@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            SQL-刷题笔记 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"artemis727.github.io","root":"/","language":"ch"}
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066cc","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"header_transparent":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","font_color":null,"hitokoto":false},"scroll":{"progress_bar":false,"percent":false}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":false,"wordcount":false,"min2read":false},"img_align":"left","copyright_info":false},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="logo-title" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">SQL-刷题笔记</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Keep Team</span>
+                            
+                                <span class="author-label">Lv1</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-02-07 15:39:01</span>
+        <span class="mobile">2023-02-07 15:39</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-02-08 00:33:29</span>
+    </span>
+    
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <h1 id="1-查询列"><a href="#1-查询列" class="headerlink" title="1. 查询列"></a>1. 查询列</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"># 查询所有列</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> user_profile</span><br><span class="line"></span><br><span class="line"># 查询多列</span><br><span class="line"><span class="keyword">SELECT</span> device_id, gender, age, university <span class="keyword">FROM</span> user_profile</span><br><span class="line"></span><br><span class="line"># 查询结果去重</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> university <span class="keyword">FROM</span> user_profile</span><br><span class="line"></span><br><span class="line"># 查询结果限制返回行数</span><br><span class="line"><span class="keyword">SELECT</span> device_id <span class="keyword">FROM</span> user_profile LIMIT <span class="number">2</span></span><br><span class="line"></span><br><span class="line"># 查询后重命名</span><br><span class="line"><span class="keyword">SELECT</span> device_id <span class="keyword">FROM</span> user_profile <span class="keyword">AS</span> user_infos_example LIMIT <span class="number">2</span></span><br><span class="line"></span><br><span class="line"># 否定查询</span><br><span class="line"><span class="keyword">select</span> device_id, gender, age, university</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">not</span> university <span class="operator">=</span> <span class="string">&#x27;复旦大学&#x27;</span></span><br><span class="line"></span><br><span class="line"># 过滤空值</span><br><span class="line"><span class="keyword">select</span> device_id, gender, age, university</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">not</span> age <span class="keyword">is</span> <span class="keyword">null</span></span><br><span class="line"></span><br><span class="line"># <span class="keyword">in</span></span><br><span class="line"><span class="keyword">select</span> device_id, gender, age, university, gpa </span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> university <span class="keyword">in</span> (<span class="string">&#x27;北京大学&#x27;</span>, <span class="string">&#x27;复旦大学&#x27;</span>, <span class="string">&#x27;山东大学&#x27;</span>)</span><br><span class="line"></span><br><span class="line"># <span class="keyword">like</span></span><br><span class="line"><span class="keyword">select</span> device_id, age, university</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> university <span class="keyword">like</span> <span class="string">&#x27;%北京%&#x27;</span></span><br><span class="line"></span><br><span class="line"># <span class="built_in">max</span>() <span class="built_in">min</span>()</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">max</span>(gpa)</span><br><span class="line"><span class="keyword">from</span> user_praofile</span><br><span class="line"><span class="keyword">where</span> university <span class="operator">=</span> <span class="string">&#x27;复旦大学&#x27;</span></span><br><span class="line"></span><br><span class="line"># <span class="built_in">avg</span>() <span class="built_in">count</span>()</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(gender) <span class="keyword">as</span> male_num, <span class="built_in">avg</span>(gpa) <span class="keyword">as</span> avg_gpa</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> gender <span class="operator">=</span> <span class="string">&#x27;male&#x27;</span></span><br><span class="line"></span><br><span class="line"># <span class="keyword">having</span></span><br><span class="line"><span class="keyword">select</span> university, <span class="built_in">avg</span>(question_cnt) avg_question_cnt, <span class="built_in">avg</span>(answer_cnt) avg_answer_cnt</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> university</span><br><span class="line"><span class="keyword">having</span> avg_question_cnt <span class="operator">&lt;</span> <span class="number">5</span> <span class="keyword">or</span> avg_answer_cnt <span class="operator">&lt;</span> <span class="number">20</span></span><br><span class="line"># 生成新字段后不能用<span class="keyword">where</span>要用<span class="keyword">having</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="2-涉及到多个表的情况"><a href="#2-涉及到多个表的情况" class="headerlink" title="2. 涉及到多个表的情况"></a>2. 涉及到多个表的情况</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> university, (<span class="built_in">count</span>(q.question_id)<span class="operator">/</span><span class="built_in">count</span>(<span class="keyword">distinct</span>(q.device_id))) avg_answer_cnt</span><br><span class="line"><span class="keyword">from</span> user_profile u</span><br><span class="line"><span class="keyword">join</span> question_practice_detail q</span><br><span class="line"><span class="keyword">on</span> u.device_id <span class="operator">=</span> q.device_id</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> university</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> university <span class="keyword">asc</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> u.university, q.difficult_level, <span class="built_in">count</span>(qp.question_id)<span class="operator">/</span><span class="built_in">count</span>(<span class="keyword">distinct</span> qp.device_id) avg_answer_cnt</span><br><span class="line"><span class="keyword">from</span> user_profile u, question_practice_detail qp, question_detail q</span><br><span class="line"><span class="keyword">where</span> u.university <span class="operator">=</span> <span class="string">&#x27;山东大学&#x27;</span> <span class="keyword">and</span> u.device_id <span class="operator">=</span> qp.device_id <span class="keyword">and</span> q.question_id <span class="operator">=</span> qp.question_id</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> u.university, difficult_level</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> avg_answer_cnt</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="SQL25-查找山东大学或者性别为男生的信息"><a href="#SQL25-查找山东大学或者性别为男生的信息" class="headerlink" title="SQL25 查找山东大学或者性别为男生的信息"></a><strong>SQL25</strong> 查找山东大学或者性别为男生的信息</h2><p>题目：现在运营想要分别查看学校为山东大学或者性别为男性的用户的device_id、gender、age和gpa数据，请取出相应结果，结果不去重。</p>
+<p>示例：user_profile</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>device_id</th>
+<th>gender</th>
+<th>age</th>
+<th>university</th>
+<th>gpa</th>
+<th>active_days_within_30</th>
+<th>question_cnt</th>
+<th>answer_cnt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>2138</td>
+<td>male</td>
+<td>21</td>
+<td>北京大学</td>
+<td>3.4</td>
+<td>7</td>
+<td>2</td>
+<td>12</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3214</td>
+<td>male</td>
+<td></td>
+<td>复旦大学</td>
+<td>4</td>
+<td>15</td>
+<td>5</td>
+<td>25</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6543</td>
+<td>female</td>
+<td>20</td>
+<td>北京大学</td>
+<td>3.2</td>
+<td>12</td>
+<td>3</td>
+<td>30</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2315</td>
+<td>female</td>
+<td>23</td>
+<td>浙江大学</td>
+<td>3.6</td>
+<td>5</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5432</td>
+<td>male</td>
+<td>25</td>
+<td>山东大学</td>
+<td>3.8</td>
+<td>20</td>
+<td>15</td>
+<td>70</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2131</td>
+<td>male</td>
+<td>28</td>
+<td>山东大学</td>
+<td>3.3</td>
+<td>15</td>
+<td>7</td>
+<td>13</td>
+</tr>
+<tr>
+<td>7</td>
+<td>4321</td>
+<td>male</td>
+<td>26</td>
+<td>复旦大学</td>
+<td>3.6</td>
+<td>9</td>
+<td>6</td>
+<td>52</td>
+</tr>
+</tbody></table>
+<p>根据示例，你的查询应返回以下结果（注意输出的顺序，先输出学校为山东大学再输出性别为男生的信息）：</p>
+<table>
+<thead>
+<tr>
+<th>device_id</th>
+<th>gender</th>
+<th>age</th>
+<th>gpa</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5432</td>
+<td>male</td>
+<td>25</td>
+<td>3.8</td>
+</tr>
+<tr>
+<td>2131</td>
+<td>male</td>
+<td>28</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td>2138</td>
+<td>male</td>
+<td>21</td>
+<td>3.4</td>
+</tr>
+<tr>
+<td>3214</td>
+<td>male</td>
+<td>None</td>
+<td>4</td>
+</tr>
+<tr>
+<td>5432</td>
+<td>male</td>
+<td>25</td>
+<td>3.8</td>
+</tr>
+<tr>
+<td>2131</td>
+<td>male</td>
+<td>28</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td>4321</td>
+<td>male</td>
+<td>28</td>
+<td>3.6</td>
+</tr>
+</tbody></table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, gender, age, gpa</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> university <span class="operator">=</span> <span class="string">&#x27;山东大学&#x27;</span></span><br><span class="line"><span class="keyword">union</span> <span class="keyword">all</span> </span><br><span class="line"><span class="keyword">select</span> device_id, gender, age, gpa</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> gender <span class="operator">=</span> <span class="string">&#x27;male&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="3-if"><a href="#3-if" class="headerlink" title="3. if"></a>3. if</h1><h2 id="SQL26-计算25岁以上和以下的用户数量"><a href="#SQL26-计算25岁以上和以下的用户数量" class="headerlink" title="SQL26 计算25岁以上和以下的用户数量"></a>SQL26 <strong>计算25岁以上和以下的用户数量</strong></h2><p>题目：现在运营想要将用户划分为25岁以下和25岁及以上两个年龄段，分别查看这两个年龄段用户数量</p>
+<p><strong>本题注意：age为null 也记为 25岁以下</strong></p>
+<p>示例：user_profile</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>device_id</th>
+<th>gender</th>
+<th>age</th>
+<th>university</th>
+<th>gpa</th>
+<th>active_days_within_30</th>
+<th>question_cnt</th>
+<th>answer_cnt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>2138</td>
+<td>male</td>
+<td>21</td>
+<td>北京大学</td>
+<td>3.4</td>
+<td>7</td>
+<td>2</td>
+<td>12</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3214</td>
+<td>male</td>
+<td></td>
+<td>复旦大学</td>
+<td>4</td>
+<td>15</td>
+<td>5</td>
+<td>25</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6543</td>
+<td>female</td>
+<td>20</td>
+<td>北京大学</td>
+<td>3.2</td>
+<td>12</td>
+<td>3</td>
+<td>30</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2315</td>
+<td>female</td>
+<td>23</td>
+<td>浙江大学</td>
+<td>3.6</td>
+<td>5</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5432</td>
+<td>male</td>
+<td>25</td>
+<td>山东大学</td>
+<td>3.8</td>
+<td>20</td>
+<td>15</td>
+<td>70</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2131</td>
+<td>male</td>
+<td>28</td>
+<td>山东大学</td>
+<td>3.3</td>
+<td>15</td>
+<td>7</td>
+<td>13</td>
+</tr>
+<tr>
+<td>7</td>
+<td>4321</td>
+<td>male</td>
+<td>26</td>
+<td>复旦大学</td>
+<td>3.6</td>
+<td>9</td>
+<td>6</td>
+<td>52</td>
+</tr>
+</tbody></table>
+<p>根据示例，你的查询应返回以下结果：</p>
+<table>
+<thead>
+<tr>
+<th>age_cut</th>
+<th>number</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>25岁以下</td>
+<td>4</td>
+</tr>
+<tr>
+<td>25岁及以上</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> age_cut, <span class="built_in">count</span>(device_id) number</span><br><span class="line"><span class="keyword">from</span>(<span class="keyword">select</span> if(age <span class="operator">&gt;=</span> <span class="number">25</span>, <span class="string">&#x27;25岁及以上&#x27;</span>, <span class="string">&#x27;25岁以下&#x27;</span>) <span class="keyword">as</span> age_cut, device_id <span class="keyword">from</span> user_profile) t1</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> age_cut</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="4-case"><a href="#4-case" class="headerlink" title="4. case"></a>4. case</h1><h2 id="SQL27-查看不同年龄段的用户明细"><a href="#SQL27-查看不同年龄段的用户明细" class="headerlink" title="SQL27 查看不同年龄段的用户明细"></a><strong>SQL27</strong> <strong>查看不同年龄段的用户明细</strong></h2><p>题目：现在运营想要将用户划分为<strong>20岁以下，20-24岁，25岁及以上</strong>三个年龄段，分别查看不同年龄段用户的明细情况，请取出相应数据。（注：若<strong>年龄为空</strong>请返回<strong>其他</strong>。）</p>
+<p>示例：user_profile</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>device_id</th>
+<th>gender</th>
+<th>age</th>
+<th>university</th>
+<th>gpa</th>
+<th>active_days_within_30</th>
+<th>question_cnt</th>
+<th>answer_cnt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>2138</td>
+<td>male</td>
+<td>21</td>
+<td>北京大学</td>
+<td>3.4</td>
+<td>7</td>
+<td>2</td>
+<td>12</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3214</td>
+<td>male</td>
+<td></td>
+<td>复旦大学</td>
+<td>4</td>
+<td>15</td>
+<td>5</td>
+<td>25</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6543</td>
+<td>female</td>
+<td>20</td>
+<td>北京大学</td>
+<td>3.2</td>
+<td>12</td>
+<td>3</td>
+<td>30</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2315</td>
+<td>female</td>
+<td>23</td>
+<td>浙江大学</td>
+<td>3.6</td>
+<td>5</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5432</td>
+<td>male</td>
+<td>25</td>
+<td>山东大学</td>
+<td>3.8</td>
+<td>20</td>
+<td>15</td>
+<td>70</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2131</td>
+<td>male</td>
+<td>28</td>
+<td>山东大学</td>
+<td>3.3</td>
+<td>15</td>
+<td>7</td>
+<td>13</td>
+</tr>
+<tr>
+<td>7</td>
+<td>4321</td>
+<td>male</td>
+<td>26</td>
+<td>复旦大学</td>
+<td>3.6</td>
+<td>9</td>
+<td>6</td>
+<td>52</td>
+</tr>
+</tbody></table>
+<p>根据示例，你的查询应返回以下结果：</p>
+<table>
+<thead>
+<tr>
+<th>device_id</th>
+<th>gender</th>
+<th>age_cut</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2138</td>
+<td>male</td>
+<td>20-24岁</td>
+</tr>
+<tr>
+<td>3214</td>
+<td>male</td>
+<td>其他</td>
+</tr>
+<tr>
+<td>6543</td>
+<td>female</td>
+<td>20-24岁</td>
+</tr>
+<tr>
+<td>2315</td>
+<td>female</td>
+<td>20-24岁</td>
+</tr>
+<tr>
+<td>5432</td>
+<td>male</td>
+<td>25岁及以上</td>
+</tr>
+<tr>
+<td>2131</td>
+<td>male</td>
+<td>25岁及以上</td>
+</tr>
+<tr>
+<td>4321</td>
+<td>male</td>
+<td>25岁及以上</td>
+</tr>
+</tbody></table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, gender, </span><br><span class="line"><span class="keyword">case</span></span><br><span class="line">    <span class="keyword">when</span> age <span class="operator">&lt;</span> <span class="number">20</span> <span class="keyword">then</span> <span class="string">&#x27;20岁以下&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> age <span class="operator">&lt;</span> <span class="number">25</span> <span class="keyword">then</span> <span class="string">&#x27;20-24岁&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> age <span class="operator">&gt;=</span> <span class="number">25</span> <span class="keyword">then</span> <span class="string">&#x27;25岁及以上&#x27;</span></span><br><span class="line">    <span class="keyword">else</span> <span class="string">&#x27;其他&#x27;</span></span><br><span class="line"><span class="keyword">end</span> age_cut</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="5-day"><a href="#5-day" class="headerlink" title="5. day()"></a>5. day()</h1><ul>
+<li><p>day()</p>
+</li>
+<li><p>month()</p>
+</li>
+<li><p>year()</p>
+</li>
+</ul>
+<h1 id="6-用户留存率计算"><a href="#6-用户留存率计算" class="headerlink" title="6. 用户留存率计算"></a>6. 用户留存率计算</h1><p><a href="/Users/xiaoyu/Documents/%E5%8D%9A%E5%AE%A2/SQL-%E8%AE%A1%E7%AE%97%E7%94%A8%E6%88%B7%E6%AC%A1%E6%97%A5%E7%95%99%E5%AD%98%E7%8E%87.md">SQL-计算用户次日留存率.md</a></p>
+<h1 id="7-字符串相关"><a href="#7-字符串相关" class="headerlink" title="7. 字符串相关"></a>7. 字符串相关</h1><p><a href="/Users/xiaoyu/Documents/%E5%8D%9A%E5%AE%A2/SQL-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%85%B3.md">SQL-字符串相关.md</a></p>
+
+            </div>
+
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/2023/02/07/hello-world/"
+                            >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                <span class="post-nav-title-item">Hello World</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/2023/02/07/SQL-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%85%B3/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">SQL-字符串相关</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2020</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">Keep Team</a>
+            
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/post-helper.js"></script>
+
+        
+        
+    
+</div>
+
+
+
+</body>
+</html>

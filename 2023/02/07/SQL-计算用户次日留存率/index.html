@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            SQL-计算用户留存率 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"artemis727.github.io","root":"/","language":"ch"}
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066cc","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"header_transparent":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","font_color":null,"hitokoto":false},"scroll":{"progress_bar":false,"percent":false}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":false,"wordcount":false,"min2read":false},"img_align":"left","copyright_info":false},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="logo-title" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">SQL-计算用户留存率</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Keep Team</span>
+                            
+                                <span class="author-label">Lv1</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-02-07 10:17:12</span>
+        <span class="mobile">2023-02-07 10:17</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-02-08 00:34:08</span>
+    </span>
+    
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <h1 id="计算用户次日留存率"><a href="#计算用户次日留存率" class="headerlink" title="计算用户次日留存率"></a>计算用户次日留存率</h1><p>如果只是计算用户的<strong>次日</strong>留存率，那么使用date_sub()函数就够了：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(if(b.device_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">null</span>, <span class="number">1</span>, <span class="number">0</span>)) <span class="keyword">as</span> avg_ret</span><br><span class="line"><span class="keyword">from</span>(</span><br><span class="line">    <span class="keyword">select</span> <span class="keyword">distinct</span> device_id, <span class="type">date</span></span><br><span class="line">    <span class="keyword">from</span> question_practice_detail</span><br><span class="line">) a</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span>(</span><br><span class="line">    <span class="keyword">select</span> <span class="keyword">distinct</span> device_id, date_sub(<span class="type">date</span>, <span class="type">interval</span> <span class="number">1</span> <span class="keyword">day</span>) <span class="keyword">as</span> <span class="type">date</span></span><br><span class="line">    <span class="keyword">from</span> question_practice_detail</span><br><span class="line">) b</span><br><span class="line"><span class="keyword">on</span> a.device_id <span class="operator">=</span> b.device_id <span class="keyword">and</span> a.date <span class="operator">=</span> b.date</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>date_sub() 函数：</strong></p>
+<ul>
+<li><p>SELECT DATE_SUB(‘2010-08-12’, INTERVAL 3 DAY) AS NewDate </p>
+<p>结果： 2010-08-09</p>
+</li>
+<li><p>SELECT DATE_SUB(‘2010-08-12’, INTERVAL ‘3-2’ YEAR_MONTH) AS NewDate </p>
+<p>结果： 2007-06-12</p>
+</li>
+<li><p>SELECT DATE_SUB(‘2011-09-14 2:44:36’, INTERVAL ‘2:26’ HOUR_MINUTE) AS NewDate </p>
+<p>结果： 2011-09-14 00:18:36</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="基于SQL的留存率计算"><a href="#基于SQL的留存率计算" class="headerlink" title="基于SQL的留存率计算"></a>基于SQL的留存率计算</h1><blockquote>
+<p>转自<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/178598910" >知乎：基于SQL的留存率计算<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<h2 id="一、什么是留存率"><a href="#一、什么是留存率" class="headerlink" title="一、什么是留存率"></a>一、什么是留存率</h2><p>互联网行业里，留存率是用于反映网站、互联网应用或网络游戏的<strong>运营情况</strong>的统计指标，其具体含义为<strong>在统计周期（周&#x2F;月）内，每日活跃用户数在第N日仍启动该App的用户数占比的平均值</strong>。其中N通常取2、3、7、<strong>14</strong>、30，分别对应次日留存率、三日留存率、周留存率、半月留存率和月留存率。</p>
+<p>留存率常用于反映用户粘性，<strong>当N取值越大、留存率越高时，用户粘性越高</strong>。</p>
+<h2 id="二、留存率的计算"><a href="#二、留存率的计算" class="headerlink" title="二、留存率的计算"></a>二、留存率的计算</h2><ul>
+<li><p><strong>留存率 &#x3D; 登陆用户数&#x2F;新增用户数 * 100%</strong></p>
+</li>
+<li><p>新增用户数：在当前时间段新注册（或新访问）的用户数；</p>
+</li>
+<li><p>登录用户数：在统计的时间段至少登录过一次的用户数；</p>
+</li>
+<li><p>次日留存率：在次日至少登录过一次的用户数&#x2F;当天新增的用户数；</p>
+</li>
+<li><p>❗️<strong>3日留存率</strong>：在往后3天内<strong>至少登录过一次</strong>的用户数&#x2F;当天新增的用户数；</p>
+</li>
+<li><p>❗️<strong>7日留存率</strong>：在往后7天内<strong>至少登录过一次</strong>的用户数&#x2F;当天新增的用户数；</p>
+</li>
+<li><p>❗️<strong>15日留存数</strong>：当天新增的用户数，在往后<strong>7天内至少登录过一次</strong>的用户，在往后<strong>第8天到第14天内至少再登陆过一次</strong>的用户数</p>
+<p><strong>➡️ 3日和7日，至少登陆过一次；15日，7天为一段，在每段内至少登录一次！</strong></p>
+</li>
+</ul>
+<h2 id="SQL中计算用户的留存率"><a href="#SQL中计算用户的留存率" class="headerlink" title="SQL中计算用户的留存率"></a>SQL中计算用户的留存率</h2><ul>
+<li><strong>新增用户数</strong></li>
+</ul>
+<p>由于数据过大，这截取时间2017.11.26~2017.12.03为例。</p>
+<p>首先计算分母，这里有的算法是用新增用户数，有的算法是用活跃用户数。</p>
+<p>⚠️注意：<strong>新增用户数与活跃用户数并不相等</strong>，活跃用户数包含新增用户数。活跃用户数，当天的访问人数，也就是<strong>UV</strong>。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 每位用户的最早登录日期</span></span><br><span class="line"><span class="keyword">SELECT</span> 用户ID, <span class="built_in">MIN</span>(日期) <span class="keyword">AS</span> 最早登录日期</span><br><span class="line"><span class="keyword">FROM</span> userbehavior</span><br><span class="line"><span class="keyword">WHERE</span> 日期 <span class="operator">&gt;</span> <span class="string">&#x27;2017-11-25&#x27;</span><span class="keyword">AND</span> 日期 <span class="operator">&lt;</span> <span class="string">&#x27;2017-12-04&#x27;</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> 用户ID</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic4.zhimg.com/80/v2-18cfc6382ff6f91e85948644b0e97137_1440w.webp" alt="img"></p>
+<p>再从上表中计算出每天的新增人数，<strong>❗️算新增人数用的日期是最早登录日期！</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 最早登录日期 <span class="keyword">AS</span> 日期, <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> 用户ID) <span class="keyword">AS</span> 新增人数</span><br><span class="line"><span class="keyword">FROM</span>(<span class="keyword">SELECT</span> 用户ID, <span class="built_in">MIN</span>(日期) <span class="keyword">AS</span> 最早登录日期</span><br><span class="line">     <span class="keyword">FROM</span> userbehavior</span><br><span class="line">     <span class="keyword">WHERE</span> 日期 <span class="operator">&gt;</span> <span class="string">&#x27;2017-11-25&#x27;</span> <span class="keyword">AND</span> 日期 <span class="operator">&lt;</span> <span class="string">&#x27;2017-12-04&#x27;</span></span><br><span class="line">     <span class="keyword">GROUP</span> <span class="keyword">BY</span> 用户ID) <span class="keyword">AS</span> f</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> 最早登录日期</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic4.zhimg.com/80/v2-967700ed583d369a6686170d50030ec3_1440w.webp" alt="img"></p>
+<p>以下是活跃用户数的算法，二者确实数值上并不相等。<strong>❗️算每日活跃用户数用的日期就是当天的日期！</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 每天活跃用户数=UV 访客数</span></span><br><span class="line"><span class="keyword">SELECT</span> 日期, <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> 用户ID) <span class="keyword">AS</span> 活跃用户数</span><br><span class="line"><span class="keyword">FROM</span> userbehavior</span><br><span class="line"><span class="keyword">where</span> 日期 <span class="operator">&gt;</span><span class="string">&#x27;2017-11-25&#x27;</span> <span class="keyword">AND</span> 日期 <span class="operator">&lt;</span> <span class="string">&#x27;2017-12-04&#x27;</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> 日期</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic1.zhimg.com/80/v2-5466468851b1d4b0794d8ec92c6f43f0_1440w.webp" alt="img"></p>
+<p>抽取7天的活跃用户数。</p>
+<ul>
+<li><strong>次日留存的用户数</strong></li>
+</ul>
+<ol>
+<li>次日的时间间隔为1，涉及到时间间隔采用自联结。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.用户ID, a.`日期` <span class="keyword">AS</span> atime, b.`日期` <span class="keyword">AS</span> btime</span><br><span class="line"><span class="keyword">FROM</span> userbehavior <span class="keyword">AS</span> a </span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> userbehavior <span class="keyword">AS</span> b</span><br><span class="line"><span class="keyword">ON</span> a.`用户ID` <span class="operator">=</span> b.`用户ID`</span><br><span class="line"><span class="keyword">WHERE</span> a.`日期` <span class="operator">&gt;</span> <span class="string">&#x27;2017-11-25&#x27;</span> <span class="keyword">AND</span> a.`日期` <span class="operator">&lt;</span> <span class="string">&#x27;2017-12-04&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic3.zhimg.com/80/v2-58aa55bd327431b0782ff0dc5d41c8ce_1440w.webp" alt="img"></p>
+<p>将上表存为视图C，</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> C(用户ID, atime, btime)</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> a.用户ID, a.`日期`, b.`日期` </span><br><span class="line"><span class="keyword">from</span> userbehavior <span class="keyword">AS</span> a <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> userbehavior <span class="keyword">AS</span> b</span><br><span class="line"><span class="keyword">ON</span> a.`用户ID`<span class="operator">=</span>b.`用户ID`</span><br><span class="line"><span class="keyword">WHERE</span> a.`日期`<span class="operator">&gt;</span><span class="string">&#x27;2017-11-25&#x27;</span><span class="keyword">AND</span> a.`日期` <span class="operator">&lt;</span> <span class="string">&#x27;2017-12-04&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>计算时间间隔用<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37493556/article/details/92805912" >timestampdiff函数<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> `用户ID`, TIMESTAMPDIFF(<span class="keyword">DAY</span>, atime, btime)<span class="keyword">AS</span> 时间间隔</span><br><span class="line"><span class="keyword">FROM</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> a.用户ID, a.日期 <span class="keyword">as</span> atime, b.日期 <span class="keyword">as</span> btime</span><br><span class="line">  <span class="keyword">FROM</span> userbehavior <span class="keyword">as</span> a <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> userbehavior <span class="keyword">as</span> b</span><br><span class="line">  <span class="keyword">ON</span> a.用户ID<span class="operator">=</span>b.`用户ID`</span><br><span class="line">  <span class="keyword">WHERE</span> a.`日期`<span class="operator">&gt;</span><span class="string">&#x27;2017-11-25&#x27;</span><span class="keyword">AND</span> a.`日期` <span class="operator">&lt;</span> <span class="string">&#x27;2017-12-04&#x27;</span>) <span class="keyword">AS</span> c</span><br><span class="line"><span class="comment">-- 这里直接设置为表c</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic2.zhimg.com/80/v2-6d0f637e1aabdc3bcc2b57dedff5094d_1440w.webp" alt="img"></p>
+<p>得到了用户的时间间隔</p>
+<p>3.用case语句筛选出时间间隔为1的数据，并且进行计数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span>, <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="keyword">case</span> <span class="keyword">when</span> 时间间隔 <span class="operator">=</span> <span class="number">1</span> <span class="keyword">then</span> `用户ID`</span><br><span class="line">			<span class="keyword">ELSE</span> <span class="keyword">NULL</span></span><br><span class="line">			<span class="keyword">END</span>)<span class="keyword">AS</span> 次日留存数</span><br><span class="line"><span class="keyword">FROM</span>( <span class="keyword">SELECT</span> `用户ID`,TIMESTAMPDIFF(<span class="keyword">DAY</span>,atime,btime)<span class="keyword">AS</span> 时间间隔</span><br><span class="line">			 <span class="keyword">FROM</span> (</span><br><span class="line">				<span class="keyword">SELECT</span> a.用户ID,a.日期 <span class="keyword">as</span> atime,b.日期 <span class="keyword">as</span> btime</span><br><span class="line">				<span class="keyword">FROM</span> userbehavior <span class="keyword">as</span> a <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> userbehavior <span class="keyword">as</span> b</span><br><span class="line">				<span class="keyword">ON</span> a.用户ID<span class="operator">=</span>b.`用户ID`</span><br><span class="line">				<span class="keyword">WHERE</span> a.`日期`<span class="operator">&gt;</span><span class="string">&#x27;2017-11-25&#x27;</span><span class="keyword">AND</span> a.`日期` <span class="operator">&lt;</span> <span class="string">&#x27;2017-12-04&#x27;</span></span><br><span class="line">				) <span class="keyword">AS</span> c</span><br><span class="line">			)<span class="keyword">AS</span> d</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>次日留存率</strong></li>
+</ul>
+<p>次日留存率&#x3D;次日留存用户数&#x2F;当日活跃用户数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span>,<span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="keyword">case</span> <span class="keyword">when</span> 时间间隔 <span class="operator">=</span> <span class="number">1</span> <span class="keyword">then</span> `用户ID`</span><br><span class="line">			<span class="keyword">ELSE</span> <span class="keyword">NULL</span></span><br><span class="line">			<span class="keyword">END</span>) <span class="keyword">AS</span> 次日留存数<span class="operator">/</span><span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> 用户ID) <span class="keyword">AS</span> 次日留存率</span><br><span class="line"><span class="keyword">FROM</span>( <span class="keyword">SELECT</span> `用户ID`,TIMESTAMPDIFF(<span class="keyword">DAY</span>,atime,btime)<span class="keyword">AS</span> 时间间隔</span><br><span class="line">			 <span class="keyword">FROM</span> (</span><br><span class="line">				<span class="keyword">SELECT</span> a.用户ID,a.日期 <span class="keyword">as</span> atime,b.日期 <span class="keyword">as</span> btime</span><br><span class="line">				<span class="keyword">FROM</span> userbehavior <span class="keyword">as</span> a <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> userbehavior <span class="keyword">as</span> b</span><br><span class="line">				<span class="keyword">ON</span> a.用户ID<span class="operator">=</span>b.`用户ID`</span><br><span class="line">				<span class="keyword">WHERE</span> a.`日期`<span class="operator">&gt;</span><span class="string">&#x27;2017-11-25&#x27;</span><span class="keyword">AND</span> a.`日期` <span class="operator">&lt;</span> <span class="string">&#x27;2017-12-04&#x27;</span></span><br><span class="line">				) <span class="keyword">AS</span> c</span><br><span class="line">			)<span class="keyword">AS</span> d</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="三、三日以及N日留存的计算"><a href="#三、三日以及N日留存的计算" class="headerlink" title="三、三日以及N日留存的计算"></a>三、三日以及N日留存的计算</h2><p>只需要修改时间间隔&#x3D;N即可。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 日期,<span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> 用户ID <span class="keyword">AS</span> 活跃用户数,</span><br><span class="line"><span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="keyword">case</span> <span class="keyword">when</span> 时间间隔<span class="operator">=</span><span class="number">1</span> <span class="keyword">then</span> `用户ID`</span><br><span class="line">			<span class="keyword">ELSE</span> <span class="keyword">NULL</span></span><br><span class="line">			<span class="keyword">END</span>) <span class="keyword">AS</span> 次日留存数<span class="operator">/</span><span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> 用户ID) <span class="keyword">AS</span> 次日留存率</span><br><span class="line"><span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="keyword">case</span> <span class="keyword">when</span> 时间间隔<span class="operator">=</span><span class="number">3</span> <span class="keyword">then</span> `用户ID`</span><br><span class="line">			<span class="keyword">ELSE</span> <span class="keyword">NULL</span></span><br><span class="line">			<span class="keyword">END</span>) <span class="keyword">AS</span> 次日留存数<span class="operator">/</span><span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> 用户ID) <span class="keyword">AS</span> 三日留存率</span><br><span class="line"><span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="keyword">case</span> <span class="keyword">when</span> 时间间隔<span class="operator">=</span><span class="number">7</span> <span class="keyword">then</span> `用户ID`</span><br><span class="line">			<span class="keyword">ELSE</span> <span class="keyword">NULL</span></span><br><span class="line">			<span class="keyword">END</span>) <span class="keyword">AS</span> 次日留存数<span class="operator">/</span><span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> 用户ID) <span class="keyword">AS</span> 七日留存率</span><br><span class="line"><span class="keyword">FROM</span>( <span class="keyword">SELECT</span> `用户ID`,TIMESTAMPDIFF(<span class="keyword">DAY</span>,atime,btime)<span class="keyword">AS</span> 时间间隔</span><br><span class="line">			 <span class="keyword">FROM</span> (</span><br><span class="line">				<span class="keyword">SELECT</span> a.用户ID,a.日期 <span class="keyword">as</span> atime,b.日期 <span class="keyword">as</span> btime</span><br><span class="line">				<span class="keyword">FROM</span> userbehavior <span class="keyword">as</span> a <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> 每日新增用户数表 <span class="keyword">as</span> b</span><br><span class="line">				<span class="keyword">ON</span> a.用户ID<span class="operator">=</span>b.`用户ID`</span><br><span class="line">				<span class="keyword">WHERE</span> a.`日期`<span class="operator">&gt;</span><span class="string">&#x27;2017-11-25&#x27;</span><span class="keyword">AND</span> a.`日期` <span class="operator">&lt;</span> <span class="string">&#x27;2017-12-04&#x27;</span></span><br><span class="line">				) <span class="keyword">AS</span> c</span><br><span class="line">			)<span class="keyword">AS</span> d</span><br></pre></td></tr></table></figure>
+            </div>
+
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/2023/02/07/SQL-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%85%B3/"
+                            >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                <span class="post-nav-title-item">SQL-字符串相关</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                            </a>
+                        </div>
+                    
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2020</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">Keep Team</a>
+            
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/post-helper.js"></script>
+
+        
+        
+    
+</div>
+
+
+
+</body>
+</html>
