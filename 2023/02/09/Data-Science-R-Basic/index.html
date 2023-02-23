@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Syaoran Li">
+    
+    <title>
+        
+            Data Science R Basic |
+        
+        Syaoran:)
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="https://cdn.staticaly.com/gh/Artemis727/Artemis727.github.io@master/images/interface-essential-profile-female.4514fm8anua0.webp">
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"artemis727.github.io","root":"/","language":"ch","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#55efc4","logo":"/images/profile.jpg","favicon":"https://cdn.staticaly.com/gh/Artemis727/Artemis727.github.io@master/images/interface-essential-profile-female.4514fm8anua0.webp","avatar":"https://cdn.staticaly.com/gh/Artemis727/Artemis727.github.io@master/images/4861675818720_.4aw4qgbkmwa0.webp","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg.svg","description":"The higher I got, || the more amazed I was by the view.","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":true},"comment":{"enable":true,"use":"valine","valine":{"appid":"LTgZzPPbq5jCkagzeI9TnhVV-gzGzoHsz","appkey":"akDnGyiE0qXqen4IP2MfEOiy","server_urls":null,"placeholder":"👻尽情吐槽吧～"},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":false},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/profile.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+               Syaoran:)
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">Data Science R Basic</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="https://cdn.staticaly.com/gh/Artemis727/Artemis727.github.io@master/images/4861675818720_.4aw4qgbkmwa0.webp">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Syaoran Li</span>
+                            
+                                <span class="author-label">Lv1</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-02-09 10:14:17</span>
+        <span class="mobile">2023-02-09 10:14</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-02-23 16:47:41</span>
+    </span>
+    
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/R/">R</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>799 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <h1 id="Words-amp-Expressions"><a href="#Words-amp-Expressions" class="headerlink" title="Words &amp; Expressions"></a>Words &amp; Expressions</h1><ul>
+<li>in a <strong>nested</strong> way 嵌套</li>
+<li><strong>concatenate</strong> 连接 c() -&gt; all items in ‘()’ to a <strong>vector</strong></li>
+<li></li>
+</ul>
+<h1 id="Why-use-‘-’-instead-of-‘-’-to-access-variables"><a href="#Why-use-‘-’-instead-of-‘-’-to-access-variables" class="headerlink" title="Why use ‘[[’ instead of ‘[’ to access variables?"></a>Why use ‘[[’ instead of ‘[’ to access variables?</h1><p>\We extract the population like this:</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p <span class="operator">&lt;-</span> murders<span class="operator">$</span>population</span><br></pre></td></tr></table></figure>
+
+<p>If you instead try to access a column with just one bracket,</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">murders<span class="punctuation">[</span><span class="string">&quot;population&quot;</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x3D;&#x3D;R returns a subset of the original data frame containing just this column. This new object will be of class <code>data.frame</code> rather than a vector.&#x3D;&#x3D; To access the column itself you need to use either the <code>$</code> accessor or the double square brackets <code>[[</code>:</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">murders<span class="punctuation">[[</span><span class="string">&quot;population&quot;</span><span class="punctuation">]</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="R-sorting-functions"><a href="#R-sorting-functions" class="headerlink" title="R- sorting functions"></a>R- sorting functions</h1><ul>
+<li><p>sort()</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sort()排序，排序结果不可逆转</span></span><br><span class="line"><span class="comment"># 默认是升序</span></span><br><span class="line"><span class="comment"># decreasing为TRUE，表示降序</span></span><br><span class="line"><span class="comment"># decreasing为FALSE，表示升序</span></span><br><span class="line"><span class="comment">#排序后并不会修改原对象的值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#示例如下：</span></span><br><span class="line"><span class="operator">&gt;</span> a <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">3</span><span class="punctuation">,</span><span class="number">9</span><span class="punctuation">,</span><span class="number">16</span><span class="punctuation">,</span><span class="number">6</span><span class="punctuation">,</span><span class="number">7</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">,</span><span class="number">22</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">,</span><span class="number">10</span><span class="punctuation">,</span><span class="number">13</span><span class="punctuation">)</span></span><br><span class="line"><span class="operator">&gt;</span> <span class="comment">#sort()默认为从小到大（升序）排序，等同于decreasing=FALSE</span></span><br><span class="line"><span class="operator">&gt;</span> sort<span class="punctuation">(</span>a<span class="punctuation">)</span></span><br><span class="line"> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>  <span class="number">3</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">13</span> <span class="number">16</span> <span class="number">22</span></span><br><span class="line"><span class="operator">&gt;</span> sort<span class="punctuation">(</span>a<span class="punctuation">,</span>decreasing <span class="operator">=</span> <span class="built_in">F</span><span class="punctuation">)</span></span><br><span class="line"> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>  <span class="number">3</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">13</span> <span class="number">16</span> <span class="number">22</span></span><br><span class="line"><span class="operator">&gt;</span> <span class="comment">#decreasing=TRUE,为从大到小（降序）排序</span></span><br><span class="line"><span class="operator">&gt;</span> sort<span class="punctuation">(</span>a<span class="punctuation">,</span>decreasing <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">)</span></span><br><span class="line"> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">22</span> <span class="number">16</span> <span class="number">13</span> <span class="number">10</span>  <span class="number">9</span>  <span class="number">7</span>  <span class="number">6</span>  <span class="number">5</span>  <span class="number">4</span>  <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#排序并不会修改原对象的值，a仍为原来未排序的a</span></span><br><span class="line"><span class="operator">&gt;</span> a</span><br><span class="line"> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>  <span class="number">3</span>  <span class="number">9</span> <span class="number">16</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">4</span> <span class="number">22</span>  <span class="number">5</span> <span class="number">10</span> <span class="number">13</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>rank()</p>
+<p>用法：rank(a)<br>函数说明：指出当前向量中各元素大小的排名，默认升序<br>函数还有其他的参数：rank(x &#x3D; data, na.last &#x3D; TRUE)<br>x 表示待排序的向量<br>na.last 表示是否排序时是否将NA放在最后面，默认忽略NA</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span> a <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">3</span><span class="punctuation">,</span><span class="number">9</span><span class="punctuation">,</span><span class="number">16</span><span class="punctuation">,</span><span class="number">6</span><span class="punctuation">,</span><span class="number">7</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">,</span><span class="number">22</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">,</span><span class="number">10</span><span class="punctuation">,</span><span class="number">13</span><span class="punctuation">)</span></span><br><span class="line"><span class="operator">&gt;</span> order<span class="punctuation">(</span>a<span class="punctuation">)</span></span><br><span class="line"> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>  <span class="number">1</span>  <span class="number">6</span>  <span class="number">8</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">2</span>  <span class="number">9</span> <span class="number">10</span>  <span class="number">3</span>  <span class="number">7</span></span><br><span class="line"><span class="comment">#说明：在向量a中，3是第一小的数，位置下标为1；4是第二小的数，位置下标为6；最大的数是22，位置下标为7</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#a[order(a)] 等同于sort(a)</span></span><br><span class="line"><span class="operator">&gt;</span> a<span class="punctuation">[</span>order<span class="punctuation">(</span>a<span class="punctuation">)</span><span class="punctuation">]</span> </span><br><span class="line"> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>  <span class="number">3</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">13</span> <span class="number">16</span> <span class="number">22</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>order()</p>
+<p>说明：返回的值表示位置，默认是升序，依次对应的是向量的最小值、次小值、第三小值…最大值</p>
+<p>用法：order(a), a为要排序的向量<br>order(… &#x3D; data, na.last &#x3D; TRUE,decreasing &#x3D; TRUE)<br>… 表示待排序向量<br>na.last 表示时候将NA值放在最后面（默认排序忽略NA）<br>decreasing 表示是否按照降序排序，默认升序。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span> a</span><br><span class="line"> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>  <span class="number">3</span>  <span class="number">9</span> <span class="number">16</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">4</span> <span class="number">22</span>  <span class="number">5</span> <span class="number">10</span> <span class="number">13</span></span><br><span class="line"><span class="operator">&gt;</span> sort<span class="punctuation">(</span>a<span class="punctuation">)</span></span><br><span class="line"> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>  <span class="number">3</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">13</span> <span class="number">16</span> <span class="number">22</span></span><br><span class="line"><span class="operator">&gt;</span> rank<span class="punctuation">(</span>a<span class="punctuation">)</span></span><br><span class="line"> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>  <span class="number">1</span>  <span class="number">6</span>  <span class="number">9</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">2</span> <span class="number">10</span>  <span class="number">3</span>  <span class="number">7</span>  <span class="number">8</span></span><br><span class="line"> <span class="comment">#说明：向量a中的第一个数为3，是最小的，故排名为1；第二个数是9，是第六小的数，排名为6</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>比较</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span> a <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">3</span><span class="punctuation">,</span><span class="number">9</span><span class="punctuation">,</span><span class="number">16</span><span class="punctuation">,</span><span class="number">6</span><span class="punctuation">,</span><span class="number">7</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">,</span><span class="number">22</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">,</span><span class="number">10</span><span class="punctuation">,</span><span class="number">13</span><span class="punctuation">)</span></span><br><span class="line"><span class="operator">&gt;</span> a</span><br><span class="line"> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>  <span class="number">3</span>  <span class="number">9</span> <span class="number">16</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">4</span> <span class="number">22</span>  <span class="number">5</span> <span class="number">10</span> <span class="number">13</span></span><br><span class="line"><span class="operator">&gt;</span> sort<span class="punctuation">(</span>a<span class="punctuation">)</span> <span class="comment">#将a**从小到大排序并列出**</span></span><br><span class="line"> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>  <span class="number">3</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">13</span> <span class="number">16</span> <span class="number">22</span></span><br><span class="line"><span class="operator">&gt;</span> order<span class="punctuation">(</span>a<span class="punctuation">)</span> <span class="comment">#返回从小到大的数的**位置下标**，a[order(a)]=sort(a)</span></span><br><span class="line"> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>  <span class="number">1</span>  <span class="number">6</span>  <span class="number">8</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">2</span>  <span class="number">9</span> <span class="number">10</span>  <span class="number">3</span>  <span class="number">7</span></span><br><span class="line"><span class="operator">&gt;</span> rank<span class="punctuation">(</span>a<span class="punctuation">)</span> <span class="comment">#返回a中**每个数的排名（从小到大）**</span></span><br><span class="line"> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>  <span class="number">1</span>  <span class="number">6</span>  <span class="number">9</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">2</span> <span class="number">10</span>  <span class="number">3</span>  <span class="number">7</span>  <span class="number">8</span></span><br><span class="line"><span class="operator">&gt;</span> a</span><br><span class="line"> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>  <span class="number">3</span>  <span class="number">9</span> <span class="number">16</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">4</span> <span class="number">22</span>  <span class="number">5</span> <span class="number">10</span> <span class="number">13</span></span><br><span class="line"><span class="comment">#注意：经过sort()、order()、rank()排序后，a不改变</span></span><br></pre></td></tr></table></figure>
+
+<p>order和rank的区别在于一个返回的是index，一个是rank，index不一定是数字。</p>
+</li>
+</ul>
+
+            </div>
+
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/R/">#R</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/2023/02/23/HousePricing/"
+                            >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                <span class="post-nav-title-item">HousePricing</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/2023/02/08/How-is-Hadley-Wickham-able-to-contribute-so-much-to-R-particularly-in-the-form-of-packages/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">How is Hadley Wickham able to contribute so much to R, particularly in the form of packages?</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+                <div class="comment-container">
+                    
+<div class="comments-container">
+    <div id="comments-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments"></i>&nbsp;评论
+    </div>
+    
+        
+            
+
+    <div class="valine-container">
+        <script  src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+          function loadValine() {
+
+            const config = {
+              el: '#vcomments',
+              appId: 'LTgZzPPbq5jCkagzeI9TnhVV-gzGzoHsz',
+              appKey: 'akDnGyiE0qXqen4IP2MfEOiy',
+              meta: ['nick', 'mail', 'link'],
+              avatar: 'wavatar',
+              enableQQ: true,
+              placeholder: '👻尽情吐槽吧～',
+              lang: 'ch'.toLowerCase()
+            }
+
+            if ('') {
+              config.serverURLs = ''
+            }
+
+            new Valine(config)
+
+            function getAuthor(language) {
+              switch (language) {
+                case 'en':
+                  return 'Author'
+                case 'zh-CN':
+                  return '博主'
+                default:
+                  return 'Master'
+              }
+            }
+
+            // Add "Author" identify
+            const getValineDomTimer = setInterval(() => {
+              const vcards = document.querySelectorAll('#vcomments .vcards .vcard')
+              if (vcards.length > 0) {
+                let author = 'Syaoran Li'
+
+                if (author) {
+                  for (let vcard of vcards) {
+                    const vnick_dom = vcard.querySelector('.vhead .vnick')
+                    const vnick = vnick_dom.innerHTML
+                    if (vnick === author) {
+                      vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                    }
+                  }
+                }
+                clearInterval(getValineDomTimer)
+              } else {
+                clearInterval(getValineDomTimer)
+              }
+            }, 2000)
+          }
+
+          if ('false' === 'true') {
+            const loadValineTimeout = setTimeout(() => {
+              loadValine()
+              clearTimeout(loadValineTimeout)
+            }, 1000)
+          } else {
+            window.addEventListener('DOMContentLoaded', loadValine)
+          }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Words-amp-Expressions"><span class="nav-number">1.</span> <span class="nav-text">Words &amp; Expressions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Why-use-%E2%80%98-%E2%80%99-instead-of-%E2%80%98-%E2%80%99-to-access-variables"><span class="nav-number">2.</span> <span class="nav-text">Why use ‘[[’ instead of ‘[’ to access variables?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#R-sorting-functions"><span class="nav-number">3.</span> <span class="nav-text">R- sorting functions</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2023</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">Syaoran Li</a>
+            
+        </div>
+        
+            <script async 
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+                    总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-block.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/post-helper.js"></script>
+
+        
+            
+<script src="/js/libs/anime.min.js"></script>
+
+        
+        
+            
+<script src="/js/toc.js"></script>
+
+        
+    
+</div>
+
+
+
+</body>
+</html>
