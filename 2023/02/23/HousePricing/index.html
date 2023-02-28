@@ -9,7 +9,7 @@
     
     <title>
         
-            HousePricing |
+            Comprehensive data exploration with python | House Pricing |
         
         Syaoran:)
     </title>
@@ -81,7 +81,7 @@
                             <a class=""
                                href="/"
                             >
-                                首頁
+                                HOME
                             </a>
                         </li>
                     
@@ -89,7 +89,7 @@
                             <a class=""
                                href="/archives"
                             >
-                                歸檔
+                                ARCHIVES
                             </a>
                         </li>
                     
@@ -97,7 +97,7 @@
                             <a class=""
                                href="/tags"
                             >
-                                標籤
+                                TAGS
                             </a>
                         </li>
                     
@@ -105,7 +105,7 @@
                             <a class=""
                                href="/categories"
                             >
-                                分類
+                                CATEGORIES
                             </a>
                         </li>
                     
@@ -113,7 +113,7 @@
                             <a class=""
                                href="/about"
                             >
-                                關於
+                                ABOUT
                             </a>
                         </li>
                     
@@ -140,27 +140,27 @@
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
-                       href="/">首頁</a>
+                       href="/">HOME</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
-                       href="/archives">歸檔</a>
+                       href="/archives">ARCHIVES</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
-                       href="/tags">標籤</a>
+                       href="/tags">TAGS</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
-                       href="/categories">分類</a>
+                       href="/categories">CATEGORIES</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
-                       href="/about">關於</a>
+                       href="/about">ABOUT</a>
                 </li>
             
         </ul>
@@ -183,7 +183,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">HousePricing</span>
+                <span class="title-hover-animation">Comprehensive data exploration with python | House Pricing</span>
             </div>
 
             
@@ -211,7 +211,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-02-23 16:55:15</span>
+        <span class="pc">2023-02-28 14:58:54</span>
     </span>
     
     
@@ -235,6 +235,14 @@
                         <a href="/tags/Python/">Python</a>&nbsp;
                     </li>
                 
+                    <li>
+                        | <a href="/tags/kaggle/">kaggle</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/data-exploration/">data exploration</a>&nbsp;
+                    </li>
+                
             </ul>
         </span>
     
@@ -242,12 +250,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>84 字數</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>7k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>1 分鐘</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>29 Mins</span>
         </span>
     
     
@@ -265,10 +273,10 @@
             <div class="article-content keep-markdown-body">
                 
 
-                <h1 id="Comprehensive-data-exploration-with-python-House-Pricing"><a href="#Comprehensive-data-exploration-with-python-House-Pricing" class="headerlink" title="Comprehensive data exploration with python | House Pricing"></a>Comprehensive data exploration with python | House Pricing</h1><h2 id="knowledge"><a href="#knowledge" class="headerlink" title="knowledge"></a>knowledge</h2><ol>
-<li>偏度(skewness)和峰度(kurtosis）</li>
-</ol>
-<ul>
+                <blockquote>
+<p>From kaggle: <a class="link"   target="_blank" rel="noopener" href="https://www.kaggle.com/code/pmarcelino/comprehensive-data-exploration-with-python/notebook#5.-Getting-hard-core" >Comprehensive data exploration with python<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><h2 id="偏度-skewness-和峰度-kurtosis）"><a href="#偏度-skewness-和峰度-kurtosis）" class="headerlink" title="偏度(skewness)和峰度(kurtosis）"></a>偏度(skewness)和峰度(kurtosis）</h2><ul>
 <li>skewness 衡量数据分布的非对称程度<ul>
 <li>正态分布 skewness &#x3D; <strong>0</strong></li>
 <li>右偏分布 skewness &gt; 0</li>
@@ -297,6 +305,347 @@
                 ></p>
 </li>
 </ul>
+<h2 id="heaptmap怎么看相关性"><a href="#heaptmap怎么看相关性" class="headerlink" title="heaptmap怎么看相关性"></a><a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/bb3c55abafe4" >heaptmap怎么看相关性<i class="fas fa-external-link-alt"></i></a></h2><p>中间对角线永远是最相关的</p>
+<h2 id="标准化"><a href="#标准化" class="headerlink" title="标准化"></a>标准化</h2><p><code>from sklearn.preprocessing import StandardScaler</code></p>
+<p>🤖️ 当进行单个变量的标准化处理时，我们通常需要将其转换为一个二维数组。这是因为，对于单个变量来说，它只有一个维度，而进行标准化处理时需要在某个轴上进行运算，因此需要将其转换为一个具有多个维度的数组，以便进行运算。</p>
+<p>可以使用 <code>print()</code> 函数输出 <code>area_2d</code> 的值，例如:</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># create a 1D numpy array with 5 values</span></span><br><span class="line">area = np.array([<span class="number">1000</span>, <span class="number">1500</span>, <span class="number">1200</span>, <span class="number">1800</span>, <span class="number">2000</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># reshape the 1D array to a 2D array with 5 rows and 1 column</span></span><br><span class="line">area_2d = area.reshape(-<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(area_2d)</span><br></pre></td></tr></table></figure>
+
+<p>输出结果应该是：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="number">1000</span>]</span><br><span class="line"> [<span class="number">1500</span>]</span><br><span class="line"> [<span class="number">1200</span>]</span><br><span class="line"> [<span class="number">1800</span>]</span><br><span class="line"> [<span class="number">2000</span>]]</span><br></pre></td></tr></table></figure>
+
+<p>可以看到，这个二维数组包含5行1列，每一行代表一个样本，每一列代表一个特征（在这个例子中，只有一个特征）。</p>
+<h2 id="如何解释probplot的结果"><a href="#如何解释probplot的结果" class="headerlink" title="如何解释probplot的结果"></a><strong>如何解释probplot的结果</strong></h2><p>红色线条表示正态分布，蓝色线条表示样本数据，蓝色越接近红色参考线，说明越符合预期分布（正态分布）。这个图通常与<code>sns.distplot</code><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/cgmcoding/p/13384535.html" >直方图与连续概率密度估计图一起使用<i class="fas fa-external-link-alt"></i></a>。![image-20230224124152190](&#x2F;Users&#x2F;xiaoyu&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230224124152190.png)</p>
+<h2 id="禁止日志信息"><a href="#禁止日志信息" class="headerlink" title="禁止日志信息"></a>禁止日志信息</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib.axes._axes <span class="keyword">import</span> _log <span class="keyword">as</span> matplotlib_axes_logger</span><br><span class="line">matplotlib_axes_logger.setLevel(<span class="string">&#x27;ERROR&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这段代码的作用是禁止 <code>matplotlib</code> 输出一些不必要的日志信息，这些信息可能会干扰我们的结果。在这段代码中，我们将 <code>matplotlib.axes._axes</code> 模块的日志级别设置为 <code>ERROR</code>，这样 <code>matplotlib</code> 就不会输出该模块的日志信息了。具体来说，该代码会禁止 <code>matplotlib</code> 输出一些与对数轴有关的警告信息，这些信息通常在我们对数据进行可视化时出现。</p>
+<h2 id="图像输出前空白"><a href="#图像输出前空白" class="headerlink" title="图像输出前空白"></a>图像输出前空白</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib.axes._axes <span class="keyword">import</span> _log <span class="keyword">as</span> matplotlib_axes_logger</span><br><span class="line">matplotlib_axes_logger.setLevel(<span class="string">&#x27;ERROR&#x27;</span>)</span><br><span class="line">var = <span class="string">&#x27;GrLivArea&#x27;</span></span><br><span class="line">data = pd.concat([df_train[<span class="string">&#x27;SalePrice&#x27;</span>], df_train[var]], axis = <span class="number">1</span>)</span><br><span class="line">data.plot.scatter(x = var, y = <span class="string">&#x27;SalePrice&#x27;</span>, ylim = (<span class="number">0</span>,<span class="number">800000</span>))</span><br></pre></td></tr></table></figure>
+
+<p>👧🏻 <strong>为什么我运行完这一段代码之后在图像输出之前会有一大段空白，并且显示<code>&lt;AxesSubplot:xlabel=&#39;GrLivArea&#39;	ylabel=&#39;SalePrice&#39;&gt; No results.</code>呢？</strong></p>
+<p>🤖️ 这段代码的输出包括两个部分：第一部分是图像，第二部分是输出的对象类型和空结果。输出对象类型的信息是因为 <code>data.plot.scatter()</code> 函数返回了一个 <code>AxesSubplot</code> 对象，而空结果是因为在代码的最后没有加上 <code>plt.show()</code> 函数。</p>
+<p>因此，你可以将代码修改为如下形式来避免输出空结果：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib.axes._axes <span class="keyword">import</span> _log <span class="keyword">as</span> matplotlib_axes_logger</span><br><span class="line">matplotlib_axes_logger.setLevel(<span class="string">&#x27;ERROR&#x27;</span>)</span><br><span class="line">var = <span class="string">&#x27;GrLivArea&#x27;</span></span><br><span class="line">data = pd.concat([df_train[<span class="string">&#x27;SalePrice&#x27;</span>], df_train[var]], axis = <span class="number">1</span>)</span><br><span class="line">ax = data.plot.scatter(x=var, y=<span class="string">&#x27;SalePrice&#x27;</span>, ylim=(<span class="number">0</span>, <span class="number">800000</span>))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>在这里，我们使用了 <code>plt.show()</code> 函数来显示图像，并且将 <code>data.plot.scatter()</code> 的输出赋值给了一个变量 <code>ax</code>，以便我们可以对图像进行更多的操作。</p>
+<h2 id="corrcoef-转置"><a href="#corrcoef-转置" class="headerlink" title="corrcoef() + 转置"></a>corrcoef() + 转置</h2><p><code>cm = np.corrcoef(df_train[cols].values.T)</code></p>
+<p>🤖️ 在Numpy中，<code>corrcoef</code>函数用于计算两个或多个变量之间的相关系数矩阵，该矩阵中的每个元素代表两个变量之间的相关性。如果有两个变量，那么corrcoef返回一个2x2的矩阵，其中第(i,j)个元素为第i个变量和第j个变量之间的相关系数。如果有多个变量，则返回一个n×n的矩阵，其中n为变量的个数。<code>corrcoef</code>函数的参数是需要计算相关系数的变量矩阵或数组，这些变量可以存储在Numpy数组或者Pandas的DataFrame或Series中。其中，参数<code>rowvar</code>默认为<code>True</code>，表示对每一行进行变量之间的相关性计算，参数<code>bias</code>默认为<code>False</code>，表示无偏估计。</p>
+<p>示例代码：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]])</span><br><span class="line">corr_matrix = np.corrcoef(x)</span><br><span class="line"><span class="built_in">print</span>(corr_matrix)</span><br></pre></td></tr></table></figure>
+
+<p>输出结果为：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span>]</span><br><span class="line"> [<span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span>]</span><br><span class="line"> [<span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span>]]</span><br></pre></td></tr></table></figure>
+
+<p>上述代码中，x是一个3x3的矩阵，表示三个变量之间的相关系数矩阵。<code>corr_matrix</code>为<code>corrcoef</code>函数计算出的相关系数矩阵，由于每个变量与自身的相关性系数都为1，因此返回的结果为一个由1组成的矩阵。</p>
+<p>🤖️ <code>df_train[cols]</code>表示在DataFrame对象<code>df_train</code>中挑选出相关性最高的10个变量对应的列，其中<code>cols</code>是一个包含这些列名的列表。<code>values</code>将这些列转换为一个二维数组，其每一行代表一个样本，每一列代表一个变量。<code>.T</code>表示对这个二维数组进行转置，即将行与列交换，变成每一行代表一个变量，每一列代表一个样本的形式。这样的结果是一个10行n列的二维数组，其中n是训练数据集中的样本数。</p>
+<p>例如，如果有以下数据集：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#scatterplot</span></span><br><span class="line">sns.<span class="built_in">set</span>()</span><br><span class="line">cols = [<span class="string">&#x27;SalePrice&#x27;</span>, <span class="string">&#x27;OverallQual&#x27;</span>, <span class="string">&#x27;GrLivArea&#x27;</span>, <span class="string">&#x27;GarageCars&#x27;</span>, <span class="string">&#x27;TotalBsmtSF&#x27;</span>, <span class="string">&#x27;FullBath&#x27;</span>, <span class="string">&#x27;YearBuilt&#x27;</span>]</span><br><span class="line">sns.pairplot(df_train[cols], size = <span class="number">2.5</span>)</span><br><span class="line">plt.show();</span><br></pre></td></tr></table></figure>
+
+<p>如果选择相关性最高的3个变量’A’, ‘B’, ‘C’，则<code>df_train[cols]</code>将返回一个包含3个列的DataFrame对象，即：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    A   B   C</span><br><span class="line"><span class="number">0</span>   <span class="number">1</span>   <span class="number">4</span>   <span class="number">7</span></span><br><span class="line"><span class="number">1</span>   <span class="number">2</span>   <span class="number">5</span>   <span class="number">8</span></span><br><span class="line"><span class="number">2</span>   <span class="number">3</span>   <span class="number">6</span>   <span class="number">9</span></span><br></pre></td></tr></table></figure>
+
+<p>通过<code>.values</code>转换成Numpy数组，即为：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array([[<span class="number">1</span>, <span class="number">4</span>, <span class="number">7</span>],</span><br><span class="line">       [<span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>],</span><br><span class="line">       [<span class="number">3</span>, <span class="number">6</span>, <span class="number">9</span>]])</span><br></pre></td></tr></table></figure>
+
+<p>在此基础上进行<code>.T</code>操作，将得到一个3行的二维数组，即：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">       [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>],</span><br><span class="line">       [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]])</span><br></pre></td></tr></table></figure>
+
+<p>这个二维数组包含了3个变量的取值，每一行代表一个变量，每一列代表一个样本。这个数组可用于计算相关系数矩阵。</p>
+<p>❗️ 🤖️不转置也可以生成相关系数矩阵和相关性热图，但是在数据集较大的情况下，由于相关系数矩阵是一个方阵，如果样本数很多，则相关系数矩阵的大小将非常大，计算量也会变得很大，因此运行速度会变慢。</p>
+<p>&#x3D;&#x3D;而转置操作可以将变量数作为矩阵的行数，这样就避免了矩阵非常大的问题，提高了计算效率，所以在处理大型数据集时，进行转置操作是一种有效的优化方式，可以加快计算速度。同时，转置后的热图可以更直观地展示变量之间的相关性，更便于观察和分析。&#x3D;&#x3D;</p>
+<h2 id="heaatmap-绘制"><a href="#heaatmap-绘制" class="headerlink" title="heaatmap 绘制"></a>heaatmap 绘制</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#correlation matrix</span></span><br><span class="line">corrmat = df_train.corr()</span><br><span class="line">f, ax = plt.subplots(figsize=(<span class="number">12</span>, <span class="number">9</span>))</span><br><span class="line">sns.heatmap(corrmat, vmax=<span class="number">.8</span>, square=<span class="literal">True</span>);</span><br></pre></td></tr></table></figure>
+
+<p>👧🏻 <em><strong>f和ax代表什么？</strong></em></p>
+<p>🤖️ 在代码 <code>f, ax = plt.subplots(figsize=(12, 9))</code> 中，<code>f</code> 和 <code>ax</code> 是两个变量名，分别表示图形画布和图形轴对象。</p>
+<p>具体来说，<code>plt.subplots()</code> 函数返回了一个包含画布和轴对象的元组 <code>(fig, ax)</code>，其中 <code>fig</code> 表示整个图形画布对象，而 <code>ax</code> 表示坐标轴对象。这个元组可以通过 Python 的解构赋值语法来拆分成单独的变量。</p>
+<p>在这段代码中，通过设置 <code>figsize=(12, 9)</code> 参数，指定画布大小为 12x9，然后将返回的元组分配给变量 <code>f</code> 和 <code>ax</code>，以便在后续代码中使用它们来绘制热力图。</p>
+<p>👧🏻 <em><strong>vmax &#x3D; .8是什么意思？</strong></em></p>
+<p>🤖️ <code>vmax = .8</code> 是指在绘制热力图时，将数据映射到颜色图谱的最大值为 0.8。具体来说，这个参数用于设置热力图中颜色的亮度范围，最大值为 0.8 表示数据中最大值对应的颜色在颜色图谱中的亮度为 0.8，而其他值对应的颜色亮度将根据数据的分布情况自动调整。</p>
+<p>通过设置 <code>vmax</code> 参数，可以在热力图中强调数据中的极端值和重要特征。如果不设置这个参数，颜色图谱的最大值将自动匹配数据中的最大值，这可能会导致颜色映射范围太大或太小，影响热力图的可读性。</p>
+<h2 id="删除原来dataframe中的某些行（2种方式）"><a href="#删除原来dataframe中的某些行（2种方式）" class="headerlink" title="删除原来dataframe中的某些行（2种方式）"></a>删除原来dataframe中的某些行（2种方式）</h2><p>🤖️ 这种情况下直接drop，必须写inplace &#x3D; True才会修改原数据框：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">top_2_index = df_train.sort_values(by=<span class="string">&#x27;GrLivArea&#x27;</span>, ascending=<span class="literal">False</span>)[:<span class="number">2</span>].index</span><br><span class="line">df_train.drop(top_2_index, inplace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<p>🤖 也可以不使用 <code>inplace=True</code> 参数来修改 <code>df_train</code>，而是将 <code>drop()</code> 函数的返回值赋给一个新的 DataFrame：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_train = df_train.drop(df_train[df_train[<span class="string">&#x27;Id&#x27;</span>] == <span class="number">1299</span>].index)</span><br></pre></td></tr></table></figure>
+
+<p>这样，将删除 Id 为 1299 的行之后的 DataFrame 赋值给了 <code>df_train</code>。需要注意的是，这种方法会返回一个修改后的副本，而不会直接修改原始 DataFrame。</p>
+<p>👧🏻 <em><strong>修改后的副本和原来的dataframe不是都叫df_train吗？这样跟直接修改原来的dataframe有什么区别呢？</strong></em></p>
+<p>🤖️ 确实，修改后的副本和原始的 DataFrame 都叫做 <code>df_train</code>，它们的名称是一样的，但它们的内存地址不同，它们是两个不同的对象。当你执行 <code>df_train = df_train.drop(df_train[df_train[&#39;Id&#39;] == 1299].index)</code> 时，<code>drop()</code> 函数返回一个新的 DataFrame 对象，然后将这个新的对象赋值给原始的 <code>df_train</code>，因此这个语句会改变原始的 <code>df_train</code>。而如果你在 <code>drop()</code> 函数中使用 <code>inplace=True</code> 参数，就会直接修改原始的 DataFrame，不会返回新的对象。这两种方法的最终效果是一样的，但是修改副本和直接修改原始 DataFrame 的方式可能对代码的可读性和维护性有一定的影响。</p>
+<p>🤖 如果使用了赋值操作符 “&#x3D;”，将原始数据框赋值给副本，那么它们的变量名会相同，很容易让人混淆。为了避免混淆，可以在变量名上添加后缀或前缀以示区别，例如在副本的变量名中加入”_copy”或”_modified”等后缀。在实际应用中，需要根据具体情况决定如何命名变量以便更好地区分它们。</p>
+<h2 id="四种assumptions"><a href="#四种assumptions" class="headerlink" title="四种assumptions"></a>四种assumptions</h2><p>最终得出结果要看因变量是否符合多变量分析中的假设。</p>
+<ul>
+<li><strong>Normality</strong> <strong>正态分布</strong>：用 <strong><u>histogram + normal probability plot</u></strong><ul>
+<li>Remember that &#x3D;&#x3D;univariate normality doesn’t ensure multivariate normality&#x3D;&#x3D;.</li>
+<li>In big samples (&gt;200 observations) normality is not such an issue. However, if we solve normality, we avoid a lot of other problems (e.g. heteroscedacity) so that’s the main reason why we are doing this analysis.<ul>
+<li>异质性就是说研究的样本的重要属性上存在差异，比如人和人之间的消费习惯可能大相径庭，这样你记录1000个人10年的月消费数据，即便他们收入流和资产完全相同，消费流也可能截然不同。在统计性质上，这种不同表现为异方差。所以在计量模型上，横截面数据和面板数据经常出现，也可以说总会存在异质性问题。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Homoscedasticity 同方差性</strong>：用 <strong><u>graphically</u></strong><ul>
+<li>Homoscedasticity refers to the ‘assumption that dependent variable(s) exhibit equal levels of variance across the range of predictor variable(s)’ <a class="link"   target="_blank" rel="noopener" href="https://amzn.to/2uC3j9p" >(Hair et al., 2013)<i class="fas fa-external-link-alt"></i></a>. </li>
+<li>Homoscedasticity is desirable because we want the error term to be the same across all values of the independent variables.</li>
+</ul>
+</li>
+<li><strong>Linearity 线性</strong><ul>
+<li>The most common way to assess linearity is to &#x3D;&#x3D;examine scatter plots and search for linear patterns&#x3D;&#x3D;. If patterns are not linear, it would be worthwhile to explore data transformations.</li>
+</ul>
+</li>
+<li><strong>Absence of correlated errors 无相关错误</strong><ul>
+<li>Correlated errors, like the definition suggests, happen when one error is correlated to another. For instance, if one positive error makes a negative error systematically, it means that there’s a relationship between these variables. This occurs often in time series, where some patterns are &#x3D;&#x3D;time related&#x3D;&#x3D;. We’ll also not get into this. </li>
+<li>However, &#x3D;&#x3D;if you detect something, try to add a variable that can explain the effect you’re getting&#x3D;&#x3D;. That’s the most common solution for correlated errors.</li>
+</ul>
+</li>
+</ul>
+<h2 id="pyplot和matplotlib的关系"><a href="#pyplot和matplotlib的关系" class="headerlink" title="pyplot和matplotlib的关系"></a>pyplot和matplotlib的关系</h2><p>🤖 <code>pyplot</code> 是 Matplotlib 库中的一个<strong>模块</strong>，用于<strong>创建图形和图表</strong>。在 Matplotlib 中，&#x3D;&#x3D;pyplot 模块被用作绘图工具的接口&#x3D;&#x3D;，提供了一些方便的函数和方法来创建和操作图形、轴、图例和注释等元素。</p>
+<p>Matplotlib 是一个数据可视化库，提供了各种各样的绘图函数和工具，可以用于创建折线图、散点图、柱状图、饼图等各种类型的图表。而 pyplot 模块则是 Matplotlib 中最常用的绘图工具之一，它提供了很多方便的函数和方法，使得绘制各种类型的图表变得更加简单易用。因此，pyplot 可以被认为是 Matplotlib 库中最主要的一个模块。</p>
+<h2 id="同方差性-Homoskedasticity-和异方差性-Heteroskedasticity"><a href="#同方差性-Homoskedasticity-和异方差性-Heteroskedasticity" class="headerlink" title="同方差性(Homoskedasticity)和异方差性(Heteroskedasticity)"></a>同方差性(Homoskedasticity)和异方差性(Heteroskedasticity)</h2><p>👦 写一个通俗的解释：比如说 $income&#x3D;b*education+e$ 这个计量模型,描述了教育水平与收入的关系，e为<a class="link"   target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%AE%8B%E5%B7%AE&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:398539763%7D" >残差<i class="fas fa-external-link-alt"></i></a>，OLS等传统计量框架要求残差e不与任何变量相关,即: <a class="link"   target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=E(e%7Cx)=0&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:398539763%7D" >$E(e|x)&#x3D;0$<i class="fas fa-external-link-alt"></i></a>。</p>
+<p>一种常见的残差e与x相关的方式是: 残差e的<a class="link"   target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%96%B9%E5%B7%AE&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:398539763%7D" >方差<i class="fas fa-external-link-alt"></i></a>与变量x相关，这时候，残差e的方差会随着x变动而变动，因此方差是异质性的. 这被称为<a class="link"   target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E5%BC%82%E6%96%B9%E5%B7%AE&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:398539763%7D" >异方差<i class="fas fa-external-link-alt"></i></a>问题。</p>
+<p><em><strong>异方差问题会导致什么?</strong></em></p>
+<p>拿上边那个教育-工资的例子来看，一般来说，受教育水平越高的人群收入变动越大，而教育水平较低的人群收入相差不会太大 (比如说，有<a class="link"   target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%9C%80%E4%BD%8E%E5%B7%A5%E8%B5%84%E6%B3%95&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:398539763%7D" >最低工资法<i class="fas fa-external-link-alt"></i></a>)，这时就出现异方差问题了, 因为e的方差会随着教育水平x的增大而增大。</p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://pic1.zhimg.com/80/v2-8ed91721ff3eb9a61872c9936c76ac29_1440w.webp?source=1940ef5c"
+                      alt="img"
+                ></p>
+<p><strong>异方差存在的时候,大多数情况下,<strong>OLS估计出的方差会比实际的方差要小(当然, 小部分情况下估计值会比实际的大)，</strong>&#x3D;&#x3D;因此会过高地估计系数b的显著性&#x3D;&#x3D;</strong> (因为, 系数的t值&#x3D;系数&#x2F;<a class="link"   target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%A0%87%E5%87%86%E5%B7%AE&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:398539763%7D" >标准差<i class="fas fa-external-link-alt"></i></a>)，**&#x3D;&#x3D;而不会影响系数估计值的大小&#x3D;&#x3D;**(考虑异方差影响系数大小的问题是近几年的焦点和难点，略过不提)。</p>
+<p>👨 同方差性是我们对OLS回归残差的一个要求，即 &#x3D;&#x3D;$\epsilon \sim N(0, \sigma^2)$&#x3D;&#x3D; 。简单的说就是<strong>残差必须是随机的</strong>，这个分布是我们用来描述随机分布的一种方法 – 均值为0，方差为sigma方。</p>
+<p>异方差则说明残差不满足这个正态分布。</p>
+<p>概括而言，同方差说明回归的残差项是随机的，<strong>异方差说明残差项不随机，你的回归设置或者变量的选取有问题，需要修正</strong>。</p>
+<h2 id="get-dummies"><a href="#get-dummies" class="headerlink" title="get_dummies()"></a>get_dummies()</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#convert categorical variable into dummy</span></span><br><span class="line">df_train = pd.get_dummies(df_train)</span><br></pre></td></tr></table></figure>
+
+<p>🤖 这段代码使用了<code>get_dummies()</code>函数将数据框中的分类变量转换成了虚拟变量（dummy variable）。</p>
+<p>虚拟变量是指将一个分类变量拆分成多个二元变量的过程。例如，如果有一个名为color的分类变量，其中包括红色、蓝色和绿色三个类别，那么将color转换成虚拟变量的过程就是创建三个新的二元变量，分别代表红色、蓝色和绿色，如果样本属于红色类别，则对应的红色虚拟变量值为1，其余两个虚拟变量的值为0，以此类推。</p>
+<p><code>get_dummies()</code>函数会自动识别出所有的分类变量，并将它们转换成虚拟变量。它还有一些其他的参数，例如<code>drop_first</code>可以指定是否要删除每个变量的第一个虚拟变量，以避免多重共线性问题。</p>
+<h1 id="Procedure"><a href="#Procedure" class="headerlink" title="Procedure"></a>Procedure</h1><p><strong>“理解问题 -&gt; 单变量分析 -&gt; 多变量分析 -&gt; 数据清洗 -&gt; 验证假设”</strong></p>
+<p>1⃣️ <strong>Understand the problem</strong>. We’ll look at each variable and do a philosophical analysis about their meaning and importance for this problem.</p>
+<ul>
+<li>观察 columns</li>
+</ul>
+<p>2⃣️ <strong>Univariable study</strong>. We’ll just focus on the dependent variable (‘SalePrice’) and try to know a little bit more about it.</p>
+<ul>
+<li>使用 describe</li>
+<li>使用直方图</li>
+<li>分析偏度和峰度</li>
+<li>使用散点图和箱图观察目标变量和其他变量之间的关系</li>
+</ul>
+<p>3⃣️ <strong>Multivariate study</strong>. We’ll try to understand how the dependent variable and independent variables relate.</p>
+<ul>
+<li>热图看所有变量之间的关系</li>
+<li>热图看跟目标变量最相关的变量之间的关系</li>
+<li>scatterplot 看目标变量及最相关的变量之间的关系</li>
+</ul>
+<p>4⃣️ <strong>Basic cleaning</strong>. We’ll clean the dataset and handle the <u>missing data</u>, outliers and categorical variables.</p>
+<ul>
+<li><p>缺失值</p>
+<ul>
+<li><p>看所有的变量中缺失值占比</p>
+</li>
+<li><p>剔除缺失变量：对因变量不重要的可以直接剔除整个变量；有替代变量的可以直接剔除整个变量；不剔除整个变量的可以仅将包含缺失值的单个样本剔除</p>
+</li>
+<li><p>检查无缺失值</p>
+</li>
+</ul>
+</li>
+<li><p>离群值</p>
+<ul>
+<li>[数据标准化][4]，设置一个阈值来判断离群值，输出过高&#x2F;过低的离群值</li>
+<li>使用散点图观察某个自变量和因变量的关系，有了上一步得到的离群值，我们可以在散点图中一眼看出离群值在哪</li>
+<li>保留遵循趋势的离群值，删除违背趋势的离群值</li>
+</ul>
+</li>
+</ul>
+<p>5⃣️ <strong>Test assumptions</strong>. We’ll check if our data meets the assumptions required by most multivariate techniques.</p>
+<ul>
+<li>正态分布<ul>
+<li>看histogram：偏度和峰度</li>
+<li>看常态机率图：数据分布应紧跟代表正态分布的对角线</li>
+</ul>
+</li>
+<li>异方差性<ul>
+<li>散点图可视化，一头紧凑一头分散，或中间紧凑两头分散，或中间分散两头紧凑</li>
+</ul>
+</li>
+<li>虚拟化变量</li>
+</ul>
+<h2 id="Step1-Understand-our-data"><a href="#Step1-Understand-our-data" class="headerlink" title="Step1: Understand our data"></a>Step1: Understand our data</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#check the decoration</span></span><br><span class="line">df_train.columns</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p> Look as each variable and try to understand their meaning and relvance to this problem. Although it’s time-comsuming, it gives us the flavour of our dataset.</p>
+</blockquote>
+<ol>
+<li><p>We should focus 5 aspects. Create an Excel spreadsheet with following columns:</p>
+<ul>
+<li><strong>Variable</strong></li>
+<li><strong>Type</strong> -&gt; ‘numerical’ or ‘categorical’</li>
+<li><strong>Segment</strong> -&gt; Define the segments of all variables then identify them. (eg. building&#x2F; space &#x2F;location)</li>
+<li><strong>Expectation</strong> -&gt; the variable infulence on the dependent variable. (high&#x2F; medium&#x2F; low)</li>
+<li><strong>Conclusion</strong> -&gt; the importance of the variable </li>
+<li><strong>Comments</strong> -&gt; any general comments that occured to us</li>
+</ul>
+</li>
+<li><p>Expectation will give us ‘sixth sense’. In order to fill it, we should read the description of all the variables one by one, ask ourselves:</p>
+<ul>
+<li>Do we <strong>care</strong> this variable when we are buying a house?</li>
+<li>How <strong>important</strong> would this variable is?</li>
+<li>Is this information <strong>already</strong> decribed in any other variable?</li>
+</ul>
+</li>
+<li><p>Focus the variables with <u>‘high’ expectation</u>. Generate some <strong>scatter plots</strong> between those variables and the dependant variable(SalePrice), filling the <strong>conclusion</strong> column which is the correction of our expectations.</p>
+<blockquote>
+<p>You may give up some of your expecting variables after vasualizing them.</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="Step2-Univariable-analysis-‘SalePrice’"><a href="#Step2-Univariable-analysis-‘SalePrice’" class="headerlink" title="Step2: Univariable analysis: ‘SalePrice’"></a>Step2: Univariable analysis: ‘SalePrice’</h2><ul>
+<li>describe()</li>
+<li>histogram- normal distribution? (positive) skewness? peakedness?</li>
+<li>[skewness and kurtosis][1]</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#data</span></span><br><span class="line"><span class="comment">#descriptive statistics summary</span></span><br><span class="line">df_train[<span class="string">&#x27;SalePrice&#x27;</span>].describe()</span><br><span class="line"></span><br><span class="line"><span class="comment">#graph</span></span><br><span class="line"><span class="comment">#histogram</span></span><br><span class="line">sns.distplot(df_train[<span class="string">&#x27;SalePrice&#x27;</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">#data</span></span><br><span class="line"><span class="comment">#skewness and kurtosis</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Skewness: %f&quot;</span> % df_train[<span class="string">&#x27;SalePrice&#x27;</span>].skew())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Kurtosis: %f&quot;</span> % df_train[<span class="string">&#x27;SalePrice&#x27;</span>].kurt())</span><br></pre></td></tr></table></figure>
+
+<h3 id="Relationship-with-numerical-variables"><a href="#Relationship-with-numerical-variables" class="headerlink" title="Relationship with numerical variables"></a>Relationship with numerical variables</h3><ul>
+<li>scatter plots - if there is a linear (exponential) reaction</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#graph</span></span><br><span class="line"><span class="comment">#scatter plot grlivarea/saleprice</span></span><br><span class="line">var = <span class="string">&#x27;GrLivArea&#x27;</span></span><br><span class="line">data = pd.concat([df_train[<span class="string">&#x27;SalePrice&#x27;</span>], df_train[var]], axis=<span class="number">1</span>)</span><br><span class="line">data.plot.scatter(x=var, y=<span class="string">&#x27;SalePrice&#x27;</span>, ylim=(<span class="number">0</span>,<span class="number">800000</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">#scatter plot totalbsmtsf/saleprice</span></span><br><span class="line">var = <span class="string">&#x27;TotalBsmtSF&#x27;</span></span><br><span class="line">data = pd.concat([df_train[<span class="string">&#x27;SalePrice&#x27;</span>], df_train[var]], axis=<span class="number">1</span>)</span><br><span class="line">data.plot.scatter(x=var, y=<span class="string">&#x27;SalePrice&#x27;</span>, ylim=(<span class="number">0</span>,<span class="number">800000</span>));</span><br></pre></td></tr></table></figure>
+
+<h3 id="Relationship-with-categorical-fratures"><a href="#Relationship-with-categorical-fratures" class="headerlink" title="Relationship with categorical fratures"></a>Relationship with categorical fratures</h3><ul>
+<li>box plots</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#box plot overallqual/saleprice</span></span><br><span class="line">var = <span class="string">&#x27;OverallQual&#x27;</span></span><br><span class="line">data = pd.concat([df_train[<span class="string">&#x27;SalePrice&#x27;</span>], df_train[var]], axis=<span class="number">1</span>)</span><br><span class="line">f, ax = plt.subplots(figsize=(<span class="number">8</span>, <span class="number">6</span>))</span><br><span class="line">fig = sns.boxplot(x=var, y=<span class="string">&quot;SalePrice&quot;</span>, data=data)</span><br><span class="line">fig.axis(ymin=<span class="number">0</span>, ymax=<span class="number">800000</span>);</span><br><span class="line"></span><br><span class="line">var = <span class="string">&#x27;YearBuilt&#x27;</span></span><br><span class="line">data = pd.concat([df_train[<span class="string">&#x27;SalePrice&#x27;</span>], df_train[var]], axis=<span class="number">1</span>)</span><br><span class="line">f, ax = plt.subplots(figsize=(<span class="number">16</span>, <span class="number">8</span>))</span><br><span class="line">fig = sns.boxplot(x=var, y=<span class="string">&quot;SalePrice&quot;</span>, data=data)</span><br><span class="line">fig.axis(ymin=<span class="number">0</span>, ymax=<span class="number">800000</span>);</span><br><span class="line">plt.xticks(rotation=<span class="number">90</span>);</span><br></pre></td></tr></table></figure>
+
+<p>🤖️ 这段代码使用了Python中的Pandas和Seaborn库，用于绘制房价数据集中整体质量（OverallQual）与房价（SalePrice）之间的箱型图。具体解释如下：</p>
+<ul>
+<li><code>var = &#39;OverallQual&#39;</code>：将变量名OverallQual赋值给变量var，表示要绘制的x轴变量是整体质量。</li>
+<li><code>data = pd.concat([df_train[&#39;SalePrice&#39;], df_train[var]], axis=1)</code>：将训练数据集df_train中的SalePrice和OverallQual列拼接在一起，并存储在名为data的变量中。这里使用了Pandas库中的concat函数。</li>
+<li><code>f, ax = plt.subplots(figsize=(8, 6))</code>：创建一个8x6英寸大小的绘图对象，并将其存储在名为f的变量中，将其轴对象存储在名为ax的变量中。这里使用了Matplotlib库。</li>
+<li><code>fig = sns.boxplot(x=var, y=&quot;SalePrice&quot;, data=data)</code>：使用Seaborn库中的boxplot函数绘制箱型图，x轴为OverallQual，y轴为SalePrice，数据来源为data。将绘制结果存储在名为fig的变量中。</li>
+<li><code>fig.axis(ymin=0, ymax=800000)</code>：将y轴的范围设定为0到800000，使得箱型图的纵坐标范围更加合适。这里使用了Matplotlib库中的axis函数。</li>
+</ul>
+<h2 id="Step3-Multivariable-analysis"><a href="#Step3-Multivariable-analysis" class="headerlink" title="Step3: Multivariable analysis"></a>Step3: Multivariable analysis</h2><ul>
+<li>[heatmap][2] style - from a universla perspective</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#correlation matrix</span></span><br><span class="line">corrmat = df_train.corr()</span><br><span class="line">f, ax = plt.subplots(figsize=(<span class="number">12</span>, <span class="number">9</span>))</span><br><span class="line">sns.heatmap(corrmat, vmax=<span class="number">.8</span>, square=<span class="literal">True</span>);</span><br></pre></td></tr></table></figure>
+
+<p>🤖️ 这段代码用于绘制数据集中的相关性矩阵的热力图。以下是每一行的解释：</p>
+<ol>
+<li><code>corrmat = df_train.corr()</code>: 计算数据集 <code>df_train</code> 中所有数值型变量之间的相关性矩阵，其中 <code>corr()</code> 是 pandas 库中计算相关系数的函数。</li>
+<li><code>f, ax = plt.subplots(figsize=(12, 9))</code>: 创建一个大小为 12x9 的图形画布，并将其保存在变量 <code>f</code> 和 <code>ax</code> 中，用于绘制相关性矩阵的热力图。这里用到了 matplotlib 库中的 <code>subplots()</code> 函数。</li>
+<li><code>sns.heatmap(corrmat, vmax=.8, square=True)</code>: 使用 seaborn 库中的 <code>heatmap()</code> 函数将相关性矩阵绘制成热力图，其中 <code>corrmat</code> 是相关性矩阵的数据，<code>vmax</code> 是热力图中颜色的最大值，<code>square</code> 参数用于指定热力图的形状是否为正方形。</li>
+</ol>
+<p>通过绘制相关性矩阵的热力图，可以更直观地了解数据集中各个变量之间的相关性，以便进行数据分析和建模。</p>
+<p>&#x3D;&#x3D;❗️Notice if some of the independent variables have a similar color distribution in the heat map! This proves that they play a similar role in the overall model, and perhaps it is possible to keep only the one variable with the least missing values in the cleaning.&#x3D;&#x3D;</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#saleprice correlation matrix</span></span><br><span class="line">k = <span class="number">10</span> <span class="comment">#number of variables for heatmap</span></span><br><span class="line">cols = corrmat.nlargest(k, <span class="string">&#x27;SalePrice&#x27;</span>)[<span class="string">&#x27;SalePrice&#x27;</span>].index</span><br><span class="line">cm = np.corrcoef(df_train[cols].values.T)</span><br><span class="line">sns.<span class="built_in">set</span>(font_scale=<span class="number">1.25</span>)</span><br><span class="line">hm = sns.heatmap(cm, cbar=<span class="literal">True</span>, annot=<span class="literal">True</span>, square=<span class="literal">True</span>, fmt=<span class="string">&#x27;.2f&#x27;</span>, annot_kws=&#123;<span class="string">&#x27;size&#x27;</span>: <span class="number">10</span>&#125;, yticklabels=cols.values, xticklabels=cols.values)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>🤖️ 这段代码使用了Python中的Numpy、Pandas和Seaborn库，用于绘制房价数据集中各变量之间的相关系数热图。具体解释如下：</p>
+<ul>
+<li><code>k = 10</code>：将热图中展示的相关系数最高的10个变量挑选出来。</li>
+<li><code>cols = corrmat.nlargest(k, &#39;SalePrice&#39;)[&#39;SalePrice&#39;].index</code>：从相关系数矩阵corrmat中选择SalePrice列与其他列的相关系数最高的10个变量，将其索引存储在cols变量中。</li>
+<li><code>cm = np.corrcoef(df_train[cols].values.T)</code>：从训练数据集df_train中挑选出相关系数最高的10个变量，计算其相关系数矩阵，并将其存储在cm变量中。这里使用了Numpy库中的[corrcoef函数][3]。</li>
+<li><code>sns.set(font_scale=1.25)</code>：设置Seaborn库中的字体大小。</li>
+<li><code>hm = sns.heatmap(cm, cbar=True, annot=True, square=True, fmt=&#39;.2f&#39;, annot_kws=&#123;&#39;size&#39;: 10&#125;, yticklabels=cols.values, xticklabels=cols.values)</code>：绘制热图。其中，参数cm是一个相关系数矩阵，参数cbar表示是否显示颜色条，参数annot表示是否显示每个格子中的数值，参数square表示是否将每个格子设置为正方形，参数fmt表示显示数值时保留两位小数，参数annot_kws表示注释的参数，这里设置字体大小为10，yticklabels和xticklabels表示行和列的标签名，这里都为cols.values。将绘制结果存储在名为hm的变量中。</li>
+<li><code>plt.show()</code>：显示绘制出的热图。这里使用了Matplotlib库中的show函数。</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.<span class="built_in">set</span>()</span><br><span class="line">cols = corrmat.nlargest(k, <span class="string">&#x27;SalePrice&#x27;</span>)[<span class="string">&#x27;SalePrice&#x27;</span>].index.tolist()</span><br><span class="line">sns.pairplot(df_train[cols], height = <span class="number">2.5</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Step4-Missing-data"><a href="#Step4-Missing-data" class="headerlink" title="Step4: Missing data"></a>Step4: Missing data</h2><h3 id="Missing-data"><a href="#Missing-data" class="headerlink" title="Missing data"></a>Missing data</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#missing data</span></span><br><span class="line">total = df_train.isnull().<span class="built_in">sum</span>().sort_values(ascending=<span class="literal">False</span>)</span><br><span class="line">percent = (df_train.isnull().<span class="built_in">sum</span>()/df_train.isnull().count()).sort_values(ascending=<span class="literal">False</span>)</span><br><span class="line">missing_data = pd.concat([total, percent], axis=<span class="number">1</span>, keys=[<span class="string">&#x27;Total&#x27;</span>, <span class="string">&#x27;Percent&#x27;</span>])</span><br><span class="line">missing_data.head(<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+
+<p>🤖️</p>
+<ol>
+<li><code>df_train.isnull()</code>：判断数据集 <code>df_train</code> 中每个元素是否为缺失值，返回一个与 <code>df_train</code> 大小相同的布尔矩阵，内容是True&#x2F;False。</li>
+<li><code>df_train.isnull().sum()</code>：将布尔矩阵中每列（变量）中的缺失值数量相加，得到每列缺失值的总数。</li>
+<li><code>df_train.isnull().count()</code>：将布尔矩阵中每列（变量）中的元素（无论是否缺失）数量相加，得到每列元素的总数。</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#dealing with missing data</span></span><br><span class="line">df_train = df_train.drop((missing_data[missing_data[<span class="string">&#x27;Total&#x27;</span>] &gt; <span class="number">1</span>]).index, axis = <span class="number">1</span>)</span><br><span class="line">df_train = df_train.drop(df_train.loc[df_train[<span class="string">&#x27;Electrical&#x27;</span>].isnull()].index)</span><br><span class="line">df_train.isnull().<span class="built_in">sum</span>().<span class="built_in">max</span>() <span class="comment">#just checking that there&#x27;s no missing data missing...</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Outliers"><a href="#Outliers" class="headerlink" title="Outliers"></a>Outliers</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#standardizing data</span></span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line">saleprice_scaled = StandardScaler().fit_transform(np.array(df_train[<span class="string">&#x27;SalePrice&#x27;</span>])[:, np.newaxis]);</span><br><span class="line">low_range = saleprice_scaled[saleprice_scaled[:, <span class="number">0</span>].argsort()][:<span class="number">10</span>]</span><br><span class="line">high_range = saleprice_scaled[saleprice_scaled[:, <span class="number">0</span>].argsort()][-<span class="number">10</span>:]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;outer range (low) of the distrubution:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(low_range)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;\n outer range (high) of the distribution:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(high_range)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Step5-Getting-hard-core"><a href="#Step5-Getting-hard-core" class="headerlink" title="Step5: Getting hard core"></a>Step5: Getting hard core</h2><h3 id="Normality-histogram-normal-probability-plot"><a href="#Normality-histogram-normal-probability-plot" class="headerlink" title="Normality: histogram + normal probability plot"></a>Normality: histogram + normal probability plot</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#histogram and normal probability plot</span></span><br><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> norm</span><br><span class="line">sns.distplot(df_train[<span class="string">&#x27;SalePrice&#x27;</span>], kde = <span class="literal">True</span>,fit = norm);</span><br><span class="line">fig = plt.figure()</span><br><span class="line">res = stats.probplot(df_train[<span class="string">&#x27;SalePrice&#x27;</span>], plot = plt)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p> 🤖️ histplot不支持直接显示拟合的正态分布曲线。如果要同时显示正态分布曲线，可以使用displot。</p>
+</blockquote>
+<p>&#x3D;&#x3D;In case of positive skewness, log transformations usually works well.&#x3D;&#x3D;</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">dist_probplot</span>(<span class="params">x</span>):</span><br><span class="line">    sns.distplot(df_train[x], fit = norm)</span><br><span class="line">    fig = plt.figure()</span><br><span class="line">    res = stats.probplot(df_train[x], plot = plt)</span><br></pre></td></tr></table></figure>
+
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://www.kaggleusercontent.com/kf/94433095/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..jj5WpOZsDvVZEWzi0y0ptw.qDI9P1mwEk5Orq36IwiMcohva_mLA0WDbHjgZNSUyQkJdyFwPcPNk7cSy2yRkMv8WYZFLBAAAqRVCl1eJispV4uFF2jSXWxrHKwKBUJVE6_mvgPdZRRi3zQkIUTKFTTOXQaifvAiMVNzEW6oJB2YtOQp9ZrE-uNwYDvHBoWCubjU7M_zlxhLhLTqeEhXe24uaBn2EJTUcOSQKeFau2IYvWvkkwlVaTcN5DAlGrDkX839qCVHIcI4sRKRSuqKSJ3N-Ofa1Ntu872AudxrCuu-NnQ2KwQjhY6OQNztztO-ed54QFcPP33aQOOrLTrn4bhLfNELAREWIi-pRB793shNer31_07A4ksQiGlD3HN_E8FDV-FODeRdGPoy4MZzLQD8Pw_DF3XXUoMxGJhbBdQSZWTRpLq5ChapQsU26qY3VKYre4y0noPt3FggpAM3sViwZGqIFVRZ-xx74jkWPlgR2R0hQo0hwxg4X8Ne_BxjV3GLPee9fpebFTJ-jmGE2iJ6r4ZKT1AHkS5rD-48qkXip0SC7kzlTCzNIqn-GcGv8b4CPAPukmzcG4lVBLrCrSqxKVbo5_1ZO0mHFm3pwhUDaA9vpkRXW-7DodquON0ztYwIVCOfy7yzL2BeqTQZaTHVYjlrY-mJBytAMz8kfWKLZpfH-Wczqo08Rc33DWwhH5YXXzaNIbxanOOGHE9ojJMe.Q-jSGE6rz_nIR3vbBw4sbg/__results___files/__results___59_0.png"
+                      alt="img"
+                ><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://www.kaggleusercontent.com/kf/94433095/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..jj5WpOZsDvVZEWzi0y0ptw.qDI9P1mwEk5Orq36IwiMcohva_mLA0WDbHjgZNSUyQkJdyFwPcPNk7cSy2yRkMv8WYZFLBAAAqRVCl1eJispV4uFF2jSXWxrHKwKBUJVE6_mvgPdZRRi3zQkIUTKFTTOXQaifvAiMVNzEW6oJB2YtOQp9ZrE-uNwYDvHBoWCubjU7M_zlxhLhLTqeEhXe24uaBn2EJTUcOSQKeFau2IYvWvkkwlVaTcN5DAlGrDkX839qCVHIcI4sRKRSuqKSJ3N-Ofa1Ntu872AudxrCuu-NnQ2KwQjhY6OQNztztO-ed54QFcPP33aQOOrLTrn4bhLfNELAREWIi-pRB793shNer31_07A4ksQiGlD3HN_E8FDV-FODeRdGPoy4MZzLQD8Pw_DF3XXUoMxGJhbBdQSZWTRpLq5ChapQsU26qY3VKYre4y0noPt3FggpAM3sViwZGqIFVRZ-xx74jkWPlgR2R0hQo0hwxg4X8Ne_BxjV3GLPee9fpebFTJ-jmGE2iJ6r4ZKT1AHkS5rD-48qkXip0SC7kzlTCzNIqn-GcGv8b4CPAPukmzcG4lVBLrCrSqxKVbo5_1ZO0mHFm3pwhUDaA9vpkRXW-7DodquON0ztYwIVCOfy7yzL2BeqTQZaTHVYjlrY-mJBytAMz8kfWKLZpfH-Wczqo08Rc33DWwhH5YXXzaNIbxanOOGHE9ojJMe.Q-jSGE6rz_nIR3vbBw4sbg/__results___files/__results___59_1.png"
+                      alt="img"
+                ></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#applying log transformation</span></span><br><span class="line">df_train[<span class="string">&#x27;SalePrice&#x27;</span>] = np.log(df_train[<span class="string">&#x27;SalePrice&#x27;</span>])</span><br><span class="line"></span><br><span class="line">dist_probplot(<span class="string">&#x27;SalePrice&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://www.kaggleusercontent.com/kf/94433095/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..jj5WpOZsDvVZEWzi0y0ptw.qDI9P1mwEk5Orq36IwiMcohva_mLA0WDbHjgZNSUyQkJdyFwPcPNk7cSy2yRkMv8WYZFLBAAAqRVCl1eJispV4uFF2jSXWxrHKwKBUJVE6_mvgPdZRRi3zQkIUTKFTTOXQaifvAiMVNzEW6oJB2YtOQp9ZrE-uNwYDvHBoWCubjU7M_zlxhLhLTqeEhXe24uaBn2EJTUcOSQKeFau2IYvWvkkwlVaTcN5DAlGrDkX839qCVHIcI4sRKRSuqKSJ3N-Ofa1Ntu872AudxrCuu-NnQ2KwQjhY6OQNztztO-ed54QFcPP33aQOOrLTrn4bhLfNELAREWIi-pRB793shNer31_07A4ksQiGlD3HN_E8FDV-FODeRdGPoy4MZzLQD8Pw_DF3XXUoMxGJhbBdQSZWTRpLq5ChapQsU26qY3VKYre4y0noPt3FggpAM3sViwZGqIFVRZ-xx74jkWPlgR2R0hQo0hwxg4X8Ne_BxjV3GLPee9fpebFTJ-jmGE2iJ6r4ZKT1AHkS5rD-48qkXip0SC7kzlTCzNIqn-GcGv8b4CPAPukmzcG4lVBLrCrSqxKVbo5_1ZO0mHFm3pwhUDaA9vpkRXW-7DodquON0ztYwIVCOfy7yzL2BeqTQZaTHVYjlrY-mJBytAMz8kfWKLZpfH-Wczqo08Rc33DWwhH5YXXzaNIbxanOOGHE9ojJMe.Q-jSGE6rz_nIR3vbBw4sbg/__results___files/__results___62_0.png"
+                      alt="img"
+                ><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://www.kaggleusercontent.com/kf/94433095/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..jj5WpOZsDvVZEWzi0y0ptw.qDI9P1mwEk5Orq36IwiMcohva_mLA0WDbHjgZNSUyQkJdyFwPcPNk7cSy2yRkMv8WYZFLBAAAqRVCl1eJispV4uFF2jSXWxrHKwKBUJVE6_mvgPdZRRi3zQkIUTKFTTOXQaifvAiMVNzEW6oJB2YtOQp9ZrE-uNwYDvHBoWCubjU7M_zlxhLhLTqeEhXe24uaBn2EJTUcOSQKeFau2IYvWvkkwlVaTcN5DAlGrDkX839qCVHIcI4sRKRSuqKSJ3N-Ofa1Ntu872AudxrCuu-NnQ2KwQjhY6OQNztztO-ed54QFcPP33aQOOrLTrn4bhLfNELAREWIi-pRB793shNer31_07A4ksQiGlD3HN_E8FDV-FODeRdGPoy4MZzLQD8Pw_DF3XXUoMxGJhbBdQSZWTRpLq5ChapQsU26qY3VKYre4y0noPt3FggpAM3sViwZGqIFVRZ-xx74jkWPlgR2R0hQo0hwxg4X8Ne_BxjV3GLPee9fpebFTJ-jmGE2iJ6r4ZKT1AHkS5rD-48qkXip0SC7kzlTCzNIqn-GcGv8b4CPAPukmzcG4lVBLrCrSqxKVbo5_1ZO0mHFm3pwhUDaA9vpkRXW-7DodquON0ztYwIVCOfy7yzL2BeqTQZaTHVYjlrY-mJBytAMz8kfWKLZpfH-Wczqo08Rc33DWwhH5YXXzaNIbxanOOGHE9ojJMe.Q-jSGE6rz_nIR3vbBw4sbg/__results___files/__results___62_1.png"
+                      alt="img"
+                ></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dist_probplot(<span class="string">&#x27;TotalBsmtSF&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://www.kaggleusercontent.com/kf/94433095/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..jj5WpOZsDvVZEWzi0y0ptw.qDI9P1mwEk5Orq36IwiMcohva_mLA0WDbHjgZNSUyQkJdyFwPcPNk7cSy2yRkMv8WYZFLBAAAqRVCl1eJispV4uFF2jSXWxrHKwKBUJVE6_mvgPdZRRi3zQkIUTKFTTOXQaifvAiMVNzEW6oJB2YtOQp9ZrE-uNwYDvHBoWCubjU7M_zlxhLhLTqeEhXe24uaBn2EJTUcOSQKeFau2IYvWvkkwlVaTcN5DAlGrDkX839qCVHIcI4sRKRSuqKSJ3N-Ofa1Ntu872AudxrCuu-NnQ2KwQjhY6OQNztztO-ed54QFcPP33aQOOrLTrn4bhLfNELAREWIi-pRB793shNer31_07A4ksQiGlD3HN_E8FDV-FODeRdGPoy4MZzLQD8Pw_DF3XXUoMxGJhbBdQSZWTRpLq5ChapQsU26qY3VKYre4y0noPt3FggpAM3sViwZGqIFVRZ-xx74jkWPlgR2R0hQo0hwxg4X8Ne_BxjV3GLPee9fpebFTJ-jmGE2iJ6r4ZKT1AHkS5rD-48qkXip0SC7kzlTCzNIqn-GcGv8b4CPAPukmzcG4lVBLrCrSqxKVbo5_1ZO0mHFm3pwhUDaA9vpkRXW-7DodquON0ztYwIVCOfy7yzL2BeqTQZaTHVYjlrY-mJBytAMz8kfWKLZpfH-Wczqo08Rc33DWwhH5YXXzaNIbxanOOGHE9ojJMe.Q-jSGE6rz_nIR3vbBw4sbg/__results___files/__results___69_0.png"
+                      alt="img"
+                ><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://www.kaggleusercontent.com/kf/94433095/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..jj5WpOZsDvVZEWzi0y0ptw.qDI9P1mwEk5Orq36IwiMcohva_mLA0WDbHjgZNSUyQkJdyFwPcPNk7cSy2yRkMv8WYZFLBAAAqRVCl1eJispV4uFF2jSXWxrHKwKBUJVE6_mvgPdZRRi3zQkIUTKFTTOXQaifvAiMVNzEW6oJB2YtOQp9ZrE-uNwYDvHBoWCubjU7M_zlxhLhLTqeEhXe24uaBn2EJTUcOSQKeFau2IYvWvkkwlVaTcN5DAlGrDkX839qCVHIcI4sRKRSuqKSJ3N-Ofa1Ntu872AudxrCuu-NnQ2KwQjhY6OQNztztO-ed54QFcPP33aQOOrLTrn4bhLfNELAREWIi-pRB793shNer31_07A4ksQiGlD3HN_E8FDV-FODeRdGPoy4MZzLQD8Pw_DF3XXUoMxGJhbBdQSZWTRpLq5ChapQsU26qY3VKYre4y0noPt3FggpAM3sViwZGqIFVRZ-xx74jkWPlgR2R0hQo0hwxg4X8Ne_BxjV3GLPee9fpebFTJ-jmGE2iJ6r4ZKT1AHkS5rD-48qkXip0SC7kzlTCzNIqn-GcGv8b4CPAPukmzcG4lVBLrCrSqxKVbo5_1ZO0mHFm3pwhUDaA9vpkRXW-7DodquON0ztYwIVCOfy7yzL2BeqTQZaTHVYjlrY-mJBytAMz8kfWKLZpfH-Wczqo08Rc33DWwhH5YXXzaNIbxanOOGHE9ojJMe.Q-jSGE6rz_nIR3vbBw4sbg/__results___files/__results___69_1.png"
+                      alt="img"
+                ></p>
+<blockquote>
+<p>Ok, now we are dealing with the big boss. What do we have here?</p>
+<ul>
+<li>Something that, in general, presents skewness.</li>
+<li>A significant number of observations with value zero (houses without basement).</li>
+<li>A big problem because the value zero doesn’t allow us to do log transformations.</li>
+</ul>
+</blockquote>
+<p>处理方法：将非零值做对数转换，零值还是零，但是若执行：</p>
+<p>![image-20230228093921098](&#x2F;Users&#x2F;xiaoyu&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230228093921098.png)</p>
+<p>会出现以上报错。</p>
+<p>🤖️ 出现<code>RuntimeWarning: divide by zero encountered in log</code>的原因是在对数变换时遇到了 0，因为 log(0) 是没有定义的，所以会产生警告。可以将值为 0 的观测在变换前用一个极小的数代替，比如可以用 1e-6 代替 0。</p>
+<p><strong>👧🏻 但是这段代码不是说只有不等于0时才会进行对数变换吗？为什么还会遇到log(0)的情况呢？</strong></p>
+<p>🤖️ 这是由于浮点数的精度问题导致的。可能有一些值在处理之后非常接近0，但实际上并不等于0，因此在进行np.log()函数计算时，会返回一个非常大的负无穷值，比如-log(1e-15)&#x3D;-34.538776394910684。这也就是报错中提到的“divide by zero encountered in log”错误，其实并非是真正意义上的除零操作，而是一个数学上的约定。</p>
+<p>🤖️ 为了解决这个问题，一种常见的方法是在对数变换前，先对数据中的所有非零值加上一个极小的常数，比如1e-8，避免出现log(0)的情况，同时由于这个常数值非常小，对整体数据的统计特征影响也非常小。因此可以将代码修改为：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">epsilon = <span class="number">1e-8</span>  <span class="comment"># 定义一个极小值</span></span><br><span class="line">df_train.loc[df_train[<span class="string">&#x27;TotalBsmtSF&#x27;</span>] &gt; <span class="number">0</span>, <span class="string">&#x27;TotalBsmtSF&#x27;</span>] = np.log(df_train.loc[df_train[<span class="string">&#x27;TotalBsmtSF&#x27;</span>] &gt; <span class="number">0</span>, <span class="string">&#x27;TotalBsmtSF&#x27;</span>] + epsilon)</span><br></pre></td></tr></table></figure>
+
+<p>👧🏻 <em><strong>所以其实应该是这样：</strong></em></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#transform data</span></span><br><span class="line">df_train.loc[df_train[<span class="string">&#x27;TotalBsmtSF&#x27;</span>] &gt; <span class="number">0</span>, <span class="string">&#x27;TotalBsmtSF&#x27;</span>] = np.log(df_train.loc[df_train[<span class="string">&#x27;TotalBsmtSF&#x27;</span>] &gt; <span class="number">0</span>, <span class="string">&#x27;TotalBsmtSF&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#histogram and normal probability plot</span></span><br><span class="line">sns.distplot(df_train[df_train[<span class="string">&#x27;TotalBsmtSF&#x27;</span>] &gt; <span class="number">0</span>][<span class="string">&#x27;TotalBsmtSF&#x27;</span>], fit = norm)</span><br><span class="line">fig = plt.figure()</span><br><span class="line">res = stats.probplot(df_train[df_train[<span class="string">&#x27;TotalBsmtSF&#x27;</span>] &gt; <span class="number">0</span>][<span class="string">&#x27;TotalBsmtSF&#x27;</span>], plot = plt)</span><br></pre></td></tr></table></figure>
+
+<p><strong>👧🏻 plot &#x3D; plt是什么意思？</strong></p>
+<p>🤖 <code>plot=plt</code>是将&#x3D;&#x3D;Matplotlib库的当前<code>pyplot</code>对象&#x3D;&#x3D;传递给<code>probplot</code>函数中的参数<code>plot</code>。这样做是为了让<code>probplot</code>函数能够在当前的Matplotlib图形对象中绘制概率图。通常，我们在创建一个新的Matplotlib图形对象时会使用<code>plt.figure()</code>函数，并为其指定一个新的名称或编号。但是，如果我们已经有了一个现有的图形对象，我们可以将其传递给<code>plot</code>参数，使得<code>probplot</code>函数在该对象中绘制图形。</p>
+<p><strong>👧🏻 我应该怎么获取Matplotlib库的当前pyplot对象？</strong></p>
+<p>🤖 你可以使用<code>matplotlib.pyplot.gcf()</code>函数来获取当前图形对象。<code>gcf()</code>代表“get current figure”，它将返回最近创建的Figure对象（如果没有现有Figure，则会创建一个新的）。</p>
+<h3 id="Homoscedasticity-graphically"><a href="#Homoscedasticity-graphically" class="headerlink" title="Homoscedasticity: graphically"></a>Homoscedasticity: graphically</h3><blockquote>
+<p>Departures from an equal dispersion are shown by such shapes as <strong>&#x3D;&#x3D;cones (small dispersion at one side of the graph, large dispersion at the opposite side)&#x3D;&#x3D;</strong> or &#x3D;&#x3D;<strong>diamonds (a large number of points at the center of the distribution)</strong>&#x3D;&#x3D;.</p>
+</blockquote>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#scatter plot</span></span><br><span class="line">plt.scatter(df_train[<span class="string">&#x27;GrLivArea&#x27;</span>], df_train[<span class="string">&#x27;SalePrice&#x27;</span>]);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#scatter plot</span></span><br><span class="line">plt.scatter(df_train[df_train[<span class="string">&#x27;TotalBsmtSF&#x27;</span>]&gt;<span class="number">0</span>][<span class="string">&#x27;TotalBsmtSF&#x27;</span>], df_train[df_train[<span class="string">&#x27;TotalBsmtSF&#x27;</span>]&gt;<span class="number">0</span>][<span class="string">&#x27;SalePrice&#x27;</span>]);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Dummy-variables"><a href="#Dummy-variables" class="headerlink" title="Dummy variables"></a>Dummy variables</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#convert categorical variable into dummy</span></span><br><span class="line">df_train = pd.get_dummies(df_train)</span><br></pre></td></tr></table></figure>
+
 
             </div>
 
@@ -307,6 +656,14 @@
                     
                         <li class="tag-item">
                             <a href="/tags/Python/">#Python</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/kaggle/">#kaggle</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/data-exploration/">#data exploration</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -323,7 +680,7 @@
                             >
                             <span class="title flex-center">
                                 <span class="post-nav-title-item">Data Science R Basic</span>
-                                <span class="post-nav-item">下一篇</span>
+                                <span class="post-nav-item">Next posts</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
                               <i class="fas fa-chevron-right"></i>
@@ -340,7 +697,7 @@
 <div class="comments-container">
     <div id="comments-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments"></i>&nbsp;留言
+        <i class="fas fa-comments"></i>&nbsp;Comments
     </div>
     
         
@@ -427,7 +784,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Comprehensive-data-exploration-with-python-House-Pricing"><span class="nav-number">1.</span> <span class="nav-text">Comprehensive data exploration with python | House Pricing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#knowledge"><span class="nav-number">1.1.</span> <span class="nav-text">knowledge</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Notes"><span class="nav-number">1.</span> <span class="nav-text">Notes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%8F%E5%BA%A6-skewness-%E5%92%8C%E5%B3%B0%E5%BA%A6-kurtosis%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">偏度(skewness)和峰度(kurtosis）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#heaptmap%E6%80%8E%E4%B9%88%E7%9C%8B%E7%9B%B8%E5%85%B3%E6%80%A7"><span class="nav-number">1.2.</span> <span class="nav-text">heaptmap怎么看相关性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%8C%96"><span class="nav-number">1.3.</span> <span class="nav-text">标准化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E9%87%8Aprobplot%E7%9A%84%E7%BB%93%E6%9E%9C"><span class="nav-number">1.4.</span> <span class="nav-text">如何解释probplot的结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A6%81%E6%AD%A2%E6%97%A5%E5%BF%97%E4%BF%A1%E6%81%AF"><span class="nav-number">1.5.</span> <span class="nav-text">禁止日志信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%BE%93%E5%87%BA%E5%89%8D%E7%A9%BA%E7%99%BD"><span class="nav-number">1.6.</span> <span class="nav-text">图像输出前空白</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#corrcoef-%E8%BD%AC%E7%BD%AE"><span class="nav-number">1.7.</span> <span class="nav-text">corrcoef() + 转置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#heaatmap-%E7%BB%98%E5%88%B6"><span class="nav-number">1.8.</span> <span class="nav-text">heaatmap 绘制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%8E%9F%E6%9D%A5dataframe%E4%B8%AD%E7%9A%84%E6%9F%90%E4%BA%9B%E8%A1%8C%EF%BC%882%E7%A7%8D%E6%96%B9%E5%BC%8F%EF%BC%89"><span class="nav-number">1.9.</span> <span class="nav-text">删除原来dataframe中的某些行（2种方式）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E7%A7%8Dassumptions"><span class="nav-number">1.10.</span> <span class="nav-text">四种assumptions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pyplot%E5%92%8Cmatplotlib%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">1.11.</span> <span class="nav-text">pyplot和matplotlib的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%96%B9%E5%B7%AE%E6%80%A7-Homoskedasticity-%E5%92%8C%E5%BC%82%E6%96%B9%E5%B7%AE%E6%80%A7-Heteroskedasticity"><span class="nav-number">1.12.</span> <span class="nav-text">同方差性(Homoskedasticity)和异方差性(Heteroskedasticity)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#get-dummies"><span class="nav-number">1.13.</span> <span class="nav-text">get_dummies()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Procedure"><span class="nav-number">2.</span> <span class="nav-text">Procedure</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step1-Understand-our-data"><span class="nav-number">2.1.</span> <span class="nav-text">Step1: Understand our data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step2-Univariable-analysis-%E2%80%98SalePrice%E2%80%99"><span class="nav-number">2.2.</span> <span class="nav-text">Step2: Univariable analysis: ‘SalePrice’</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Relationship-with-numerical-variables"><span class="nav-number">2.2.1.</span> <span class="nav-text">Relationship with numerical variables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Relationship-with-categorical-fratures"><span class="nav-number">2.2.2.</span> <span class="nav-text">Relationship with categorical fratures</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step3-Multivariable-analysis"><span class="nav-number">2.3.</span> <span class="nav-text">Step3: Multivariable analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step4-Missing-data"><span class="nav-number">2.4.</span> <span class="nav-text">Step4: Missing data</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Missing-data"><span class="nav-number">2.4.1.</span> <span class="nav-text">Missing data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Outliers"><span class="nav-number">2.4.2.</span> <span class="nav-text">Outliers</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step5-Getting-hard-core"><span class="nav-number">2.5.</span> <span class="nav-text">Step5: Getting hard core</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Normality-histogram-normal-probability-plot"><span class="nav-number">2.5.1.</span> <span class="nav-text">Normality: histogram + normal probability plot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Homoscedasticity-graphically"><span class="nav-number">2.5.2.</span> <span class="nav-text">Homoscedasticity: graphically</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dummy-variables"><span class="nav-number">2.5.3.</span> <span class="nav-text">Dummy variables</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
 
@@ -462,15 +819,15 @@
                     src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
             <div class="website-count info-item">
                 
-                    讀者&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                 
                 
-                    閱覽&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
                 
             </div>
         
         <div class="theme-info info-item">
-            <a target="_blank" href="https://hexo.io">Hexo</a> 框架&nbsp;|&nbsp;主題&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
         </div>
         
         
@@ -569,7 +926,7 @@
                 <input autocomplete="off"
                        autocorrect="off"
                        autocapitalize="off"
-                       placeholder="搜尋..."
+                       placeholder="Search..."
                        spellcheck="false"
                        type="search"
                        class="search-input"
