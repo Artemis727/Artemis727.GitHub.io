@@ -209,7 +209,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-03-04 17:34:41</span>
+        <span class="pc">2023-03-07 17:43:31</span>
     </span>
     
     
@@ -240,7 +240,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>799 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>795 Words</span>
         </span>
     
     
@@ -269,13 +269,13 @@
 <li><p><strong>concatenate</strong> 连接 c() -&gt; all items in ‘()’ to a <strong>vector</strong></p>
 </li>
 </ul>
-<h1 id="Why-use-‘-’-instead-of-‘-’-to-access-variables"><a href="#Why-use-‘-’-instead-of-‘-’-to-access-variables" class="headerlink" title="Why use ‘[[’ instead of ‘[’ to access variables?"></a>Why use ‘[[’ instead of ‘[’ to access variables?</h1><p>\We extract the population like this:</p>
+<h1 id="Why-use-‘-’-instead-of-‘-’-to-access-variables"><a href="#Why-use-‘-’-instead-of-‘-’-to-access-variables" class="headerlink" title="Why use ‘[[’ instead of ‘[’ to access variables?"></a>Why use ‘[[’ instead of ‘[’ to access variables?</h1><p>We extract the population like this:</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p <span class="operator">&lt;-</span> murders<span class="operator">$</span>population</span><br></pre></td></tr></table></figure>
 
 <p>If you instead try to access a column with just one bracket,</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">murders<span class="punctuation">[</span><span class="string">&quot;population&quot;</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
 
-<p>&#x3D;&#x3D;R returns a subset of the original data frame containing just this column. This new object will be of class <code>data.frame</code> rather than a vector.&#x3D;&#x3D; To access the column itself you need to use either the <code>$</code> accessor or the double square brackets <code>[[</code>:</p>
+<p><strong>R returns a subset of the original data frame containing just this column. This new object will be of class <code>data.frame</code> rather than a vector.</strong> To access the column itself you need to use either the <code>$</code> accessor or the double square brackets <code>[[</code>:</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">murders<span class="punctuation">[[</span><span class="string">&quot;population&quot;</span><span class="punctuation">]</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
 
 

@@ -9,7 +9,7 @@
     
     <title>
         
-            Hello World |
+            DAU下降分析 |
         
         Syaoran:)
     </title>
@@ -183,7 +183,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">Hello World</span>
+                <span class="title-hover-animation">DAU下降分析</span>
             </div>
 
             
@@ -203,22 +203,33 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-02-07 23:41:13</span>
-        <span class="mobile">2023-02-07 23:41</span>
+        <span class="pc">2023-03-08 08:17:09</span>
+        <span class="mobile">2023-03-08 08:17</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-02-07 23:41:13</span>
+        <span class="pc">2023-03-08 08:51:10</span>
     </span>
     
     
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>75 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>570 Words</span>
         </span>
     
     
@@ -241,52 +252,81 @@
             <div class="article-content keep-markdown-body">
                 
 
-                <p>Welcome to <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/" >Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/" >documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html" >troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link"   target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues" >GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html" >Writing<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/server.html" >Server<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html" >Generating<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html" >Deployment<i class="fas fa-external-link-alt"></i></a></p>
+                <h1 id="产品日活-DAU-下降，该如何分析"><a href="#产品日活-DAU-下降，该如何分析" class="headerlink" title="产品日活(DAU)下降，该如何分析"></a>产品日活(DAU)下降，该如何分析</h1><blockquote>
+<p>案例：例如网易新闻APP日活突然下降5%，需要尽快排查一下数据下跌的原因。</p>
+</blockquote>
+<h2 id="分析框架和逻辑思维"><a href="#分析框架和逻辑思维" class="headerlink" title="分析框架和逻辑思维"></a>分析框架和逻辑思维</h2><p>![image-20230308082432891](&#x2F;Users&#x2F;xiaoyu&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230308082432891.png)</p>
+<h2 id="1-对数据异常原因做出假设，利用数据验证"><a href="#1-对数据异常原因做出假设，利用数据验证" class="headerlink" title="1. 对数据异常原因做出假设，利用数据验证"></a>1. 对数据异常原因做出假设，利用数据验证</h2><p>影响DAU因素较多，对所有维度直接拆解耗时耗力。所以需要<strong>结合以往经验及各种信息，对数据异常的原因做出假设</strong>，然后对数据<strong>从不同维度拆分来验证假设</strong>。可能随着之前的假设的验证不断进行新的假设，直到<strong>定位原因</strong>。</p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://pic3.zhimg.com/80/v2-22a204d699aa50233b3dee6f2264545e_1440w.jpg"
+                      alt="img"
+                ></p>
+<h2 id="2-确认数据真实性"><a href="#2-确认数据真实性" class="headerlink" title="2. 确认数据真实性"></a>2. 确认数据真实性</h2><ul>
+<li>将时间轴拉长(3个月)，做同比和环比，看近期异常还是历史异常；</li>
+<li>查看与该指标关联的其他指标是否异常；</li>
+<li>找数据流相关产品和研发确实数据真实性。</li>
+</ul>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://pic1.zhimg.com/80/v2-9244e21224593a51db9eefab77969a2c_1440w.webp"
+                      alt="img"
+                ></p>
+<h2 id="3-常见拆分维度"><a href="#3-常见拆分维度" class="headerlink" title="3. 常见拆分维度"></a>3. 常见拆分维度</h2><p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://pic2.zhimg.com/80/v2-86283af0164e49c1459e33431baa3c65_1440w.webp"
+                      alt="img"
+                ></p>
+<p><strong>根据以上维度拆分之后，每项数据都需要和历史数据做对比，计算影响系数。</strong></p>
+<p>影响系数&#x3D;(今日数据−昨日数据)&#x2F;(今日总量−昨日总量)</p>
+<p><strong>影响系数越大，说明此处为主要原因所在。</strong></p>
+<p>通过上述维度进行初步拆分，可以<strong>大致定位数据异常范围</strong>。</p>
+<h2 id="4-外部原因分析"><a href="#4-外部原因分析" class="headerlink" title="4. 外部原因分析"></a>4. 外部原因分析</h2><p>外部：外部原因分析可以根据<strong>PEST（政治、经济、社会、技术）模型</strong>进行分析。</p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://pic1.zhimg.com/80/v2-cc5ad446c4efa076975b2fbaafb3ea54_1440w.webp"
+                      alt="img"
+                ></p>
+<h2 id="5-内部原因分析"><a href="#5-内部原因分析" class="headerlink" title="5. 内部原因分析"></a>5. 内部原因分析</h2><p>通过初步分析定位范围之后，需要进行进一步的排查，一般从三个维度来分析：<strong>产品、技术、运营</strong>；<strong>可以和这几个人一起拉一个会讨论一下</strong>。同时应注意<strong>数据统计口径</strong>是否发生变化。</p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://pic1.zhimg.com/80/v2-c820282ce239ee9ae366cabcb5cc950c_1440w.webp"
+                      alt="img"
+                ></p>
+<h2 id="6-总结"><a href="#6-总结" class="headerlink" title="6. 总结"></a>6. 总结</h2><p>所以我们整个的分析流程大致为：</p>
+<p><strong>先结合以往数据异常进行假设 —— 在一个假设得到验证之后 —— 从不同维度进行拆解，确定异常范围 —— 从产品、运营、技术侧逐一排查，最终找到原因。</strong></p>
+<p>以上分析框架不仅局限于DAU波动，对于数据异常类问题即可根据以上模型进行分析。</p>
 
             </div>
 
             
 
             
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">#数据分析</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
 
             
                 <div class="article-nav">
-                    
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/2023/02/08/How-is-Hadley-Wickham-able-to-contribute-so-much-to-R-particularly-in-the-form-of-packages/"
-                            >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">How is Hadley Wickham able to contribute so much to R, particularly in the form of packages?</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                            </a>
-                        </div>
                     
                     
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/02/07/SQL%20%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"
+                               href="/2023/03/06/SQL-%E5%A4%8D%E4%B9%A01/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">SQL-刷题笔记</span>
+                                <span class="post-nav-title-item">SQL 复习1</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -391,7 +431,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%A7%E5%93%81%E6%97%A5%E6%B4%BB-DAU-%E4%B8%8B%E9%99%8D%EF%BC%8C%E8%AF%A5%E5%A6%82%E4%BD%95%E5%88%86%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">产品日活(DAU)下降，该如何分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6%E5%92%8C%E9%80%BB%E8%BE%91%E6%80%9D%E7%BB%B4"><span class="nav-number">1.1.</span> <span class="nav-text">分析框架和逻辑思维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AF%B9%E6%95%B0%E6%8D%AE%E5%BC%82%E5%B8%B8%E5%8E%9F%E5%9B%A0%E5%81%9A%E5%87%BA%E5%81%87%E8%AE%BE%EF%BC%8C%E5%88%A9%E7%94%A8%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81"><span class="nav-number">1.2.</span> <span class="nav-text">1. 对数据异常原因做出假设，利用数据验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%A1%AE%E8%AE%A4%E6%95%B0%E6%8D%AE%E7%9C%9F%E5%AE%9E%E6%80%A7"><span class="nav-number">1.3.</span> <span class="nav-text">2. 确认数据真实性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%B8%B8%E8%A7%81%E6%8B%86%E5%88%86%E7%BB%B4%E5%BA%A6"><span class="nav-number">1.4.</span> <span class="nav-text">3. 常见拆分维度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%A4%96%E9%83%A8%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90"><span class="nav-number">1.5.</span> <span class="nav-text">4. 外部原因分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%86%85%E9%83%A8%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90"><span class="nav-number">1.6.</span> <span class="nav-text">5. 内部原因分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E6%80%BB%E7%BB%93"><span class="nav-number">1.7.</span> <span class="nav-text">6. 总结</span></a></li></ol></li></ol>
     </div>
 </div>
 
