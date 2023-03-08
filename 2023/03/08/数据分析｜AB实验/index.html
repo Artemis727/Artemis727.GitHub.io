@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Syaoran Li">
+    
+    <title>
+        
+            数据分析｜AB实验 |
+        
+        Syaoran:)
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/favicon.png">
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"artemis727.github.io","root":"/","language":"ch","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#55efc4","logo":"/images/profile.jpg","favicon":"/images/favicon.png","avatar":"/images/profile.jpg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg.svg","description":"The higher I got, || the more amazed I was by the view.","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":true},"comment":{"enable":true,"use":"valine","valine":{"appid":"LTgZzPPbq5jCkagzeI9TnhVV-gzGzoHsz","appkey":"akDnGyiE0qXqen4IP2MfEOiy","server_urls":null,"placeholder":"👻尽情吐槽吧～"},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":false},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/profile.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+               Syaoran:)
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">数据分析｜AB实验</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/profile.jpg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Syaoran Li</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-03-08 11:51:34</span>
+        <span class="mobile">2023-03-08 11:51</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-03-08 12:17:42</span>
+    </span>
+    
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>3.9k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>13 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <blockquote>
+<p>面试官:“你有没有想过用AB实验来优化项目？”</p>
+<p>​    瑟瑟发抖的我：“<strong>不好意思，我在做项目的时候想过用AB实验，但由于XXXX的原因无法落实。不过我自己构思了比较完整的实验思路……（此处省略若干字），如果有机会让我实施AB实验，我相信能够让项目表现更好。</strong>”</p>
+<p>​    其实这是一个很加分的回答。在面试官看来，眼前的候选人虽然没有参与AB实验，但自己琢磨思考了项目优化方案，应该有不错的自我学习和自我驱动能力 （给自己鼓掌撒花ing）。</p>
+<p>作者：阿狸和小兔<br>链接：<a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/0b54dc8b0880" >https://www.jianshu.com/p/0b54dc8b0880<i class="fas fa-external-link-alt"></i></a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+</blockquote>
+<h1 id="什么是A-x2F-B测试"><a href="#什么是A-x2F-B测试" class="headerlink" title="什么是A&#x2F;B测试"></a>什么是A&#x2F;B测试</h1><p>简单来讲，A&#x2F;B测试是一种比较手段：通过分析<strong>同一总体</strong>下，由于<strong>某些不同的策略</strong>导致<strong>样本数据</strong>表现出的差异，来推断某些<strong>策略的效果</strong>。</p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://pic2.zhimg.com/80/v2-b549c6116b2323ee91d92c1d4b03598d_1440w.webp"
+                      alt="img"
+                ></p>
+<p>几个核心概念：<strong>同一总体，不同策略，不同样本，差异及效果</strong></p>
+<p>本质上来说，<strong>A&#x2F;B测试就是假设检验理论的一个实际应用而已</strong>，所以想了解A&#x2F;B测试的理论，只需要了解假设检验的理论即可。</p>
+<h1 id="A-x2F-B测试流程"><a href="#A-x2F-B测试流程" class="headerlink" title="A&#x2F;B测试流程"></a>A&#x2F;B测试流程</h1><p>一个完整的A&#x2F;B test主要包括如下几部分：</p>
+<p>1、<strong>分析现状，建立假设</strong>：分析业务，确定最高优先级的改进点，作出假设，提出优化建议。</p>
+<p>2、<strong>设定指标</strong>：设置主要指标来衡量版本的优劣；设置辅助指标来评估其他影响。</p>
+<p>3、<strong>设计与开发</strong>：设计优化版本的原型并完成开发。</p>
+<p>4、<strong>确定测试时长</strong>：确定测试进行的时长。</p>
+<p>5、<strong>确定分流方案</strong>：确定每个测试版本的分流比例及其他分流细节。</p>
+<p>6、<strong>采集并分析数据</strong>：收集实验数据，进行有效性和效果判断。</p>
+<p>7、<strong>给出结论</strong>：①确定发布新版本；②调整分流比例继续测试；③优化迭代方案重新开发，回到步骤1。</p>
+<h3 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a><strong>注意点：</strong></h3><p><strong>1. 测试时长：</strong>测试的时长不宜过短，否则参与试验的用户几乎都是产品的高频用户。</p>
+<p><strong>2. 分流（或者说抽样）：</strong>应该保证同时性、同质性、唯一性、均匀性。</p>
+<p><strong>①同时性：</strong>分流应该是同时的，测试的进行也应该是同时的。</p>
+<p><strong>②同质性：</strong>也可以说是相似性，是要求<u>分出的用户群，在各维度的特征都相似</u>。<u>可以基于用户的设备特征（例如手机机型、操作系统版本号、手机语言等）和用户的其他标签（例如性别、年龄、新老用户、会员等级等）</u>进行分群，每一个A&#x2F;B测试试验都可以选定特定的用户群进行试验。</p>
+<p><strong>思考：如何判断是不是真的同质？</strong>可以采用<u>AAB测试</u>。抽出两份流量进行A版本的测试，进行AA测试，并分别与B版本进行AB测试。<u>通过考察A1和A2组是否存在显著性差异，就可以确定试验的分流是否同质了。</u></p>
+<p><strong>③唯一性：</strong>即要求用户不被重复计入测试。</p>
+<p><strong>④均匀性：</strong>要求各组<u>流量是均匀的</u>。Hash算法。现在一般由专用的A&#x2F;B测试工具负责。也有看到一篇文章写了python实现，大体的思路是对用户id添加Salt值，对其散列，并据此算出一个0-1之间的浮点数，同设定好的阈值比大小，从而分组。有兴趣的可以看看，该作者的思路很清晰： <a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/34301270" >随机分配里的Why and How<i class="fas fa-external-link-alt"></i></a>。（统计学原理上，我没有找到均匀性这一要求的依据，其实双样本的假设检验并不要求两个样本的数量相等或相近。当然从直观上是可以理解，希望分出的用户组越相近越好，包括人数的相近。）</p>
+<p><strong>3. A&#x2F;B测试只能有两个版本么？</strong></p>
+<p>A&#x2F;B test不是只能A方案和B方案，实际上一个测试可以包含A&#x2F;B&#x2F;C&#x2F;D&#x2F;E&#x2F;……多个版本，但是要保证单变量，比如按钮的颜色赤&#x2F;橙&#x2F;黄&#x2F;绿&#x2F;青&#x2F;蓝&#x2F;紫，那么这七个方案是可以做A&#x2F;B测试的；但如果某方案在旁边新增了另一个按钮，即便实验结果产生了显著差异，我们也无法判断这种差异的成因究竟是谁。</p>
+<p><strong>4. 同一段时间内可以做不同的A&#x2F;B测试么？</strong></p>
+<p>比如一个test抽取总体20%的流量做按钮颜色的实验，另一个test也抽取总体20%的流量做布局样式的实验。是否可行？</p>
+<p>我认为是可行的。但要求多个方案<u>并行测试</u>，同层互斥。如果从总体里，先后两次随机抽取20%流量，则很有可能会有重叠的用户，既无法满足控制单变量，又影响了用户的使用体验。</p>
+<ul>
+<li>同层指的是在同一流量层中创建实验，在此层中创建的实验共享此层中的100%流量。</li>
+<li>互斥指的是在此层中，一个设备有且只能分配到此层多个实验中的某一个实验。</li>
+</ul>
+<h1 id="A-x2F-B测试原理：假设检验"><a href="#A-x2F-B测试原理：假设检验" class="headerlink" title="A&#x2F;B测试原理：假设检验"></a>A&#x2F;B测试原理：假设检验</h1><blockquote>
+<p>参考：<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/68019926" >https://zhuanlan.zhihu.com/p/68019926<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://pic3.zhimg.com/80/v2-9f80526142e214556bef2a19f8e00c9e_1440w.webp"
+                      alt="img"
+                ></p>
+<blockquote>
+<p>参考：<a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/0b54dc8b0880" >https://www.jianshu.com/p/0b54dc8b0880<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>AB实验是数据分析、产品运营、算法开发在工作中都时常接触到的工作。按钮颜色、广告算法、标签排序，这些互联网产品里常见的功能与展示都是在一次次AB实验中得到优化。</p>
+<p>   在实习中，并不是每一个实习生都能接触到AB实验，这也让很多没有相关经历的人误认为AB实验是一项高大上的工作任务。但其实——</p>
+<p>   许多公司搭建了可(sha)视(gua)化的AB实验平台，业务、运营以及产品都一眼看出AB实验的结果……不过，由于企业搭建的AB实验平台在权限、监控上有诸多限制，加上很多Leader出于实习生实习期短、留用概率小的顾虑，大部分实习生都不会参与完整的AB项目。</p>
+<p>​    可是——</p>
+<p>​    尽管在实习中没有接触过AB实验，在简历中也没提到丝毫，这不代表在面试中就能逃过一劫……</p>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="https:////upload-images.jianshu.io/upload_images/22555708-a505fad6af9035fc?imageMogr2/auto-orient/strip|imageView2/2/w/424/format/webp"
+                      alt="img" style="zoom: 25%;" 
+                >
+
+<p>​    我在实习中就没有接触过AB实验，但面试官仍然对我抛出来的项目分析过程饶有兴趣，也会问我有没有使用AB实验作出优化。得益于面试前全方位的准备，我的面试回（tao）答（lu）往往是:</p>
+<p>​    面试官:“你有没有想过用AB实验来优化项目？”</p>
+<p>​    瑟瑟发抖的我：<strong>“不好意思，我在做项目的时候想过用AB实验，但由于XXXX的原因无法落实。不过我自己构思了比较完整的实验思路……（此处省略若干字），如果有机会让我实施AB实验，我相信能够让项目表现更好。”</strong></p>
+<p>​    其实这是一个很加分的回答。在面试官看来，眼前的候选人虽然没有参与AB实验，但自己琢磨思考了项目优化方案，应该有不错的自我学习和自我驱动能力 （给自己鼓掌撒花ing）。</p>
+<p>   引申一步，当你对自己的项目足够熟悉时，哪怕没有机会开展AB实验，仍然可以和我一样，在回答项目相关问题时，代入自己对AB实验的思考。</p>
+<p>   好了，言归正传，进入今天的正题。</p>
+<p><strong>01</strong> <strong>我们先介绍统计检验</strong></p>
+<p>​    在统计学中，想要证明一个命题是正确的，只能通过证明其否命题是错误的来达到目的。假设检验是用统计数据来判断命题真伪的方式。我们常常会假设两个命题：</p>
+<p>​    <strong>H0：备受质疑的命题</strong></p>
+<p>​    <strong>H1：有待验证的问题</strong></p>
+<p>   那如何来证明H0和H1孰对孰错呢？这时候我们需要用到P值。</p>
+<p>   P值是什么？<strong>P值就是在H0假设成立的情况下，得到样本观察结果或更极端的观察结果出现的概率。</strong></p>
+<p>   这句话好绕口，我们可以简单的理解成<strong>P代表了对H0命题的支持程度。所以P值越小，H0命题正确的概率就越小，H1命题正确的概率越大。</strong>我们有常常会指定显著性水平α&#x3D;0.05，当P&lt;α时，H0命题成立的概率&lt;0.05，这是一个受到统计学支持的假命题。</p>
+<p>   在学习统计学时，我们接触了一大堆显著性水平，显著区间的概念；在考完统计学后，统统还给了大学老师……如果是面试数据分析相关的岗位，强烈建议复习一下，再总结成方便自己记忆的文字，存入<strong>面试文档</strong>（插播一句，后台好多人私信我面试文档里准备了哪些内容……按当前进度，一只伪装加班狗表示写到这一块预计应该要4月了吧emmmm）。</p>
+<p>   若是有面试官问我：<strong>“置信区间和置信度你了解吗？”</strong></p>
+<p>   根据准备在面试文档中的内容，我能够脱口而出：<strong>“在假设检验的过程中，我们往往采用样本数据特征来估计整体的数据特征。在中心极限定理里，我们知道从总体中进行N次样本抽取，N次样本的均值会围绕总体均值上下波动。因此，置信区间就是为总体的均值提供了一个可波动的范围，置信区间与置信度是相对应的。例如，在95%的置信度下，置信区间为【a,b】，也就是说，抽取100次样本，其中有95次样本的均值能够落在【a,b】范围内。”</strong></p>
+<p>   可惜我做了充分的准备，并没有面试官问我这个问题（哭）</p>
+<p>   也有人问，面试中面试官会以什么形式来问假设检验的知识点呢？举一个栗子 ：</p>
+<p>   面试VIVO的时候面试官随口提问：<strong>“你会怎么证明中医的有效性？”</strong></p>
+<p>   我当时的回答是：</p>
+<p>   <strong>“我会用假设检验来做证明。</strong></p>
+<p>   <strong>第一步，提出两个命题。H0命题是中医无效；H1命题是中医有效。在这里，H0命题是我希望被推翻的命题，而H1命题是我希望被证实的命题。</strong></p>
+<p>   <strong>第二步，随机选择两组生理特征、疾病状况一致的人。一组人不给予治疗；另一组人给予中药治疗，持续观测两拨人生理状况。</strong></p>
+<p>   <strong>第三步，对两组人的生理数据进行独立样本t检验，观测统计结果P值。</strong></p>
+<p>   <strong>第四步：设定显著性水平α&#x3D;0.05，如果统计结果P≤0.05，则推翻了H0假设，证明在该显著性水平下，中医是有效的。”</strong></p>
+<p>  所以我们简化一下，回答假设检验相关题目的时候，<strong>遵循“提出命题-选择实验对象-检验-输出结论”的流程即可</strong>。只是有一点，<strong>建议多使用“第一第二第三”、“首先其次最后”这些次序词，用以展示相对流畅的思考逻辑。</strong></p>
+<p>   不知道我讲清楚了没有……如果没有，建议结合《商务经济统计》再继续理解几遍，自我感觉以上内容应该可以应付绝大多数面试过程中的假设检验问题。</p>
+<p>   好了……不管了，我要强行进入第二个话题了……</p>
+<p><strong>02</strong> <strong>工作中的AB实验是如何开展的？</strong></p>
+<p>   再举一个简单的栗子。过去在对首页产品进行排序时，往往是运营人员结合自己工作经验进行人工排序，现在算法小哥更新了产品排序的逻辑，希望通过AB实验证明自己的算法优于运营人工推荐，提高转化效果。</p>
+<p>   算法小哥和开发沟通好上线AB实验，用转化率(CR)来评估不同排序方式的效果，并设定显著性水平α&#x3D;0.05。在这场AB实验中，用到的两个假设分别是：</p>
+<p>   <strong>H0：运营的人工排序效果好（备受质疑、希望被推翻的命题）</strong></p>
+<p>   <strong>H1：算法的推荐算法效果好（有待验证，希望被证实的命题）</strong></p>
+<p>   在AB平台观察今天的实验效果，数据结果显示P&#x3D;0.003，可以理解成数据统计结果对H0的支持力度只有0.003，小于显著性水平0.05，这时候H1命题成立，相比运营的手工排序，算法工程师的推荐算法取得了更好的效果。</p>
+<p>   那在这个实验里，有什么要注意的点吗？</p>
+<p>  ——嗯，AB实验有很多需要注意的问题。</p>
+<p> <strong>（1）AB组是否真的只有一个变量</strong></p>
+<p>   这场AB实验的变量是产品排序的逻辑，但大家都想开展AB实验，在首页上同期开展的AB实验有几十个，UI想测试筛选框的颜色、产品想测试标签的文案……。这种背景下，我们AB实验里被划分为A群体和B群体的用户往往同时参与了N多实验，不能绝对保证变量的唯一性。一般而言认为流量足够大，其AB实验和我们观测的AB实验没有直接交集，可以忽略其影响。</p>
+<p><strong>（2）新策略是否真的上线了</strong></p>
+<p>   因为研发每天都有很多AB实验，而且AB实验平台出错也是常有的事情。所以我们要在别人告诉我们AB实验上线了以后，自己验证实验策略是否真的上线了。</p>
+<p><strong>（3）在实验前确定评估指标</strong></p>
+<p>   我们的实验评估指标是CR转化率。这一点在实验上线前就要沟通好。</p>
+<p><strong>（4）多观察几天数据</strong></p>
+<p>   很多AB实验上线后前几天数据表现是不稳定的，最好持续观察半个月再给出结论。</p>
+<p><strong>（5）存档AB测试的结果</strong></p>
+<p>   对于数据分析师来说，每一个项目、每一个分析都需要做复盘和存档。比如AB实验项目，可以用一个标准化的模板来记录测试内容，为什么测试，测试对接人，测试效果等等，在年终的时候可以更好的汇报和复盘。</p>
+<p>   在大半年的工作中，终于有机会接触到诸多的AB实验，慢慢感知到各种AB实验原来殊途同归。但不可置否，它仍然是互联网产品迭代的利器，仍然是分析师证明自身价值的手段之一。想来这也是为什么诸多的面试官喜欢在面试中询问AB实验、假设检验的原因。</p>
+<p>作者：阿狸和小兔<br>链接：<a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/0b54dc8b0880" >https://www.jianshu.com/p/0b54dc8b0880<i class="fas fa-external-link-alt"></i></a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+
+            </div>
+
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">#数据分析</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CBI%E6%90%AD%E5%BB%BA/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">数据分析｜BI搭建</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+                <div class="comment-container">
+                    
+<div class="comments-container">
+    <div id="comments-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments"></i>&nbsp;Comments
+    </div>
+    
+        
+            
+
+    <div class="valine-container">
+        <script  src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+          function loadValine() {
+
+            const config = {
+              el: '#vcomments',
+              appId: 'LTgZzPPbq5jCkagzeI9TnhVV-gzGzoHsz',
+              appKey: 'akDnGyiE0qXqen4IP2MfEOiy',
+              meta: ['nick', 'mail', 'link'],
+              avatar: 'wavatar',
+              enableQQ: true,
+              placeholder: '👻尽情吐槽吧～',
+              lang: 'ch'.toLowerCase()
+            }
+
+            if ('') {
+              config.serverURLs = ''
+            }
+
+            new Valine(config)
+
+            function getAuthor(language) {
+              switch (language) {
+                case 'en':
+                  return 'Author'
+                case 'zh-CN':
+                  return '博主'
+                default:
+                  return 'Master'
+              }
+            }
+
+            // Add "Author" identify
+            const getValineDomTimer = setInterval(() => {
+              const vcards = document.querySelectorAll('#vcomments .vcards .vcard')
+              if (vcards.length > 0) {
+                let author = 'Syaoran Li'
+
+                if (author) {
+                  for (let vcard of vcards) {
+                    const vnick_dom = vcard.querySelector('.vhead .vnick')
+                    const vnick = vnick_dom.innerHTML
+                    if (vnick === author) {
+                      vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                    }
+                  }
+                }
+                clearInterval(getValineDomTimer)
+              } else {
+                clearInterval(getValineDomTimer)
+              }
+            }, 2000)
+          }
+
+          if ('false' === 'true') {
+            const loadValineTimeout = setTimeout(() => {
+              loadValine()
+              clearTimeout(loadValineTimeout)
+            }, 1000)
+          } else {
+            window.addEventListener('DOMContentLoaded', loadValine)
+          }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFA-x2F-B%E6%B5%8B%E8%AF%95"><span class="nav-number">1.</span> <span class="nav-text">什么是A&#x2F;B测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A-x2F-B%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">A&#x2F;B测试流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E7%82%B9%EF%BC%9A"><span class="nav-number">2.0.1.</span> <span class="nav-text">注意点：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A-x2F-B%E6%B5%8B%E8%AF%95%E5%8E%9F%E7%90%86%EF%BC%9A%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="nav-number">3.</span> <span class="nav-text">A&#x2F;B测试原理：假设检验</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2023</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">Syaoran Li</a>
+            
+        </div>
+        
+            <script async 
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+                    Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-block.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/post-helper.js"></script>
+
+        
+            
+<script src="/js/libs/anime.min.js"></script>
+
+        
+        
+            
+<script src="/js/toc.js"></script>
+
+        
+    
+</div>
+
+
+
+</body>
+</html>
