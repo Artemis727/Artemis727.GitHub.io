@@ -9,7 +9,7 @@
     
     <title>
         
-            DAU下降分析 |
+            数据分析｜DAU预测 |
         
         Syaoran:)
     </title>
@@ -183,7 +183,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">DAU下降分析</span>
+                <span class="title-hover-animation">数据分析｜DAU预测</span>
             </div>
 
             
@@ -203,13 +203,13 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-03-08 08:17:09</span>
-        <span class="mobile">2023-03-08 08:17</span>
+        <span class="pc">2023-03-08 10:53:40</span>
+        <span class="mobile">2023-03-08 10:53</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-03-08 08:51:10</span>
+        <span class="pc">2023-03-08 11:04:41</span>
     </span>
     
     
@@ -229,12 +229,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>570 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.3k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>1 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>4 Mins</span>
         </span>
     
     
@@ -252,55 +252,66 @@
             <div class="article-content keep-markdown-body">
                 
 
-                <h1 id="产品日活-DAU-下降，该如何分析"><a href="#产品日活-DAU-下降，该如何分析" class="headerlink" title="产品日活(DAU)下降，该如何分析"></a>产品日活(DAU)下降，该如何分析</h1><blockquote>
-<p>案例：例如网易新闻APP日活突然下降5%，需要尽快排查一下数据下跌的原因。</p>
-</blockquote>
-<h2 id="分析框架和逻辑思维"><a href="#分析框架和逻辑思维" class="headerlink" title="分析框架和逻辑思维"></a>分析框架和逻辑思维</h2><p>![image-20230308082432891](&#x2F;Users&#x2F;xiaoyu&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230308082432891.png)</p>
-<h2 id="1-对数据异常原因做出假设，利用数据验证"><a href="#1-对数据异常原因做出假设，利用数据验证" class="headerlink" title="1. 对数据异常原因做出假设，利用数据验证"></a>1. 对数据异常原因做出假设，利用数据验证</h2><p>影响DAU因素较多，对所有维度直接拆解耗时耗力。所以需要<strong>结合以往经验及各种信息，对数据异常的原因做出假设</strong>，然后对数据<strong>从不同维度拆分来验证假设</strong>。可能随着之前的假设的验证不断进行新的假设，直到<strong>定位原因</strong>。</p>
+                <p>日活会受到很多因素的影响，产品迭代，运营活动，推广的变化等等都会影响到日活。当然这些因素中，有的影响较小，有的暂时无法预估。因此<strong>在预测的过程中，我们可以将一些影响不大的因素，剔除出去，从而简化得到一个可计算的状态</strong>。（这个简化到可计算的过程中，其实就叫<strong>数学建模</strong>。）</p>
+<p>因此为了计算，我们首先构建日活的一个简单数学模型。</p>
+<h2 id="建立日活的数学模型"><a href="#建立日活的数学模型" class="headerlink" title="建立日活的数学模型"></a>建立日活的数学模型</h2><p>影响日活的因素中，最本质的其实是两个，一个是每日新增用户数，一个是新增用户的留存率。</p>
+<p>某一天的日活，我们可以看作是，当天的新增，加上前一天的新增的次日留存用户，再加上大前天的新增的二日留存用户……</p>
+<p>以此类推，我们可以认为日活是<strong>“当天的新增用户和此前每一天新增用户在当天的留存用户之和”</strong>，基于此，我们可以用一个很简单的公式表达日活。</p>
+<p>$DAU(n)&#x3D;A(n)+A(n-1)R(1)+A(n-2)R(2)+… …+A(1)R(n-1)$</p>
+<p>其中，DAU(n)为第n天的日活，A(n)为第n天的新增，R(n-1)为新增用户在第n-1天后的留存率。<strong>如果我们假设，每日用户的新增是一个固定的数值A，</strong>则公式可简写为：</p>
+<p>$DAU(n)&#x3D;A(1+R(1)+R(2)+… …+R(n-1))$</p>
+<p>上述公式可以看成是日活的一个简单的数学模型。从这个模型中，我们可以看出，新增A是一个较为确定的数值，另一部分：</p>
+<p>$1+R(1)+R(2)+… …+R(n-1)$</p>
+<p><strong>留存之和的确定稍微有些麻烦</strong>。可以用下述的方法，预估留存。</p>
+<h2 id="如何预估留存"><a href="#如何预估留存" class="headerlink" title="如何预估留存"></a>如何预估留存</h2><p>留存率是一个产品最为核心的指标了，下图是一个产品的留存率衰减曲线：</p>
 <p><img  
                      lazyload
                      alt="image"
-                     data-src="https://pic3.zhimg.com/80/v2-22a204d699aa50233b3dee6f2264545e_1440w.jpg"
-                      alt="img"
+                     data-src="https://image.woshipm.com/wp-files/2019/06/YaM9IL72ftSBP0BVoNNp.png"
+                      alt="如何预估一个产品的日活（DAU）？"
                 ></p>
-<h2 id="2-确认数据真实性"><a href="#2-确认数据真实性" class="headerlink" title="2. 确认数据真实性"></a>2. 确认数据真实性</h2><ul>
-<li>将时间轴拉长(3个月)，做同比和环比，看近期异常还是历史异常；</li>
-<li>查看与该指标关联的其他指标是否异常；</li>
-<li>找数据流相关产品和研发确实数据真实性。</li>
-</ul>
+<p>（1-30日留存率衰减曲线）</p>
+<p>由图中，我们可以看出：留存率的衰减曲线，非常类似幂函数的曲线，<strong>其实，在业内绝大部分产品的留存衰减曲线，基本都是符合幂函数曲线。</strong></p>
+<p>基于此，我们<strong>可以通过幂函数来近似拟合留存率的衰减曲线</strong>，也就可以顺利的预估出日活模型中需要的留存之和。</p>
+<p>一般在预估一个产品的留存之前，我们会有一些先验的数据基础，<strong>如果你的产品已经上线来一段时间，可以使用历史数据作为基础。如果产品还未上线，没有历史的数据，因为不同类型产品的留存和衰减速度都不太一样，因此可以用业内同类型的产品的大概留存数据作为拟合预测的参考。</strong></p>
+<p><font color = 'red'>因此，留存曲线拟合基本会遇到两种情况：</font></p>
+<ol>
+<li>已经知道了若干天的留存，预估后续的留存？</li>
+<li>不知道具体每天的留存，只知道次留，周留，月留存等数据，预估每一天的留存。</li>
+</ol>
+<p>这两个情况本质上属于同一个问题，这里以第二种情况为例，简单说下如何操作。曲线拟合的方法有很多，这里我介绍一个最为简单的方式，就是<strong>利用excel来做一个简单的拟合计算</strong>，具体步骤如下：</p>
+<h3 id="step1"><a href="#step1" class="headerlink" title="step1"></a>step1</h3><p>假设我们知道了一个产品次日留存，7日留存，30留存如下：</p>
 <p><img  
                      lazyload
                      alt="image"
-                     data-src="https://pic1.zhimg.com/80/v2-9244e21224593a51db9eefab77969a2c_1440w.webp"
-                      alt="img"
+                     data-src="https://image.woshipm.com/wp-files/2019/06/uWZ4ziw01zwS6MVAfJus.png"
+                      alt="如何预估一个产品的日活（DAU）？"
                 ></p>
-<h2 id="3-常见拆分维度"><a href="#3-常见拆分维度" class="headerlink" title="3. 常见拆分维度"></a>3. 常见拆分维度</h2><p><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://pic2.zhimg.com/80/v2-86283af0164e49c1459e33431baa3c65_1440w.webp"
-                      alt="img"
-                ></p>
-<p><strong>根据以上维度拆分之后，每项数据都需要和历史数据做对比，计算影响系数。</strong></p>
-<p>影响系数&#x3D;(今日数据−昨日数据)&#x2F;(今日总量−昨日总量)</p>
-<p><strong>影响系数越大，说明此处为主要原因所在。</strong></p>
-<p>通过上述维度进行初步拆分，可以<strong>大致定位数据异常范围</strong>。</p>
-<h2 id="4-外部原因分析"><a href="#4-外部原因分析" class="headerlink" title="4. 外部原因分析"></a>4. 外部原因分析</h2><p>外部：外部原因分析可以根据<strong>PEST（政治、经济、社会、技术）模型</strong>进行分析。</p>
+<p>（某产品若干日留存）</p>
+<h3 id="step2"><a href="#step2" class="headerlink" title="step2"></a>step2</h3><p>在excel中按照对应留存天数，写出留存率，并画出散点图：</p>
 <p><img  
                      lazyload
                      alt="image"
-                     data-src="https://pic1.zhimg.com/80/v2-cc5ad446c4efa076975b2fbaafb3ea54_1440w.webp"
-                      alt="img"
+                     data-src="https://image.woshipm.com/wp-files/2019/06/60NceIZrTA2IYMuGOjUs.png"
+                      alt="如何预估一个产品的日活（DAU）？"
                 ></p>
-<h2 id="5-内部原因分析"><a href="#5-内部原因分析" class="headerlink" title="5. 内部原因分析"></a>5. 内部原因分析</h2><p>通过初步分析定位范围之后，需要进行进一步的排查，一般从三个维度来分析：<strong>产品、技术、运营</strong>；<strong>可以和这几个人一起拉一个会讨论一下</strong>。同时应注意<strong>数据统计口径</strong>是否发生变化。</p>
+<p>（留存散点图）</p>
+<h3 id="step3"><a href="#step3" class="headerlink" title="step3"></a>step3</h3><p>在excel图表对上述散点添加趋势线，并在趋势线选项中，选择幂函数，并选择显示幂函数公式</p>
 <p><img  
                      lazyload
                      alt="image"
-                     data-src="https://pic1.zhimg.com/80/v2-c820282ce239ee9ae366cabcb5cc950c_1440w.webp"
-                      alt="img"
+                     data-src="https://image.woshipm.com/wp-files/2019/06/BXLzOPqVHKCoIHTJ0A92.png"
+                      alt="如何预估一个产品的日活（DAU）？"
                 ></p>
-<h2 id="6-总结"><a href="#6-总结" class="headerlink" title="6. 总结"></a>6. 总结</h2><p>所以我们整个的分析流程大致为：</p>
-<p><strong>先结合以往数据异常进行假设 —— 在一个假设得到验证之后 —— 从不同维度进行拆解，确定异常范围 —— 从产品、运营、技术侧逐一排查，最终找到原因。</strong></p>
-<p>以上分析框架不仅局限于DAU波动，对于数据异常类问题即可根据以上模型进行分析。</p>
+<p>（基于散点拟合曲线）</p>
+<p>得到的幂函数为：</p>
+<p>$y&#x3D;0.4861*x^(-0.435)$，其中x为对应的天数，y为对应天数的留存率。</p>
+<h3 id="step4"><a href="#step4" class="headerlink" title="step4"></a>step4</h3><p>基于得到的幂函数公式，可以求的所有对应天数的留存率。</p>
+<h2 id="计算得到预估的日活"><a href="#计算得到预估的日活" class="headerlink" title="计算得到预估的日活"></a>计算得到预估的日活</h2><p>基于得到的幂函数，算出对应的留存率之后，就可以简单求和得到，带入日活公式中：</p>
+<p>$DAU(n)&#x3D;A(1+R(1)+R(2)+… …+R(n-1))$</p>
+<p>这样就可以通过预估的每日新增，得到在未来第n天日活所处的水平。</p>
+<h2 id="总结-amp-后记"><a href="#总结-amp-后记" class="headerlink" title="总结&amp;后记"></a>总结&amp;后记</h2><p>以上通过简化日活模型，仅考虑新增和留存对于日活的影响（其它影响，也都是通过新增和留存间接对日活产生影响的），可以粗略的估算出未来一段时间的产品日活规模。</p>
+<p>进而通过日活的规模，再去估算一些潜在收益，以及运营成本等等数据。上述计算一定存在误差，并且不能满足所有的场景，但整体的思路可以作为参考，应该能搞解决大部分相关问题了。</p>
 
             </div>
 
@@ -319,14 +330,29 @@
             
                 <div class="article-nav">
                     
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CBI%E6%90%AD%E5%BB%BA/"
+                            >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                <span class="post-nav-title-item">数据分析｜BI搭建</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                            </a>
+                        </div>
+                    
                     
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/03/06/SQL-%E5%A4%8D%E4%B9%A01/"
+                               href="/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%8C%87%E6%A0%87%E4%BD%93%E7%B3%BB%E6%90%AD%E5%BB%BA/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">SQL 复习1</span>
+                                <span class="post-nav-title-item">数据分析｜指标体系搭建</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -431,7 +457,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%A7%E5%93%81%E6%97%A5%E6%B4%BB-DAU-%E4%B8%8B%E9%99%8D%EF%BC%8C%E8%AF%A5%E5%A6%82%E4%BD%95%E5%88%86%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">产品日活(DAU)下降，该如何分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6%E5%92%8C%E9%80%BB%E8%BE%91%E6%80%9D%E7%BB%B4"><span class="nav-number">1.1.</span> <span class="nav-text">分析框架和逻辑思维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AF%B9%E6%95%B0%E6%8D%AE%E5%BC%82%E5%B8%B8%E5%8E%9F%E5%9B%A0%E5%81%9A%E5%87%BA%E5%81%87%E8%AE%BE%EF%BC%8C%E5%88%A9%E7%94%A8%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81"><span class="nav-number">1.2.</span> <span class="nav-text">1. 对数据异常原因做出假设，利用数据验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%A1%AE%E8%AE%A4%E6%95%B0%E6%8D%AE%E7%9C%9F%E5%AE%9E%E6%80%A7"><span class="nav-number">1.3.</span> <span class="nav-text">2. 确认数据真实性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%B8%B8%E8%A7%81%E6%8B%86%E5%88%86%E7%BB%B4%E5%BA%A6"><span class="nav-number">1.4.</span> <span class="nav-text">3. 常见拆分维度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%A4%96%E9%83%A8%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90"><span class="nav-number">1.5.</span> <span class="nav-text">4. 外部原因分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%86%85%E9%83%A8%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90"><span class="nav-number">1.6.</span> <span class="nav-text">5. 内部原因分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E6%80%BB%E7%BB%93"><span class="nav-number">1.7.</span> <span class="nav-text">6. 总结</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E6%97%A5%E6%B4%BB%E7%9A%84%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">建立日活的数学模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%A2%84%E4%BC%B0%E7%95%99%E5%AD%98"><span class="nav-number">2.</span> <span class="nav-text">如何预估留存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#step1"><span class="nav-number">2.1.</span> <span class="nav-text">step1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step2"><span class="nav-number">2.2.</span> <span class="nav-text">step2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step3"><span class="nav-number">2.3.</span> <span class="nav-text">step3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step4"><span class="nav-number">2.4.</span> <span class="nav-text">step4</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E5%BE%97%E5%88%B0%E9%A2%84%E4%BC%B0%E7%9A%84%E6%97%A5%E6%B4%BB"><span class="nav-number">3.</span> <span class="nav-text">计算得到预估的日活</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93-amp-%E5%90%8E%E8%AE%B0"><span class="nav-number">4.</span> <span class="nav-text">总结&amp;后记</span></a></li></ol>
     </div>
 </div>
 
