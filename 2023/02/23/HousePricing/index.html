@@ -209,7 +209,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-02-28 16:53:28</span>
+        <span class="pc">2023-03-08 18:53:58</span>
     </span>
     
     
@@ -282,12 +282,13 @@
 </ul>
 </li>
 </ul>
-<p><img  
+<img  
                      lazyload
                      alt="image"
                      data-src="https://img-blog.csdn.net/20170405214815843?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGJtYXRyaXg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center"
-                      alt="img"
-                ></p>
+                      alt="img" style="zoom:50%;" 
+                >
+
 <ul>
 <li><p>kurtosis 表示概率密度曲线的峰值高低（峰的尖度）</p>
 <ul>
@@ -359,7 +360,7 @@
 <p>👧🏻 <em><strong>vmax &#x3D; .8是什么意思？</strong></em></p>
 <p>🤖️ <code>vmax = .8</code> 是指在绘制热力图时，将数据映射到颜色图谱的最大值为 0.8。具体来说，这个参数用于设置热力图中颜色的亮度范围，最大值为 0.8 表示数据中最大值对应的颜色在颜色图谱中的亮度为 0.8，而其他值对应的颜色亮度将根据数据的分布情况自动调整。</p>
 <p>通过设置 <code>vmax</code> 参数，可以在热力图中强调数据中的极端值和重要特征。如果不设置这个参数，颜色图谱的最大值将自动匹配数据中的最大值，这可能会导致颜色映射范围太大或太小，影响热力图的可读性。</p>
-<h2 id="删除原来dataframe中的某些行（2种方式）"><a href="#删除原来dataframe中的某些行（2种方式）" class="headerlink" title="删除原来dataframe中的某些行（2种方式）"></a>删除原来dataframe中的某些行（2种方式）</h2><p>🤖️ 这种情况下直接drop，必须写inplace &#x3D; True才会修改原数据框：</p>
+<h2 id="删除原来dataframe中的某些行（2种方式）"><a href="#删除原来dataframe中的某些行（2种方式）" class="headerlink" title="删除原来dataframe中的某些行（2种方式）"></a>删除原来dataframe中的某些行（2种方式）</h2><p>🤖️ 这种情况下直接drop，必须写<code>inplace = True</code>才会修改原数据框：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">top_2_index = df_train.sort_values(by=<span class="string">&#x27;GrLivArea&#x27;</span>, ascending=<span class="literal">False</span>)[:<span class="number">2</span>].index</span><br><span class="line">df_train.drop(top_2_index, inplace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
 
 <p>🤖 也可以不使用 <code>inplace=True</code> 参数来修改 <code>df_train</code>，而是将 <code>drop()</code> 函数的返回值赋给一个新的 DataFrame：</p>
