@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Syaoran Li">
+    
+    <title>
+        
+            数据分析｜逻辑回归 |
+        
+        Syaoran:)
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/favicon.png">
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"artemis727.github.io","root":"/","language":"ch","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#55efc4","logo":"/images/profile.jpg","favicon":"/images/favicon.png","avatar":"/images/profile.jpg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg.svg","description":"The higher I got, || the more amazed I was by the view.","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":true},"comment":{"enable":true,"use":"valine","valine":{"appid":"LTgZzPPbq5jCkagzeI9TnhVV-gzGzoHsz","appkey":"akDnGyiE0qXqen4IP2MfEOiy","server_urls":null,"placeholder":"👻尽情吐槽吧～"},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":false},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/profile.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+               Syaoran:)
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">数据分析｜逻辑回归</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/profile.jpg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Syaoran Li</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-03-12 09:02:11</span>
+        <span class="mobile">2023-03-12 09:02</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-03-12 09:45:18</span>
+    </span>
+    
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Python/">Python</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.3k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>9 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <h1 id="分类和回归"><a href="#分类和回归" class="headerlink" title="分类和回归"></a>分类和回归</h1><h2 id="Logistic-Regression-和-Linear-Regression"><a href="#Logistic-Regression-和-Linear-Regression" class="headerlink" title="Logistic Regression 和 Linear Regression"></a>Logistic Regression 和 Linear Regression</h2><ul>
+<li>Linear Regression：<strong>输出一个标量wx+b</strong>，是连续值，用以处理回归问题；</li>
+<li>Logistic Regression：<strong>将标量wx+b通过sigmoid函数映射到(0,1)上</strong>，并划分一个<strong>阈值</strong>，大于阈值的分为一类，其他归为另一类，可处理<strong>二分分类问题</strong>；</li>
+<li>对于N分类问题，先得到<strong>N组w值不同的wx+b</strong>，然后<strong>利用softmax函数归一化</strong>，最后得到<strong>N个类上的概率</strong>，可处理<strong>多分类</strong>问题。</li>
+</ul>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://pic3.zhimg.com/80/v2-e5118cf19e52cb3ccd832f1f07a1433a_1440w.webp"
+                      alt="img"
+                ></p>
+<blockquote>
+<p>因此，逻辑回归属于分类方法，其本质是将回归方程映射到了(0,1)上。</p>
+</blockquote>
+<h2 id="Support-Vector-Regression-和-Support-Vector-Machine"><a href="#Support-Vector-Regression-和-Support-Vector-Machine" class="headerlink" title="Support Vector Regression 和 Support Vector Machine"></a>Support Vector Regression 和 Support Vector Machine</h2><ul>
+<li>SVR：输出wx+b，即某个样本点到分类面的距离，是连续值，用以处理<strong>回归</strong>问题；</li>
+<li>SVM：将该距离通过sign(·)函数映射，距离为正的样本点为一类，为负的是另一类，故为<strong>分类</strong>问题。</li>
+</ul>
+<h2 id="相应有哪些常用方法"><a href="#相应有哪些常用方法" class="headerlink" title="相应有哪些常用方法"></a><strong>相应有哪些常用方法</strong></h2><ul>
+<li><p>常见的<strong>分类方法：</strong>逻辑回归、决策树分类、KNN(K-近邻)分类、贝叶斯分类、人工神经网络、支持向量机(SVM)等</p>
+</li>
+<li><p>常见的<strong>回归方法：</strong>线性回归、多项式回归、逐步回归等</p>
+</li>
+</ul>
+<p>（常见的聚类方法：K-Means(K均值)聚类等）</p>
+<h1 id="逻辑回归分析"><a href="#逻辑回归分析" class="headerlink" title="逻辑回归分析"></a>逻辑回归分析</h1><h2 id="主要思想"><a href="#主要思想" class="headerlink" title="主要思想"></a>主要思想</h2><p>根据现有数据对决策边界建立回归方程，然后将回归方程映射到分类函数上实现分类。</p>
+<h2 id="原理介绍"><a href="#原理介绍" class="headerlink" title="原理介绍"></a>原理介绍</h2><blockquote>
+<p>具体见参考[1]</p>
+</blockquote>
+<p>Logistic回归的原理可以理解为以下四步：</p>
+<ol>
+<li>利用回归方程表示决策边界</li>
+<li>利用Sigmod函数对回归关系进行映射</li>
+<li>在得到拟合函数后，利用损失函数来评价模型与实际值之间的差异大小</li>
+<li>求出损失函数取得极小值时对应的W，从而得到拟合函数</li>
+</ol>
+<h2 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h2><p>常见的分类模型性能指标有准确率(accuracy)、召回率(recall)、ROC曲线等。</p>
+<h3 id="混淆矩阵"><a href="#混淆矩阵" class="headerlink" title="混淆矩阵"></a>混淆矩阵</h3><p>包括分类器预测结果：真正TP(true positive)、真负TN(true negative)、假正FP(false positive)、假负FN(false negative)的数量，其中真正和真负均为正确分类的结果。</p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://pic3.zhimg.com/80/v2-7e323dac66fca1f5733c5a417081f436_1440w.webp"
+                      alt="img"
+                ></p>
+<p>1代表正类，0代表负类</p>
+<h3 id="准确率ACC、真正率TPR及假正率FPR"><a href="#准确率ACC、真正率TPR及假正率FPR" class="headerlink" title="准确率ACC、真正率TPR及假正率FPR"></a>准确率ACC、真正率TPR及假正率FPR</h3><p><strong>注意区别准确率Accuracy与精确率(查准率)Precision区别</strong>：后者是预测与实际均为正类别样本数量 与 预测正样本数量的比值，即 $TP&#x2F;(TP+FP)$ 。一般而言，回归模型中默认的Score都是Accuracy值。</p>
+<h3 id="ROC曲线"><a href="#ROC曲线" class="headerlink" title="ROC曲线"></a>ROC曲线</h3><p>ROC曲线由变量1-Specificity和Sensitivity绘制，其中横轴1-Specificity&#x3D;假正率(FPR)、纵轴Sensitivity&#x3D;真正率(TPR)，ROC曲线的对角线表示随机猜测，若ROC曲线在对角线下表示分类器性能比随机猜测还差，ROC曲线下的区域面积(area under the curve,AUC)表示分类模型的性能。</p>
+<p><strong>意义：</strong></p>
+<ul>
+<li>有助于选择最佳阈值：ROC曲线越靠近左上角，模型查全率越高，最靠近左上角的ROC曲线上的点是分类错误最少的最好阈值，其假正例和假反例总数最少。</li>
+<li>可以比较不同学习器的性能：将各个学习器的ROC曲线绘制在同一坐标中，直观比较，越靠近左上角的ROC曲线代表的学习器准确性越高。</li>
+<li>AUC同时考虑了学习器对于正例和负例的分类能力，在样本不平衡的情况下，依然能对分类器做出合理评价。</li>
+</ul>
+<h1 id="逻辑回归的Python实现"><a href="#逻辑回归的Python实现" class="headerlink" title="逻辑回归的Python实现"></a>逻辑回归的Python实现</h1><p>利用Python中sklearn包进行逻辑回归分析。</p>
+<h2 id="提出问题"><a href="#提出问题" class="headerlink" title="提出问题"></a><strong>提出问题</strong></h2><p>根据已有数据探究“学习时长”与“是否通过考试”之间关系，并建立预测模型。</p>
+<h2 id="理解数据"><a href="#理解数据" class="headerlink" title="理解数据"></a><strong>理解数据</strong></h2><p>1、导入包和数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1.导入包</span></span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> OrderedDict</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">warnings.filterwarnings(<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#2.创建数据（学习时间与是否通过考试）</span></span><br><span class="line">dataDict=&#123;<span class="string">&#x27;学习时间&#x27;</span>:<span class="built_in">list</span>(np.arange(<span class="number">0.50</span>,<span class="number">5.50</span>,<span class="number">0.25</span>)),</span><br><span class="line">        <span class="string">&#x27;考试成绩&#x27;</span>:[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]&#125;</span><br><span class="line">dataOrDict=OrderedDict(dataDict)</span><br><span class="line">dataDf=pd.DataFrame(dataOrDict)</span><br><span class="line">dataDf.head()</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">       学习时间	考试成绩</span><br><span class="line"><span class="number">0</span>	<span class="number">0.50</span>	<span class="number">0</span></span><br><span class="line"><span class="number">1</span>	<span class="number">0.75</span>	<span class="number">0</span></span><br><span class="line"><span class="number">2</span>	<span class="number">1.00</span>	<span class="number">0</span></span><br><span class="line"><span class="number">3</span>	<span class="number">1.25</span>	<span class="number">0</span></span><br><span class="line"><span class="number">4</span>	<span class="number">1.50</span>	<span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p>2、查看数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看数据具体形式</span></span><br><span class="line">dataDf.head()</span><br><span class="line"><span class="comment">#查看数据类型及缺失情况</span></span><br><span class="line">dataDf.info()</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;pandas.core.frame.DataFrame&#x27;</span>&gt;</span><br><span class="line">RangeIndex: <span class="number">20</span> entries, <span class="number">0</span> to <span class="number">19</span></span><br><span class="line">Data columns (total <span class="number">2</span> columns):</span><br><span class="line">学习时间    <span class="number">20</span> non-null float64</span><br><span class="line">考试成绩    <span class="number">20</span> non-null int64</span><br><span class="line">dtypes: float64(<span class="number">1</span>), int64(<span class="number">1</span>)</span><br><span class="line">memory usage: <span class="number">400.0</span> <span class="built_in">bytes</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#查看描述性统计信息</span></span><br><span class="line">dataDf.describe()</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">        学习时间	 考试成绩</span><br><span class="line">count	<span class="number">20.00000</span> <span class="number">20.000000</span></span><br><span class="line">mean	<span class="number">2.87500</span>	<span class="number">0.500000</span></span><br><span class="line">std	<span class="number">1.47902</span>	<span class="number">0.512989</span></span><br><span class="line"><span class="built_in">min</span>	<span class="number">0.50000</span>	<span class="number">0.000000</span></span><br><span class="line"><span class="number">25</span>%	<span class="number">1.68750</span>	<span class="number">0.000000</span></span><br><span class="line"><span class="number">50</span>%	<span class="number">2.87500</span>	<span class="number">0.500000</span></span><br><span class="line"><span class="number">75</span>%	<span class="number">4.06250</span>	<span class="number">1.000000</span></span><br><span class="line"><span class="built_in">max</span>	<span class="number">5.25000</span>	<span class="number">1.000000</span></span><br></pre></td></tr></table></figure>
+
+<p>3、绘制散点图查看数据分布情况</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#提取特征和标签</span></span><br><span class="line">exam_X=dataDf[<span class="string">&#x27;学习时间&#x27;</span>]</span><br><span class="line">exam_y=dataDf[<span class="string">&#x27;考试成绩&#x27;</span>]</span><br><span class="line"><span class="comment">#绘制散点图</span></span><br><span class="line">plt.scatter(exam_X,exam_y,color=<span class="string">&#x27;b&#x27;</span>,label=<span class="string">&#x27;考试数据&#x27;</span>)</span><br><span class="line">plt.legend(loc=<span class="number">2</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;学习时间&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;考试成绩&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://pic2.zhimg.com/80/v2-f1d63db4853f166c846626c1bd7b64cd_1440w.webp"
+                      alt="img"
+                ></p>
+<p>从图中可以看出当学习时间高于某一阈值时，一般都能够通过考试，因此我们利用逻辑回归方法建立模型。</p>
+<h2 id="构建模型"><a href="#构建模型" class="headerlink" title="构建模型"></a><strong>构建模型</strong></h2><p>1、拆分训练集并利用散点图观察</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1.拆分训练集和测试集</span></span><br><span class="line"><span class="keyword">from</span> sklearn.cross_validation <span class="keyword">import</span> train_test_split</span><br><span class="line">exam_X=exam_X.values.reshape(-<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">exam_y=exam_y.values.reshape(-<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">train_X,test_X,train_y,test_y=train_test_split(exam_X,exam_y,train_size=<span class="number">0.8</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;训练集数据大小为&#x27;</span>,train_X.size,train_y.size)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;测试集数据大小为&#x27;</span>,test_X.size,test_y.size)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">训练集数据大小为 <span class="number">16</span> <span class="number">16</span></span><br><span class="line">测试集数据大小为 <span class="number">4</span> <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#2.散点图观察</span></span><br><span class="line">plt.scatter(train_X,train_y,color=<span class="string">&#x27;b&#x27;</span>,label=<span class="string">&#x27;train data&#x27;</span>)</span><br><span class="line">plt.scatter(test_X,test_y,color=<span class="string">&#x27;r&#x27;</span>,label=<span class="string">&#x27;test data&#x27;</span>)</span><br><span class="line"><span class="comment">#plt.plot(test_X,pred_y,color=&#x27;r&#x27;)</span></span><br><span class="line">plt.legend(loc=<span class="number">2</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Hours&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Scores&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://pic2.zhimg.com/80/v2-61117b8b8c172e696692a69fe3ce062d_1440w.webp"
+                      alt="img"
+                ></p>
+<p>2、导入模型</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line">modelLR=LogisticRegression()</span><br></pre></td></tr></table></figure>
+
+<p>3、训练模型</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">modelLR.fit(train_X,train_y)</span><br></pre></td></tr></table></figure>
+
+<h2 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a><strong>模型评估</strong></h2><p>1、模型评分（即准确率）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">modelLR.score(test_X,test_y)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="number">0.75</span></span><br></pre></td></tr></table></figure>
+
+<p>2、指定某个点的预测情况</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#学习时间确定时，预测为0和1的概率分别为多少？</span></span><br><span class="line">modelLR.predict_proba(<span class="number">3</span>)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">array([[<span class="number">0.36720478</span>, <span class="number">0.63279522</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#学习时间确定时，预测能否通过考试？</span></span><br><span class="line">modelLR.predict(<span class="number">3</span>)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">array([<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+
+<p>3、求出逻辑回归函数并绘制曲线</p>
+<p><em>逻辑回归函数</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#先求出回归函数y=a+bx，再代入逻辑函数中pred_y=1/(1+np.exp(-y))</span></span><br><span class="line">b=modelLR.coef_</span><br><span class="line">a=modelLR.intercept_</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;该模型对应的回归函数为:1/(1+exp-(%f+%f*x))&#x27;</span>%(a,b))</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">该模型对应的回归函数为:<span class="number">1</span>/(<span class="number">1</span>+exp-(-<span class="number">1.527106</span>+<span class="number">0.690444</span>*x))</span><br></pre></td></tr></table></figure>
+
+<p><em>逻辑回归曲线</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#画出相应的逻辑回归曲线</span></span><br><span class="line">plt.scatter(train_X,train_y,color=<span class="string">&#x27;b&#x27;</span>,label=<span class="string">&#x27;train data&#x27;</span>)</span><br><span class="line">plt.scatter(test_X,test_y,color=<span class="string">&#x27;r&#x27;</span>,label=<span class="string">&#x27;test data&#x27;</span>)</span><br><span class="line">plt.plot(test_X,<span class="number">1</span>/(<span class="number">1</span>+np.exp(-(a+b*test_X))),color=<span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">plt.plot(exam_X,<span class="number">1</span>/(<span class="number">1</span>+np.exp(-(a+b*exam_X))),color=<span class="string">&#x27;y&#x27;</span>)</span><br><span class="line">plt.legend(loc=<span class="number">2</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Hours&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Scores&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://pic4.zhimg.com/80/v2-247219e9dabefadfeed7933474eaebbb_1440w.webp"
+                      alt="img"
+                ></p>
+<p>黄色S形曲线代表利用数据集拟合得到的逻辑回归曲线</p>
+<p>4、得到模型混淆矩阵</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> confusion_matrix</span><br><span class="line"><span class="comment">#数值处理</span></span><br><span class="line">pred_y=<span class="number">1</span>/(<span class="number">1</span>+np.exp(-(a+b*test_X)))</span><br><span class="line">pred_y=pd.DataFrame(pred_y)</span><br><span class="line">pred_y=<span class="built_in">round</span>(pred_y,<span class="number">0</span>).astype(<span class="built_in">int</span>)</span><br><span class="line"><span class="comment">#混淆矩阵</span></span><br><span class="line">confusion_matrix(test_y.astype(<span class="built_in">str</span>),pred_y.astype(<span class="built_in">str</span>))</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">array([[<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">       [<span class="number">0</span>, <span class="number">2</span>]])</span><br></pre></td></tr></table></figure>
+
+<p>从混淆矩阵可以看出：</p>
+<ul>
+<li>该模型的准确率ACC为0.75；</li>
+<li>真正率TPR和假正率FPR分别为0.50和0.00，说明该模型对负例的甄别能力更强（如果数据量更多，该指标更有说服性，而本案例中数据较少，因此受随机影响较大）。</li>
+</ul>
+<p>5、绘制模型ROC曲线</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> roc_curve, auc  <span class="comment">###计算roc和auc</span></span><br><span class="line"><span class="comment"># Compute ROC curve and ROC area for each class</span></span><br><span class="line">fpr,tpr,threshold = roc_curve(test_y, pred_y) <span class="comment">###计算真正率和假正率</span></span><br><span class="line">roc_auc = auc(fpr,tpr) <span class="comment">###计算auc的值</span></span><br><span class="line"></span><br><span class="line">plt.figure()</span><br><span class="line">lw = <span class="number">2</span></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">10</span>))</span><br><span class="line">plt.plot(fpr, tpr, color=<span class="string">&#x27;r&#x27;</span>,</span><br><span class="line">         lw=lw, label=<span class="string">&#x27;ROC curve (area = %0.2f)&#x27;</span> % roc_auc) <span class="comment">###假正率为横坐标，真正率为纵坐标做曲线</span></span><br><span class="line">plt.plot([<span class="number">0</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">1</span>], color=<span class="string">&#x27;navy&#x27;</span>, lw=lw, linestyle=<span class="string">&#x27;--&#x27;</span>)</span><br><span class="line">plt.xlim([<span class="number">0.0</span>, <span class="number">1.0</span>])</span><br><span class="line">plt.ylim([<span class="number">0.0</span>, <span class="number">1.0</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;False Positive Rate&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;True Positive Rate&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;Receiver operating characteristic example&#x27;</span>)</span><br><span class="line">plt.legend(loc=<span class="string">&quot;lower right&quot;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://pic3.zhimg.com/80/v2-30b960d57411222d79b41842a3529ea2_1440w.webp"
+                      alt="img"
+                ></p>
+<p>红线以下部分面积等于0.75，即误将一个反例划分为正例。（此处AUC的面积与模型准确率刚好一致，并非总是相等的）</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol>
+<li>理解回归与分类的关系：两者既有区别（三个维度理解），又有联系（将回归方程映射到分类函数）；</li>
+<li>逻辑回归的参数及其含义：准确率（ACC：模型预测准确度）、真正率（TPR：模型将正例分类正确的能力）、假正率（FPR：模型将负例分类正确的能力）、ROC曲线（可以反映模型正确识别正&#x2F;负例的能力，也可利用AUC反映模型准确度）</li>
+</ol>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
+<li><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/48981694" >机器学习之利用Python进行逻辑回归分析<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+
+            </div>
+
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Python/">#Python</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">#数据分析</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/2023/03/12/%E5%95%86%E4%B8%9A%E5%88%86%E6%9E%90%EF%BD%9C%E8%B6%85%E5%B8%82%E5%88%86%E6%9E%90/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">商业分析｜超市分析</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+                <div class="comment-container">
+                    
+<div class="comments-container">
+    <div id="comments-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments"></i>&nbsp;Comments
+    </div>
+    
+        
+            
+
+    <div class="valine-container">
+        <script  src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+          function loadValine() {
+
+            const config = {
+              el: '#vcomments',
+              appId: 'LTgZzPPbq5jCkagzeI9TnhVV-gzGzoHsz',
+              appKey: 'akDnGyiE0qXqen4IP2MfEOiy',
+              meta: ['nick', 'mail', 'link'],
+              avatar: 'wavatar',
+              enableQQ: true,
+              placeholder: '👻尽情吐槽吧～',
+              lang: 'ch'.toLowerCase()
+            }
+
+            if ('') {
+              config.serverURLs = ''
+            }
+
+            new Valine(config)
+
+            function getAuthor(language) {
+              switch (language) {
+                case 'en':
+                  return 'Author'
+                case 'zh-CN':
+                  return '博主'
+                default:
+                  return 'Master'
+              }
+            }
+
+            // Add "Author" identify
+            const getValineDomTimer = setInterval(() => {
+              const vcards = document.querySelectorAll('#vcomments .vcards .vcard')
+              if (vcards.length > 0) {
+                let author = 'Syaoran Li'
+
+                if (author) {
+                  for (let vcard of vcards) {
+                    const vnick_dom = vcard.querySelector('.vhead .vnick')
+                    const vnick = vnick_dom.innerHTML
+                    if (vnick === author) {
+                      vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                    }
+                  }
+                }
+                clearInterval(getValineDomTimer)
+              } else {
+                clearInterval(getValineDomTimer)
+              }
+            }, 2000)
+          }
+
+          if ('false' === 'true') {
+            const loadValineTimeout = setTimeout(() => {
+              loadValine()
+              clearTimeout(loadValineTimeout)
+            }, 1000)
+          } else {
+            window.addEventListener('DOMContentLoaded', loadValine)
+          }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E5%92%8C%E5%9B%9E%E5%BD%92"><span class="nav-number">1.</span> <span class="nav-text">分类和回归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Logistic-Regression-%E5%92%8C-Linear-Regression"><span class="nav-number">1.1.</span> <span class="nav-text">Logistic Regression 和 Linear Regression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Support-Vector-Regression-%E5%92%8C-Support-Vector-Machine"><span class="nav-number">1.2.</span> <span class="nav-text">Support Vector Regression 和 Support Vector Machine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%BA%94%E6%9C%89%E5%93%AA%E4%BA%9B%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text">相应有哪些常用方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text">逻辑回归分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E6%80%9D%E6%83%B3"><span class="nav-number">2.1.</span> <span class="nav-text">主要思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.2.</span> <span class="nav-text">原理介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87"><span class="nav-number">2.3.</span> <span class="nav-text">评价指标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B7%E6%B7%86%E7%9F%A9%E9%98%B5"><span class="nav-number">2.3.1.</span> <span class="nav-text">混淆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%86%E7%A1%AE%E7%8E%87ACC%E3%80%81%E7%9C%9F%E6%AD%A3%E7%8E%87TPR%E5%8F%8A%E5%81%87%E6%AD%A3%E7%8E%87FPR"><span class="nav-number">2.3.2.</span> <span class="nav-text">准确率ACC、真正率TPR及假正率FPR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ROC%E6%9B%B2%E7%BA%BF"><span class="nav-number">2.3.3.</span> <span class="nav-text">ROC曲线</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%9A%84Python%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.</span> <span class="nav-text">逻辑回归的Python实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E5%87%BA%E9%97%AE%E9%A2%98"><span class="nav-number">3.1.</span> <span class="nav-text">提出问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%A7%A3%E6%95%B0%E6%8D%AE"><span class="nav-number">3.2.</span> <span class="nav-text">理解数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.3.</span> <span class="nav-text">构建模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0"><span class="nav-number">3.4.</span> <span class="nav-text">模型评估</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2023</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">Syaoran Li</a>
+            
+        </div>
+        
+            <script async 
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+                    Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-block.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/post-helper.js"></script>
+
+        
+            
+<script src="/js/libs/anime.min.js"></script>
+
+        
+        
+            
+<script src="/js/toc.js"></script>
+
+        
+    
+</div>
+
+
+
+</body>
+</html>
