@@ -9,7 +9,7 @@
     
     <title>
         
-            数据分析|DAU下降分析 |
+            SQL-字符串相关 |
         
         Syaoran:)
     </title>
@@ -183,7 +183,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">数据分析|DAU下降分析</span>
+                <span class="title-hover-animation">SQL-字符串相关</span>
             </div>
 
             
@@ -203,15 +203,26 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-03-08 08:17:09</span>
-        <span class="mobile">2023-03-08 08:17</span>
+        <span class="pc">2023-02-07 12:47:41</span>
+        <span class="mobile">2023-02-07 12:47</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-03-08 14:02:53</span>
+        <span class="pc">2023-03-20 10:01:18</span>
     </span>
     
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
     
         <span class="article-tags article-meta-item">
@@ -219,7 +230,11 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a>&nbsp;
+                        <a href="/tags/SQL/">SQL</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,7 +244,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>901 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>785 Words</span>
         </span>
     
     
@@ -252,61 +267,224 @@
             <div class="article-content keep-markdown-body">
                 
 
-                <h1 id="产品日活-DAU-下降，该如何分析"><a href="#产品日活-DAU-下降，该如何分析" class="headerlink" title="产品日活(DAU)下降，该如何分析"></a>产品日活(DAU)下降，该如何分析</h1><blockquote>
-<p>案例：例如网易新闻APP日活突然下降5%，需要尽快排查一下数据下跌的原因。</p>
-</blockquote>
-<h2 id="分析框架和逻辑思维"><a href="#分析框架和逻辑思维" class="headerlink" title="分析框架和逻辑思维"></a>分析框架和逻辑思维</h2><p>![image-20230308082432891](&#x2F;Users&#x2F;xiaoyu&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230308082432891.png)</p>
-<p>可以分为五个步骤。</p>
-<p><strong>第一，结合以往经验及各种信息，对数据的异常作出假设。</strong>比如假期效应、热点事件、活动影响、政策影响和统计口径变化等。</p>
-<p><strong>第二，确认数据的真实性。</strong>可以将时间轴拉长至3个月，做同比和环比，看是近期异常还是历史异常；还需要看与该指标关联的其他指标是否异常，并找关键人员比如产品和研发确认数据的真实性。</p>
-<p><strong>第三，对数据从不同的维度进行拆分来验证假设。</strong>比如从新用户&#x2F;老用户、新版本&#x2F;老版本、登录渠道和入口等维度。</p>
-<p><strong>第四，分析外部原因和内部原因。</strong>外部原因考虑政治、经济和社会因素，比如政策、竞品APP数据和社会事件影响；内部影响从产品、研发和运营入手，并注意统计口径是发生了变化，比如业务逻辑的改变和指标计算方式的变化。</p>
-<p><strong>第五，需要将当前的结论文档化，并持续跟踪后期的数据是否再次异常。</strong>确认无误之后给相关人员发邮件输出影响范围和分析的结论等等。</p>
-<h2 id="1-对数据异常原因做出假设，利用数据验证"><a href="#1-对数据异常原因做出假设，利用数据验证" class="headerlink" title="1. 对数据异常原因做出假设，利用数据验证"></a>1. 对数据异常原因做出假设，利用数据验证</h2><p>影响DAU因素较多，对所有维度直接拆解耗时耗力。所以需要<strong>结合以往经验及各种信息，对数据异常的原因做出假设</strong>，然后对数据<strong>从不同维度拆分来验证假设</strong>。可能随着之前的假设的验证不断进行新的假设，直到<strong>定位原因</strong>。</p>
-<p><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://pic3.zhimg.com/80/v2-22a204d699aa50233b3dee6f2264545e_1440w.jpg"
-                      alt="img"
-                ></p>
-<h2 id="2-确认数据真实性"><a href="#2-确认数据真实性" class="headerlink" title="2. 确认数据真实性"></a>2. 确认数据真实性</h2><ul>
-<li>将时间轴拉长(3个月)，做同比和环比，看近期异常还是历史异常；</li>
-<li>查看与该指标关联的其他指标是否异常；</li>
-<li>找数据流相关产品和研发确实数据真实性。</li>
-</ul>
-<p><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://pic1.zhimg.com/80/v2-9244e21224593a51db9eefab77969a2c_1440w.webp"
-                      alt="img"
-                ></p>
-<h2 id="3-常见拆分维度"><a href="#3-常见拆分维度" class="headerlink" title="3. 常见拆分维度"></a>3. 常见拆分维度</h2><p><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://pic2.zhimg.com/80/v2-86283af0164e49c1459e33431baa3c65_1440w.webp"
-                      alt="img"
-                ></p>
-<p><strong>根据以上维度拆分之后，每项数据都需要和历史数据做对比，计算影响系数。</strong></p>
-<p>影响系数&#x3D;(今日数据−昨日数据)&#x2F;(今日总量−昨日总量)</p>
-<p><strong>影响系数越大，说明此处为主要原因所在。</strong></p>
-<p>通过上述维度进行初步拆分，可以<strong>大致定位数据异常范围</strong>。</p>
-<h2 id="4-外部原因分析"><a href="#4-外部原因分析" class="headerlink" title="4. 外部原因分析"></a>4. 外部原因分析</h2><p>外部：外部原因分析可以根据<strong>PEST（政治、经济、社会、技术）模型</strong>进行分析。</p>
-<p><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://pic1.zhimg.com/80/v2-cc5ad446c4efa076975b2fbaafb3ea54_1440w.webp"
-                      alt="img"
-                ></p>
-<h2 id="5-内部原因分析"><a href="#5-内部原因分析" class="headerlink" title="5. 内部原因分析"></a>5. 内部原因分析</h2><p>通过初步分析定位范围之后，需要进行进一步的排查，一般从三个维度来分析：<strong>产品、技术、运营</strong>；<strong>可以和这几个人一起拉一个会讨论一下</strong>。同时应注意<strong>数据统计口径</strong>是否发生变化。</p>
-<p><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://pic1.zhimg.com/80/v2-c820282ce239ee9ae366cabcb5cc950c_1440w.webp"
-                      alt="img"
-                ></p>
-<h2 id="6-总结"><a href="#6-总结" class="headerlink" title="6. 总结"></a>6. 总结</h2><p>所以我们整个的分析流程大致为：</p>
-<p><strong>先结合以往数据异常进行假设 —— 在一个假设得到验证之后 —— 从不同维度进行拆解，确定异常范围 —— 从产品、运营、技术侧逐一排查，最终找到原因。</strong></p>
-<p>以上分析框架不仅局限于DAU波动，对于数据异常类问题即可根据以上模型进行分析。</p>
+                <h1 id="SQL30-统计每种性别的人数"><a href="#SQL30-统计每种性别的人数" class="headerlink" title="SQL30 统计每种性别的人数"></a><strong>SQL30</strong> <strong>统计每种性别的人数</strong></h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>题目：现在运营举办了一场比赛，收到了一些参赛申请，表数据记录形式如下所示，现在运营想要统计每个性别的用户分别有多少参赛者，请取出相应结果</p>
+<p>示例：user_submit</p>
+<table>
+<thead>
+<tr>
+<th>device_id</th>
+<th>profile</th>
+<th>blog_url</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2138</td>
+<td>180cm,75kg,27,male</td>
+<td>http:&#x2F;url&#x2F;bigboy777</td>
+</tr>
+<tr>
+<td>3214</td>
+<td>165cm,45kg,26,female</td>
+<td>http:&#x2F;url&#x2F;kittycc</td>
+</tr>
+<tr>
+<td>6543</td>
+<td>178cm,65kg,25,male</td>
+<td>http:&#x2F;url&#x2F;tiger</td>
+</tr>
+<tr>
+<td>4321</td>
+<td>171cm,55kg,23,female</td>
+<td>http:&#x2F;url&#x2F;uhksd</td>
+</tr>
+<tr>
+<td>2131</td>
+<td>168cm,45kg,22,female</td>
+<td>http:&#x2F;urlsydney</td>
+</tr>
+</tbody></table>
+<p>根据示例，你的查询应返回以下结果：</p>
+<table>
+<thead>
+<tr>
+<th>gender</th>
+<th>number</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>male</td>
+<td>2</td>
+</tr>
+<tr>
+<td>female</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<hr>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> substring_index(profile, <span class="string">&#x27;,&#x27;</span>, <span class="number">-1</span>) <span class="keyword">as</span> gender, <span class="built_in">count</span>(device_id)</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> gender</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="SQL31-提取博客URL中的用户名"><a href="#SQL31-提取博客URL中的用户名" class="headerlink" title="SQL31 提取博客URL中的用户名"></a><strong>SQL31</strong> <strong>提取博客URL中的用户名</strong></h1><h2 id="描述-1"><a href="#描述-1" class="headerlink" title="描述"></a>描述</h2><p>题目：对于申请参与比赛的用户，blog_url字段中url字符后的字符串为用户个人博客的用户名，现在运营想要把用户的个人博客用户字段提取出单独记录为一个新的字段，请取出所需数据。</p>
+<p>示例：user_submit</p>
+<table>
+<thead>
+<tr>
+<th>device_id</th>
+<th>profile</th>
+<th>blog_url</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2138</td>
+<td>180cm,75kg,27,male</td>
+<td>http:&#x2F;ur&#x2F;bisdgboy777</td>
+</tr>
+<tr>
+<td>3214</td>
+<td>165cm,45kg,26,female</td>
+<td>http:&#x2F;url&#x2F;dkittycc</td>
+</tr>
+<tr>
+<td>6543</td>
+<td>178cm,65kg,25,male</td>
+<td>http:&#x2F;ur&#x2F;tigaer</td>
+</tr>
+<tr>
+<td>4321</td>
+<td>171 cm,55kg,23,female</td>
+<td>http:&#x2F;url&#x2F;uhksd</td>
+</tr>
+<tr>
+<td>2131</td>
+<td>168cm,45kg,22,female</td>
+<td>http:&#x2F;url&#x2F;sydney</td>
+</tr>
+</tbody></table>
+<p>根据示例，你的查询应返回以下结果：</p>
+<table>
+<thead>
+<tr>
+<th>device_id</th>
+<th>user_name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2138</td>
+<td>bisdgboy777</td>
+</tr>
+<tr>
+<td>3214</td>
+<td>dkittycc</td>
+</tr>
+<tr>
+<td>6543</td>
+<td>tigaer</td>
+</tr>
+<tr>
+<td>4321</td>
+<td>uhsksd</td>
+</tr>
+<tr>
+<td>2131</td>
+<td>sydney</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="提取某个字符一般有四种做法："><a href="#提取某个字符一般有四种做法：" class="headerlink" title="提取某个字符一般有四种做法："></a>提取某个字符一般有四种做法：</h3><ol>
+<li><p><strong>trim()</strong></p>
+<p>trim() 是直接更改相同格式的一列，删除这一列内容中的统一部分，然后重命名：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, <span class="built_in">trim</span>(<span class="string">&#x27;http:/url/&#x27;</span> <span class="keyword">from</span> blog_url) <span class="keyword">as</span> user_name</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br></pre></td></tr></table></figure>
+
+<p>​	</p>
+</li>
+<li><p><strong>substring_index()</strong></p>
+<p>substring_index() 是将字符串切割，1表示保留字符串的左边👈，-1表示保留字符串的右边👉：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, substring_index(blog_url, <span class="string">&#x27;/url/&#x27;</span>, <span class="number">-1</span>) <span class="keyword">as</span> user_name</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br></pre></td></tr></table></figure>
+
+<p>还有一个用法是计数：</p>
+<p>SUBSTRING_INDEX(str,delim,count) 返回从字符串str分隔符 delim 在计数发生前的子字符串。如果计数是正的，则返回一切到最终定界符(从左边算起)的左侧。如果count是负数，则返回一切最终定界符(从右边算起)的右侧。SUBSTRING_INDEX() 搜寻在delim时进行区分大小写的匹配。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SUBSTRING_INDEX(<span class="string">&#x27;www.somewebsite.com&#x27;</span>,<span class="string">&#x27;.&#x27;</span>,<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<p>Output: <code>&#39;www.somewebsite&#39;</code></p>
+</li>
+<li><p><strong>substr()</strong></p>
+<p>substr() 是用具体位置（数字）来表示从哪开始截取的，参数里还包括截取的长度：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, substr(blog_url, <span class="number">11</span>, length(blog_url)<span class="number">-10</span>) <span class="keyword">as</span> user_name</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p><strong>replace()</strong></p>
+<p>replace() 就是替换函数：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sleect device_id, replace(blog_url, <span class="string">&#x27;http:/url/&#x27;</span>, <span class="string">&#x27;&#x27;</span>) <span class="keyword">as</span> user_name</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="SQL32-截取出年龄"><a href="#SQL32-截取出年龄" class="headerlink" title="SQL32 截取出年龄"></a><strong>SQL32</strong> <strong>截取出年龄</strong></h1><h2 id="描述-2"><a href="#描述-2" class="headerlink" title="描述"></a>描述</h2><p>题目：现在运营举办了一场比赛，收到了一些参赛申请，表数据记录形式如下所示，现在运营想要统计每个年龄的用户分别有多少参赛者，请取出相应结果</p>
+<p>示例：user_submit</p>
+<table>
+<thead>
+<tr>
+<th>device_id</th>
+<th>profile</th>
+<th>blog_url</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2138</td>
+<td>180cm,75kg,27,male</td>
+<td>http:&#x2F;ur&#x2F;bigboy777</td>
+</tr>
+<tr>
+<td>3214</td>
+<td>165cm,45kg,26,female</td>
+<td>http:&#x2F;url&#x2F;kittycc</td>
+</tr>
+<tr>
+<td>6543</td>
+<td>178cm,65kg,25,male</td>
+<td>http:&#x2F;url&#x2F;tiger</td>
+</tr>
+<tr>
+<td>4321</td>
+<td>171cm,55kg,23,female</td>
+<td>http:&#x2F;url&#x2F;uhksd</td>
+</tr>
+<tr>
+<td>2131</td>
+<td>168cm,45kg,22,female</td>
+<td>http:&#x2F;url&#x2F;sydney</td>
+</tr>
+</tbody></table>
+<p>根据示例，你的查询应返回以下结果：</p>
+<table>
+<thead>
+<tr>
+<th>age</th>
+<th>number</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>27</td>
+<td>1</td>
+</tr>
+<tr>
+<td>26</td>
+<td>1</td>
+</tr>
+<tr>
+<td>25</td>
+<td>1</td>
+</tr>
+<tr>
+<td>23</td>
+<td>1</td>
+</tr>
+<tr>
+<td>22</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> substring_index(substring_index(profile, <span class="string">&#x27;,&#x27;</span>, <span class="number">-2</span>), <span class="string">&#x27;,&#x27;</span>, <span class="number">1</span>) <span class="keyword">as</span> age, <span class="built_in">count</span>(device_id)</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> age</span><br></pre></td></tr></table></figure>
+
 
             </div>
 
@@ -316,7 +494,11 @@
                 <ul class="post-tags-box">
                     
                         <li class="tag-item">
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">#数据分析</a>&nbsp;
+                            <a href="/tags/SQL/">#SQL</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -328,13 +510,13 @@
                         <div class="article-prev">
                             <a class="prev"
                                rel="prev"
-                               href="/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/"
+                               href="/2023/02/07/SQL%EF%BD%9C%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"
                             >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                                 <span class="title flex-center">
-                                <span class="post-nav-title-item">数据分析｜数据指标口径不统一</span>
+                                <span class="post-nav-title-item">SQL｜刷题笔记</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                             </a>
@@ -344,10 +526,10 @@
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/"
+                               href="/2023/02/07/SQL%EF%BD%9C%E8%AE%A1%E7%AE%97%E7%94%A8%E6%88%B7%E6%AC%A1%E6%97%A5%E7%95%99%E5%AD%98%E7%8E%87/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">SQL｜复习1</span>
+                                <span class="post-nav-title-item">SQL｜计算用户留存率</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -452,7 +634,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%A7%E5%93%81%E6%97%A5%E6%B4%BB-DAU-%E4%B8%8B%E9%99%8D%EF%BC%8C%E8%AF%A5%E5%A6%82%E4%BD%95%E5%88%86%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">产品日活(DAU)下降，该如何分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6%E5%92%8C%E9%80%BB%E8%BE%91%E6%80%9D%E7%BB%B4"><span class="nav-number">1.1.</span> <span class="nav-text">分析框架和逻辑思维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AF%B9%E6%95%B0%E6%8D%AE%E5%BC%82%E5%B8%B8%E5%8E%9F%E5%9B%A0%E5%81%9A%E5%87%BA%E5%81%87%E8%AE%BE%EF%BC%8C%E5%88%A9%E7%94%A8%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81"><span class="nav-number">1.2.</span> <span class="nav-text">1. 对数据异常原因做出假设，利用数据验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%A1%AE%E8%AE%A4%E6%95%B0%E6%8D%AE%E7%9C%9F%E5%AE%9E%E6%80%A7"><span class="nav-number">1.3.</span> <span class="nav-text">2. 确认数据真实性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%B8%B8%E8%A7%81%E6%8B%86%E5%88%86%E7%BB%B4%E5%BA%A6"><span class="nav-number">1.4.</span> <span class="nav-text">3. 常见拆分维度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%A4%96%E9%83%A8%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90"><span class="nav-number">1.5.</span> <span class="nav-text">4. 外部原因分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%86%85%E9%83%A8%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90"><span class="nav-number">1.6.</span> <span class="nav-text">5. 内部原因分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E6%80%BB%E7%BB%93"><span class="nav-number">1.7.</span> <span class="nav-text">6. 总结</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL30-%E7%BB%9F%E8%AE%A1%E6%AF%8F%E7%A7%8D%E6%80%A7%E5%88%AB%E7%9A%84%E4%BA%BA%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">SQL30 统计每种性别的人数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">描述</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL31-%E6%8F%90%E5%8F%96%E5%8D%9A%E5%AE%A2URL%E4%B8%AD%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-number">2.</span> <span class="nav-text">SQL31 提取博客URL中的用户名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0-1"><span class="nav-number">2.1.</span> <span class="nav-text">描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E5%8F%96%E6%9F%90%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%80%E8%88%AC%E6%9C%89%E5%9B%9B%E7%A7%8D%E5%81%9A%E6%B3%95%EF%BC%9A"><span class="nav-number">2.1.1.</span> <span class="nav-text">提取某个字符一般有四种做法：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL32-%E6%88%AA%E5%8F%96%E5%87%BA%E5%B9%B4%E9%BE%84"><span class="nav-number">3.</span> <span class="nav-text">SQL32 截取出年龄</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0-2"><span class="nav-number">3.1.</span> <span class="nav-text">描述</span></a></li></ol></li></ol>
     </div>
 </div>
 

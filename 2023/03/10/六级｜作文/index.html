@@ -9,7 +9,7 @@
     
     <title>
         
-            数据分析|DAU下降分析 |
+            六级｜作文 |
         
         Syaoran:)
     </title>
@@ -183,7 +183,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">数据分析|DAU下降分析</span>
+                <span class="title-hover-animation">六级｜作文</span>
             </div>
 
             
@@ -203,15 +203,26 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-03-08 08:17:09</span>
-        <span class="mobile">2023-03-08 08:17</span>
+        <span class="pc">2023-03-10 13:32:03</span>
+        <span class="mobile">2023-03-10 13:32</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-03-08 14:02:53</span>
+        <span class="pc">2023-03-20 10:00:20</span>
     </span>
     
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%85%AD%E7%BA%A7/">六级</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
     
         <span class="article-tags article-meta-item">
@@ -219,7 +230,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a>&nbsp;
+                        <a href="/tags/%E8%8B%B1%E8%AF%AD/">英语</a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,12 +240,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>901 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.1k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>3 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>5 Mins</span>
         </span>
     
     
@@ -252,61 +263,75 @@
             <div class="article-content keep-markdown-body">
                 
 
-                <h1 id="产品日活-DAU-下降，该如何分析"><a href="#产品日活-DAU-下降，该如何分析" class="headerlink" title="产品日活(DAU)下降，该如何分析"></a>产品日活(DAU)下降，该如何分析</h1><blockquote>
-<p>案例：例如网易新闻APP日活突然下降5%，需要尽快排查一下数据下跌的原因。</p>
-</blockquote>
-<h2 id="分析框架和逻辑思维"><a href="#分析框架和逻辑思维" class="headerlink" title="分析框架和逻辑思维"></a>分析框架和逻辑思维</h2><p>![image-20230308082432891](&#x2F;Users&#x2F;xiaoyu&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230308082432891.png)</p>
-<p>可以分为五个步骤。</p>
-<p><strong>第一，结合以往经验及各种信息，对数据的异常作出假设。</strong>比如假期效应、热点事件、活动影响、政策影响和统计口径变化等。</p>
-<p><strong>第二，确认数据的真实性。</strong>可以将时间轴拉长至3个月，做同比和环比，看是近期异常还是历史异常；还需要看与该指标关联的其他指标是否异常，并找关键人员比如产品和研发确认数据的真实性。</p>
-<p><strong>第三，对数据从不同的维度进行拆分来验证假设。</strong>比如从新用户&#x2F;老用户、新版本&#x2F;老版本、登录渠道和入口等维度。</p>
-<p><strong>第四，分析外部原因和内部原因。</strong>外部原因考虑政治、经济和社会因素，比如政策、竞品APP数据和社会事件影响；内部影响从产品、研发和运营入手，并注意统计口径是发生了变化，比如业务逻辑的改变和指标计算方式的变化。</p>
-<p><strong>第五，需要将当前的结论文档化，并持续跟踪后期的数据是否再次异常。</strong>确认无误之后给相关人员发邮件输出影响范围和分析的结论等等。</p>
-<h2 id="1-对数据异常原因做出假设，利用数据验证"><a href="#1-对数据异常原因做出假设，利用数据验证" class="headerlink" title="1. 对数据异常原因做出假设，利用数据验证"></a>1. 对数据异常原因做出假设，利用数据验证</h2><p>影响DAU因素较多，对所有维度直接拆解耗时耗力。所以需要<strong>结合以往经验及各种信息，对数据异常的原因做出假设</strong>，然后对数据<strong>从不同维度拆分来验证假设</strong>。可能随着之前的假设的验证不断进行新的假设，直到<strong>定位原因</strong>。</p>
-<p><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://pic3.zhimg.com/80/v2-22a204d699aa50233b3dee6f2264545e_1440w.jpg"
-                      alt="img"
-                ></p>
-<h2 id="2-确认数据真实性"><a href="#2-确认数据真实性" class="headerlink" title="2. 确认数据真实性"></a>2. 确认数据真实性</h2><ul>
-<li>将时间轴拉长(3个月)，做同比和环比，看近期异常还是历史异常；</li>
-<li>查看与该指标关联的其他指标是否异常；</li>
-<li>找数据流相关产品和研发确实数据真实性。</li>
+                <h1 id="✍️-万能模板-写作句型"><a href="#✍️-万能模板-写作句型" class="headerlink" title="✍️ 万能模板 + 写作句型"></a>✍️ 万能模板 + 写作句型</h1><h2 id="名言警句类"><a href="#名言警句类" class="headerlink" title="名言警句类"></a>名言警句类</h2><ul>
+<li>Reading this famous saying, we can naturally perceive its connotation that+名言警句内含的道理</li>
+<li>This famous saying conveys a universal fact&#x2F;phenomenon that+名言警句内含的道理</li>
 </ul>
-<p><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://pic1.zhimg.com/80/v2-9244e21224593a51db9eefab77969a2c_1440w.webp"
-                      alt="img"
-                ></p>
-<h2 id="3-常见拆分维度"><a href="#3-常见拆分维度" class="headerlink" title="3. 常见拆分维度"></a>3. 常见拆分维度</h2><p><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://pic2.zhimg.com/80/v2-86283af0164e49c1459e33431baa3c65_1440w.webp"
-                      alt="img"
-                ></p>
-<p><strong>根据以上维度拆分之后，每项数据都需要和历史数据做对比，计算影响系数。</strong></p>
-<p>影响系数&#x3D;(今日数据−昨日数据)&#x2F;(今日总量−昨日总量)</p>
-<p><strong>影响系数越大，说明此处为主要原因所在。</strong></p>
-<p>通过上述维度进行初步拆分，可以<strong>大致定位数据异常范围</strong>。</p>
-<h2 id="4-外部原因分析"><a href="#4-外部原因分析" class="headerlink" title="4. 外部原因分析"></a>4. 外部原因分析</h2><p>外部：外部原因分析可以根据<strong>PEST（政治、经济、社会、技术）模型</strong>进行分析。</p>
-<p><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://pic1.zhimg.com/80/v2-cc5ad446c4efa076975b2fbaafb3ea54_1440w.webp"
-                      alt="img"
-                ></p>
-<h2 id="5-内部原因分析"><a href="#5-内部原因分析" class="headerlink" title="5. 内部原因分析"></a>5. 内部原因分析</h2><p>通过初步分析定位范围之后，需要进行进一步的排查，一般从三个维度来分析：<strong>产品、技术、运营</strong>；<strong>可以和这几个人一起拉一个会讨论一下</strong>。同时应注意<strong>数据统计口径</strong>是否发生变化。</p>
-<p><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://pic1.zhimg.com/80/v2-c820282ce239ee9ae366cabcb5cc950c_1440w.webp"
-                      alt="img"
-                ></p>
-<h2 id="6-总结"><a href="#6-总结" class="headerlink" title="6. 总结"></a>6. 总结</h2><p>所以我们整个的分析流程大致为：</p>
-<p><strong>先结合以往数据异常进行假设 —— 在一个假设得到验证之后 —— 从不同维度进行拆解，确定异常范围 —— 从产品、运营、技术侧逐一排查，最终找到原因。</strong></p>
-<p>以上分析框架不仅局限于DAU波动，对于数据异常类问题即可根据以上模型进行分析。</p>
+<h2 id="漫画类"><a href="#漫画类" class="headerlink" title="漫画类"></a>漫画类</h2><ul>
+<li>It is vividly&#x2F;clearly depicted in the picture that+图画中的人物、话语或事件</li>
+<li>Given is a simple&#x2F;ironical but thought-provoking&#x2F;enlightening picture&#x2F;cartoon, in which+图画中的人物、话语或事件</li>
+<li>What is clearly described in the drawing above is that+图画中的人物、话语或事件</li>
+<li>The cartoon subtly and symbolically depicts a thought-provoking scenario in which+图画中的人物、话语或事件</li>
+</ul>
+<h2 id="不同观点"><a href="#不同观点" class="headerlink" title="不同观点"></a>不同观点</h2><ul>
+<li>People’s views on……vary from person to person. Some hold that……However, others believe that……（人们对……的观点因人而异，有些人认为……然而其他人却认为……</li>
+<li>People may have different opinions on……（人们对……可能会持有不同见解）</li>
+<li>Attitudes towards ……vary from person to person.&#x3D;&#x3D;Different people hold different attitudes towards……（人们对待……的态度因人而异）</li>
+<li>There are different opinions among people as to……（对于……人们的观点大不相同）</li>
+</ul>
+<h2 id="建议句"><a href="#建议句" class="headerlink" title="建议句"></a>建议句</h2><ul>
+<li>It is high time that we put an end to the (trend).（该是我们停止这一趋势的时候了）</li>
+<li>There is no doubt that enough concern must be paid to the problem of……（毫无疑问，对……问题应予以足够重视）</li>
+<li>Obviously ,if we want to do something … it is essential that……（显然，如果我们想要做某事，很重要的是……）</li>
+<li>Only in this way can we ……（只有这样，我们才能……） </li>
+<li>Spare no effort to + V （不遗余力的）</li>
+</ul>
+<h2 id="采取措施"><a href="#采取措施" class="headerlink" title="采取措施"></a>采取措施</h2><ul>
+<li>We should take some effective measures.我们应该采取有效措施</li>
+<li>We should try our best to overcome&#x2F;conquer the difficulties.我们应该尽最大努力去克服困难</li>
+<li>We should do our utmost in doing sth.我们应该尽力去做……</li>
+<li>We should solve the problems that we are confronted&#x2F;faced with.我们应该解决我们面临的困难</li>
+</ul>
+<h2 id="常用英语谚语"><a href="#常用英语谚语" class="headerlink" title="常用英语谚语"></a>常用英语谚语</h2><ol>
+<li><p>Actions speak louder than words.事实胜于雄辩</p>
+</li>
+<li><p>All is not gold that glitters.发光的未必都是金子</p>
+</li>
+<li><p>All roads lead to Rome.条条大路通罗马</p>
+</li>
+<li><p>A good beginning is half done.良好的开端是成功的一半</p>
+</li>
+<li><p>Every advantage has its disadvantage有利必有弊</p>
+</li>
+<li><p>A miss is as good as a mile.失之毫厘，差之千里</p>
+</li>
+<li><p>Failure is the mother of success.失败是成功之母</p>
+</li>
+<li><p><strong>Industry</strong> is the parent of success.勤奋是成功之母</p>
+</li>
+<li><p>It is never too old to learn.活到老，学到老</p>
+</li>
+<li><p>Knowledge is power.知识就是力量</p>
+</li>
+<li><p>Nothing in the world is difficult for one who sets his mind to it.世上无难事，只怕有心人</p>
+</li>
+</ol>
+<h1 id="✍️写作思路技巧"><a href="#✍️写作思路技巧" class="headerlink" title="✍️写作思路技巧"></a>✍️写作思路技巧</h1><ol>
+<li><p>无论是名言警句还是漫画作文都要坚持「由表及里，由浅入深」的原则，将话题和某一社会现象、问题联系，或者论述某一重要素质的重要性（例如坚强意志力、好奇心等）。</p>
+</li>
+<li><p>漫画作文首段描述图画，不做论述；二段从原因、利弊、重要性方面论述，并加以具体例证。尾段重申观点，并提出建议措施。</p>
+</li>
+<li><p><strong>文字形式的作文首段破解文字含义，将抽象的名言或警句具体化。二段是将话题联系现实生活论述相关的社会问题或者能力素质的原因、现象、背景、重要性、利弊等。尾段再次重申观点加上建议措施即可。</strong></p>
+</li>
+</ol>
+<h1 id="✍️真题范文实例"><a href="#✍️真题范文实例" class="headerlink" title="✍️真题范文实例"></a>✍️真题范文实例</h1><p><strong>网络对人际交流的影响&gt;&gt;</strong></p>
+<p>Directions: For this part, you are allowed 30 minutes to write a short essay based on the picture below. You should start your essay with a brief account of <em>the impact of the Internet on the way people communicate and then explain whether electronic communication can replace face-to-face contact</em>. You should write at least 120 words but no more than 180 words.</p>
+<p><strong>首段：图画联系主题&gt;&gt;</strong></p>
+<p>Apparently, this cartoon can be naturally associated with the impact of the Internet on the way people communicate: Internet makes our communication convenient, but if <strong>individuals</strong> intend to <strong>maintain close and harmonious relationship with others,</strong> it is not <strong>advisable</strong> for them to chat <strong>merely</strong> by the Internet.</p>
+<p><strong>二段：现象+危害&gt;&gt;</strong></p>
+<p>In <strong>contemporary</strong> society, it has become a trend for <strong>a host of youngsters</strong> to spend much time in playing PC games, QQ and Wechat. Meanwhile, an increasing number of parents find it rather difficult to have opportunities to chat with teenagers face to face, because of Internet. A case in point is the guy and his parents: he seldom sees his parents, and when his computer crashes, he will come downstairs to see his parents. It is the Internet that does not enable teenagers to spend adequate time in caring about parents and significant things. <strong>As a matter of fact, intelligent people in large numbers have come to realize the negative influences of Internet: cold or indifferent relationship.</strong></p>
+<p><strong>尾段：观点+结论&gt;&gt;</strong></p>
+<p>As a college student, I am <strong>convinced</strong> that it <strong>is of great necessity</strong> for youngsters to strengthen our communication in real life. <strong>Do bear in mind</strong>: electronic communication can never replace face-to-face contact.</p>
 
             </div>
 
@@ -316,7 +341,7 @@
                 <ul class="post-tags-box">
                     
                         <li class="tag-item">
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">#数据分析</a>&nbsp;
+                            <a href="/tags/%E8%8B%B1%E8%AF%AD/">#英语</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -328,13 +353,13 @@
                         <div class="article-prev">
                             <a class="prev"
                                rel="prev"
-                               href="/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/"
+                               href="/2023/03/10/%E5%95%86%E4%B8%9A%E5%88%86%E6%9E%90%EF%BD%9CSaaS/"
                             >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                                 <span class="title flex-center">
-                                <span class="post-nav-title-item">数据分析｜数据指标口径不统一</span>
+                                <span class="post-nav-title-item">商业分析｜SaaS</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                             </a>
@@ -344,10 +369,10 @@
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/"
+                               href="/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BD%9C%E5%B0%8F%E7%B1%B3/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">SQL｜复习1</span>
+                                <span class="post-nav-title-item">数据分析面试题｜小米</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -452,7 +477,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%A7%E5%93%81%E6%97%A5%E6%B4%BB-DAU-%E4%B8%8B%E9%99%8D%EF%BC%8C%E8%AF%A5%E5%A6%82%E4%BD%95%E5%88%86%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">产品日活(DAU)下降，该如何分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6%E5%92%8C%E9%80%BB%E8%BE%91%E6%80%9D%E7%BB%B4"><span class="nav-number">1.1.</span> <span class="nav-text">分析框架和逻辑思维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AF%B9%E6%95%B0%E6%8D%AE%E5%BC%82%E5%B8%B8%E5%8E%9F%E5%9B%A0%E5%81%9A%E5%87%BA%E5%81%87%E8%AE%BE%EF%BC%8C%E5%88%A9%E7%94%A8%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81"><span class="nav-number">1.2.</span> <span class="nav-text">1. 对数据异常原因做出假设，利用数据验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%A1%AE%E8%AE%A4%E6%95%B0%E6%8D%AE%E7%9C%9F%E5%AE%9E%E6%80%A7"><span class="nav-number">1.3.</span> <span class="nav-text">2. 确认数据真实性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%B8%B8%E8%A7%81%E6%8B%86%E5%88%86%E7%BB%B4%E5%BA%A6"><span class="nav-number">1.4.</span> <span class="nav-text">3. 常见拆分维度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%A4%96%E9%83%A8%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90"><span class="nav-number">1.5.</span> <span class="nav-text">4. 外部原因分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%86%85%E9%83%A8%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90"><span class="nav-number">1.6.</span> <span class="nav-text">5. 内部原因分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E6%80%BB%E7%BB%93"><span class="nav-number">1.7.</span> <span class="nav-text">6. 总结</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E2%9C%8D%EF%B8%8F-%E4%B8%87%E8%83%BD%E6%A8%A1%E6%9D%BF-%E5%86%99%E4%BD%9C%E5%8F%A5%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">✍️ 万能模板 + 写作句型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8D%E8%A8%80%E8%AD%A6%E5%8F%A5%E7%B1%BB"><span class="nav-number">1.1.</span> <span class="nav-text">名言警句类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BC%AB%E7%94%BB%E7%B1%BB"><span class="nav-number">1.2.</span> <span class="nav-text">漫画类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E8%A7%82%E7%82%B9"><span class="nav-number">1.3.</span> <span class="nav-text">不同观点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E8%AE%AE%E5%8F%A5"><span class="nav-number">1.4.</span> <span class="nav-text">建议句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%87%E5%8F%96%E6%8E%AA%E6%96%BD"><span class="nav-number">1.5.</span> <span class="nav-text">采取措施</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%8B%B1%E8%AF%AD%E8%B0%9A%E8%AF%AD"><span class="nav-number">1.6.</span> <span class="nav-text">常用英语谚语</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E2%9C%8D%EF%B8%8F%E5%86%99%E4%BD%9C%E6%80%9D%E8%B7%AF%E6%8A%80%E5%B7%A7"><span class="nav-number">2.</span> <span class="nav-text">✍️写作思路技巧</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E2%9C%8D%EF%B8%8F%E7%9C%9F%E9%A2%98%E8%8C%83%E6%96%87%E5%AE%9E%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">✍️真题范文实例</span></a></li></ol>
     </div>
 </div>
 
