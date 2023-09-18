@@ -6,7 +6,7 @@
   <link href="https://artemis727.github.io/atom.xml" rel="self"/>
   
   <link href="https://artemis727.github.io/"/>
-  <updated>2023-03-21T09:56:00.896Z</updated>
+  <updated>2023-09-18T05:31:15.101Z</updated>
   <id>https://artemis727.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CART｜&quot;Trainset error&quot; 和 &quot;CV error&quot;</title>
+    <link href="https://artemis727.github.io/2023/03/21/CART%EF%BD%9C%22Trainset%20error%22%20%E5%92%8C%20%22CV%20error%22%20/"/>
+    <id>https://artemis727.github.io/2023/03/21/CART%EF%BD%9C%22Trainset%20error%22%20%E5%92%8C%20%22CV%20error%22%20/</id>
+    <published>2023-03-21T06:24:54.000Z</published>
+    <updated>2023-09-18T05:31:15.101Z</updated>
+    
+    <content type="html"><![CDATA[<p>CART全称是Classification and Regression Trees。</p><p>对于 CART（Classification and Regression Trees）算法，”Trainset error” 和 “CV error” 分别代表了两种不同的误差度量：</p><ol><li><p><strong>Trainset Error（训练集误差）</strong>：</p><p>这是在构建决策树时使用训练数据集来评估模型的误差。具体来说，它是指模型在训练数据集上的预测误差或者拟合不准确度。训练集误差通常是通过将模型对训练数据集的预测与实际观测值进行比较来计算的。</p><p><strong>训练集误差的一个问题是它可能会过于乐观地估计了模型的性能，因为模型在训练数据上进行了拟合。这可能导致模型在未见过的新数据上的性能表现不佳。</strong></p></li><li><p><strong>Cross-Validation Error（交叉验证误差）</strong>：</p><p><strong>为了更准确地评估模型的性能，</strong>通常会将数据分成训练集和测试集两部分。交叉验证（Cross-Validation）是一种常用的方法，它将数据分成多个折（folds），然后分别使用其中一个折作为测试集，其余折作为训练集来训练模型。这样可以多次进行模型训练和评估，从而得到一个更稳健的性能估计。</p><p>CV error 是在交叉验证中得到的，它表示模型在不同的测试集上的平均预测误差。通常，通过计算多次交叉验证的结果的平均值来得到最终的 CV error。</p></li></ol><p>总的来说，Trainset Error 是在训练数据上的误差，它可能会过于乐观地估计模型的性能；而 CV error 则是通过在多次独立的测试集上进行交叉验证得到的，它提供了对模型在未见过的数据上性能的更稳健的估计。 CV error 通常被认为是对模型性能的更可靠的评估。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;CART全称是Classification and Regression Trees。&lt;/p&gt;
+&lt;p&gt;对于 CART（Classification and Regression Trees）算法，”Trainset error” 和 “CV error” 分别代表了两种不同</summary>
+      
+    
+    
+    
+    
+    <category term="算法" scheme="https://artemis727.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>NLP｜命名实体识别</title>
@@ -38,29 +61,6 @@
     
     
     <category term="NLP" scheme="https://artemis727.github.io/tags/NLP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CART｜&quot;Trainset error&quot; 和 &quot;CV error&quot;</title>
-    <link href="https://artemis727.github.io/2023/03/21/title:%20CART%EF%BD%9C%22Trainset%20error%22%20%E5%92%8C%20%22CV%20error%22%20/"/>
-    <id>https://artemis727.github.io/2023/03/21/title:%20CART%EF%BD%9C%22Trainset%20error%22%20%E5%92%8C%20%22CV%20error%22%20/</id>
-    <published>2023-03-21T06:24:54.000Z</published>
-    <updated>2023-09-18T05:28:21.776Z</updated>
-    
-    <content type="html"><![CDATA[<p>CART全称是Classification and Regression Trees。</p><p>对于 CART（Classification and Regression Trees）算法，”Trainset error” 和 “CV error” 分别代表了两种不同的误差度量：</p><ol><li><p><strong>Trainset Error（训练集误差）</strong>：</p><p>这是在构建决策树时使用训练数据集来评估模型的误差。具体来说，它是指模型在训练数据集上的预测误差或者拟合不准确度。训练集误差通常是通过将模型对训练数据集的预测与实际观测值进行比较来计算的。</p><p><strong>训练集误差的一个问题是它可能会过于乐观地估计了模型的性能，因为模型在训练数据上进行了拟合。这可能导致模型在未见过的新数据上的性能表现不佳。</strong></p></li><li><p><strong>Cross-Validation Error（交叉验证误差）</strong>：</p><p><strong>为了更准确地评估模型的性能，</strong>通常会将数据分成训练集和测试集两部分。交叉验证（Cross-Validation）是一种常用的方法，它将数据分成多个折（folds），然后分别使用其中一个折作为测试集，其余折作为训练集来训练模型。这样可以多次进行模型训练和评估，从而得到一个更稳健的性能估计。</p><p>CV error 是在交叉验证中得到的，它表示模型在不同的测试集上的平均预测误差。通常，通过计算多次交叉验证的结果的平均值来得到最终的 CV error。</p></li></ol><p>总的来说，Trainset Error 是在训练数据上的误差，它可能会过于乐观地估计模型的性能；而 CV error 则是通过在多次独立的测试集上进行交叉验证得到的，它提供了对模型在未见过的数据上性能的更稳健的估计。 CV error 通常被认为是对模型性能的更可靠的评估。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;CART全称是Classification and Regression Trees。&lt;/p&gt;
-&lt;p&gt;对于 CART（Classification and Regression Trees）算法，”Trainset error” 和 “CV error” 分别代表了两种不同</summary>
-      
-    
-    
-    
-    
-    <category term="算法" scheme="https://artemis727.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
