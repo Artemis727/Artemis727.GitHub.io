@@ -9,7 +9,7 @@
     
     <title>
         
-            CART｜CART的各种误差 |
+            CART | Errors in CART |
         
         Syaoran:)
     </title>
@@ -183,7 +183,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">CART｜CART的各种误差</span>
+                <span class="title-hover-animation">CART | Errors in CART</span>
             </div>
 
             
@@ -203,23 +203,38 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-03-21 14:24:54</span>
-        <span class="mobile">2023-03-21 14:24</span>
+        <span class="pc">2023-09-18 13:41:18</span>
+        <span class="mobile">2023-09-18 13:41</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-09-18 13:41:42</span>
+        <span class="pc">2023-09-18 13:41:50</span>
     </span>
     
     
     
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
 
     
     
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.1k Words</span>
+        </span>
+    
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>1 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>3 Mins</span>
         </span>
     
     
@@ -237,39 +252,80 @@
             <div class="article-content keep-markdown-body">
                 
 
-                
+                <p>CART全称是Classification and Regression Trees。</p>
+<h1 id="“Trainset-error”-和-“CV-error”"><a href="#“Trainset-error”-和-“CV-error”" class="headerlink" title="“Trainset error” 和 “CV error”"></a>“Trainset error” 和 “CV error”</h1><p>对于 CART（Classification and Regression Trees）算法，”Trainset error” 和 “CV error” 分别代表了两种不同的误差度量：</p>
+<ol>
+<li><p><strong>Trainset Error（训练集误差）</strong>：</p>
+<p>这是在构建决策树时使用训练数据集来评估模型的误差。具体来说，它是指模型在训练数据集上的预测误差或者拟合不准确度。训练集误差通常是通过将模型对训练数据集的预测与实际观测值进行比较来计算的。</p>
+<p><strong>训练集误差的一个问题是它可能会过于乐观地估计了模型的性能，因为模型在训练数据上进行了拟合。这可能导致模型在未见过的新数据上的性能表现不佳。</strong></p>
+</li>
+<li><p><strong>Cross-Validation Error（交叉验证误差）</strong>：</p>
+<p><strong>为了更准确地评估模型的性能，</strong>通常会将数据分成训练集和测试集两部分。交叉验证（Cross-Validation）是一种常用的方法，它将数据分成多个折（folds），然后分别使用其中一个折作为测试集，其余折作为训练集来训练模型。这样可以多次进行模型训练和评估，从而得到一个更稳健的性能估计。</p>
+<p>CV error 是在交叉验证中得到的，它表示模型在不同的测试集上的平均预测误差。通常，通过计算多次交叉验证的结果的平均值来得到最终的 CV error。</p>
+</li>
+</ol>
+<p>总的来说，Trainset Error 是在训练数据上的误差，它可能会过于乐观地估计模型的性能；而 CV error 则是通过在多次独立的测试集上进行交叉验证得到的，它提供了对模型在未见过的数据上性能的更稳健的估计。 CV error 通常被认为是对模型性能的更可靠的评估。</p>
+<h1 id="解释一个CP-table"><a href="#解释一个CP-table" class="headerlink" title="解释一个CP table"></a>解释一个CP table</h1><p>一个 CART（Classification and Regression Trees）模型的 <code>cp table</code> 包含了与树的复杂度参数（通常用 α 表示）相关的信息。CART 模型会根据训练数据构建一棵树，但这棵树可能会过于复杂，导致在训练数据上表现很好，但在未见过的数据上表现较差（过拟合）。</p>
+<p><code>cp table</code> 提供了一种帮助找到适当树大小的方法。其中 <code>cp</code> 代表复杂度参数，它可以理解为控制树的复杂程度的一个调节参数。</p>
+<p><code>cp table</code> 通常包括以下列：</p>
+<ol>
+<li><p><strong><code>CP</code>（复杂度参数）</strong>：</p>
+<ul>
+<li>这列列出了不同的复杂度参数值。它们是一个递减的有序序列，从最大的复杂度开始，逐渐减小。</li>
+</ul>
+</li>
+<li><p><strong><code>rel error</code>（相对误差）</strong>：</p>
+<ul>
+<li>这列列出了在给定复杂度参数下，与完全展开的树相比，模型的相对误差。<strong>相对误差是模型的预测误差与完全展开树的预测误差之比。</strong></li>
+</ul>
+</li>
+<li><p><strong><code>xerror</code>（交叉验证误差）</strong>：</p>
+<ul>
+<li>这列列出了在给定复杂度参数下，通过<strong>交叉验证</strong>得到的模型的平均预测误差。</li>
+</ul>
+</li>
+<li><p><strong><code>xstd</code>（交叉验证误差的标准差）</strong>：</p>
+<ul>
+<li>这列列出了在给定复杂度参数下，通过交叉验证得到的模型的平均预测误差的<strong>标准差</strong>。</li>
+</ul>
+</li>
+</ol>
+<p>解释一个 <code>cp table</code> 的过程通常包括以下步骤：</p>
+<ol>
+<li><p><strong>选择最小的 <code>CP</code> 值</strong>：通常会选择具有最小相对误差或交叉验证误差的复杂度参数作为最终模型的复杂度参数。</p>
+</li>
+<li><p><strong>对比相对误差和交叉验证误差</strong>：相对误差提供了一种在训练集上进行模型评估的方法，而交叉验证误差提供了对模型在未见过数据上的性能的估计。</p>
+</li>
+<li><p><strong>考虑模型的解释性和复杂度</strong>：选择一个合适的复杂度参数需要在模型的性能和复杂度之间进行权衡。更复杂的模型可能在训练数据上表现得更好，但可能在新数据上表现较差。</p>
+</li>
+</ol>
+<p>总的来说，<code>cp table</code> 提供了一个帮助找到合适树大小的指南，以避免过拟合和提高模型的泛化能力。</p>
+
             </div>
 
             
 
             
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
 
             
                 <div class="article-nav">
-                    
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/2023/09/18/CART-Errors-in-CART/"
-                            >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">CART | Errors in CART</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                            </a>
-                        </div>
                     
                     
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/03/21/NLP%EF%BD%9C%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB/"
+                               href="/2023/03/21/CART%EF%BD%9C%22Trainset%20error%22%20%E5%92%8C%20%22CV%20error%22%20/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">NLP｜命名实体识别</span>
+                                <span class="post-nav-title-item">CART｜CART的各种误差</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -374,7 +430,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E2%80%9CTrainset-error%E2%80%9D-%E5%92%8C-%E2%80%9CCV-error%E2%80%9D"><span class="nav-number">1.</span> <span class="nav-text">“Trainset error” 和 “CV error”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%AACP-table"><span class="nav-number">2.</span> <span class="nav-text">解释一个CP table</span></a></li></ol>
     </div>
 </div>
 
