@@ -6,7 +6,7 @@
   <link href="https://artemis727.github.io/atom.xml" rel="self"/>
   
   <link href="https://artemis727.github.io/"/>
-  <updated>2023-09-18T05:41:50.837Z</updated>
+  <updated>2023-09-25T08:51:54.128Z</updated>
   <id>https://artemis727.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WHAT IS PRESCRIPTIVE ANALYTICS? 6 EXAMPLES</title>
+    <link href="https://artemis727.github.io/2023/09/25/WHAT-IS-PRESCRIPTIVE-ANALYTICS-6-EXAMPLES/"/>
+    <id>https://artemis727.github.io/2023/09/25/WHAT-IS-PRESCRIPTIVE-ANALYTICS-6-EXAMPLES/</id>
+    <published>2023-09-25T08:46:35.000Z</published>
+    <updated>2023-09-25T08:51:54.128Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="WHAT-IS-PRESCRIPTIVE-ANALYTICS-6-EXAMPLES"><a href="#WHAT-IS-PRESCRIPTIVE-ANALYTICS-6-EXAMPLES" class="headerlink" title="WHAT IS PRESCRIPTIVE ANALYTICS? 6 EXAMPLES"></a>WHAT IS PRESCRIPTIVE ANALYTICS? 6 EXAMPLES</h1><blockquote><p><a class="link"   href="https://online.hbs.edu/blog/post/prescriptive-analytics" >https://online.hbs.edu/blog/post/prescriptive-analytics<i class="fas fa-external-link-alt"></i></a></p></blockquote><p>规范性分析被<a class="link"   href="https://www.forbes.com/sites/danielnewman/2020/01/02/why-the-future-of-data-analytics-is-prescriptive-analytics/" >称为<i class="fas fa-external-link-alt"></i></a>“数据分析的未来”，这是有充分理由的。这种类型的分析超越了解释和预测，可以推荐未来的最佳行动方案。它对于推动基于数据的决策特别有用。</p><p><a class="link"   href="https://online.hbs.edu/blog/post/types-of-data-analysis" >数据分析<i class="fas fa-external-link-alt"></i></a>有四种主要类型：</p><ul><li>**<a class="link"   href="https://online.hbs.edu/blog/post/descriptive-analytics" >描述性的<i class="fas fa-external-link-alt"></i></a>**，回答“发生了什么？”的问题。</li><li>**<a class="link"   href="https://online.hbs.edu/blog/post/diagnostic-analytics" >Diagnostic<i class="fas fa-external-link-alt"></i></a>**，它回答了“为什么会发生这种情况？”的问题。</li><li><a href="https://online.hbs.edu/blog/post/predictive-analytics"><strong>Predictive</strong></a>，它回答了“未来可能发生什么？”的问题。</li><li><strong>规范性</strong>，回答“我们下一步应该做什么？”的问题。</li></ul><p>在商业中使用时，数据分析通常称为<a class="link"   href="https://online.hbs.edu/courses/business-analytics/" >业务分析<i class="fas fa-external-link-alt"></i></a>。所有四种类型都可以串联使用，以创建数据讲述的故事的全貌。您可以首先描述您看到的趋势，深入挖掘以了解这些趋势发生的原因，并对这些趋势是否会再次出现做出明智的预测。规范性分析使事情更进一步，并提出您可以采取的行动来实现组织目标。</p><p>以下是规范性分析的入门知识以及跨行业使用它的六个示例。</p><h2 id="什么是规范性分析？"><a href="#什么是规范性分析？" class="headerlink" title="什么是规范性分析？"></a>什么是规范性分析？</h2><p><strong>规范性分析</strong>是使用数据来确定最佳行动方案的过程。通过考虑所有相关因素，此类分析可以为后续步骤提供建议。因此，规范性分析是<a class="link"   href="https://online.hbs.edu/blog/post/data-driven-decision-making" >数据驱动决策<i class="fas fa-external-link-alt"></i></a>的宝贵工具。</p><p>机器学习算法通常用于规范性分析，以比人类更快且通常更有效地解析大量数据。使用“if”和“else”语句，算法梳理数据并根据特定的需求组合提出建议。例如，如果数据集中至少 50% 的客户选择他们对您的客户服务团队“非常不满意”，则算法可能会建议进行额外的培训。</p><p>值得注意的是：虽然算法可以提供基于数据的建议，但它们无法取代人类的洞察力。规范性分析是一种为决策和战略提供信息的工具，应该被如此对待。您的判断对于为算法输出提供上下文和护栏来说是有价值且必要的。</p><p>在您的公司，您可以使用规范分析来进行手动分析、开发专有算法或使用具有内置算法的第三方分析工具。</p><h2 id="规范性分析的-6-个实际应用示例"><a href="#规范性分析的-6-个实际应用示例" class="headerlink" title="规范性分析的 6 个实际应用示例"></a>规范性分析的 6 个实际应用示例</h2><p>![image-20230925165134890](&#x2F;Users&#x2F;xiaoyu&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230925165134890.png)</p><h3 id="1-风险投资：投资决策"><a href="#1-风险投资：投资决策" class="headerlink" title="1. 风险投资：投资决策"></a>1. 风险投资：投资决策</h3><p>投资决策虽然通常基于直觉，但可以通过权衡风险并建议是否投资的算法来加强。</p><p>风险投资领域的一个例子是一项实验（《<a href="https://hbr.org/2020/11/do-algorithms-make-better-and-fairer-investments-than-angel-investors"><em>哈佛商业评论》</em></a>对此进行了解释），该实验测试了算法关于投资哪些初创企业的决策与天使投资者决策的有效性。</p><p>研究结果很微妙。该算法的表现优于天使投资人，因为天使投资人投资经验较少，控制认知偏差的能力也较差；然而，当天使投资者有投资经验并且能够控制自己的认知偏差时，他们的表现就会优于算法。</p><p>该实验揭示了规范性分析在决策中必须发挥的补充作用，以及在经验不存在且认知偏差需要消除时帮助决策的潜力。算法的公正性取决于其训练所用的数据，因此无论是否使用算法都需要人类判断。</p><h3 id="2-销售：销售线索评分"><a href="#2-销售：销售线索评分" class="headerlink" title="2. 销售：销售线索评分"></a>2. 销售：销售线索评分</h3><p>规范性分析通过潜在客户评分（也称为潜在客户排名）在销售中发挥着重要作用。<strong>潜在客户评分</strong>是为销售漏斗中的各种操作分配分值的过程，使您或算法能够根据潜在客户转化为客户的可能性对潜在客户进行排名。</p><p>您可以指定值的操作包括：</p><ul><li>页面浏览量</li><li>电子邮件互动</li><li>网站搜索</li><li>内容参与，例如参加网络研讨会、下载电子书或观看视频</li></ul><p>为每个操作分配分值时，请将最高分分配给暗示购买意图的操作（例如，访问产品页面），将负分分配给那些显示非购买意图的操作（例如，查看网站上的职位发布） ）。这有助于优先联系最有可能转化为客户的潜在客户，从而可能节省您的组织的时间和金钱。</p><h3 id="3-内容管理：算法推荐"><a href="#3-内容管理：算法推荐" class="headerlink" title="3. 内容管理：算法推荐"></a>3. 内容管理：算法推荐</h3><p>如果您曾经浏览过社交媒体平台或约会应用程序，您可能已经通过算法内容推荐亲身体验过规范性分析。</p><p>企业的算法根据您在其平台（也可能是其他平台）上的参与历史记录来收集数据。您之前的行为组合可以作为算法的触发器来发布特定的建议。例如，如果您经常在 YouTube 上观看鞋履评论视频，该平台的算法可能会分析该数据，并建议您观看更多您可能感兴趣的相同类型的视频或类似内容。</p><p>在社交媒体上，TikTok 的“For You”提要就是规范性分析的实际应用之一。该<a class="link"   href="https://www.tiktok.com/creators/creator-portal/en-us/tiktok-creation-essentials/whats-the-for-you-page-and-how-do-i-get-there/" >公司的网站<i class="fas fa-external-link-alt"></i></a>解释说，用户在应用程序上的互动，就像销售中的潜在客户评分一样，是根据兴趣指示进行加权的。</p><p>“例如，”TikTok 的网站称，“如果你看完了一个视频，那就强烈表明你感兴趣。然后对视频进行排名，以确定您对每个视频感兴趣的可能性，并将其发送到每个独特的“为您”提要。”</p><p>这种规范性分析用例可以提高客户参与率、提高客户满意度，并有可能根据客户的行为历史通过广告重新定位客户。</p><h3 id="4-银行业：欺诈检测"><a href="#4-银行业：欺诈检测" class="headerlink" title="4. 银行业：欺诈检测"></a>4. 银行业：欺诈检测</h3><p>规范分析的另一个算法用途是检测和标记银行欺诈。由于银行系统中存储的数据量巨大，人们几乎不可能手动检测单个帐户中的任何可疑活动。使用客户的历史交易数据进行训练的算法可以分析和扫描新交易数据是否存在异常。例如，也许您通常每月花费 3,000 美元，但本月您的信用卡会被扣款 30,000 美元。</p><p>该算法分析交易数据中的模式，向银行发出警报，并提供建议的行动方案。在此示例中，行动过程可能是取消信用卡，因为它可能已被盗。</p><h3 id="5-产品管理：开发和改进"><a href="#5-产品管理：开发和改进" class="headerlink" title="5. 产品管理：开发和改进"></a>5. 产品管理：开发和改进</h3><p>规范性分析还可以为产品开发和改进提供信息。产品经理可以通过调查客户、使用产品的测试版本运行测试、对非当前产品用户进行市场研究以及收集当前用户交互时的行为数据来收集用户数据。所有这些数据都可以通过手动或算法进行分析，以识别趋势、发现这些趋势的原因，并预测这些趋势是否会再次出现。</p><p>规范性分析可以帮助确定产品中应包含或删除哪些功能以及需要更改哪些功能以确保最佳的用户体验。</p><h3 id="6-营销：电子邮件自动化"><a href="#6-营销：电子邮件自动化" class="headerlink" title="6. 营销：电子邮件自动化"></a>6. 营销：电子邮件自动化</h3><p>电子邮件自动化是规范性分析在工作中的一个明确示例。营销人员使用电子邮件自动化根据销售线索的动机、心态和意图将其分类，并根据这些类别向他们发送电子邮件内容。潜在客户与电子邮件的任何互动都可以将其归入另一个类别，从而触发一组不同的消息。</p><p>虽然这是纯粹的算法规范分析，但人们应该规划、创建和监督自动化流程。电子邮件自动化使公司能够大规模提供个性化消息传递，并增加使用适合客户动机和需求的内容将潜在客户转化为客户的机会。</p><h2 id="在您的组织中利用规范性分析"><a href="#在您的组织中利用规范性分析" class="headerlink" title="在您的组织中利用规范性分析"></a>在您的组织中利用规范性分析</h2><p>如果您的组织是规范性分析的新手，那么现在正是了解它如何影响您的决策流程的最佳时机。从您需要回答的一个问题或您想要优化的一个流程开始。收集围绕该问题或流程的数据，并通过每种类型的分析来描绘全貌。</p><ol><li><strong>描述性：</strong>数据显示了哪些趋势？</li><li><strong>诊断：</strong>哪些因素导致了这些趋势？为什么会出现这些趋势？</li><li><strong>规定性：</strong>如果适用，请确定某种趋势是否会持续或重复出现。</li><li><strong>规范性：</strong>最后，深入规范性分析。如果您有专有算法或第三方分析工具，请使用您公司的数据运行它。或者，根据您对问题或流程的发现，对可能的后续步骤进行手动分析。每个选项将如何影响情况的结果以及您的目标？</li></ol><p>规范性分析不必令人望而生畏；有了正确的基础，它可以成为帮助优化流程、制定战略和实现组织目标的强大工具。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;WHAT-IS-PRESCRIPTIVE-ANALYTICS-6-EXAMPLES&quot;&gt;&lt;a href=&quot;#WHAT-IS-PRESCRIPTIVE-ANALYTICS-6-EXAMPLES&quot; class=&quot;headerlink&quot; title=&quot;WHAT IS PR</summary>
+      
+    
+    
+    
+    <category term="Research" scheme="https://artemis727.github.io/categories/Research/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Research | &quot;Data Driven Decision-Making under Uncertainty (D3U)&quot;</title>
+    <link href="https://artemis727.github.io/2023/09/22/Research-Data-Driven-Decision-Making-under-Uncertainty-D3U/"/>
+    <id>https://artemis727.github.io/2023/09/22/Research-Data-Driven-Decision-Making-under-Uncertainty-D3U/</id>
+    <published>2023-09-22T04:40:42.000Z</published>
+    <updated>2023-09-25T08:51:56.231Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="“Data-Driven-Decision-Making-under-Uncertainty-D3U-”"><a href="#“Data-Driven-Decision-Making-under-Uncertainty-D3U-”" class="headerlink" title="“Data Driven Decision-Making under Uncertainty (D3U)”"></a>“Data Driven Decision-Making under Uncertainty (D3U)”</h1><blockquote><p>Data-driven decision making under uncertainty (<strong>D3U</strong>) practically means <strong>extracting data and information, including from Big Data, to make decisions in areas such as emergency response and healthcare to renewable energy</strong>. D3U is driven by the advancements afforded through Industry 4.0 worldwide, and the power of hardware handling offered through Cloud and Fog computing and the like. In times of adverse situations, such as the COVID-19 pandemic, crucial issues such as predictive bed allocation, predicting the spread and the stages of the pandemic and so on, have made D3U an inevitable part of life. It is also thus becoming an ardent necessity to deal with challenges such as uncertainty, vagueness, and hesitation in order to <strong>come up with rational decisions</strong>.</p><p>不确定性下的数据驱动决策（D3U）实际上意味着提取数据和信息（包括从大数据中），以便在应急响应和可再生能源医疗保健等领域做出决策。D3U 受到全球工业 4.0 带来的进步以及云和雾计算等提供的硬件处理能力的推动。在COVID-19大流行等不利情况下，预测床位分配、预测大流行的传播和阶段等关键问题使D3U成为生活中不可避免的一部分。因此，为了做出理性的决策，应对不确定性、模糊性和犹豫等挑战也变得非常必要。</p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;“Data-Driven-Decision-Making-under-Uncertainty-D3U-”&quot;&gt;&lt;a href=&quot;#“Data-Driven-Decision-Making-under-Uncertainty-D3U-”&quot; class=&quot;headerl</summary>
+      
+    
+    
+    
+    <category term="Research" scheme="https://artemis727.github.io/categories/Research/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>CART | Errors in CART</title>
@@ -420,53 +464,6 @@
       
       
     <summary type="html">&lt;h1 id=&quot;什么是数据看板&quot;&gt;&lt;a href=&quot;#什么是数据看板&quot; class=&quot;headerlink&quot; title=&quot;什么是数据看板&quot;&gt;&lt;/a&gt;什么是数据看板&lt;/h1&gt;&lt;p&gt;数据看板一般用作后台系统的首页，主要呈现公司当前&lt;strong&gt;业务相关或运营管理相关数据和图表&lt;/</summary>
-      
-    
-    
-    
-    
-    <category term="数据分析" scheme="https://artemis727.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据分析｜需求沟通</title>
-    <link href="https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E9%9C%80%E6%B1%82%E6%B2%9F%E9%80%9A/"/>
-    <id>https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E9%9C%80%E6%B1%82%E6%B2%9F%E9%80%9A/</id>
-    <published>2023-03-08T06:57:38.000Z</published>
-    <updated>2023-03-08T07:05:11.507Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>参考：<a class="link"   href="https://zhuanlan.zhihu.com/p/363896505" >https://zhuanlan.zhihu.com/p/363896505<i class="fas fa-external-link-alt"></i></a></p></blockquote><p><img                       lazyload                     alt="image"                     data-src="https://pic3.zhimg.com/80/v2-b324a35f8a4b56433b861e95f7ebf62e_1440w.webp"                      alt="img"                ></p><h1 id="需求沟通"><a href="#需求沟通" class="headerlink" title="需求沟通"></a>需求沟通</h1><ol><li><p><strong>需求收集（5+2）</strong></p><p>明确：为什么、做什么、谁做、何时、何地、如何、多少。</p></li><li><p><strong>需求分析（8）</strong></p><ul><li>需求产生的背景和原因</li><li>需求的目的和程度（最好可以量化）</li><li>使用人员和场景</li><li>会影响到哪些业务领域</li><li>统计指标和维度</li><li>展现形式</li><li>数据源</li><li>交付形式和标准</li></ul></li><li><p><strong>目标对齐</strong></p><p>梳理整个流程，把整个流程中的关键环节都列出来，这是其实运用了MVC（最小可行性成品）的思想，<strong>每个环节都和业务同学碰一下，保持信息共享，确保需求的进行没有跑偏就好</strong>，即使有问题影响也不大，及时发现进行调整。</p></li><li><p><strong>信息同步</strong></p><p>整个流程一定要数字化，保持信息畅通无阻。<strong>信息共享</strong>真的很重要，让业务同学清晰看见自己需求的进度，进行得如何了，会让业务同学具有安全感。</p></li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;参考：&lt;a class=&quot;link&quot;   href=&quot;https://zhuanlan.zhihu.com/p/363896505&quot; &gt;https://zhuanlan.zhihu.com/p/363896505&lt;i class=&quot;fas fa-e</summary>
-      
-    
-    
-    
-    
-    <category term="数据分析" scheme="https://artemis727.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据分析｜AB实验</title>
-    <link href="https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/"/>
-    <id>https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/</id>
-    <published>2023-03-08T03:51:34.000Z</published>
-    <updated>2023-03-08T04:17:42.985Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>面试官:“你有没有想过用AB实验来优化项目？”</p><p>​    瑟瑟发抖的我：“<strong>不好意思，我在做项目的时候想过用AB实验，但由于XXXX的原因无法落实。不过我自己构思了比较完整的实验思路……（此处省略若干字），如果有机会让我实施AB实验，我相信能够让项目表现更好。</strong>”</p><p>​    其实这是一个很加分的回答。在面试官看来，眼前的候选人虽然没有参与AB实验，但自己琢磨思考了项目优化方案，应该有不错的自我学习和自我驱动能力 （给自己鼓掌撒花ing）。</p><p>作者：阿狸和小兔<br>链接：<a class="link"   href="https://www.jianshu.com/p/0b54dc8b0880" >https://www.jianshu.com/p/0b54dc8b0880<i class="fas fa-external-link-alt"></i></a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p></blockquote><h1 id="什么是A-x2F-B测试"><a href="#什么是A-x2F-B测试" class="headerlink" title="什么是A&#x2F;B测试"></a>什么是A&#x2F;B测试</h1><p>简单来讲，A&#x2F;B测试是一种比较手段：通过分析<strong>同一总体</strong>下，由于<strong>某些不同的策略</strong>导致<strong>样本数据</strong>表现出的差异，来推断某些<strong>策略的效果</strong>。</p><p><img                       lazyload                     alt="image"                     data-src="https://pic2.zhimg.com/80/v2-b549c6116b2323ee91d92c1d4b03598d_1440w.webp"                      alt="img"                ></p><p>几个核心概念：<strong>同一总体，不同策略，不同样本，差异及效果</strong></p><p>本质上来说，<strong>A&#x2F;B测试就是假设检验理论的一个实际应用而已</strong>，所以想了解A&#x2F;B测试的理论，只需要了解假设检验的理论即可。</p><h1 id="A-x2F-B测试流程"><a href="#A-x2F-B测试流程" class="headerlink" title="A&#x2F;B测试流程"></a>A&#x2F;B测试流程</h1><p>一个完整的A&#x2F;B test主要包括如下几部分：</p><p>1、<strong>分析现状，建立假设</strong>：分析业务，确定最高优先级的改进点，作出假设，提出优化建议。</p><p>2、<strong>设定指标</strong>：设置主要指标来衡量版本的优劣；设置辅助指标来评估其他影响。</p><p>3、<strong>设计与开发</strong>：设计优化版本的原型并完成开发。</p><p>4、<strong>确定测试时长</strong>：确定测试进行的时长。</p><p>5、<strong>确定分流方案</strong>：确定每个测试版本的分流比例及其他分流细节。</p><p>6、<strong>采集并分析数据</strong>：收集实验数据，进行有效性和效果判断。</p><p>7、<strong>给出结论</strong>：①确定发布新版本；②调整分流比例继续测试；③优化迭代方案重新开发，回到步骤1。</p><h3 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a><strong>注意点：</strong></h3><p><strong>1. 测试时长：</strong>测试的时长不宜过短，否则参与试验的用户几乎都是产品的高频用户。</p><p><strong>2. 分流（或者说抽样）：</strong>应该保证同时性、同质性、唯一性、均匀性。</p><p><strong>①同时性：</strong>分流应该是同时的，测试的进行也应该是同时的。</p><p><strong>②同质性：</strong>也可以说是相似性，是要求<u>分出的用户群，在各维度的特征都相似</u>。<u>可以基于用户的设备特征（例如手机机型、操作系统版本号、手机语言等）和用户的其他标签（例如性别、年龄、新老用户、会员等级等）</u>进行分群，每一个A&#x2F;B测试试验都可以选定特定的用户群进行试验。</p><p><strong>思考：如何判断是不是真的同质？</strong>可以采用<u>AAB测试</u>。抽出两份流量进行A版本的测试，进行AA测试，并分别与B版本进行AB测试。<u>通过考察A1和A2组是否存在显著性差异，就可以确定试验的分流是否同质了。</u></p><p><strong>③唯一性：</strong>即要求用户不被重复计入测试。</p><p><strong>④均匀性：</strong>要求各组<u>流量是均匀的</u>。Hash算法。现在一般由专用的A&#x2F;B测试工具负责。也有看到一篇文章写了python实现，大体的思路是对用户id添加Salt值，对其散列，并据此算出一个0-1之间的浮点数，同设定好的阈值比大小，从而分组。有兴趣的可以看看，该作者的思路很清晰： <a class="link"   href="https://zhuanlan.zhihu.com/p/34301270" >随机分配里的Why and How<i class="fas fa-external-link-alt"></i></a>。（统计学原理上，我没有找到均匀性这一要求的依据，其实双样本的假设检验并不要求两个样本的数量相等或相近。当然从直观上是可以理解，希望分出的用户组越相近越好，包括人数的相近。）</p><p><strong>3. A&#x2F;B测试只能有两个版本么？</strong></p><p>A&#x2F;B test不是只能A方案和B方案，实际上一个测试可以包含A&#x2F;B&#x2F;C&#x2F;D&#x2F;E&#x2F;……多个版本，但是要保证单变量，比如按钮的颜色赤&#x2F;橙&#x2F;黄&#x2F;绿&#x2F;青&#x2F;蓝&#x2F;紫，那么这七个方案是可以做A&#x2F;B测试的；但如果某方案在旁边新增了另一个按钮，即便实验结果产生了显著差异，我们也无法判断这种差异的成因究竟是谁。</p><p><strong>4. 同一段时间内可以做不同的A&#x2F;B测试么？</strong></p><p>比如一个test抽取总体20%的流量做按钮颜色的实验，另一个test也抽取总体20%的流量做布局样式的实验。是否可行？</p><p>我认为是可行的。但要求多个方案<u>并行测试</u>，同层互斥。如果从总体里，先后两次随机抽取20%流量，则很有可能会有重叠的用户，既无法满足控制单变量，又影响了用户的使用体验。</p><ul><li>同层指的是在同一流量层中创建实验，在此层中创建的实验共享此层中的100%流量。</li><li>互斥指的是在此层中，一个设备有且只能分配到此层多个实验中的某一个实验。</li></ul><h1 id="A-x2F-B测试原理：假设检验"><a href="#A-x2F-B测试原理：假设检验" class="headerlink" title="A&#x2F;B测试原理：假设检验"></a>A&#x2F;B测试原理：假设检验</h1><blockquote><p>参考：<a class="link"   href="https://zhuanlan.zhihu.com/p/68019926" >https://zhuanlan.zhihu.com/p/68019926<i class="fas fa-external-link-alt"></i></a></p></blockquote><p><img                       lazyload                     alt="image"                     data-src="https://pic3.zhimg.com/80/v2-9f80526142e214556bef2a19f8e00c9e_1440w.webp"                      alt="img"                ></p><blockquote><p>参考：<a class="link"   href="https://www.jianshu.com/p/0b54dc8b0880" >https://www.jianshu.com/p/0b54dc8b0880<i class="fas fa-external-link-alt"></i></a></p></blockquote><p>AB实验是数据分析、产品运营、算法开发在工作中都时常接触到的工作。按钮颜色、广告算法、标签排序，这些互联网产品里常见的功能与展示都是在一次次AB实验中得到优化。</p><p>   在实习中，并不是每一个实习生都能接触到AB实验，这也让很多没有相关经历的人误认为AB实验是一项高大上的工作任务。但其实——</p><p>   许多公司搭建了可(sha)视(gua)化的AB实验平台，业务、运营以及产品都一眼看出AB实验的结果……不过，由于企业搭建的AB实验平台在权限、监控上有诸多限制，加上很多Leader出于实习生实习期短、留用概率小的顾虑，大部分实习生都不会参与完整的AB项目。</p><p>​    可是——</p><p>​    尽管在实习中没有接触过AB实验，在简历中也没提到丝毫，这不代表在面试中就能逃过一劫……</p><img                       lazyload                     alt="image"                     data-src="https:////upload-images.jianshu.io/upload_images/22555708-a505fad6af9035fc?imageMogr2/auto-orient/strip|imageView2/2/w/424/format/webp"                      alt="img" style="zoom: 25%;"                 ><p>​    我在实习中就没有接触过AB实验，但面试官仍然对我抛出来的项目分析过程饶有兴趣，也会问我有没有使用AB实验作出优化。得益于面试前全方位的准备，我的面试回（tao）答（lu）往往是:</p><p>​    面试官:“你有没有想过用AB实验来优化项目？”</p><p>​    瑟瑟发抖的我：<strong>“不好意思，我在做项目的时候想过用AB实验，但由于XXXX的原因无法落实。不过我自己构思了比较完整的实验思路……（此处省略若干字），如果有机会让我实施AB实验，我相信能够让项目表现更好。”</strong></p><p>​    其实这是一个很加分的回答。在面试官看来，眼前的候选人虽然没有参与AB实验，但自己琢磨思考了项目优化方案，应该有不错的自我学习和自我驱动能力 （给自己鼓掌撒花ing）。</p><p>   引申一步，当你对自己的项目足够熟悉时，哪怕没有机会开展AB实验，仍然可以和我一样，在回答项目相关问题时，代入自己对AB实验的思考。</p><p>   好了，言归正传，进入今天的正题。</p><p><strong>01</strong> <strong>我们先介绍统计检验</strong></p><p>​    在统计学中，想要证明一个命题是正确的，只能通过证明其否命题是错误的来达到目的。假设检验是用统计数据来判断命题真伪的方式。我们常常会假设两个命题：</p><p>​    <strong>H0：备受质疑的命题</strong></p><p>​    <strong>H1：有待验证的问题</strong></p><p>   那如何来证明H0和H1孰对孰错呢？这时候我们需要用到P值。</p><p>   P值是什么？<strong>P值就是在H0假设成立的情况下，得到样本观察结果或更极端的观察结果出现的概率。</strong></p><p>   这句话好绕口，我们可以简单的理解成<strong>P代表了对H0命题的支持程度。所以P值越小，H0命题正确的概率就越小，H1命题正确的概率越大。</strong>我们有常常会指定显著性水平α&#x3D;0.05，当P&lt;α时，H0命题成立的概率&lt;0.05，这是一个受到统计学支持的假命题。</p><p>   在学习统计学时，我们接触了一大堆显著性水平，显著区间的概念；在考完统计学后，统统还给了大学老师……如果是面试数据分析相关的岗位，强烈建议复习一下，再总结成方便自己记忆的文字，存入<strong>面试文档</strong>（插播一句，后台好多人私信我面试文档里准备了哪些内容……按当前进度，一只伪装加班狗表示写到这一块预计应该要4月了吧emmmm）。</p><p>   若是有面试官问我：<strong>“置信区间和置信度你了解吗？”</strong></p><p>   根据准备在面试文档中的内容，我能够脱口而出：<strong>“在假设检验的过程中，我们往往采用样本数据特征来估计整体的数据特征。在中心极限定理里，我们知道从总体中进行N次样本抽取，N次样本的均值会围绕总体均值上下波动。因此，置信区间就是为总体的均值提供了一个可波动的范围，置信区间与置信度是相对应的。例如，在95%的置信度下，置信区间为【a,b】，也就是说，抽取100次样本，其中有95次样本的均值能够落在【a,b】范围内。”</strong></p><p>   可惜我做了充分的准备，并没有面试官问我这个问题（哭）</p><p>   也有人问，面试中面试官会以什么形式来问假设检验的知识点呢？举一个栗子 ：</p><p>   面试VIVO的时候面试官随口提问：<strong>“你会怎么证明中医的有效性？”</strong></p><p>   我当时的回答是：</p><p>   <strong>“我会用假设检验来做证明。</strong></p><p>   <strong>第一步，提出两个命题。H0命题是中医无效；H1命题是中医有效。在这里，H0命题是我希望被推翻的命题，而H1命题是我希望被证实的命题。</strong></p><p>   <strong>第二步，随机选择两组生理特征、疾病状况一致的人。一组人不给予治疗；另一组人给予中药治疗，持续观测两拨人生理状况。</strong></p><p>   <strong>第三步，对两组人的生理数据进行独立样本t检验，观测统计结果P值。</strong></p><p>   <strong>第四步：设定显著性水平α&#x3D;0.05，如果统计结果P≤0.05，则推翻了H0假设，证明在该显著性水平下，中医是有效的。”</strong></p><p>  所以我们简化一下，回答假设检验相关题目的时候，<strong>遵循“提出命题-选择实验对象-检验-输出结论”的流程即可</strong>。只是有一点，<strong>建议多使用“第一第二第三”、“首先其次最后”这些次序词，用以展示相对流畅的思考逻辑。</strong></p><p>   不知道我讲清楚了没有……如果没有，建议结合《商务经济统计》再继续理解几遍，自我感觉以上内容应该可以应付绝大多数面试过程中的假设检验问题。</p><p>   好了……不管了，我要强行进入第二个话题了……</p><p><strong>02</strong> <strong>工作中的AB实验是如何开展的？</strong></p><p>   再举一个简单的栗子。过去在对首页产品进行排序时，往往是运营人员结合自己工作经验进行人工排序，现在算法小哥更新了产品排序的逻辑，希望通过AB实验证明自己的算法优于运营人工推荐，提高转化效果。</p><p>   算法小哥和开发沟通好上线AB实验，用转化率(CR)来评估不同排序方式的效果，并设定显著性水平α&#x3D;0.05。在这场AB实验中，用到的两个假设分别是：</p><p>   <strong>H0：运营的人工排序效果好（备受质疑、希望被推翻的命题）</strong></p><p>   <strong>H1：算法的推荐算法效果好（有待验证，希望被证实的命题）</strong></p><p>   在AB平台观察今天的实验效果，数据结果显示P&#x3D;0.003，可以理解成数据统计结果对H0的支持力度只有0.003，小于显著性水平0.05，这时候H1命题成立，相比运营的手工排序，算法工程师的推荐算法取得了更好的效果。</p><p>   那在这个实验里，有什么要注意的点吗？</p><p>  ——嗯，AB实验有很多需要注意的问题。</p><p> <strong>（1）AB组是否真的只有一个变量</strong></p><p>   这场AB实验的变量是产品排序的逻辑，但大家都想开展AB实验，在首页上同期开展的AB实验有几十个，UI想测试筛选框的颜色、产品想测试标签的文案……。这种背景下，我们AB实验里被划分为A群体和B群体的用户往往同时参与了N多实验，不能绝对保证变量的唯一性。一般而言认为流量足够大，其AB实验和我们观测的AB实验没有直接交集，可以忽略其影响。</p><p><strong>（2）新策略是否真的上线了</strong></p><p>   因为研发每天都有很多AB实验，而且AB实验平台出错也是常有的事情。所以我们要在别人告诉我们AB实验上线了以后，自己验证实验策略是否真的上线了。</p><p><strong>（3）在实验前确定评估指标</strong></p><p>   我们的实验评估指标是CR转化率。这一点在实验上线前就要沟通好。</p><p><strong>（4）多观察几天数据</strong></p><p>   很多AB实验上线后前几天数据表现是不稳定的，最好持续观察半个月再给出结论。</p><p><strong>（5）存档AB测试的结果</strong></p><p>   对于数据分析师来说，每一个项目、每一个分析都需要做复盘和存档。比如AB实验项目，可以用一个标准化的模板来记录测试内容，为什么测试，测试对接人，测试效果等等，在年终的时候可以更好的汇报和复盘。</p><p>   在大半年的工作中，终于有机会接触到诸多的AB实验，慢慢感知到各种AB实验原来殊途同归。但不可置否，它仍然是互联网产品迭代的利器，仍然是分析师证明自身价值的手段之一。想来这也是为什么诸多的面试官喜欢在面试中询问AB实验、假设检验的原因。</p><p>作者：阿狸和小兔<br>链接：<a class="link"   href="https://www.jianshu.com/p/0b54dc8b0880" >https://www.jianshu.com/p/0b54dc8b0880<i class="fas fa-external-link-alt"></i></a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;面试官:“你有没有想过用AB实验来优化项目？”&lt;/p&gt;
-&lt;p&gt;​    瑟瑟发抖的我：“&lt;strong&gt;不好意思，我在做项目的时候想过用AB实验，但由于XXXX的原因无法落实。不过我自己构思了比较完整的实验思路……（此处省略若干字），如果有机会让我</summary>
       
     
     
