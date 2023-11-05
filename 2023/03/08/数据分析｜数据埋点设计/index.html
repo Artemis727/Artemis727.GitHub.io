@@ -1,180 +1,226 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
 <head>
-    <!-- so meta -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="六个步骤实现数据埋点设计1.确认事件与变量 这里的事件指产品中的功能或者用户的操作，而变量是指描述事件的属性或者关键指标。确认事件与变量可以通过AARRR模型或者UJM模型进行逐步拆解，理清用户生命周期和行为路径，抽象出每一个步骤的关键指标。 Tips：AARRR模型和UJM模型会在之前的文章中有讲过，点击阅读原文即可跳转。  AARRR 模型  UJM 模型   2.明确事件的触发时机 不同的触">
-<meta property="og:type" content="article">
-<meta property="og:title" content="数据分析｜数据埋点设计">
-<meta property="og:url" content="https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/index.html">
-<meta property="og:site_name" content="Syaoran :)">
-<meta property="og:description" content="六个步骤实现数据埋点设计1.确认事件与变量 这里的事件指产品中的功能或者用户的操作，而变量是指描述事件的属性或者关键指标。确认事件与变量可以通过AARRR模型或者UJM模型进行逐步拆解，理清用户生命周期和行为路径，抽象出每一个步骤的关键指标。 Tips：AARRR模型和UJM模型会在之前的文章中有讲过，点击阅读原文即可跳转。  AARRR 模型  UJM 模型   2.明确事件的触发时机 不同的触">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://picx.zhimg.com/v2-caf3ea7bae280944457fcd076dced07f_720w.jpg?source=172ae18b">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-35d0220539559da807f851b3059896b5_1440w.webp?source=1940ef5c">
-<meta property="og:image" content="https://picx.zhimg.com/80/v2-d33bda07fa0a48858fbf98a396530e90_1440w.webp?source=1940ef5c">
-<meta property="article:published_time" content="2023-03-08T01:32:24.000Z">
-<meta property="article:modified_time" content="2023-03-08T02:05:11.075Z">
-<meta property="article:author" content="Syaoran Li">
-<meta property="article:tag" content="数据分析">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://picx.zhimg.com/v2-caf3ea7bae280944457fcd076dced07f_720w.jpg?source=172ae18b">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
     
-    
-      
+    <title>
         
-          <link rel="shortcut icon" href="/images/favicon.ico">
+            数据分析｜数据埋点设计 |
         
-      
-      
-        
-          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
-        
-      
-      
-        
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-        
-      
-    
-    <!-- title -->
-    <title>数据分析｜数据埋点设计</title>
-    <!-- async scripts -->
-    <!-- Google Analytics -->
-
-
-    <!-- Umami Analytics -->
-
-
-    <!-- styles -->
+        Keep Theme
+    </title>
     
 <link rel="stylesheet" href="/css/style.css">
 
-    <!-- persian styles -->
     
-    <!-- rss -->
+        <link rel="shortcut icon" href="/images/logo.svg">
     
     
-	<!-- mathjax -->
-	
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"artemis727.github.io","root":"/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"style":{"primary_color":"#0066cc","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"scroll":{"progress_bar":false,"percent":false}},"local_search":{"enable":false,"preload":false},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"version":"3.8.6"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
 </head>
 
-<body class="max-width mx-auto px3 ltr">
-    
-      <div id="header-post">
-  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-        <!--
-       --><li><a href="/">Home</a></li><!--
-     --><!--
-       --><li><a href="/about/">About</a></li><!--
-     --><!--
-       --><li><a href="/archives/">Writing</a></li><!--
-     --><!--
-       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
-     -->
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        <li><a class="icon" aria-label="Previous post" href="/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%8C%87%E6%A0%87%E4%BD%93%E7%B3%BB%E6%90%AD%E5%BB%BA/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
-        
-        
-        <li><a class="icon" aria-label="Next post" href="/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
-        
-        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
-        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/&text=数据分析｜数据埋点设计"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/&title=数据分析｜数据埋点设计"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/&is_video=false&description=数据分析｜数据埋点设计"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=数据分析｜数据埋点设计&body=Check out this article: https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/&title=数据分析｜数据埋点设计"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/&title=数据分析｜数据埋点设计"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/&title=数据分析｜数据埋点设计"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/&title=数据分析｜数据埋点设计"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/&name=数据分析｜数据埋点设计&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/&t=数据分析｜数据埋点设计"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
-</ul>
 
-    </div>
+<body>
+<div class="progress-bar-container">
     
+
     
-      <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E4%B8%AA%E6%AD%A5%E9%AA%A4%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.</span> <span class="toc-text">六个步骤实现数据埋点设计</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A5%E7%94%B5%E5%95%86%E8%B4%AD%E7%89%A9%E6%88%90%E4%BA%A4%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%BE%8B%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.</span> <span class="toc-text">以电商购物成交转化为例实现数据埋点设计</span></a></li></ol>
-      </div>
-    
-  </span>
 </div>
 
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
     
-    <div class="content index py4 ">
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+
+                
+
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+
+        <div class="article-content-container border-box">
+
+            
+
+            <div class="article-content-bottom border-box">
+                
+                    <div class="article-title">
+                        数据分析｜数据埋点设计
+                    </div>
+                
+
+                
+                    <div class="article-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name">Keep Team</span>
+                                
+                                    <span class="author-label">Lv4</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="article-meta-info-container border-box post">
+    <div class="article-meta-info border-box">
         
-        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
+
+
+        
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2023-03-08 09:32:24</span>
+                <span class="mobile">2023-03-08 09:32</span>
+            </span>
+
+            <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Wed Mar 08 2023 10:05:11 GMT+0800">2023-03-08 10:05:11</span>
+            </span>
+        
+
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
     
-    <h1 class="posttitle p-name" itemprop="name headline">
-        数据分析｜数据埋点设计
-    </h1>
+</div>
 
+                            </div>
+                        </div>
+                    </div>
+                
 
+                <div class="article-content keep-markdown-body">
+                    
 
-    <div class="meta">
-      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span class="p-name" itemprop="name">Syaoran Li</span>
-      </span>
-      
-    <div class="postdate">
-      
-        <time datetime="2023-03-08T01:32:24.000Z" class="dt-published" itemprop="datePublished">2023-03-08</time>
-        
-      
-    </div>
-
-
-      
-
-      
-    <div class="article-tag">
-        <i class="fa-solid fa-tag"></i>
-        <a class="p-category" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" rel="tag">数据分析</a>
-    </div>
-
-
-    </div>
-  </header>
-  
-
-  <div class="content e-content" itemprop="articleBody">
-    <h1 id="六个步骤实现数据埋点设计"><a href="#六个步骤实现数据埋点设计" class="headerlink" title="六个步骤实现数据埋点设计"></a>六个步骤实现数据埋点设计</h1><p><strong>1.确认事件与变量</strong></p>
+                    <h1 id="六个步骤实现数据埋点设计"><a href="#六个步骤实现数据埋点设计" class="headerlink" title="六个步骤实现数据埋点设计"></a>六个步骤实现数据埋点设计</h1><p><strong>1.确认事件与变量</strong></p>
 <p>这里的<strong>事件指产品中的功能或者用户的操作，而变量是指描述事件的属性或者关键指标</strong>。确认事件与变量可以通过<strong>AARRR模型或者UJM模型</strong>进行逐步拆解，理清用户生命周期和行为路径，抽象出每一个步骤的关键指标。</p>
 <p>Tips：AARRR模型和UJM模型会在之前的文章中有讲过，点击阅读原文即可跳转。</p>
 <ul>
-<li><p>AARRR 模型<img  
-                     lazyload
-                     alt="image"
-                     data-src="https://picx.zhimg.com/v2-caf3ea7bae280944457fcd076dced07f_720w.jpg?source=172ae18b"
-                      alt="重要的产品分析模型：AARRR模型"
-                ></p>
+<li><p>AARRR 模型<img src="https://picx.zhimg.com/v2-caf3ea7bae280944457fcd076dced07f_720w.jpg?source=172ae18b" alt="重要的产品分析模型：AARRR模型"></p>
 </li>
 <li><p>UJM 模型</p>
 </li>
@@ -191,12 +237,7 @@
 <p>建立公司内部或者团队内部的命名规范是非常必要的，<strong>可以采用「动词+名词」或者「名词+动词」的规则来命名</strong>，比如「加入购物车」事件，就可以命名为：addToCart。</p>
 <p><strong>6.明确优先级</strong></p>
 <p>数据埋点都是为数据应用做铺排，埋点之后分析师可能面临着搭建指标体系和数据报表体系的工作，<strong>可以根据报表的优先级、埋点的技术实现成本以及资源有限性为数据埋点确定优先级</strong>。</p>
-<h1 id="以电商购物成交转化为例实现数据埋点设计"><a href="#以电商购物成交转化为例实现数据埋点设计" class="headerlink" title="以电商购物成交转化为例实现数据埋点设计"></a>以电商购物成交转化为例实现数据埋点设计</h1><p><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://pic1.zhimg.com/80/v2-35d0220539559da807f851b3059896b5_1440w.webp?source=1940ef5c"
-                      alt="img"
-                ></p>
+<h1 id="以电商购物成交转化为例实现数据埋点设计"><a href="#以电商购物成交转化为例实现数据埋点设计" class="headerlink" title="以电商购物成交转化为例实现数据埋点设计"></a>以电商购物成交转化为例实现数据埋点设计</h1><p><img src="https://pic1.zhimg.com/80/v2-35d0220539559da807f851b3059896b5_1440w.webp?source=1940ef5c" alt="img"></p>
 <p><strong>（1）通过UJM模型拆分用户购买商品的路径</strong>：将用户购买路径拆解为<u>注册-登录-商品曝光-商品点击-浏览页面详情-加入购物车-生成订单-订单支付</u>步骤，根据产品或策划提的数据需求，<u>确定每一个步骤学要看哪些字段才能实现数据需求</u>。</p>
 <p><strong>（2）确认触发机制</strong>：明确是在<u>点击按钮时记录行为还是在用户完成该步骤时</u>记录行为。</p>
 <p><strong>（3）确认上报机制</strong>：明确数据上报机制，是<u>实时上报还是异步上报</u>，不同的上报机制采集到的字段可能不一样，或者说需要将字段拆分到不同表进行记录。</p>
@@ -204,150 +245,253 @@
 <p><strong>（5）统一表层级结构</strong>：我们这里采用两层数据表结构，<u>第一层存放用户基信息，第二层存放用户行为信息</u>。这个根据团队内部的数据接入规范进行调整，只要是统一的结构，对于数据分析师的分析都是有利的。</p>
 <p><strong>（6）明确数据优先级</strong>：根据<u>埋点需求的紧急程度</u>，给每一个买埋点任务标上优先级。</p>
 <p>根据上面的六个步骤，将每一个步骤需要记录的字段按照标准格式<strong>汇总到文档</strong>，即可完成初步的埋点设计。当然完成初版埋点设计之后，还需要与<strong>产品、策划、程序</strong>一遍一遍过文档内容，不断修改完善，直至三方会谈达成统一意见。</p>
-<p><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://picx.zhimg.com/80/v2-d33bda07fa0a48858fbf98a396530e90_1440w.webp?source=1940ef5c"
-                      alt="img"
-                ></p>
+<p><img src="https://picx.zhimg.com/80/v2-d33bda07fa0a48858fbf98a396530e90_1440w.webp?source=1940ef5c" alt="img"></p>
 
-  </div>
-</article>
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="article-nav">
+                        
+                            <div class="article-prev">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%8C%87%E6%A0%87%E4%BD%93%E7%B3%BB%E6%90%AD%E5%BB%BA/"
+                                   title="数据分析｜指标体系搭建"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                      <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                            <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">数据分析｜指标体系搭建</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="article-next">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/"
+                                   title="数据分析｜数据指标口径不统一"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">数据分析｜数据指标口径不统一</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                            <span class="right arrow-icon flex-center">
+                                      <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
 
 
 
-        
-          <div id="footer-post-container">
-  <div id="footer-post">
 
-    <div id="nav-footer" style="display: none">
-      <ul>
+
+
+                
+            </div>
+        </div>
+
         
-          <li><a href="/">Home</a></li>
-        
-          <li><a href="/about/">About</a></li>
-        
-          <li><a href="/archives/">Writing</a></li>
-        
-          <li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li>
-        
-      </ul>
     </div>
-
-    
-    
-      <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E4%B8%AA%E6%AD%A5%E9%AA%A4%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.</span> <span class="toc-text">六个步骤实现数据埋点设计</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A5%E7%94%B5%E5%95%86%E8%B4%AD%E7%89%A9%E6%88%90%E4%BA%A4%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%BE%8B%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.</span> <span class="toc-text">以电商购物成交转化为例实现数据埋点设计</span></a></li></ol>
-      </div>
-    
-
-    <div id="share-footer" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/&text=数据分析｜数据埋点设计"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/&title=数据分析｜数据埋点设计"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/&is_video=false&description=数据分析｜数据埋点设计"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=数据分析｜数据埋点设计&body=Check out this article: https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/&title=数据分析｜数据埋点设计"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/&title=数据分析｜数据埋点设计"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/&title=数据分析｜数据埋点设计"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/&title=数据分析｜数据埋点设计"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/&name=数据分析｜数据埋点设计&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/&t=数据分析｜数据埋点设计"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        
-          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-    </div>
-
-  </div>
 </div>
 
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
         
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy;
-    
-    
-    2016-2023
-    Syaoran Li
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-        <!--
-       --><li><a href="/">Home</a></li><!--
-     --><!--
-       --><li><a href="/about/">About</a></li><!--
-     --><!--
-       --><li><a href="/archives/">Writing</a></li><!--
-     --><!--
-       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
-     -->
-      </ul>
-    </nav>
-  </div>
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2023
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Keep Team</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
 </footer>
 
+        </div>
     </div>
-    <!-- styles -->
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+
+        <!-- PC go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+</main>
 
 
 
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+<!-- common -->
 
+<script src="/js/utils.js"></script>
 
-    <!-- jquery -->
+<script src="/js/header-shrink.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+<script src="/js/back2top.js"></script>
 
-
-
-
-<!-- clipboard -->
-
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
-  
-  <script type="text/javascript">
-  $(function() {
-    // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
-    btn += '<i class="fa-regular fa-clone"></i>';
-    btn += '</span>';
-    // mount it!
-    $(".highlight table").before(btn);
-    var clip = new ClipboardJS('.btn-copy', {
-      text: function(trigger) {
-        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
-      }
-    });
-    clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "Copied!");
-      e.clearSelection();
-    })
-  })
-  </script>
-
+<script src="/js/dark-light-toggle.js"></script>
 
 <script src="/js/main.js"></script>
 
-<!-- search -->
+<script src="/js/libs/anime.min.js"></script>
 
-<!-- Baidu Analytics -->
 
-<!-- Cloudflare Analytics -->
+<!-- local-search -->
 
-<!-- Disqus Comments -->
 
-<!-- utterances Comments -->
+<!-- code-block -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
 
 </body>
 </html>

@@ -1,177 +1,222 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
 <head>
-    <!-- so meta -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Case1: 统一指标在不同系统之间标口径不一致改进方方案是将各个系统都需要用的复合指标，统一由数据中台进行加工，并统一向外提供消费，同时数据中台需要确保指标的准确性、及时性，最好能提供自我质量检查机制，无需消费者自己再检查。 Case2: 中间表的建立和维护 目的：依托于基础的埋点表&#x2F;业务明细表&#x2F;用户明细表等，来提高数据提取与输出的效率。 作用：在[dws层 (data w">
-<meta property="og:type" content="article">
-<meta property="og:title" content="数据分析｜数据指标口径不统一">
-<meta property="og:url" content="https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/index.html">
-<meta property="og:site_name" content="Syaoran :)">
-<meta property="og:description" content="Case1: 统一指标在不同系统之间标口径不一致改进方方案是将各个系统都需要用的复合指标，统一由数据中台进行加工，并统一向外提供消费，同时数据中台需要确保指标的准确性、及时性，最好能提供自我质量检查机制，无需消费者自己再检查。 Case2: 中间表的建立和维护 目的：依托于基础的埋点表&#x2F;业务明细表&#x2F;用户明细表等，来提高数据提取与输出的效率。 作用：在[dws层 (data w">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://img.pmcaff.com/9e2f3796fc0662953a71edd6a76592b9-picture?imageView2/0/format/jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-7589a707dbcb40bddd1d36577b8a250c_1440w.webp">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-c9a75c4aaf73c79c9e2760754722c0eb_1440w.webp">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-c14e8c8aa14ce726c0044756eb35aaf4_1440w.webp">
-<meta property="article:published_time" content="2023-03-08T00:55:55.000Z">
-<meta property="article:modified_time" content="2023-03-08T01:23:49.754Z">
-<meta property="article:author" content="Syaoran Li">
-<meta property="article:tag" content="数据分析">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://img.pmcaff.com/9e2f3796fc0662953a71edd6a76592b9-picture?imageView2/0/format/jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
     
-    
-      
+    <title>
         
-          <link rel="shortcut icon" href="/images/favicon.ico">
+            数据分析｜数据指标口径不统一 |
         
-      
-      
-        
-          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
-        
-      
-      
-        
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-        
-      
-    
-    <!-- title -->
-    <title>数据分析｜数据指标口径不统一</title>
-    <!-- async scripts -->
-    <!-- Google Analytics -->
-
-
-    <!-- Umami Analytics -->
-
-
-    <!-- styles -->
+        Keep Theme
+    </title>
     
 <link rel="stylesheet" href="/css/style.css">
 
-    <!-- persian styles -->
     
-    <!-- rss -->
+        <link rel="shortcut icon" href="/images/logo.svg">
     
     
-	<!-- mathjax -->
-	
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"artemis727.github.io","root":"/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"style":{"primary_color":"#0066cc","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"scroll":{"progress_bar":false,"percent":false}},"local_search":{"enable":false,"preload":false},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"version":"3.8.6"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
 </head>
 
-<body class="max-width mx-auto px3 ltr">
-    
-      <div id="header-post">
-  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-        <!--
-       --><li><a href="/">Home</a></li><!--
-     --><!--
-       --><li><a href="/about/">About</a></li><!--
-     --><!--
-       --><li><a href="/archives/">Writing</a></li><!--
-     --><!--
-       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
-     -->
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        <li><a class="icon" aria-label="Previous post" href="/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
-        
-        
-        <li><a class="icon" aria-label="Next post" href="/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CDAU%E4%B8%8B%E9%99%8D%E5%88%86%E6%9E%90/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
-        
-        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
-        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/&text=数据分析｜数据指标口径不统一"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/&title=数据分析｜数据指标口径不统一"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/&is_video=false&description=数据分析｜数据指标口径不统一"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=数据分析｜数据指标口径不统一&body=Check out this article: https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/&title=数据分析｜数据指标口径不统一"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/&title=数据分析｜数据指标口径不统一"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/&title=数据分析｜数据指标口径不统一"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/&title=数据分析｜数据指标口径不统一"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/&name=数据分析｜数据指标口径不统一&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/&t=数据分析｜数据指标口径不统一"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
-</ul>
 
-    </div>
+<body>
+<div class="progress-bar-container">
     
+
     
-      <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Case1-%E7%BB%9F%E4%B8%80%E6%8C%87%E6%A0%87%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E9%97%B4%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E4%B8%80%E8%87%B4"><span class="toc-number">1.</span> <span class="toc-text">Case1: 统一指标在不同系统之间标口径不一致</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Case2-%E4%B8%AD%E9%97%B4%E8%A1%A8%E7%9A%84%E5%BB%BA%E7%AB%8B%E5%92%8C%E7%BB%B4%E6%8A%A4"><span class="toc-number">2.</span> <span class="toc-text">Case2: 中间表的建立和维护</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%9B%E7%BB%99%E7%AB%AF"><span class="toc-number">2.1.</span> <span class="toc-text">供给端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B6%88%E8%80%97%E7%AB%AF"><span class="toc-number">2.2.</span> <span class="toc-text">消耗端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">2.3.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Case3-%E5%8F%AF%E4%BB%A5%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80%E7%9A%84%E9%97%AE%E9%A2%98%E5%90%97%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">Case3: 可以彻底解决数据指标口径不统一的问题吗？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Case4-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%85%AC%E5%8F%B8%E5%86%85%E9%83%A8%E7%BB%9F%E4%B8%80%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84"><span class="toc-number">4.</span> <span class="toc-text">Case4: 如何在公司内部统一数据指标口径</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B6%E5%AE%9A%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%A7%84%E8%8C%83"><span class="toc-number">4.1.</span> <span class="toc-text">制定数据埋点规范</span></a></li></ol></li></ol>
-      </div>
-    
-  </span>
 </div>
 
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
     
-    <div class="content index py4 ">
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+
+                
+
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+
+        <div class="article-content-container border-box">
+
+            
+
+            <div class="article-content-bottom border-box">
+                
+                    <div class="article-title">
+                        数据分析｜数据指标口径不统一
+                    </div>
+                
+
+                
+                    <div class="article-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name">Keep Team</span>
+                                
+                                    <span class="author-label">Lv4</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="article-meta-info-container border-box post">
+    <div class="article-meta-info border-box">
         
-        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
+
+
+        
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2023-03-08 08:55:55</span>
+                <span class="mobile">2023-03-08 08:55</span>
+            </span>
+
+            <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Wed Mar 08 2023 09:23:49 GMT+0800">2023-03-08 09:23:49</span>
+            </span>
+        
+
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
     
-    <h1 class="posttitle p-name" itemprop="name headline">
-        数据分析｜数据指标口径不统一
-    </h1>
+</div>
 
+                            </div>
+                        </div>
+                    </div>
+                
 
+                <div class="article-content keep-markdown-body">
+                    
 
-    <div class="meta">
-      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span class="p-name" itemprop="name">Syaoran Li</span>
-      </span>
-      
-    <div class="postdate">
-      
-        <time datetime="2023-03-08T00:55:55.000Z" class="dt-published" itemprop="datePublished">2023-03-08</time>
-        
-      
-    </div>
-
-
-      
-
-      
-    <div class="article-tag">
-        <i class="fa-solid fa-tag"></i>
-        <a class="p-category" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" rel="tag">数据分析</a>
-    </div>
-
-
-    </div>
-  </header>
-  
-
-  <div class="content e-content" itemprop="articleBody">
-    <p><img  
-                     lazyload
-                     alt="image"
-                     data-src="http://img.pmcaff.com/9e2f3796fc0662953a71edd6a76592b9-picture?imageView2/0/format/jpg"
-                      alt="图片"
-                ></p>
+                    <p><img src="http://img.pmcaff.com/9e2f3796fc0662953a71edd6a76592b9-picture?imageView2/0/format/jpg" alt="图片"></p>
 <h1 id="Case1-统一指标在不同系统之间标口径不一致"><a href="#Case1-统一指标在不同系统之间标口径不一致" class="headerlink" title="Case1: 统一指标在不同系统之间标口径不一致"></a>Case1: 统一指标在不同系统之间标口径不一致</h1><p>改进方方案是<strong>将各个系统都需要用的复合指标，统一由数据中台进行加工，并统一向外提供消费</strong>，同时数据中台需要确保指标的<strong>准确性、及时性</strong>，最好能提供<strong>自我质量检查机制</strong>，无需消费者自己再检查。</p>
 <h1 id="Case2-中间表的建立和维护"><a href="#Case2-中间表的建立和维护" class="headerlink" title="Case2: 中间表的建立和维护"></a>Case2: 中间表的建立和维护</h1><ul>
 <li>目的：依托于基础的<strong>埋点表&#x2F;业务明细表&#x2F;用户明细表</strong>等，来提高<strong>数据提取与输出</strong>的效率。</li>
@@ -181,26 +226,11 @@
 <p>引自：<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/145226500" >https://zhuanlan.zhihu.com/p/145226500<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
 <h2 id="供给端"><a href="#供给端" class="headerlink" title="供给端"></a>供给端</h2><p>创建一张中间表，将所有功能数据存储，对于有关需求可以随取随用。</p>
-<p><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://pic1.zhimg.com/80/v2-7589a707dbcb40bddd1d36577b8a250c_1440w.webp"
-                      alt="img"
-                ></p>
+<p><img src="https://pic1.zhimg.com/80/v2-7589a707dbcb40bddd1d36577b8a250c_1440w.webp" alt="img"></p>
 <h2 id="消耗端"><a href="#消耗端" class="headerlink" title="消耗端"></a>消耗端</h2><p>运营人员除了关注整体的文章阅读外，还会关注各个入口的转化情况，数据如下：</p>
-<p><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://pic4.zhimg.com/80/v2-c9a75c4aaf73c79c9e2760754722c0eb_1440w.webp"
-                      alt="img"
-                ></p>
+<p><img src="https://pic4.zhimg.com/80/v2-c9a75c4aaf73c79c9e2760754722c0eb_1440w.webp" alt="img"></p>
 <p><strong>与产品&#x2F;运营人员，开会商议，确定每个来源入口的规则，对埋点表进行处理，用case when使不同的来源入口标签化</strong>：</p>
-<p><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://pic1.zhimg.com/80/v2-c14e8c8aa14ce726c0044756eb35aaf4_1440w.webp"
-                      alt="img"
-                ></p>
+<p><img src="https://pic1.zhimg.com/80/v2-c14e8c8aa14ce726c0044756eb35aaf4_1440w.webp" alt="img"></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过建立中间表，确实可以提高数据的输出效率，但是<strong>光建立是远远不够的，后期的维护也同样重要</strong>。</p>
 <p>由于规则是与产品&#x2F;运营商定的，<strong>必须形成规范的数据字典文档，存储在公共平台上</strong>（wiki、SVN等），有改动或者新增，需及时调整。</p>
 <p>有新增的业务时，也要在发版之后，添加至中间表中，避免数据遗漏或者重跑。</p>
@@ -210,143 +240,251 @@
 <h1 id="Case4-如何在公司内部统一数据指标口径"><a href="#Case4-如何在公司内部统一数据指标口径" class="headerlink" title="Case4: 如何在公司内部统一数据指标口径"></a>Case4: 如何在公司内部统一数据指标口径</h1><p>第一，<strong>规范数据埋点</strong>，先统一数据埋点的<u>最小维度记录方式</u>等，做好这一步是统一数据口径的基础，会为之后口径的统一提供极大便利；其次是，<strong>构建数据字典</strong>，定义每一个指标的<u>最小维度和统计口径</u>；然后就是通过<strong>数据指标体系</strong>等进行数据指标的展示。</p>
 <p>当然这只是数据层面的，对口径的统一还需要和各方沟通达成统一的认知。</p>
 <h2 id="制定数据埋点规范"><a href="#制定数据埋点规范" class="headerlink" title="制定数据埋点规范"></a>制定数据埋点规范</h2>
-  </div>
-</article>
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="article-nav">
+                        
+                            <div class="article-prev">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1/"
+                                   title="数据分析｜数据埋点设计"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                      <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                            <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">数据分析｜数据埋点设计</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="article-next">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CDAU%E4%B8%8B%E9%99%8D%E5%88%86%E6%9E%90/"
+                                   title="数据分析|DAU下降分析"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">数据分析|DAU下降分析</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                            <span class="right arrow-icon flex-center">
+                                      <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
 
 
 
-        
-          <div id="footer-post-container">
-  <div id="footer-post">
 
-    <div id="nav-footer" style="display: none">
-      <ul>
+
+
+                
+            </div>
+        </div>
+
         
-          <li><a href="/">Home</a></li>
-        
-          <li><a href="/about/">About</a></li>
-        
-          <li><a href="/archives/">Writing</a></li>
-        
-          <li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li>
-        
-      </ul>
     </div>
-
-    
-    
-      <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Case1-%E7%BB%9F%E4%B8%80%E6%8C%87%E6%A0%87%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E9%97%B4%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E4%B8%80%E8%87%B4"><span class="toc-number">1.</span> <span class="toc-text">Case1: 统一指标在不同系统之间标口径不一致</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Case2-%E4%B8%AD%E9%97%B4%E8%A1%A8%E7%9A%84%E5%BB%BA%E7%AB%8B%E5%92%8C%E7%BB%B4%E6%8A%A4"><span class="toc-number">2.</span> <span class="toc-text">Case2: 中间表的建立和维护</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%9B%E7%BB%99%E7%AB%AF"><span class="toc-number">2.1.</span> <span class="toc-text">供给端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B6%88%E8%80%97%E7%AB%AF"><span class="toc-number">2.2.</span> <span class="toc-text">消耗端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">2.3.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Case3-%E5%8F%AF%E4%BB%A5%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80%E7%9A%84%E9%97%AE%E9%A2%98%E5%90%97%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">Case3: 可以彻底解决数据指标口径不统一的问题吗？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Case4-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%85%AC%E5%8F%B8%E5%86%85%E9%83%A8%E7%BB%9F%E4%B8%80%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84"><span class="toc-number">4.</span> <span class="toc-text">Case4: 如何在公司内部统一数据指标口径</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B6%E5%AE%9A%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%A7%84%E8%8C%83"><span class="toc-number">4.1.</span> <span class="toc-text">制定数据埋点规范</span></a></li></ol></li></ol>
-      </div>
-    
-
-    <div id="share-footer" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/&text=数据分析｜数据指标口径不统一"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/&title=数据分析｜数据指标口径不统一"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/&is_video=false&description=数据分析｜数据指标口径不统一"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=数据分析｜数据指标口径不统一&body=Check out this article: https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/&title=数据分析｜数据指标口径不统一"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/&title=数据分析｜数据指标口径不统一"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/&title=数据分析｜数据指标口径不统一"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/&title=数据分析｜数据指标口径不统一"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/&name=数据分析｜数据指标口径不统一&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80/&t=数据分析｜数据指标口径不统一"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        
-          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-    </div>
-
-  </div>
 </div>
 
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
         
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy;
-    
-    
-    2016-2023
-    Syaoran Li
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-        <!--
-       --><li><a href="/">Home</a></li><!--
-     --><!--
-       --><li><a href="/about/">About</a></li><!--
-     --><!--
-       --><li><a href="/archives/">Writing</a></li><!--
-     --><!--
-       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
-     -->
-      </ul>
-    </nav>
-  </div>
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2023
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Keep Team</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
 </footer>
 
+        </div>
     </div>
-    <!-- styles -->
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+
+        <!-- PC go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+</main>
 
 
 
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+<!-- common -->
 
+<script src="/js/utils.js"></script>
 
-    <!-- jquery -->
+<script src="/js/header-shrink.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+<script src="/js/back2top.js"></script>
 
-
-
-
-<!-- clipboard -->
-
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
-  
-  <script type="text/javascript">
-  $(function() {
-    // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
-    btn += '<i class="fa-regular fa-clone"></i>';
-    btn += '</span>';
-    // mount it!
-    $(".highlight table").before(btn);
-    var clip = new ClipboardJS('.btn-copy', {
-      text: function(trigger) {
-        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
-      }
-    });
-    clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "Copied!");
-      e.clearSelection();
-    })
-  })
-  </script>
-
+<script src="/js/dark-light-toggle.js"></script>
 
 <script src="/js/main.js"></script>
 
-<!-- search -->
+<script src="/js/libs/anime.min.js"></script>
 
-<!-- Baidu Analytics -->
 
-<!-- Cloudflare Analytics -->
+<!-- local-search -->
 
-<!-- Disqus Comments -->
 
-<!-- utterances Comments -->
+<!-- code-block -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
 
 </body>
 </html>
