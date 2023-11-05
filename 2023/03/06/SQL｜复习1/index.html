@@ -1,258 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=en>
 <head>
+    <!-- so meta -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
-    <meta name="description" content="Hexo Theme Keep">
-    <meta name="author" content="Syaoran Li">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="SQL语句顺序sql语句的书写顺序:select &gt;&gt; from &gt;&gt; where &gt;&gt; group by &gt;&gt; having &gt;&gt; order by &gt;&gt; limit注意：  select和from是必须的； where和having不能同时使用; having和group by联合使用；  sql语句的解析顺序 :from">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL｜复习1">
+<meta property="og:url" content="https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/index.html">
+<meta property="og:site_name" content="Syaoran :)">
+<meta property="og:description" content="SQL语句顺序sql语句的书写顺序:select &gt;&gt; from &gt;&gt; where &gt;&gt; group by &gt;&gt; having &gt;&gt; order by &gt;&gt; limit注意：  select和from是必须的； where和having不能同时使用; having和group by联合使用；  sql语句的解析顺序 :from">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-a9342df7f64ec7d9a52b42adcdb48341_1440w.webp">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-ad1d86f5a5b9f0ef684907b20b341099_1440w.webp">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-c48f0218306f65049fcf9f98c184226d_1440w.webp">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-c589fe21dd785ff5996174684cc4de84_1440w.webp">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190816192208899.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3RheW5naA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190816192248562.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1691280-fe651b7989ee5052.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/267/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1691280-e82d6a40909b732f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/354/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1691280-e82d6a40909b732f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/354/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1691280-fe651b7989ee5052.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/267/format/webp">
+<meta property="article:published_time" content="2023-03-06T12:38:18.000Z">
+<meta property="article:modified_time" content="2023-03-20T02:01:41.398Z">
+<meta property="article:author" content="Syaoran Li">
+<meta property="article:tag" content="SQL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic2.zhimg.com/80/v2-a9342df7f64ec7d9a52b42adcdb48341_1440w.webp">
     
-    <title>
+    
+      
         
-            SQL｜复习1 |
+          <link rel="shortcut icon" href="/images/favicon.ico">
         
-        Syaoran:)
-    </title>
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>SQL｜复习1</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
     
 <link rel="stylesheet" href="/css/style.css">
 
-    <link rel="shortcut icon" href="/images/favicon.png">
+    <!-- persian styles -->
     
-<link rel="stylesheet" href="/font/css/fontawesome.min.css">
-
+    <!-- rss -->
     
-<link rel="stylesheet" href="/font/css/regular.min.css">
-
     
-<link rel="stylesheet" href="/font/css/solid.min.css">
-
-    
-<link rel="stylesheet" href="/font/css/brands.min.css">
-
-    <script id="hexo-configurations">
-    let KEEP = window.KEEP || {}
-    KEEP.hexo_config = {"hostname":"artemis727.github.io","root":"/","language":"en","path":"search.json"}
-    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#55efc4","logo":"/images/profile.jpg","favicon":"/images/favicon.png","avatar":"/images/profile.jpg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg.svg","description":"The higher I got, || the more amazed I was by the view.","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":true},"comment":{"enable":true,"use":"valine","valine":{"appid":"LTgZzPPbq5jCkagzeI9TnhVV-gzGzoHsz","appkey":"akDnGyiE0qXqen4IP2MfEOiy","server_urls":null,"placeholder":"👻尽情吐槽吧～"},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":false},"version":"3.6.1"}
-    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
-    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
-    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
-  </script>
+	<!-- mathjax -->
+	
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
 </head>
 
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CDAU%E4%B8%8B%E9%99%8D%E5%88%86%E6%9E%90/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/03/04/%E5%85%AD%E7%BA%A7%EF%BD%9C%E7%BF%BB%E8%AF%91/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/&text=SQL｜复习1"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/&title=SQL｜复习1"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/&is_video=false&description=SQL｜复习1"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=SQL｜复习1&body=Check out this article: https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/&title=SQL｜复习1"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/&title=SQL｜复习1"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/&title=SQL｜复习1"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/&title=SQL｜复习1"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/&name=SQL｜复习1&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/&t=SQL｜复习1"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
 
-<body>
-<div class="progress-bar-container">
+    </div>
     
-        <span class="scroll-progress-bar"></span>
     
-
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL%E8%AF%AD%E5%8F%A5%E9%A1%BA%E5%BA%8F"><span class="toc-number">1.</span> <span class="toc-text">SQL语句顺序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E4%BA%8E-join%EF%BC%8C%E5%A6%82%E6%9E%9C%E4%B8%8D%E5%86%99-left-inner-right-%EF%BC%8C%E9%BB%98%E8%AE%A4%E6%98%AF%E4%BB%80%E4%B9%88%E8%81%94%E6%8E%A5%E5%91%A2%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">对于 join，如果不写 left, inner, right ，默认是什么联接呢？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="toc-number">3.</span> <span class="toc-text">SQL窗口函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8"><span class="toc-number">3.1.</span> <span class="toc-text">窗口函数使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rank"><span class="toc-number">3.1.1.</span> <span class="toc-text">rank</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="toc-number">3.1.2.</span> <span class="toc-text">其他窗口函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="toc-number">3.1.3.</span> <span class="toc-text">聚合函数作为窗口函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">3.2.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">3.3.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#on%E5%92%8Cwhere%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.</span> <span class="toc-text">on和where的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-number">4.1.</span> <span class="toc-text">总结：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL%E8%A1%8C%E5%88%97%E8%BD%AC%E6%8D%A2"><span class="toc-number">5.</span> <span class="toc-text">SQL行列转换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E8%BD%AC%E5%88%97"><span class="toc-number">5.1.</span> <span class="toc-text">行转列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E8%BD%AC%E8%A1%8C"><span class="toc-number">5.2.</span> <span class="toc-text">列转行</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">6.</span> <span class="toc-text">索引的作用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%92%E5%90%8D%E5%87%BD%E6%95%B0%E4%B8%8E%E6%8E%92%E5%BA%8F%E5%87%BD%E6%95%B0"><span class="toc-number">7.</span> <span class="toc-text">排名函数与排序函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E5%A4%9A%E4%B8%AAselect%EF%BC%9F"><span class="toc-number">8.</span> <span class="toc-text">连接多个select？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E9%94%AE%E5%92%8C%E5%A4%96%E5%BB%BA%EF%BC%9F"><span class="toc-number">9.</span> <span class="toc-text">主键和外建？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%91%E8%A1%A8%E4%B8%AD%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">10.</span> <span class="toc-text">向表中插入数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%A1%A8%E4%B8%AD%E6%95%B0%E6%8D%AE"><span class="toc-number">11.</span> <span class="toc-text">删除表中数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0"><span class="toc-number">12.</span> <span class="toc-text">字符串常见操作函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#in-x2F-exist-%E7%9A%84%E5%85%B3%E7%B3%BB%E5%92%8C%E5%8C%BA%E5%88%AB"><span class="toc-number">13.</span> <span class="toc-text">in&#x2F;exist 的关系和区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF"><span class="toc-number">14.</span> <span class="toc-text">笛卡尔积</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#LEFT-JOIN%E5%92%8CINNER-JOIN%EF%BC%8CFULL-JOIN%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">15.</span> <span class="toc-text">LEFT JOIN和INNER JOIN，FULL JOIN什么区别？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HAVING%E5%92%8CWHERE%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">16.</span> <span class="toc-text">HAVING和WHERE什么区别？</span></a></li></ol>
+      </div>
     
+  </span>
 </div>
 
-
-<main class="page-container">
-
     
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        SQL｜复习1
+    </h1>
 
-    <div class="page-main-content">
 
-        <div class="page-main-content-top">
-            
-<header class="header-wrapper">
 
-    <div class="header-content">
-        <div class="left">
-            
-                <a class="logo-image" href="/">
-                    <img src="/images/profile.jpg">
-                </a>
-            
-            <a class="logo-title" href="/">
-               Syaoran:)
-            </a>
-        </div>
-
-        <div class="right">
-            <div class="pc">
-                <ul class="menu-list">
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/"
-                            >
-                                HOME
-                            </a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/archives"
-                            >
-                                ARCHIVES
-                            </a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/tags"
-                            >
-                                TAGS
-                            </a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/categories"
-                            >
-                                CATEGORIES
-                            </a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/about"
-                            >
-                                ABOUT
-                            </a>
-                        </li>
-                    
-                    
-                        <li class="menu-item search search-popup-trigger">
-                            <i class="fas fa-search"></i>
-                        </li>
-                    
-                </ul>
-            </div>
-            <div class="mobile">
-                
-                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
-                
-                <div class="icon-item menu-bar">
-                    <div class="menu-bar-middle"></div>
-                </div>
-            </div>
-        </div>
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Syaoran Li</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-03-06T12:38:18.000Z" class="dt-published" itemprop="datePublished">2023-03-06</time>
+        
+      
     </div>
 
-    <div class="header-drawer">
-        <ul class="drawer-menu-list">
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/">HOME</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/archives">ARCHIVES</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/tags">TAGS</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/categories">CATEGORIES</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/about">ABOUT</a>
-                </li>
-            
-        </ul>
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/SQL/" rel="tag">SQL</a>
     </div>
 
-    <div class="window-mask"></div>
 
-</header>
+    </div>
+  </header>
+  
 
-
-        </div>
-
-        <div class="page-main-content-middle">
-
-            <div class="main-content">
-
-                
-                    <div class="fade-in-down-animation">
-    <div class="post-page-container">
-        <div class="article-content-container">
-
-            <div class="article-title">
-                <span class="title-hover-animation">SQL｜复习1</span>
-            </div>
-
-            
-                <div class="article-header">
-                    <div class="avatar">
-                        <img src="/images/profile.jpg">
-                    </div>
-                    <div class="info">
-                        <div class="author">
-                            <span class="name">Syaoran Li</span>
-                            
-                        </div>
-                        <div class="meta-info">
-                            
-<div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        
-            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
-        
-        <span class="pc">2023-03-06 20:38:18</span>
-        <span class="mobile">2023-03-06 20:38</span>
-    </span>
-    
-        <span class="article-update-date article-meta-item">
-        <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-03-20 10:01:41</span>
-    </span>
-    
-    
-    
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/tags/SQL/">SQL</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
-
-    
-    
-        <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>5.6k Words</span>
-        </span>
-    
-    
-        <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>21 Mins</span>
-        </span>
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            
-
-            <div class="article-content keep-markdown-body">
-                
-
-                <h1 id="SQL语句顺序"><a href="#SQL语句顺序" class="headerlink" title="SQL语句顺序"></a>SQL语句顺序</h1><p>sql语句的书写顺序:<br><strong>select &gt;&gt; from &gt;&gt; where &gt;&gt; group by &gt;&gt; having &gt;&gt; order by &gt;&gt; limit</strong><br>注意：</p>
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="SQL语句顺序"><a href="#SQL语句顺序" class="headerlink" title="SQL语句顺序"></a>SQL语句顺序</h1><p>sql语句的书写顺序:<br><strong>select &gt;&gt; from &gt;&gt; where &gt;&gt; group by &gt;&gt; having &gt;&gt; order by &gt;&gt; limit</strong><br>注意：</p>
 <ol>
 <li>select和from是必须的；</li>
 <li>where和having不能同时使用;</li>
@@ -532,367 +452,143 @@
 </li>
 </ul>
 
-            </div>
+  </div>
+</article>
 
-            
 
-            
-                <ul class="post-tags-box">
-                    
-                        <li class="tag-item">
-                            <a href="/tags/SQL/">#SQL</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            
 
-            
-                <div class="article-nav">
-                    
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CDAU%E4%B8%8B%E9%99%8D%E5%88%86%E6%9E%90/"
-                            >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">数据分析|DAU下降分析</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                            </a>
-                        </div>
-                    
-                    
-                        <div class="article-next">
-                            <a class="next"
-                               rel="next"
-                               href="/2023/03/04/%E5%85%AD%E7%BA%A7%EF%BD%9C%E7%BF%BB%E8%AF%91/"
-                            >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">六级｜翻译</span>
-                                <span class="post-nav-item">Next posts</span>
-                            </span>
-                                <span class="right arrow-icon flex-center">
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                            </a>
-                        </div>
-                    
-                </div>
-            
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
 
-            
-                <div class="comment-container">
-                    
-<div class="comments-container">
-    <div id="comments-anchor"></div>
-    <div class="comment-area-title">
-        <i class="fas fa-comments"></i>&nbsp;Comments
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li>
+        
+      </ul>
     </div>
+
     
-        
-            
-
-    <div class="valine-container">
-        <script  src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
-        <div id="vcomments"></div>
-        <script >
-          function loadValine() {
-
-            const config = {
-              el: '#vcomments',
-              appId: 'LTgZzPPbq5jCkagzeI9TnhVV-gzGzoHsz',
-              appKey: 'akDnGyiE0qXqen4IP2MfEOiy',
-              meta: ['nick', 'mail', 'link'],
-              avatar: 'wavatar',
-              enableQQ: true,
-              placeholder: '👻尽情吐槽吧～',
-              lang: 'en'.toLowerCase()
-            }
-
-            if ('') {
-              config.serverURLs = ''
-            }
-
-            new Valine(config)
-
-            function getAuthor(language) {
-              switch (language) {
-                case 'en':
-                  return 'Author'
-                case 'zh-CN':
-                  return '博主'
-                default:
-                  return 'Master'
-              }
-            }
-
-            // Add "Author" identify
-            const getValineDomTimer = setInterval(() => {
-              const vcards = document.querySelectorAll('#vcomments .vcards .vcard')
-              if (vcards.length > 0) {
-                let author = 'Syaoran Li'
-
-                if (author) {
-                  for (let vcard of vcards) {
-                    const vnick_dom = vcard.querySelector('.vhead .vnick')
-                    const vnick = vnick_dom.innerHTML
-                    if (vnick === author) {
-                      vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
-                    }
-                  }
-                }
-                clearInterval(getValineDomTimer)
-              } else {
-                clearInterval(getValineDomTimer)
-              }
-            }, 2000)
-          }
-
-          if ('false' === 'true') {
-            const loadValineTimeout = setTimeout(() => {
-              loadValine()
-              clearTimeout(loadValineTimeout)
-            }, 1000)
-          } else {
-            window.addEventListener('DOMContentLoaded', loadValine)
-          }
-        </script>
-    </div>
-
-
-
-        
     
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL%E8%AF%AD%E5%8F%A5%E9%A1%BA%E5%BA%8F"><span class="toc-number">1.</span> <span class="toc-text">SQL语句顺序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E4%BA%8E-join%EF%BC%8C%E5%A6%82%E6%9E%9C%E4%B8%8D%E5%86%99-left-inner-right-%EF%BC%8C%E9%BB%98%E8%AE%A4%E6%98%AF%E4%BB%80%E4%B9%88%E8%81%94%E6%8E%A5%E5%91%A2%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">对于 join，如果不写 left, inner, right ，默认是什么联接呢？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="toc-number">3.</span> <span class="toc-text">SQL窗口函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8"><span class="toc-number">3.1.</span> <span class="toc-text">窗口函数使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rank"><span class="toc-number">3.1.1.</span> <span class="toc-text">rank</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="toc-number">3.1.2.</span> <span class="toc-text">其他窗口函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="toc-number">3.1.3.</span> <span class="toc-text">聚合函数作为窗口函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">3.2.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">3.3.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#on%E5%92%8Cwhere%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.</span> <span class="toc-text">on和where的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-number">4.1.</span> <span class="toc-text">总结：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL%E8%A1%8C%E5%88%97%E8%BD%AC%E6%8D%A2"><span class="toc-number">5.</span> <span class="toc-text">SQL行列转换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E8%BD%AC%E5%88%97"><span class="toc-number">5.1.</span> <span class="toc-text">行转列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E8%BD%AC%E8%A1%8C"><span class="toc-number">5.2.</span> <span class="toc-text">列转行</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">6.</span> <span class="toc-text">索引的作用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%92%E5%90%8D%E5%87%BD%E6%95%B0%E4%B8%8E%E6%8E%92%E5%BA%8F%E5%87%BD%E6%95%B0"><span class="toc-number">7.</span> <span class="toc-text">排名函数与排序函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E5%A4%9A%E4%B8%AAselect%EF%BC%9F"><span class="toc-number">8.</span> <span class="toc-text">连接多个select？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E9%94%AE%E5%92%8C%E5%A4%96%E5%BB%BA%EF%BC%9F"><span class="toc-number">9.</span> <span class="toc-text">主键和外建？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%91%E8%A1%A8%E4%B8%AD%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">10.</span> <span class="toc-text">向表中插入数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%A1%A8%E4%B8%AD%E6%95%B0%E6%8D%AE"><span class="toc-number">11.</span> <span class="toc-text">删除表中数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0"><span class="toc-number">12.</span> <span class="toc-text">字符串常见操作函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#in-x2F-exist-%E7%9A%84%E5%85%B3%E7%B3%BB%E5%92%8C%E5%8C%BA%E5%88%AB"><span class="toc-number">13.</span> <span class="toc-text">in&#x2F;exist 的关系和区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF"><span class="toc-number">14.</span> <span class="toc-text">笛卡尔积</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#LEFT-JOIN%E5%92%8CINNER-JOIN%EF%BC%8CFULL-JOIN%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">15.</span> <span class="toc-text">LEFT JOIN和INNER JOIN，FULL JOIN什么区别？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HAVING%E5%92%8CWHERE%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">16.</span> <span class="toc-text">HAVING和WHERE什么区别？</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/&text=SQL｜复习1"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/&title=SQL｜复习1"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/&is_video=false&description=SQL｜复习1"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=SQL｜复习1&body=Check out this article: https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/&title=SQL｜复习1"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/&title=SQL｜复习1"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/&title=SQL｜复习1"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/&title=SQL｜复习1"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/&name=SQL｜复习1&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://artemis727.github.io/2023/03/06/SQL%EF%BD%9C%E5%A4%8D%E4%B9%A01/&t=SQL｜复习1"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
 </div>
 
-                </div>
-            
-        </div>
-
         
-            <div class="toc-content-container">
-                <div class="post-toc-wrap">
-    <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E8%AF%AD%E5%8F%A5%E9%A1%BA%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text">SQL语句顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%B9%E4%BA%8E-join%EF%BC%8C%E5%A6%82%E6%9E%9C%E4%B8%8D%E5%86%99-left-inner-right-%EF%BC%8C%E9%BB%98%E8%AE%A4%E6%98%AF%E4%BB%80%E4%B9%88%E8%81%94%E6%8E%A5%E5%91%A2%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">对于 join，如果不写 left, inner, right ，默认是什么联接呢？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">SQL窗口函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8"><span class="nav-number">3.1.</span> <span class="nav-text">窗口函数使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rank"><span class="nav-number">3.1.1.</span> <span class="nav-text">rank</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">3.1.2.</span> <span class="nav-text">其他窗口函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">3.1.3.</span> <span class="nav-text">聚合函数作为窗口函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">3.2.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#on%E5%92%8Cwhere%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">4.</span> <span class="nav-text">on和where的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">4.1.</span> <span class="nav-text">总结：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E8%A1%8C%E5%88%97%E8%BD%AC%E6%8D%A2"><span class="nav-number">5.</span> <span class="nav-text">SQL行列转换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E8%BD%AC%E5%88%97"><span class="nav-number">5.1.</span> <span class="nav-text">行转列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%BD%AC%E8%A1%8C"><span class="nav-number">5.2.</span> <span class="nav-text">列转行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text">索引的作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%92%E5%90%8D%E5%87%BD%E6%95%B0%E4%B8%8E%E6%8E%92%E5%BA%8F%E5%87%BD%E6%95%B0"><span class="nav-number">7.</span> <span class="nav-text">排名函数与排序函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%A4%9A%E4%B8%AAselect%EF%BC%9F"><span class="nav-number">8.</span> <span class="nav-text">连接多个select？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BB%E9%94%AE%E5%92%8C%E5%A4%96%E5%BB%BA%EF%BC%9F"><span class="nav-number">9.</span> <span class="nav-text">主键和外建？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%91%E8%A1%A8%E4%B8%AD%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">10.</span> <span class="nav-text">向表中插入数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%A1%A8%E4%B8%AD%E6%95%B0%E6%8D%AE"><span class="nav-number">11.</span> <span class="nav-text">删除表中数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0"><span class="nav-number">12.</span> <span class="nav-text">字符串常见操作函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#in-x2F-exist-%E7%9A%84%E5%85%B3%E7%B3%BB%E5%92%8C%E5%8C%BA%E5%88%AB"><span class="nav-number">13.</span> <span class="nav-text">in&#x2F;exist 的关系和区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF"><span class="nav-number">14.</span> <span class="nav-text">笛卡尔积</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LEFT-JOIN%E5%92%8CINNER-JOIN%EF%BC%8CFULL-JOIN%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">15.</span> <span class="nav-text">LEFT JOIN和INNER JOIN，FULL JOIN什么区别？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HAVING%E5%92%8CWHERE%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">16.</span> <span class="nav-text">HAVING和WHERE什么区别？</span></a></li></ol>
-    </div>
-</div>
-
-            </div>
-        
-    </div>
-</div>
-
-
-                
-            </div>
-
-        </div>
-
-        <div class="page-main-content-bottom">
-            
-<footer class="footer">
-    <div class="info-container">
-        <div class="copyright-info info-item">
-            &copy;
-            
-                <span>2023</span> -
-            
-            2023
-            
-                &nbsp;<i class="fas fa-heart icon-animate"></i>
-                &nbsp;<a href="/">Syaoran Li</a>
-            
-        </div>
-        
-            <script async 
-                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-            <div class="website-count info-item">
-                
-                    Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
-                
-                
-                    Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
-                
-            </div>
-        
-        <div class="theme-info info-item">
-            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
-        </div>
-        
-        
-    </div>
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2023
+    Syaoran Li
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
 </footer>
 
-        </div>
     </div>
-
-    
-        <div class="post-tools">
-            <div class="post-tools-container">
-    <ul class="tools-list">
-        <!-- TOC aside toggle -->
-        
-            <li class="tools-item flex-center toggle-show-toc">
-                <i class="fas fa-list"></i>
-            </li>
-        
-
-        <!-- go comment -->
-        
-            <li class="tools-item flex-center go-to-comments">
-                <i class="fas fa-comment"></i>
-                <span class="post-comments-count"></span>
-            </li>
-        
-    </ul>
-</div>
-
-        </div>
-    
-
-    <div class="right-bottom-side-tools">
-        <div class="side-tools-container">
-    <ul class="side-tools-list">
-        <li class="tools-item tool-font-adjust-plus flex-center">
-            <i class="fas fa-search-plus"></i>
-        </li>
-
-        <li class="tools-item tool-font-adjust-minus flex-center">
-            <i class="fas fa-search-minus"></i>
-        </li>
-
-        <li class="tools-item tool-dark-light-toggle flex-center">
-            <i class="fas fa-moon"></i>
-        </li>
-
-        <!-- rss -->
-        
-            <li class="tools-item rss flex-center">
-                <a class="flex-center"
-                   href="/atom.xml"
-                   target="_blank"
-                >
-                    <i class="fas fa-rss"></i>
-                </a>
-            </li>
-        
-
-        
-
-        <li class="tools-item tool-scroll-to-bottom flex-center">
-            <i class="fas fa-arrow-down"></i>
-        </li>
-    </ul>
-
-    <ul class="exposed-tools-list">
-        <li class="tools-item tool-toggle-show flex-center">
-            <i class="fas fa-cog fa-spin"></i>
-        </li>
-        
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
-        
-    </ul>
-</div>
-
-    </div>
-
-    <div class="zoom-in-image-mask">
-    <img class="zoom-in-image">
-</div>
+    <!-- styles -->
 
 
-    
-        <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-          <span class="search-input-field-pre">
-            <i class="fas fa-keyboard"></i>
-          </span>
-            <div class="search-input-container">
-                <input autocomplete="off"
-                       autocorrect="off"
-                       autocapitalize="off"
-                       placeholder="Search..."
-                       spellcheck="false"
-                       type="search"
-                       class="search-input"
-                >
-            </div>
-            <span class="close-popup-btn">
-                <i class="fas fa-times"></i>
-            </span>
-        </div>
-        <div id="search-result">
-            <div id="no-result">
-                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
-            </div>
-        </div>
-    </div>
-</div>
 
-    
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
 
-</main>
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
 
 
 
 
-<script src="/js/utils.js"></script>
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
 
 <script src="/js/main.js"></script>
 
-<script src="/js/header-shrink.js"></script>
+<!-- search -->
 
-<script src="/js/back2top.js"></script>
+<!-- Baidu Analytics -->
 
-<script src="/js/dark-light-toggle.js"></script>
+<!-- Cloudflare Analytics -->
 
+<!-- Disqus Comments -->
 
-
-
-
-    
-<script src="/js/local-search.js"></script>
-
-
-
-
-    
-<script src="/js/code-block.js"></script>
-
-
-
-
-    
-<script src="/js/lazyload.js"></script>
-
-
-
-<div class="post-scripts">
-    
-        
-<script src="/js/post-helper.js"></script>
-
-        
-            
-<script src="/js/libs/anime.min.js"></script>
-
-        
-        
-            
-<script src="/js/toc.js"></script>
-
-        
-    
-</div>
-
-
+<!-- utterances Comments -->
 
 </body>
 </html>

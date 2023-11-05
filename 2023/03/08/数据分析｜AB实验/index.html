@@ -1,258 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=en>
 <head>
+    <!-- so meta -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
-    <meta name="description" content="Hexo Theme Keep">
-    <meta name="author" content="Syaoran Li">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="面试官:“你有没有想过用AB实验来优化项目？” ​    瑟瑟发抖的我：“不好意思，我在做项目的时候想过用AB实验，但由于XXXX的原因无法落实。不过我自己构思了比较完整的实验思路……（此处省略若干字），如果有机会让我实施AB实验，我相信能够让项目表现更好。” ​    其实这是一个很加分的回答。在面试官看来，眼前的候选人虽然没有参与AB实验，但自己琢磨思考了项目优化方案，应该有不错的自我学习和">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据分析｜AB实验">
+<meta property="og:url" content="https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/index.html">
+<meta property="og:site_name" content="Syaoran :)">
+<meta property="og:description" content="面试官:“你有没有想过用AB实验来优化项目？” ​    瑟瑟发抖的我：“不好意思，我在做项目的时候想过用AB实验，但由于XXXX的原因无法落实。不过我自己构思了比较完整的实验思路……（此处省略若干字），如果有机会让我实施AB实验，我相信能够让项目表现更好。” ​    其实这是一个很加分的回答。在面试官看来，眼前的候选人虽然没有参与AB实验，但自己琢磨思考了项目优化方案，应该有不错的自我学习和">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-b549c6116b2323ee91d92c1d4b03598d_1440w.webp">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-9f80526142e214556bef2a19f8e00c9e_1440w.webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/22555708-a505fad6af9035fc?imageMogr2/auto-orient/strip|imageView2/2/w/424/format/webp">
+<meta property="article:published_time" content="2023-03-08T03:51:34.000Z">
+<meta property="article:modified_time" content="2023-03-08T04:17:42.985Z">
+<meta property="article:author" content="Syaoran Li">
+<meta property="article:tag" content="数据分析">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic2.zhimg.com/80/v2-b549c6116b2323ee91d92c1d4b03598d_1440w.webp">
     
-    <title>
+    
+      
         
-            数据分析｜AB实验 |
+          <link rel="shortcut icon" href="/images/favicon.ico">
         
-        Syaoran:)
-    </title>
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>数据分析｜AB实验</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
     
 <link rel="stylesheet" href="/css/style.css">
 
-    <link rel="shortcut icon" href="/images/favicon.png">
+    <!-- persian styles -->
     
-<link rel="stylesheet" href="/font/css/fontawesome.min.css">
-
+    <!-- rss -->
     
-<link rel="stylesheet" href="/font/css/regular.min.css">
-
     
-<link rel="stylesheet" href="/font/css/solid.min.css">
-
-    
-<link rel="stylesheet" href="/font/css/brands.min.css">
-
-    <script id="hexo-configurations">
-    let KEEP = window.KEEP || {}
-    KEEP.hexo_config = {"hostname":"artemis727.github.io","root":"/","language":"en","path":"search.json"}
-    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#55efc4","logo":"/images/profile.jpg","favicon":"/images/favicon.png","avatar":"/images/profile.jpg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg.svg","description":"The higher I got, || the more amazed I was by the view.","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":true},"comment":{"enable":true,"use":"valine","valine":{"appid":"LTgZzPPbq5jCkagzeI9TnhVV-gzGzoHsz","appkey":"akDnGyiE0qXqen4IP2MfEOiy","server_urls":null,"placeholder":"👻尽情吐槽吧～"},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":false},"version":"3.6.1"}
-    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
-    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
-    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
-  </script>
+	<!-- mathjax -->
+	
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
 </head>
 
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E9%9C%80%E6%B1%82%E6%B2%9F%E9%80%9A/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CBI%E6%90%AD%E5%BB%BA/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/&text=数据分析｜AB实验"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/&title=数据分析｜AB实验"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/&is_video=false&description=数据分析｜AB实验"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=数据分析｜AB实验&body=Check out this article: https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/&title=数据分析｜AB实验"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/&title=数据分析｜AB实验"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/&title=数据分析｜AB实验"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/&title=数据分析｜AB实验"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/&name=数据分析｜AB实验&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/&t=数据分析｜AB实验"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
 
-<body>
-<div class="progress-bar-container">
+    </div>
     
-        <span class="scroll-progress-bar"></span>
     
-
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFA-x2F-B%E6%B5%8B%E8%AF%95"><span class="toc-number">1.</span> <span class="toc-text">什么是A&#x2F;B测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#A-x2F-B%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">A&#x2F;B测试流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E7%82%B9%EF%BC%9A"><span class="toc-number">2.0.1.</span> <span class="toc-text">注意点：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#A-x2F-B%E6%B5%8B%E8%AF%95%E5%8E%9F%E7%90%86%EF%BC%9A%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="toc-number">3.</span> <span class="toc-text">A&#x2F;B测试原理：假设检验</span></a></li></ol>
+      </div>
     
+  </span>
 </div>
 
-
-<main class="page-container">
-
     
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        数据分析｜AB实验
+    </h1>
 
-    <div class="page-main-content">
 
-        <div class="page-main-content-top">
-            
-<header class="header-wrapper">
 
-    <div class="header-content">
-        <div class="left">
-            
-                <a class="logo-image" href="/">
-                    <img src="/images/profile.jpg">
-                </a>
-            
-            <a class="logo-title" href="/">
-               Syaoran:)
-            </a>
-        </div>
-
-        <div class="right">
-            <div class="pc">
-                <ul class="menu-list">
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/"
-                            >
-                                HOME
-                            </a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/archives"
-                            >
-                                ARCHIVES
-                            </a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/tags"
-                            >
-                                TAGS
-                            </a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/categories"
-                            >
-                                CATEGORIES
-                            </a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/about"
-                            >
-                                ABOUT
-                            </a>
-                        </li>
-                    
-                    
-                        <li class="menu-item search search-popup-trigger">
-                            <i class="fas fa-search"></i>
-                        </li>
-                    
-                </ul>
-            </div>
-            <div class="mobile">
-                
-                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
-                
-                <div class="icon-item menu-bar">
-                    <div class="menu-bar-middle"></div>
-                </div>
-            </div>
-        </div>
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Syaoran Li</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-03-08T03:51:34.000Z" class="dt-published" itemprop="datePublished">2023-03-08</time>
+        
+      
     </div>
 
-    <div class="header-drawer">
-        <ul class="drawer-menu-list">
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/">HOME</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/archives">ARCHIVES</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/tags">TAGS</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/categories">CATEGORIES</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/about">ABOUT</a>
-                </li>
-            
-        </ul>
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" rel="tag">数据分析</a>
     </div>
 
-    <div class="window-mask"></div>
 
-</header>
+    </div>
+  </header>
+  
 
-
-        </div>
-
-        <div class="page-main-content-middle">
-
-            <div class="main-content">
-
-                
-                    <div class="fade-in-down-animation">
-    <div class="post-page-container">
-        <div class="article-content-container">
-
-            <div class="article-title">
-                <span class="title-hover-animation">数据分析｜AB实验</span>
-            </div>
-
-            
-                <div class="article-header">
-                    <div class="avatar">
-                        <img src="/images/profile.jpg">
-                    </div>
-                    <div class="info">
-                        <div class="author">
-                            <span class="name">Syaoran Li</span>
-                            
-                        </div>
-                        <div class="meta-info">
-                            
-<div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        
-            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
-        
-        <span class="pc">2023-03-08 11:51:34</span>
-        <span class="mobile">2023-03-08 11:51</span>
-    </span>
-    
-        <span class="article-update-date article-meta-item">
-        <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-03-08 12:17:42</span>
-    </span>
-    
-    
-    
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
-
-    
-    
-        <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>3.9k Words</span>
-        </span>
-    
-    
-        <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>13 Mins</span>
-        </span>
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            
-
-            <div class="article-content keep-markdown-body">
-                
-
-                <blockquote>
+  <div class="content e-content" itemprop="articleBody">
+    <blockquote>
 <p>面试官:“你有没有想过用AB实验来优化项目？”</p>
 <p>​    瑟瑟发抖的我：“<strong>不好意思，我在做项目的时候想过用AB实验，但由于XXXX的原因无法落实。不过我自己构思了比较完整的实验思路……（此处省略若干字），如果有机会让我实施AB实验，我相信能够让项目表现更好。</strong>”</p>
 <p>​    其实这是一个很加分的回答。在面试官看来，眼前的候选人虽然没有参与AB实验，但自己琢磨思考了项目优化方案，应该有不错的自我学习和自我驱动能力 （给自己鼓掌撒花ing）。</p>
@@ -364,367 +277,143 @@
 <p>   在大半年的工作中，终于有机会接触到诸多的AB实验，慢慢感知到各种AB实验原来殊途同归。但不可置否，它仍然是互联网产品迭代的利器，仍然是分析师证明自身价值的手段之一。想来这也是为什么诸多的面试官喜欢在面试中询问AB实验、假设检验的原因。</p>
 <p>作者：阿狸和小兔<br>链接：<a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/0b54dc8b0880" >https://www.jianshu.com/p/0b54dc8b0880<i class="fas fa-external-link-alt"></i></a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 
-            </div>
+  </div>
+</article>
 
-            
 
-            
-                <ul class="post-tags-box">
-                    
-                        <li class="tag-item">
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">#数据分析</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            
 
-            
-                <div class="article-nav">
-                    
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9C%E9%9C%80%E6%B1%82%E6%B2%9F%E9%80%9A/"
-                            >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">数据分析｜需求沟通</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                            </a>
-                        </div>
-                    
-                    
-                        <div class="article-next">
-                            <a class="next"
-                               rel="next"
-                               href="/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CBI%E6%90%AD%E5%BB%BA/"
-                            >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">数据分析｜BI搭建</span>
-                                <span class="post-nav-item">Next posts</span>
-                            </span>
-                                <span class="right arrow-icon flex-center">
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                            </a>
-                        </div>
-                    
-                </div>
-            
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
 
-            
-                <div class="comment-container">
-                    
-<div class="comments-container">
-    <div id="comments-anchor"></div>
-    <div class="comment-area-title">
-        <i class="fas fa-comments"></i>&nbsp;Comments
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li>
+        
+      </ul>
     </div>
+
     
-        
-            
-
-    <div class="valine-container">
-        <script  src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
-        <div id="vcomments"></div>
-        <script >
-          function loadValine() {
-
-            const config = {
-              el: '#vcomments',
-              appId: 'LTgZzPPbq5jCkagzeI9TnhVV-gzGzoHsz',
-              appKey: 'akDnGyiE0qXqen4IP2MfEOiy',
-              meta: ['nick', 'mail', 'link'],
-              avatar: 'wavatar',
-              enableQQ: true,
-              placeholder: '👻尽情吐槽吧～',
-              lang: 'en'.toLowerCase()
-            }
-
-            if ('') {
-              config.serverURLs = ''
-            }
-
-            new Valine(config)
-
-            function getAuthor(language) {
-              switch (language) {
-                case 'en':
-                  return 'Author'
-                case 'zh-CN':
-                  return '博主'
-                default:
-                  return 'Master'
-              }
-            }
-
-            // Add "Author" identify
-            const getValineDomTimer = setInterval(() => {
-              const vcards = document.querySelectorAll('#vcomments .vcards .vcard')
-              if (vcards.length > 0) {
-                let author = 'Syaoran Li'
-
-                if (author) {
-                  for (let vcard of vcards) {
-                    const vnick_dom = vcard.querySelector('.vhead .vnick')
-                    const vnick = vnick_dom.innerHTML
-                    if (vnick === author) {
-                      vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
-                    }
-                  }
-                }
-                clearInterval(getValineDomTimer)
-              } else {
-                clearInterval(getValineDomTimer)
-              }
-            }, 2000)
-          }
-
-          if ('false' === 'true') {
-            const loadValineTimeout = setTimeout(() => {
-              loadValine()
-              clearTimeout(loadValineTimeout)
-            }, 1000)
-          } else {
-            window.addEventListener('DOMContentLoaded', loadValine)
-          }
-        </script>
-    </div>
-
-
-
-        
     
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFA-x2F-B%E6%B5%8B%E8%AF%95"><span class="toc-number">1.</span> <span class="toc-text">什么是A&#x2F;B测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#A-x2F-B%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">A&#x2F;B测试流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E7%82%B9%EF%BC%9A"><span class="toc-number">2.0.1.</span> <span class="toc-text">注意点：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#A-x2F-B%E6%B5%8B%E8%AF%95%E5%8E%9F%E7%90%86%EF%BC%9A%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="toc-number">3.</span> <span class="toc-text">A&#x2F;B测试原理：假设检验</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/&text=数据分析｜AB实验"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/&title=数据分析｜AB实验"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/&is_video=false&description=数据分析｜AB实验"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=数据分析｜AB实验&body=Check out this article: https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/&title=数据分析｜AB实验"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/&title=数据分析｜AB实验"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/&title=数据分析｜AB实验"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/&title=数据分析｜AB实验"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/&name=数据分析｜AB实验&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://artemis727.github.io/2023/03/08/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BD%9CAB%E5%AE%9E%E9%AA%8C/&t=数据分析｜AB实验"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
 </div>
 
-                </div>
-            
-        </div>
-
         
-            <div class="toc-content-container">
-                <div class="post-toc-wrap">
-    <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFA-x2F-B%E6%B5%8B%E8%AF%95"><span class="nav-number">1.</span> <span class="nav-text">什么是A&#x2F;B测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A-x2F-B%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">A&#x2F;B测试流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E7%82%B9%EF%BC%9A"><span class="nav-number">2.0.1.</span> <span class="nav-text">注意点：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A-x2F-B%E6%B5%8B%E8%AF%95%E5%8E%9F%E7%90%86%EF%BC%9A%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="nav-number">3.</span> <span class="nav-text">A&#x2F;B测试原理：假设检验</span></a></li></ol>
-    </div>
-</div>
-
-            </div>
-        
-    </div>
-</div>
-
-
-                
-            </div>
-
-        </div>
-
-        <div class="page-main-content-bottom">
-            
-<footer class="footer">
-    <div class="info-container">
-        <div class="copyright-info info-item">
-            &copy;
-            
-                <span>2023</span> -
-            
-            2023
-            
-                &nbsp;<i class="fas fa-heart icon-animate"></i>
-                &nbsp;<a href="/">Syaoran Li</a>
-            
-        </div>
-        
-            <script async 
-                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-            <div class="website-count info-item">
-                
-                    Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
-                
-                
-                    Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
-                
-            </div>
-        
-        <div class="theme-info info-item">
-            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
-        </div>
-        
-        
-    </div>
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2023
+    Syaoran Li
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
 </footer>
 
-        </div>
     </div>
-
-    
-        <div class="post-tools">
-            <div class="post-tools-container">
-    <ul class="tools-list">
-        <!-- TOC aside toggle -->
-        
-            <li class="tools-item flex-center toggle-show-toc">
-                <i class="fas fa-list"></i>
-            </li>
-        
-
-        <!-- go comment -->
-        
-            <li class="tools-item flex-center go-to-comments">
-                <i class="fas fa-comment"></i>
-                <span class="post-comments-count"></span>
-            </li>
-        
-    </ul>
-</div>
-
-        </div>
-    
-
-    <div class="right-bottom-side-tools">
-        <div class="side-tools-container">
-    <ul class="side-tools-list">
-        <li class="tools-item tool-font-adjust-plus flex-center">
-            <i class="fas fa-search-plus"></i>
-        </li>
-
-        <li class="tools-item tool-font-adjust-minus flex-center">
-            <i class="fas fa-search-minus"></i>
-        </li>
-
-        <li class="tools-item tool-dark-light-toggle flex-center">
-            <i class="fas fa-moon"></i>
-        </li>
-
-        <!-- rss -->
-        
-            <li class="tools-item rss flex-center">
-                <a class="flex-center"
-                   href="/atom.xml"
-                   target="_blank"
-                >
-                    <i class="fas fa-rss"></i>
-                </a>
-            </li>
-        
-
-        
-
-        <li class="tools-item tool-scroll-to-bottom flex-center">
-            <i class="fas fa-arrow-down"></i>
-        </li>
-    </ul>
-
-    <ul class="exposed-tools-list">
-        <li class="tools-item tool-toggle-show flex-center">
-            <i class="fas fa-cog fa-spin"></i>
-        </li>
-        
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
-        
-    </ul>
-</div>
-
-    </div>
-
-    <div class="zoom-in-image-mask">
-    <img class="zoom-in-image">
-</div>
+    <!-- styles -->
 
 
-    
-        <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-          <span class="search-input-field-pre">
-            <i class="fas fa-keyboard"></i>
-          </span>
-            <div class="search-input-container">
-                <input autocomplete="off"
-                       autocorrect="off"
-                       autocapitalize="off"
-                       placeholder="Search..."
-                       spellcheck="false"
-                       type="search"
-                       class="search-input"
-                >
-            </div>
-            <span class="close-popup-btn">
-                <i class="fas fa-times"></i>
-            </span>
-        </div>
-        <div id="search-result">
-            <div id="no-result">
-                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
-            </div>
-        </div>
-    </div>
-</div>
 
-    
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
 
-</main>
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
 
 
 
 
-<script src="/js/utils.js"></script>
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
 
 <script src="/js/main.js"></script>
 
-<script src="/js/header-shrink.js"></script>
+<!-- search -->
 
-<script src="/js/back2top.js"></script>
+<!-- Baidu Analytics -->
 
-<script src="/js/dark-light-toggle.js"></script>
+<!-- Cloudflare Analytics -->
 
+<!-- Disqus Comments -->
 
-
-
-
-    
-<script src="/js/local-search.js"></script>
-
-
-
-
-    
-<script src="/js/code-block.js"></script>
-
-
-
-
-    
-<script src="/js/lazyload.js"></script>
-
-
-
-<div class="post-scripts">
-    
-        
-<script src="/js/post-helper.js"></script>
-
-        
-            
-<script src="/js/libs/anime.min.js"></script>
-
-        
-        
-            
-<script src="/js/toc.js"></script>
-
-        
-    
-</div>
-
-
+<!-- utterances Comments -->
 
 </body>
 </html>
