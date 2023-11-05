@@ -32,7 +32,119 @@
     KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
     KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
   </script>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
 </head>
 
 
@@ -256,7 +368,7 @@
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>754 Words</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>736 Words</span>
             </span>
         
         
@@ -337,8 +449,8 @@
 </tr>
 </tbody>
 </table>
-<hr />
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> substring_index(profile, <span class="string">&#x27;,&#x27;</span>, <span class="number">-1</span>) <span class="keyword">as</span> gender, <span class="built_in">count</span>(device_id)</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> gender</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> substring_index(profile, <span class="string">','</span>, <span class="number">-1</span>) <span class="keyword">as</span> gender, <span class="built_in">count</span>(device_id)</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> gender</span><br></pre></td></tr></table></figure>
 <h1 id="sql31-提取博客url中的用户名"><a class="markdownIt-Anchor" href="#sql31-提取博客url中的用户名"></a> <strong>SQL31</strong> <strong>提取博客URL中的用户名</strong></h1>
 <h2 id="描述-2"><a class="markdownIt-Anchor" href="#描述-2"></a> 描述</h2>
 <p>题目：对于申请参与比赛的用户，blog_url字段中url字符后的字符串为用户个人博客的用户名，现在运营想要把用户的个人博客用户字段提取出单独记录为一个新的字段，请取出所需数据。</p>
@@ -410,22 +522,22 @@
 </tr>
 </tbody>
 </table>
-<hr />
+<hr>
 <h3 id="提取某个字符一般有四种做法"><a class="markdownIt-Anchor" href="#提取某个字符一般有四种做法"></a> 提取某个字符一般有四种做法：</h3>
 <ol>
 <li>
 <p><strong>trim()</strong></p>
 <p>trim() 是直接更改相同格式的一列，删除这一列内容中的统一部分，然后重命名：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, <span class="built_in">trim</span>(<span class="string">&#x27;http:/url/&#x27;</span> <span class="keyword">from</span> blog_url) <span class="keyword">as</span> user_name</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, <span class="built_in">trim</span>(<span class="string">'http:/url/'</span> <span class="keyword">from</span> blog_url) <span class="keyword">as</span> user_name</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br></pre></td></tr></table></figure>
 <p>​</p>
 </li>
 <li>
 <p><strong>substring_index()</strong></p>
 <p>substring_index() 是将字符串切割，1表示保留字符串的左边👈，-1表示保留字符串的右边👉：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, substring_index(blog_url, <span class="string">&#x27;/url/&#x27;</span>, <span class="number">-1</span>) <span class="keyword">as</span> user_name</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, substring_index(blog_url, <span class="string">'/url/'</span>, <span class="number">-1</span>) <span class="keyword">as</span> user_name</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br></pre></td></tr></table></figure>
 <p>还有一个用法是计数：</p>
 <p>SUBSTRING_INDEX(str,delim,count) 返回从字符串str分隔符 delim 在计数发生前的子字符串。如果计数是正的，则返回一切到最终定界符(从左边算起)的左侧。如果count是负数，则返回一切最终定界符(从右边算起)的右侧。SUBSTRING_INDEX() 搜寻在delim时进行区分大小写的匹配。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SUBSTRING_INDEX(<span class="string">&#x27;www.somewebsite.com&#x27;</span>,<span class="string">&#x27;.&#x27;</span>,<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SUBSTRING_INDEX(<span class="string">'www.somewebsite.com'</span>,<span class="string">'.'</span>,<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
 <p>Output: <code>'www.somewebsite'</code></p>
 </li>
 <li>
@@ -436,7 +548,7 @@
 <li>
 <p><strong>replace()</strong></p>
 <p>replace() 就是替换函数：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sleect device_id, replace(blog_url, <span class="string">&#x27;http:/url/&#x27;</span>, <span class="string">&#x27;&#x27;</span>) <span class="keyword">as</span> user_name</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sleect device_id, replace(blog_url, <span class="string">'http:/url/'</span>, <span class="string">''</span>) <span class="keyword">as</span> user_name</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h1 id="sql32-截取出年龄"><a class="markdownIt-Anchor" href="#sql32-截取出年龄"></a> <strong>SQL32</strong> <strong>截取出年龄</strong></h1>
@@ -510,7 +622,7 @@
 </tr>
 </tbody>
 </table>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> substring_index(substring_index(profile, <span class="string">&#x27;,&#x27;</span>, <span class="number">-2</span>), <span class="string">&#x27;,&#x27;</span>, <span class="number">1</span>) <span class="keyword">as</span> age, <span class="built_in">count</span>(device_id)</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> age</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> substring_index(substring_index(profile, <span class="string">','</span>, <span class="number">-2</span>), <span class="string">','</span>, <span class="number">1</span>) <span class="keyword">as</span> age, <span class="built_in">count</span>(device_id)</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> age</span><br></pre></td></tr></table></figure>
 
                 </div>
 
@@ -676,7 +788,7 @@
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">72.7k</span>
+                    <span class="item-value border-box word">72.2k</span>
                 </span>
             
 

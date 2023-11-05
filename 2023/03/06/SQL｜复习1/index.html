@@ -32,7 +32,119 @@
     KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
     KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
   </script>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
 </head>
 
 
@@ -267,16 +379,16 @@
                     
 
                     <h1 id="sql语句顺序"><a class="markdownIt-Anchor" href="#sql语句顺序"></a> SQL语句顺序</h1>
-<p>sql语句的书写顺序:<br />
-<strong>select &gt;&gt; from &gt;&gt; where &gt;&gt; group by &gt;&gt; having &gt;&gt; order by &gt;&gt; limit</strong><br />
+<p>sql语句的书写顺序:<br>
+<strong>select &gt;&gt; from &gt;&gt; where &gt;&gt; group by &gt;&gt; having &gt;&gt; order by &gt;&gt; limit</strong><br>
 注意：</p>
 <ol>
 <li>select和from是必须的；</li>
 <li>where和having不能同时使用;</li>
 <li>having和group by联合使用；</li>
 </ol>
-<p>sql语句的解析顺序 :<br />
-from &gt;&gt; on&gt;&gt; join &gt;&gt; where &gt;&gt; group by &gt;&gt; having &gt;&gt; select &gt;&gt; distinct &gt;&gt; order by &gt;&gt; limit<br />
+<p>sql语句的解析顺序 :<br>
+from &gt;&gt; on&gt;&gt; join &gt;&gt; where &gt;&gt; group by &gt;&gt; having &gt;&gt; select &gt;&gt; distinct &gt;&gt; order by &gt;&gt; limit<br>
 注意：虽然select在having后执行，但是mysql中仍然可以在having中使用select语句定义的别名</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> [<span class="keyword">ALL</span> <span class="operator">|</span> <span class="keyword">DISTINCT</span> <span class="operator">|</span> DISTINCTROW <span class="operator">|</span> TOP] 字段</span><br><span class="line"><span class="keyword">from</span> 表</span><br><span class="line">[<span class="keyword">inner</span> <span class="keyword">join</span>  <span class="keyword">right</span> <span class="keyword">join</span> <span class="operator">|</span> <span class="keyword">left</span> <span class="keyword">join</span> 表<span class="number">2</span>]</span><br><span class="line">[<span class="keyword">on</span> 连接条件]</span><br><span class="line">[<span class="keyword">where</span> 条件]</span><br><span class="line">[<span class="keyword">group</span> <span class="keyword">by</span> 分组规则]</span><br><span class="line">[<span class="keyword">having</span> 分组条件]</span><br><span class="line">[<span class="keyword">order</span> <span class="keyword">by</span> 排序规则]</span><br><span class="line">[limit 分页规则]</span><br></pre></td></tr></table></figure>
 <h1 id="对于-join如果不写-left-inner-right-默认是什么联接呢"><a class="markdownIt-Anchor" href="#对于-join如果不写-left-inner-right-默认是什么联接呢"></a> 对于 join，如果不写 left, inner, right ，默认是什么联接呢？</h1>
@@ -294,17 +406,17 @@ from &gt;&gt; on&gt;&gt; join &gt;&gt; where &gt;&gt; group by &gt;&gt; having &
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&lt;</span>窗口函数<span class="operator">&gt;</span> <span class="keyword">over</span> (<span class="keyword">partition</span> <span class="keyword">by</span> <span class="operator">&lt;</span>用于分组的列名<span class="operator">&gt;</span></span><br><span class="line">                <span class="keyword">order</span> <span class="keyword">by</span> <span class="operator">&lt;</span>用于排序的列名<span class="operator">&gt;</span>)</span><br></pre></td></tr></table></figure>
 <h2 id="窗口函数使用"><a class="markdownIt-Anchor" href="#窗口函数使用"></a> 窗口函数使用</h2>
 <blockquote>
-<p>转自：<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/92654574" >https://zhuanlan.zhihu.com/p/92654574<i class="fas fa-external-link-alt"></i></a></p>
+<p>转自：<a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/92654574">https://zhuanlan.zhihu.com/p/92654574<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
 <h3 id="rank"><a class="markdownIt-Anchor" href="#rank"></a> rank</h3>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>, <span class="built_in">rank</span>() <span class="keyword">over</span>(</span><br><span class="line">	<span class="keyword">partition</span> <span class="keyword">by</span> class</span><br><span class="line">	<span class="keyword">order</span> <span class="keyword">by</span> grade <span class="keyword">desc</span>) <span class="keyword">as</span> ranking</span><br><span class="line"><span class="keyword">from</span> classtable</span><br></pre></td></tr></table></figure>
 <p>1）每个班级内：按班级分组</p>
-<p><strong>partition by用来对表分组</strong>。在这个例子中，所以我们指定了按“班级”分组（partition by 班级）<br />
+<p><strong>partition by用来对表分组</strong>。在这个例子中，所以我们指定了按“班级”分组（partition by 班级）<br>
 2）按成绩排名</p>
 <p><strong>order by子句的功能是对分组后的结果进行排序</strong>，默认是按照升序（asc）排列。在本例中（order by 成绩 desc）是按成绩这一列排序，加了desc关键词表示降序排列。</p>
-<p><font color = 'red'>窗口函数具备了我们之前学过的group by子句分组的功能和order by子句排序的功能。那么，为什么还要用窗口函数呢？</font></p>
+<p><font color="red">窗口函数具备了我们之前学过的group by子句分组的功能和order by子句排序的功能。那么，为什么还要用窗口函数呢？</font></p>
 <p>这是因为，<strong>group by分组汇总后改变了表的行数，一行只有一个类别。而partiition by和rank函数不会减少原表中的行数</strong>。例如下面统计每个班级的人数。</p>
-<p><img src="https://pic2.zhimg.com/80/v2-a9342df7f64ec7d9a52b42adcdb48341_1440w.webp" alt="img" /></p>
+<p><img src="https://pic2.zhimg.com/80/v2-a9342df7f64ec7d9a52b42adcdb48341_1440w.webp" alt="img"></p>
 <p>现在我们说回来，为什么叫“窗口”函数呢？这是因为<strong>partition by分组后的结果称为“窗口”，这里的窗口不是我们家里的门窗，而是表示“范围”的意思</strong>。</p>
 <p><strong>简单来说，窗口函数有以下功能：</strong></p>
 <p><strong>1）同时具有分组和排序的功能</strong></p>
@@ -312,7 +424,7 @@ from &gt;&gt; on&gt;&gt; join &gt;&gt; where &gt;&gt; group by &gt;&gt; having &
 <h3 id="其他窗口函数"><a class="markdownIt-Anchor" href="#其他窗口函数"></a> 其他窗口函数</h3>
 <p>专用窗口函数<strong>rank, dense_rank, row_number</strong>有什么区别呢？</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>,</span><br><span class="line">   <span class="built_in">rank</span>() <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> 成绩 <span class="keyword">desc</span>) <span class="keyword">as</span> ranking,</span><br><span class="line">   <span class="built_in">dense_rank</span>() <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> 成绩 <span class="keyword">desc</span>) <span class="keyword">as</span> dese_rank,</span><br><span class="line">   <span class="built_in">row_number</span>() <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> 成绩 <span class="keyword">desc</span>) <span class="keyword">as</span> row_num</span><br><span class="line"><span class="keyword">from</span> 班级表</span><br></pre></td></tr></table></figure>
-<img src="https://pic2.zhimg.com/80/v2-ad1d86f5a5b9f0ef684907b20b341099_1440w.webp" alt="img" style="zoom:50%;" />
+<img src="https://pic2.zhimg.com/80/v2-ad1d86f5a5b9f0ef684907b20b341099_1440w.webp" alt="img" style="zoom:50%;">
 <p>rank函数：这个例子中是5位，5位，5位，8位，也就是<strong>如果有并列名次的行，会占用下一名次的位置</strong>。比如正常排名是1，2，3，4，但是现在前3名是并列的名次，结果是：1，1，1，4。</p>
 <p>dense_rank函数：这个例子中是5位，5位，5位，6位，也就是<strong>如果有并列名次的行，不占用下一名次的位置</strong>。比如正常排名是1，2，3，4，但是现在前3名是并列的名次，结果是：1，1，1，2。</p>
 <p>row_number函数：这个例子中是5位，6位，7位，8位，也就是<strong>不考虑并列名次的情况</strong>。比如前3名是并列的名次，排名是正常的1，2，3，4。</p>
@@ -321,7 +433,7 @@ from &gt;&gt; on&gt;&gt; join &gt;&gt; where &gt;&gt; group by &gt;&gt; having &
 <p>聚和窗口函数和上面提到的专用窗口函数用法完全相同，只需要把聚合函数写在窗口函数的位置即可，<strong>但是函数后面括号里面不能为空，需要指定聚合的列名</strong>。</p>
 <p>我们来看一下窗口函数是聚合函数时，会出来什么结果：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>,</span><br><span class="line">   <span class="built_in">sum</span>(成绩) <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> 学号) <span class="keyword">as</span> current_sum,</span><br><span class="line">   <span class="built_in">avg</span>(成绩) <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> 学号) <span class="keyword">as</span> current_avg,</span><br><span class="line">   <span class="built_in">count</span>(成绩) <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> 学号) <span class="keyword">as</span> current_count,</span><br><span class="line">   <span class="built_in">max</span>(成绩) <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> 学号) <span class="keyword">as</span> current_max,</span><br><span class="line">   <span class="built_in">min</span>(成绩) <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> 学号) <span class="keyword">as</span> current_min</span><br><span class="line"><span class="keyword">from</span> 班级表</span><br></pre></td></tr></table></figure>
-<img src="https://pic2.zhimg.com/80/v2-c48f0218306f65049fcf9f98c184226d_1440w.webp" alt="img" style="zoom:67%;" />
+<img src="https://pic2.zhimg.com/80/v2-c48f0218306f65049fcf9f98c184226d_1440w.webp" alt="img" style="zoom:67%;">
 <p>有发现什么吗？我单独用sum举个例子：</p>
 <p>如上图，<strong>聚合函数sum在窗口函数中，是对自身记录、及位于自身记录以上的数据进行求和的结果</strong>。比如0004号，在使用sum窗口函数后的结果，是对0001，0002，0003，0004号的成绩求和，若是0005号，则结果是0001号~0005号成绩的求和，以此类推。</p>
 <p>不仅是sum求和，平均、计数、最大最小值，也是同理，<strong>都是针对自身记录、以及自身记录之上的所有数据进行计算</strong>，现在再结合刚才得到的结果（下图），是不是理解起来容易多了？</p>
@@ -332,7 +444,7 @@ from &gt;&gt; on&gt;&gt; join &gt;&gt; where &gt;&gt; group by &gt;&gt; having &
 <p>partition子句可省略，<strong>省略就是不指定分组</strong>，结果如下，只是按成绩由高到低进行了排序：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>,</span><br><span class="line">   <span class="built_in">rank</span>() <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> 成绩 <span class="keyword">desc</span>) <span class="keyword">as</span> ranking</span><br><span class="line"><span class="keyword">from</span> 班级表</span><br></pre></td></tr></table></figure>
 <p>得到结果：</p>
-<img src="https://pic1.zhimg.com/80/v2-c589fe21dd785ff5996174684cc4de84_1440w.webp" alt="img" style="zoom:50%;" />
+<img src="https://pic1.zhimg.com/80/v2-c589fe21dd785ff5996174684cc4de84_1440w.webp" alt="img" style="zoom:50%;">
 <p>但是，这就失去了窗口函数的功能，所以一般不要这么使用。</p>
 <h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
 <p><strong>1.窗口函数语法</strong></p>
@@ -348,21 +460,21 @@ from &gt;&gt; on&gt;&gt; join &gt;&gt; where &gt;&gt; group by &gt;&gt; having &
 <p><strong>4.窗口函数使用场景</strong></p>
 <p>1）业务需求“<strong>在每组内排名”</strong>，比如：</p>
 <blockquote>
-<p>排名问题：每个部门按业绩来排名<br />
+<p>排名问题：每个部门按业绩来排名<br>
 topN问题：找出每个部门排名前N的员工进行奖励</p>
 </blockquote>
 <h1 id="on和where的区别"><a class="markdownIt-Anchor" href="#on和where的区别"></a> on和where的区别</h1>
 <blockquote>
-<p>参考：<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/tayngh/article/details/99684035" >https://blog.csdn.net/tayngh/article/details/99684035<i class="fas fa-external-link-alt"></i></a></p>
+<p>参考：<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/tayngh/article/details/99684035">https://blog.csdn.net/tayngh/article/details/99684035<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
 <p>前提：数据库在连接多张表返回记录时，都会生成一个中间临时表。</p>
-<p>在多表查询时，ON和where都表示筛选条件，<strong>on先执行，where后执行</strong>。<br />
-<u>区别：</u><br />
+<p>在多表查询时，ON和where都表示筛选条件，<strong>on先执行，where后执行</strong>。<br>
+<u>区别：</u><br>
 <strong>外连接时，on条件是在生成临时表时使用的条件，它不管on中的条件是否为真，都会返回左边表中的记录。而where条件是在临时表生成好后，再对临时表进行过滤的条件。</strong></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> </span><br><span class="line"><span class="keyword">FROM</span> emp e </span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> dept d </span><br><span class="line"><span class="keyword">ON</span> e.deptno<span class="operator">=</span>d.`deptno` <span class="keyword">AND</span> e.`deptno`<span class="operator">=</span><span class="number">40</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20190816192208899.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3RheW5naA==,size_16,color_FFFFFF,t_70" alt="on查询结果" /></p>
+<p><img src="https://img-blog.csdnimg.cn/20190816192208899.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3RheW5naA==,size_16,color_FFFFFF,t_70" alt="on查询结果"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> </span><br><span class="line"><span class="keyword">FROM</span> emp e </span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> dept d </span><br><span class="line"><span class="keyword">ON</span> e.deptno<span class="operator">=</span>d.`deptno` </span><br><span class="line"><span class="keyword">WHERE</span> e.`deptno`<span class="operator">=</span><span class="number">40</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20190816192248562.png" alt="where查询图片" /></p>
+<p><img src="https://img-blog.csdnimg.cn/20190816192248562.png" alt="where查询图片"></p>
 <p>来我们分析一下为什么会造成以上两种不同的结果。</p>
 <ul>
 <li>on是生成临时表时使用的条件，上面我们采用的是左外连接，左外连接是以左表为基础的，<strong>左表的记录将会全部表示出来，而右表只会显示符合搜索条件的记录</strong>。也就是说emp是左表，dept是右表，条件是emp的deptno与dept中的deptno相等且为40时才连接，<strong>但emp表中不存在deptno为40的记录，也就是右表没有符合条件的记录，而记录不足的地方均用NULL来补充。</strong></li>
@@ -370,7 +482,7 @@ topN问题：找出每个部门排名前N的员工进行奖励</p>
 </ul>
 <p>由于<strong>内连接是从结果表中删除与其他被连接表中没有匹配行的所有行</strong>，所以<strong>在内连接时on和where的结果是相同的</strong>。而左外、右外与全连接由于它的特殊性，on和where造成的差别大小取决于表达式和表中的数据。</p>
 <blockquote>
-<p>参考：<a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/sql-different-on-and-where.html" >https://www.runoob.com/w3cnote/sql-different-on-and-where.html<i class="fas fa-external-link-alt"></i></a></p>
+<p>参考：<a class="link" target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/sql-different-on-and-where.html">https://www.runoob.com/w3cnote/sql-different-on-and-where.html<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
 <p>数据库在通过连接两张或多张表来返回记录时，都会生成一张中间的临时表，然后再将这张临时表返回给用户。</p>
 <p>在使用 <strong>left join</strong> 时，<strong>on</strong> 和 <strong>where</strong> 条件的区别如下：</p>
@@ -382,7 +494,7 @@ topN问题：找出每个部门排名前N的员工进行奖励</p>
 <p>表2：tab2</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">size name</span><br><span class="line"><span class="number">10</span>   AAA</span><br><span class="line"><span class="number">20</span>   BBB</span><br><span class="line"><span class="number">20</span>   CCC</span><br></pre></td></tr></table></figure>
 <p>两条SQL:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、<span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> tab1 <span class="keyword">left</span> <span class="keyword">join</span> tab2 <span class="keyword">on</span> tab1.size <span class="operator">=</span> tab2.size <span class="keyword">where</span> tab2.name<span class="operator">=</span><span class="string">&#x27;AAA&#x27;</span></span><br><span class="line"><span class="number">2</span>、<span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> tab1 <span class="keyword">left</span> <span class="keyword">join</span> tab2 <span class="keyword">on</span> tab1.size <span class="operator">=</span> tab2.size <span class="keyword">and</span> tab2.name<span class="operator">=</span><span class="string">&#x27;AAA&#x27;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、<span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> tab1 <span class="keyword">left</span> <span class="keyword">join</span> tab2 <span class="keyword">on</span> tab1.size <span class="operator">=</span> tab2.size <span class="keyword">where</span> tab2.name<span class="operator">=</span><span class="string">'AAA'</span></span><br><span class="line"><span class="number">2</span>、<span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> tab1 <span class="keyword">left</span> <span class="keyword">join</span> tab2 <span class="keyword">on</span> tab1.size <span class="operator">=</span> tab2.size <span class="keyword">and</span> tab2.name<span class="operator">=</span><span class="string">'AAA'</span></span><br></pre></td></tr></table></figure>
 <p><strong>第一条SQL的过程：</strong></p>
 <p>1、中间表</p>
 <p>on 条件:</p>
@@ -394,7 +506,7 @@ topN问题：找出每个部门排名前N的员工进行奖励</p>
 <p><strong>第二条SQL的过程：</strong></p>
 <p>1、中间表</p>
 <p>on 条件:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tab1.size <span class="operator">=</span> tab2.size <span class="keyword">and</span> tab2.name<span class="operator">=</span><span class="string">&#x27;AAA&#x27;</span></span><br><span class="line">(条件不为真也会返回左表中的记录) tab1.id tab1.size tab2.size tab2.name</span><br><span class="line"><span class="number">1</span> <span class="number">10</span> <span class="number">10</span> AAA</span><br><span class="line"><span class="number">2</span> <span class="number">20</span> (<span class="keyword">null</span>) (<span class="keyword">null</span>)</span><br><span class="line"><span class="number">3</span> <span class="number">30</span> (<span class="keyword">null</span>) (<span class="keyword">null</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tab1.size <span class="operator">=</span> tab2.size <span class="keyword">and</span> tab2.name<span class="operator">=</span><span class="string">'AAA'</span></span><br><span class="line">(条件不为真也会返回左表中的记录) tab1.id tab1.size tab2.size tab2.name</span><br><span class="line"><span class="number">1</span> <span class="number">10</span> <span class="number">10</span> AAA</span><br><span class="line"><span class="number">2</span> <span class="number">20</span> (<span class="keyword">null</span>) (<span class="keyword">null</span>)</span><br><span class="line"><span class="number">3</span> <span class="number">30</span> (<span class="keyword">null</span>) (<span class="keyword">null</span>)</span><br></pre></td></tr></table></figure>
 <p>其实以上结果的关键原因就是 <strong>left join,right join,full join</strong> 的特殊性。</p>
 <p>不管 on 上的条件是否为真都会返回 left 或 right 表中的记录，full 则具有 left 和 right 的特性的并集。</p>
 <p>而 inner jion 没这个特殊性，则条件放在 on 中和 where 中，返回的结果集是相同的。</p>
@@ -406,32 +518,32 @@ topN问题：找出每个部门排名前N的员工进行奖励</p>
 <p><strong>where条件是在临时表生成好后，再对临时表进行过滤的条件</strong>。这时已经没有left join的含义（必须返回左边表的记录）了，条件不为真的就全部过滤掉。</p>
 <h1 id="sql行列转换"><a class="markdownIt-Anchor" href="#sql行列转换"></a> SQL行列转换</h1>
 <blockquote>
-<p>参考：<a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/1c6fb0df9f58" >https://www.jianshu.com/p/1c6fb0df9f58<i class="fas fa-external-link-alt"></i></a></p>
+<p>参考：<a class="link" target="_blank" rel="noopener" href="https://www.jianshu.com/p/1c6fb0df9f58">https://www.jianshu.com/p/1c6fb0df9f58<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
 <h2 id="行转列"><a class="markdownIt-Anchor" href="#行转列"></a> 行转列</h2>
 <p>假如我们有下表：</p>
-<p><img src="https:////upload-images.jianshu.io/upload_images/1691280-fe651b7989ee5052.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/267/format/webp" alt="img" /></p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/1691280-fe651b7989ee5052.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/267/format/webp" alt="img"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> student</span><br><span class="line">PIVOT (</span><br><span class="line">    <span class="built_in">SUM</span>(score) <span class="keyword">FOR</span> subject <span class="keyword">IN</span> (语文, 数学, 英语)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>通过上面 SQL 语句即可得到下面的结果</p>
-<p><img src="https:////upload-images.jianshu.io/upload_images/1691280-e82d6a40909b732f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/354/format/webp" alt="img" /></p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/1691280-e82d6a40909b732f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/354/format/webp" alt="img"></p>
 <p>PIVOT 后跟一个聚合函数来拿到结果，FOR 后面跟的科目是我们要转换的列，这样的话科目中的语文、数学、英语就就被转换为列。IN 后面跟的就是具体的科目值。</p>
 <p><strong>pivot将原来表中 课程字段中的 数据行 语文，数学，英语 转换为列，并用sum取对应列的值。</strong></p>
 <p>当然我们也可以用 CASE WHEN 得到同样的结果，就是写起来麻烦一点。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name,</span><br><span class="line">  <span class="built_in">MAX</span>(</span><br><span class="line">  <span class="keyword">CASE</span></span><br><span class="line">    <span class="keyword">WHEN</span> subject<span class="operator">=</span><span class="string">&#x27;语文&#x27;</span></span><br><span class="line">    <span class="keyword">THEN</span> score</span><br><span class="line">    <span class="keyword">ELSE</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">END</span>) <span class="keyword">AS</span> &quot;语文&quot;,</span><br><span class="line">  <span class="built_in">MAX</span>(</span><br><span class="line">  <span class="keyword">CASE</span></span><br><span class="line">    <span class="keyword">WHEN</span> subject<span class="operator">=</span><span class="string">&#x27;数学&#x27;</span></span><br><span class="line">    <span class="keyword">THEN</span> score</span><br><span class="line">    <span class="keyword">ELSE</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">END</span>) <span class="keyword">AS</span> &quot;数学&quot;,</span><br><span class="line">  <span class="built_in">MAX</span>(</span><br><span class="line">  <span class="keyword">CASE</span></span><br><span class="line">    <span class="keyword">WHEN</span> subject<span class="operator">=</span><span class="string">&#x27;英语&#x27;</span></span><br><span class="line">    <span class="keyword">THEN</span> score</span><br><span class="line">    <span class="keyword">ELSE</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">END</span>) <span class="keyword">AS</span> &quot;英语&quot;</span><br><span class="line"><span class="keyword">FROM</span> student</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> name</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name,</span><br><span class="line">  <span class="built_in">MAX</span>(</span><br><span class="line">  <span class="keyword">CASE</span></span><br><span class="line">    <span class="keyword">WHEN</span> subject<span class="operator">=</span><span class="string">'语文'</span></span><br><span class="line">    <span class="keyword">THEN</span> score</span><br><span class="line">    <span class="keyword">ELSE</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">END</span>) <span class="keyword">AS</span> "语文",</span><br><span class="line">  <span class="built_in">MAX</span>(</span><br><span class="line">  <span class="keyword">CASE</span></span><br><span class="line">    <span class="keyword">WHEN</span> subject<span class="operator">=</span><span class="string">'数学'</span></span><br><span class="line">    <span class="keyword">THEN</span> score</span><br><span class="line">    <span class="keyword">ELSE</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">END</span>) <span class="keyword">AS</span> "数学",</span><br><span class="line">  <span class="built_in">MAX</span>(</span><br><span class="line">  <span class="keyword">CASE</span></span><br><span class="line">    <span class="keyword">WHEN</span> subject<span class="operator">=</span><span class="string">'英语'</span></span><br><span class="line">    <span class="keyword">THEN</span> score</span><br><span class="line">    <span class="keyword">ELSE</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">END</span>) <span class="keyword">AS</span> "英语"</span><br><span class="line"><span class="keyword">FROM</span> student</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> name</span><br></pre></td></tr></table></figure>
 <p>使用 CASE WHEN 可以得到和 PIVOT 同样的结果，没有 PIVOT 简单直观。</p>
 <h2 id="列转行"><a class="markdownIt-Anchor" href="#列转行"></a> 列转行</h2>
 <p>假设我们有下表 student1</p>
-<p><img src="https:////upload-images.jianshu.io/upload_images/1691280-e82d6a40909b732f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/354/format/webp" alt="img" /></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> student1</span><br><span class="line">UNPIVOT (</span><br><span class="line">    score <span class="keyword">FOR</span> subject <span class="keyword">IN</span> (&quot;语文&quot;,&quot;数学&quot;,&quot;英语&quot;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><img src="https:////upload-images.jianshu.io/upload_images/1691280-e82d6a40909b732f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/354/format/webp" alt="img"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> student1</span><br><span class="line">UNPIVOT (</span><br><span class="line">    score <span class="keyword">FOR</span> subject <span class="keyword">IN</span> ("语文","数学","英语")</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>通过 UNPIVOT 即可得到如下结果：</p>
-<p><img src="https:////upload-images.jianshu.io/upload_images/1691280-fe651b7989ee5052.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/267/format/webp" alt="img" /></p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/1691280-fe651b7989ee5052.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/267/format/webp" alt="img"></p>
 <p>我们也可以使用下面方法得到同样结果</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    NAME,</span><br><span class="line">    <span class="string">&#x27;语文&#x27;</span> <span class="keyword">AS</span> subject ,</span><br><span class="line">    <span class="built_in">MAX</span>(&quot;语文&quot;) <span class="keyword">AS</span> score</span><br><span class="line"><span class="keyword">FROM</span> student1 <span class="keyword">GROUP</span> <span class="keyword">BY</span> NAME</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    NAME,</span><br><span class="line">    <span class="string">&#x27;数学&#x27;</span> <span class="keyword">AS</span> subject ,</span><br><span class="line">    <span class="built_in">MAX</span>(&quot;数学&quot;) <span class="keyword">AS</span> score</span><br><span class="line"><span class="keyword">FROM</span> student1 <span class="keyword">GROUP</span> <span class="keyword">BY</span> NAME</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    NAME,</span><br><span class="line">    <span class="string">&#x27;英语&#x27;</span> <span class="keyword">AS</span> subject ,</span><br><span class="line">    <span class="built_in">MAX</span>(&quot;英语&quot;) <span class="keyword">AS</span> score</span><br><span class="line"><span class="keyword">FROM</span> student1 <span class="keyword">GROUP</span> <span class="keyword">BY</span> NAME</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    NAME,</span><br><span class="line">    <span class="string">'语文'</span> <span class="keyword">AS</span> subject ,</span><br><span class="line">    <span class="built_in">MAX</span>("语文") <span class="keyword">AS</span> score</span><br><span class="line"><span class="keyword">FROM</span> student1 <span class="keyword">GROUP</span> <span class="keyword">BY</span> NAME</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    NAME,</span><br><span class="line">    <span class="string">'数学'</span> <span class="keyword">AS</span> subject ,</span><br><span class="line">    <span class="built_in">MAX</span>("数学") <span class="keyword">AS</span> score</span><br><span class="line"><span class="keyword">FROM</span> student1 <span class="keyword">GROUP</span> <span class="keyword">BY</span> NAME</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    NAME,</span><br><span class="line">    <span class="string">'英语'</span> <span class="keyword">AS</span> subject ,</span><br><span class="line">    <span class="built_in">MAX</span>("英语") <span class="keyword">AS</span> score</span><br><span class="line"><span class="keyword">FROM</span> student1 <span class="keyword">GROUP</span> <span class="keyword">BY</span> NAME</span><br></pre></td></tr></table></figure>
 <h1 id="索引的作用"><a class="markdownIt-Anchor" href="#索引的作用"></a> 索引的作用</h1>
 <p>索引是为了<strong>提高数据库查询数据的速度</strong>而增加的标志符号（通过创建<strong>唯一性索引，可以保证表中每一行数据的唯一性</strong>）。索引主要建立在<strong>①经常搜索的列；②主键所在列；③外键所在列</strong></p>
 <p>索引包括聚集索引与非聚集索引，它们的区别在于<strong>索引记录的顺序与表记录的顺序是否一致</strong>。</p>
 <p>聚集索引:  可以理解为<strong>索引记录的顺序与表记录的顺序一致</strong>，SQL默认在依次递增的主键上建立聚集索引，例如，id为1的数据在第一条，id为2的数据在第二条。聚集索引会按照主键的顺序来排序。（例如，用字典找字，对于认识的字可以通过拼音排序对应正文找到页码）</p>
-<p>非聚集索引:  可以理解<strong>数据存储在一个地方，索引指向数据存储的位置，索引的顺序与表中数据记录的顺序不一定一致</strong>。例如说，建立数据表登记学生考试成绩，字段包括姓名，学号与分数。假定该表按照成绩排序、学号信息错乱，可以考虑构建非聚集索引，第一名对应1，第二名对应2……，想要提取第10个学生的学号，查找索引10指向的数据即可。（用字典找字，不认识的字可以采用部首结合笔画等信息在检字表中搜索，找到页码。比如查&quot;张&quot;字，检字表中&quot;张&quot;的页码是60页，检字表中&quot;张&quot;的上面是&quot;驰&quot;字，但页码却是100页，&quot;张&quot;的下面是&quot;弩&quot;字，页面是200页。很显然，在正文里面这些字并不是真正的分别位于&quot;张&quot;字的上下方，而检字表中连续的&quot;驰、张、弩&quot;三字实际上就是他们在非聚集索引中的排序）</p>
+<p>非聚集索引:  可以理解<strong>数据存储在一个地方，索引指向数据存储的位置，索引的顺序与表中数据记录的顺序不一定一致</strong>。例如说，建立数据表登记学生考试成绩，字段包括姓名，学号与分数。假定该表按照成绩排序、学号信息错乱，可以考虑构建非聚集索引，第一名对应1，第二名对应2……，想要提取第10个学生的学号，查找索引10指向的数据即可。（用字典找字，不认识的字可以采用部首结合笔画等信息在检字表中搜索，找到页码。比如查"张"字，检字表中"张"的页码是60页，检字表中"张"的上面是"驰"字，但页码却是100页，"张"的下面是"弩"字，页面是200页。很显然，在正文里面这些字并不是真正的分别位于"张"字的上下方，而检字表中连续的"驰、张、弩"三字实际上就是他们在非聚集索引中的排序）</p>
 <p>（关于聚集索引和非聚集索引的区别可以百度学习下，我记得好几家面试都直接问了……）</p>
 <h1 id="排名函数与排序函数"><a class="markdownIt-Anchor" href="#排名函数与排序函数"></a> 排名函数与排序函数</h1>
 <p>排序函数：<strong>order by</strong> （默认asc升序，指定desc降序），例如将表格数据按照考试成绩从低到高排序。</p>
@@ -492,7 +604,7 @@ topN问题：找出每个部门排名前N的员工进行奖励</p>
 <h1 id="having和where什么区别"><a class="markdownIt-Anchor" href="#having和where什么区别"></a> <strong>HAVING和WHERE什么区别？</strong></h1>
 <ul>
 <li>
-<p>“Where” 是一个约束声明，使用Where来约束来自<a class="link"   target="_blank" rel="noopener" href="http://lib.csdn.net/base/mysql" >数据库<i class="fas fa-external-link-alt"></i></a>的数据，Where是在结果返回之前起作用的，且Where中不能使用聚合函数。</p>
+<p>“Where” 是一个约束声明，使用Where来约束来自<a class="link" target="_blank" rel="noopener" href="http://lib.csdn.net/base/mysql">数据库<i class="fas fa-external-link-alt"></i></a>的数据，Where是在结果返回之前起作用的，且Where中不能使用聚合函数。</p>
 </li>
 <li>
 <p>“Having”是一个过滤声明，是在查询返回结果集以后对查询结果进行的过滤操作，在Having中可以使用聚合函数。</p>
@@ -510,7 +622,7 @@ topN问题：找出每个部门排名前N的员工进行奖励</p>
 <p>其它情况用where</p>
 </li>
 </ol>
-<p>用having就一定要和group by连用，<br />
+<p>用having就一定要和group by连用，<br>
 用group by不一有having （它只是一个筛选条件用的）</p>
 <p>只要条件里面的字段, <strong>不是表里面原先有的字段就需要用having</strong>。</p>
 <p>SQL在查询表的时候先把查询的字段放到了内存里，而<strong>where查询的时候是从表里面查的，其余需要用having</strong>。</p>
@@ -677,7 +789,7 @@ topN问题：找出每个部门排名前N的员工进行奖励</p>
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">72.7k</span>
+                    <span class="item-value border-box word">72.2k</span>
                 </span>
             
 

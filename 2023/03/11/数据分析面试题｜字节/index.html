@@ -32,7 +32,119 @@
     KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
     KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
   </script>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
 </head>
 
 
@@ -335,7 +447,7 @@
 <p><strong>接6. HAVING和WHERE什么区别？</strong></p>
 <ul>
 <li>
-<p>“Where” 是一个约束声明，使用Where来约束来自<a class="link"   target="_blank" rel="noopener" href="http://lib.csdn.net/base/mysql" >数据库<i class="fas fa-external-link-alt"></i></a>的数据，Where是在结果返回之前起作用的，且Where中不能使用聚合函数。</p>
+<p>“Where” 是一个约束声明，使用Where来约束来自<a class="link" target="_blank" rel="noopener" href="http://lib.csdn.net/base/mysql">数据库<i class="fas fa-external-link-alt"></i></a>的数据，Where是在结果返回之前起作用的，且Where中不能使用聚合函数。</p>
 </li>
 <li>
 <p>“Having”是一个过滤声明，是在查询返回结果集以后对查询结果进行的过滤操作，在Having中可以使用聚合函数。</p>
@@ -353,7 +465,7 @@
 <p>其它情况用where</p>
 </li>
 </ol>
-<p>用having就一定要和group by连用，<br />
+<p>用having就一定要和group by连用，<br>
 用group by不一有having （它只是一个筛选条件用的）</p>
 <p>只要条件里面的字段, <strong>不是表里面原先有的字段就需要用having</strong>。</p>
 <p>SQL在查询表的时候先把查询的字段放到了内存里，而<strong>where查询的时候是从表里面查的，其余需要用having</strong>。</p>
@@ -402,7 +514,7 @@
 </ol>
 <h1 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h1>
 <ol>
-<li><a class="link"   target="_blank" rel="noopener" href="https://www.sohu.com/a/334675712_825456" >超市营运指标分析，七个方法任你采用！ <i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link" target="_blank" rel="noopener" href="https://www.sohu.com/a/334675712_825456">超市营运指标分析，七个方法任你采用！ <i class="fas fa-external-link-alt"></i></a></li>
 <li></li>
 </ol>
 
@@ -558,7 +670,7 @@
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">72.7k</span>
+                    <span class="item-value border-box word">72.2k</span>
                 </span>
             
 

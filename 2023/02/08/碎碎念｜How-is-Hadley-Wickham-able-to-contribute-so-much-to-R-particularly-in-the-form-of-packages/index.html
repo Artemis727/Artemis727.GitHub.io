@@ -32,7 +32,119 @@
     KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
     KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
   </script>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
 </head>
 
 
@@ -269,14 +381,14 @@
 <p><strong>David Robinson:</strong></p>
 <p>From following Hadley’s work, it seems to me that along with being an exceptional programmer and data scientist, and having the advantage of developing R packages as part of his job, Hadley follows a few strategies that serve as useful wisdom for all developers:</p>
 <ul>
-<li><em>He writes packages that make himself more productive</em>. Three of Hadley’s popular packages, devtools, Roxygen2, and testthat, make it very easy to (respectively) develop, document and test R packages. He recognized that the time spent to create and maintain those was small compared to the time it would save him (and others!) in developing future packages. This extends beyond those package development tools: packages like stringr and lubridate are designed to make working with strings and dates easier. This also extends beyond his own packages: he takes advantage of packages like Rcpp (<a class="link"   target="_blank" rel="noopener" href="http://www.rcpp.org/" >http://www.rcpp.org/<i class="fas fa-external-link-alt"></i></a>) that make writing R C++ extensions fast and intuitive.</li>
-<li><em>He takes full advantage of social coding.</em> He’s a prolific GitHub user (<a class="link"   target="_blank" rel="noopener" href="https://github.com/hadley?tab=repositories" >hadley (Hadley Wickham)<i class="fas fa-external-link-alt"></i></a>), which makes it efficient to receive and respond to bug reports and feature requests, and to collaborate with others (for instance, with Romain Francois on dplyr).</li>
-<li><em>He works to simplify his packages rather than complicate them.</em> In his announcement of the tidyr package (<a class="link"   target="_blank" rel="noopener" href="http://blog.rstudio.org/2014/07/22/introducing-tidyr/" >Introducing tidyr<i class="fas fa-external-link-alt"></i></a>) he notes that “Just as reshape2 did less than reshape, tidyr does less than reshape2.” When packages are simpler (doing a few things well instead of hundreds of things poorly), they’re easier to develop and maintain.</li>
+<li><em>He writes packages that make himself more productive</em>. Three of Hadley’s popular packages, devtools, Roxygen2, and testthat, make it very easy to (respectively) develop, document and test R packages. He recognized that the time spent to create and maintain those was small compared to the time it would save him (and others!) in developing future packages. This extends beyond those package development tools: packages like stringr and lubridate are designed to make working with strings and dates easier. This also extends beyond his own packages: he takes advantage of packages like Rcpp (<a class="link" target="_blank" rel="noopener" href="http://www.rcpp.org/">http://www.rcpp.org/<i class="fas fa-external-link-alt"></i></a>) that make writing R C++ extensions fast and intuitive.</li>
+<li><em>He takes full advantage of social coding.</em> He’s a prolific GitHub user (<a class="link" target="_blank" rel="noopener" href="https://github.com/hadley?tab=repositories">hadley (Hadley Wickham)<i class="fas fa-external-link-alt"></i></a>), which makes it efficient to receive and respond to bug reports and feature requests, and to collaborate with others (for instance, with Romain Francois on dplyr).</li>
+<li><em>He works to simplify his packages rather than complicate them.</em> In his announcement of the tidyr package (<a class="link" target="_blank" rel="noopener" href="http://blog.rstudio.org/2014/07/22/introducing-tidyr/">Introducing tidyr<i class="fas fa-external-link-alt"></i></a>) he notes that “Just as reshape2 did less than reshape, tidyr does less than reshape2.” When packages are simpler (doing a few things well instead of hundreds of things poorly), they’re easier to develop and maintain.</li>
 </ul>
 <p>**Hadley Wickham: **</p>
 <p>I like David’s answer, but here are a few more thoughts from a personal perspective 😉</p>
 <ul>
-<li><strong>Writing</strong>. I have worked really hard to build a solid writing habit - <mark>I try and write for 60-90 minutes every morning. It’s the first thing I do after I get out of bed.</mark> I think writing is really helpful to me for a few reasons. First, <mark>I often use my writing as a reference</mark> - I don’t program in C++ every day, so I’m constantly referring to @<a class="link"   target="_blank" rel="noopener" href="http://adv-r.had.co.nz/Rcpp.html" >Rcpp<i class="fas fa-external-link-alt"></i></a> every time I do. Writing also makes me aware of gaps in my knowledge and my tools, and filling in those gaps tends to make me more efficient at tackling new problems.</li>
+<li><strong>Writing</strong>. I have worked really hard to build a solid writing habit - <mark>I try and write for 60-90 minutes every morning. It’s the first thing I do after I get out of bed.</mark> I think writing is really helpful to me for a few reasons. First, <mark>I often use my writing as a reference</mark> - I don’t program in C++ every day, so I’m constantly referring to @<a class="link" target="_blank" rel="noopener" href="http://adv-r.had.co.nz/Rcpp.html">Rcpp<i class="fas fa-external-link-alt"></i></a> every time I do. Writing also makes me aware of gaps in my knowledge and my tools, and filling in those gaps tends to make me more efficient at tackling new problems.</li>
 <li><strong>Reading</strong>. I read a <em>lot</em>. I follow about 300 blogs, and keep a pretty close eye on the R tags on Twitter and Stack Overflow. I don’t read most things deeply - <mark>the majority of content I only briefly skim. But this wide exposure helps me keep up with changes in technology, interesting new programming languages, and what others are doing with data.</mark> It’s also helpful that if when you’re tackling a new problem you can recognise the basic name - then googling for it will suggest possible solutions. If you don’t know the name of a problem, it’s very hard to research it.</li>
 <li><strong>Chunking</strong>. Context-switching is expensive, so if I worked on many packages at the same time, I’d never get anything done. Instead, at any point in time, most of my packages are lying fallow, steadily accumulating issues and ideas for new feature. Once a critical mass has accumulated, I’ll spend a couple of days on the package.</li>
 </ul>
@@ -434,7 +546,7 @@
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">72.7k</span>
+                    <span class="item-value border-box word">72.2k</span>
                 </span>
             
 

@@ -32,7 +32,119 @@
     KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
     KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
   </script>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
 </head>
 
 
@@ -280,26 +392,26 @@
 <p>**第五，需要将当前的结论文档化，并持续跟踪后期的数据是否再次异常。**确认无误之后给相关人员发邮件输出影响范围和分析的结论等等。</p>
 <h2 id="1-对数据异常原因做出假设利用数据验证"><a class="markdownIt-Anchor" href="#1-对数据异常原因做出假设利用数据验证"></a> 1. 对数据异常原因做出假设，利用数据验证</h2>
 <p>影响DAU因素较多，对所有维度直接拆解耗时耗力。所以需要<strong>结合以往经验及各种信息，对数据异常的原因做出假设</strong>，然后对数据<strong>从不同维度拆分来验证假设</strong>。可能随着之前的假设的验证不断进行新的假设，直到<strong>定位原因</strong>。</p>
-<p><img src="https://pic3.zhimg.com/80/v2-22a204d699aa50233b3dee6f2264545e_1440w.jpg" alt="img" /></p>
+<p><img src="https://pic3.zhimg.com/80/v2-22a204d699aa50233b3dee6f2264545e_1440w.jpg" alt="img"></p>
 <h2 id="2-确认数据真实性"><a class="markdownIt-Anchor" href="#2-确认数据真实性"></a> 2. 确认数据真实性</h2>
 <ul>
 <li>将时间轴拉长(3个月)，做同比和环比，看近期异常还是历史异常；</li>
 <li>查看与该指标关联的其他指标是否异常；</li>
 <li>找数据流相关产品和研发确实数据真实性。</li>
 </ul>
-<p><img src="https://pic1.zhimg.com/80/v2-9244e21224593a51db9eefab77969a2c_1440w.webp" alt="img" /></p>
+<p><img src="https://pic1.zhimg.com/80/v2-9244e21224593a51db9eefab77969a2c_1440w.webp" alt="img"></p>
 <h2 id="3-常见拆分维度"><a class="markdownIt-Anchor" href="#3-常见拆分维度"></a> 3. 常见拆分维度</h2>
-<p><img src="https://pic2.zhimg.com/80/v2-86283af0164e49c1459e33431baa3c65_1440w.webp" alt="img" /></p>
+<p><img src="https://pic2.zhimg.com/80/v2-86283af0164e49c1459e33431baa3c65_1440w.webp" alt="img"></p>
 <p><strong>根据以上维度拆分之后，每项数据都需要和历史数据做对比，计算影响系数。</strong></p>
 <p>影响系数=(今日数据−昨日数据)/(今日总量−昨日总量)</p>
 <p><strong>影响系数越大，说明此处为主要原因所在。</strong></p>
 <p>通过上述维度进行初步拆分，可以<strong>大致定位数据异常范围</strong>。</p>
 <h2 id="4-外部原因分析"><a class="markdownIt-Anchor" href="#4-外部原因分析"></a> 4. 外部原因分析</h2>
 <p>外部：外部原因分析可以根据<strong>PEST（政治、经济、社会、技术）模型</strong>进行分析。</p>
-<p><img src="https://pic1.zhimg.com/80/v2-cc5ad446c4efa076975b2fbaafb3ea54_1440w.webp" alt="img" /></p>
+<p><img src="https://pic1.zhimg.com/80/v2-cc5ad446c4efa076975b2fbaafb3ea54_1440w.webp" alt="img"></p>
 <h2 id="5-内部原因分析"><a class="markdownIt-Anchor" href="#5-内部原因分析"></a> 5. 内部原因分析</h2>
 <p>通过初步分析定位范围之后，需要进行进一步的排查，一般从三个维度来分析：<strong>产品、技术、运营</strong>；<strong>可以和这几个人一起拉一个会讨论一下</strong>。同时应注意<strong>数据统计口径</strong>是否发生变化。</p>
-<p><img src="https://pic1.zhimg.com/80/v2-c820282ce239ee9ae366cabcb5cc950c_1440w.webp" alt="img" /></p>
+<p><img src="https://pic1.zhimg.com/80/v2-c820282ce239ee9ae366cabcb5cc950c_1440w.webp" alt="img"></p>
 <h2 id="6-总结"><a class="markdownIt-Anchor" href="#6-总结"></a> 6. 总结</h2>
 <p>所以我们整个的分析流程大致为：</p>
 <p><strong>先结合以往数据异常进行假设 —— 在一个假设得到验证之后 —— 从不同维度进行拆解，确定异常范围 —— 从产品、运营、技术侧逐一排查，最终找到原因。</strong></p>
@@ -465,7 +577,7 @@
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">72.7k</span>
+                    <span class="item-value border-box word">72.2k</span>
                 </span>
             
 

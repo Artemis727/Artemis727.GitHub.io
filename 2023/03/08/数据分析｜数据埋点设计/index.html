@@ -32,7 +32,119 @@
     KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
     KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
   </script>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
 </head>
 
 
@@ -272,7 +384,7 @@
 <p>Tips：AARRR模型和UJM模型会在之前的文章中有讲过，点击阅读原文即可跳转。</p>
 <ul>
 <li>
-<p>AARRR 模型<img src="https://picx.zhimg.com/v2-caf3ea7bae280944457fcd076dced07f_720w.jpg?source=172ae18b" alt="重要的产品分析模型：AARRR模型" /></p>
+<p>AARRR 模型<img src="https://picx.zhimg.com/v2-caf3ea7bae280944457fcd076dced07f_720w.jpg?source=172ae18b" alt="重要的产品分析模型：AARRR模型"></p>
 </li>
 <li>
 <p>UJM 模型</p>
@@ -291,7 +403,7 @@
 <p><strong>6.明确优先级</strong></p>
 <p>数据埋点都是为数据应用做铺排，埋点之后分析师可能面临着搭建指标体系和数据报表体系的工作，<strong>可以根据报表的优先级、埋点的技术实现成本以及资源有限性为数据埋点确定优先级</strong>。</p>
 <h1 id="以电商购物成交转化为例实现数据埋点设计"><a class="markdownIt-Anchor" href="#以电商购物成交转化为例实现数据埋点设计"></a> 以电商购物成交转化为例实现数据埋点设计</h1>
-<p><img src="https://pic1.zhimg.com/80/v2-35d0220539559da807f851b3059896b5_1440w.webp?source=1940ef5c" alt="img" /></p>
+<p><img src="https://pic1.zhimg.com/80/v2-35d0220539559da807f851b3059896b5_1440w.webp?source=1940ef5c" alt="img"></p>
 <p><strong>（1）通过UJM模型拆分用户购买商品的路径</strong>：将用户购买路径拆解为<u>注册-登录-商品曝光-商品点击-浏览页面详情-加入购物车-生成订单-订单支付</u>步骤，根据产品或策划提的数据需求，<u>确定每一个步骤学要看哪些字段才能实现数据需求</u>。</p>
 <p><strong>（2）确认触发机制</strong>：明确是在<u>点击按钮时记录行为还是在用户完成该步骤时</u>记录行为。</p>
 <p><strong>（3）确认上报机制</strong>：明确数据上报机制，是<u>实时上报还是异步上报</u>，不同的上报机制采集到的字段可能不一样，或者说需要将字段拆分到不同表进行记录。</p>
@@ -299,7 +411,7 @@
 <p><strong>（5）统一表层级结构</strong>：我们这里采用两层数据表结构，<u>第一层存放用户基信息，第二层存放用户行为信息</u>。这个根据团队内部的数据接入规范进行调整，只要是统一的结构，对于数据分析师的分析都是有利的。</p>
 <p><strong>（6）明确数据优先级</strong>：根据<u>埋点需求的紧急程度</u>，给每一个买埋点任务标上优先级。</p>
 <p>根据上面的六个步骤，将每一个步骤需要记录的字段按照标准格式<strong>汇总到文档</strong>，即可完成初步的埋点设计。当然完成初版埋点设计之后，还需要与<strong>产品、策划、程序</strong>一遍一遍过文档内容，不断修改完善，直至三方会谈达成统一意见。</p>
-<p><img src="https://picx.zhimg.com/80/v2-d33bda07fa0a48858fbf98a396530e90_1440w.webp?source=1940ef5c" alt="img" /></p>
+<p><img src="https://picx.zhimg.com/80/v2-d33bda07fa0a48858fbf98a396530e90_1440w.webp?source=1940ef5c" alt="img"></p>
 
                 </div>
 
@@ -461,7 +573,7 @@
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">72.7k</span>
+                    <span class="item-value border-box word">72.2k</span>
                 </span>
             
 

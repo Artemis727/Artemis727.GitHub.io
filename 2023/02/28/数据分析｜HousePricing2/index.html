@@ -32,7 +32,119 @@
     KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
     KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
   </script>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
 </head>
 
 
@@ -259,7 +371,7 @@
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>417 Words</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>415 Words</span>
             </span>
         
         
@@ -283,7 +395,7 @@
 
                     <h1 id="notes"><a class="markdownIt-Anchor" href="#notes"></a> Notes</h1>
 <h2 id="profilereport-1"><a class="markdownIt-Anchor" href="#profilereport-1"></a> ProfileReport [1]</h2>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ydata_profiling <span class="keyword">as</span> ppf</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">df_train = pd.read_csv(<span class="string">&#x27;train.csv&#x27;</span>)</span><br><span class="line">ppf.ProfileReport(df_train)</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ydata_profiling <span class="keyword">as</span> ppf</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">df_train = pd.read_csv(<span class="string">'train.csv'</span>)</span><br><span class="line">ppf.ProfileReport(df_train)</span><br></pre></td></tr></table></figure>
 <p>👧🏻 ydata_profiling 和 pandas_profiling?</p>
 <p>👧🏻 ProfileReport() 运行卡顿？</p>
 <p>🤖 这可能与不同浏览器对于 Jupyter Notebook 的支持和性能优化有关。Jupyter Notebook 是一个基于 Web 的应用程序，它的性能和稳定性可能会受到不同浏览器的影响。</p>
@@ -297,8 +409,8 @@
 <h3 id="label-encoding"><a class="markdownIt-Anchor" href="#label-encoding"></a> Label encoding</h3>
 <h3 id="one-hot-encoding"><a class="markdownIt-Anchor" href="#one-hot-encoding"></a> One-hot encoding</h3>
 <h1 id="reference"><a class="markdownIt-Anchor" href="#reference"></a> Reference</h1>
-<p>[1] <a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/109924294" >kaggle案例-Python实现房价预测-完整分析流程<i class="fas fa-external-link-alt"></i></a></p>
-<p>[2] [Kaggle竞赛丨房价预测（House Prices）][<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/137076292" >https://zhuanlan.zhihu.com/p/137076292<i class="fas fa-external-link-alt"></i></a>]</p>
+<p>[1] <a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/109924294">kaggle案例-Python实现房价预测-完整分析流程<i class="fas fa-external-link-alt"></i></a></p>
+<p>[2] [Kaggle竞赛丨房价预测（House Prices）][<a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/137076292">https://zhuanlan.zhihu.com/p/137076292<i class="fas fa-external-link-alt"></i></a>]</p>
 <p>[3]</p>
 
                 </div>
@@ -469,7 +581,7 @@
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">72.7k</span>
+                    <span class="item-value border-box word">72.2k</span>
                 </span>
             
 

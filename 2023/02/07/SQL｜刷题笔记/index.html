@@ -32,7 +32,119 @@
     KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
     KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
   </script>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
 </head>
 
 
@@ -253,7 +365,7 @@
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.2k Words</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.1k Words</span>
             </span>
         
         
@@ -277,10 +389,10 @@
 
                     <h1 id="1-查询列"><a class="markdownIt-Anchor" href="#1-查询列"></a> 1. 查询列</h1>
 <p>列查询、多列查询、限制返回数量、in、like、聚合函数。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"># 查询所有列</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> user_profile</span><br><span class="line"></span><br><span class="line"># 查询多列</span><br><span class="line"><span class="keyword">SELECT</span> device_id, gender, age, university <span class="keyword">FROM</span> user_profile</span><br><span class="line"></span><br><span class="line"># 查询结果去重</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> university <span class="keyword">FROM</span> user_profile</span><br><span class="line"></span><br><span class="line"># 查询结果限制返回行数</span><br><span class="line"><span class="keyword">SELECT</span> device_id <span class="keyword">FROM</span> user_profile LIMIT <span class="number">2</span></span><br><span class="line"></span><br><span class="line"># 查询后重命名</span><br><span class="line"><span class="keyword">SELECT</span> device_id <span class="keyword">FROM</span> user_profile <span class="keyword">AS</span> user_infos_example LIMIT <span class="number">2</span></span><br><span class="line"></span><br><span class="line"># 否定查询</span><br><span class="line"><span class="keyword">select</span> device_id, gender, age, university</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">not</span> university <span class="operator">=</span> <span class="string">&#x27;复旦大学&#x27;</span></span><br><span class="line"></span><br><span class="line"># 过滤空值</span><br><span class="line"><span class="keyword">select</span> device_id, gender, age, university</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">not</span> age <span class="keyword">is</span> <span class="keyword">null</span></span><br><span class="line"></span><br><span class="line"># <span class="keyword">in</span></span><br><span class="line"><span class="keyword">select</span> device_id, gender, age, university, gpa </span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> university <span class="keyword">in</span> (<span class="string">&#x27;北京大学&#x27;</span>, <span class="string">&#x27;复旦大学&#x27;</span>, <span class="string">&#x27;山东大学&#x27;</span>)</span><br><span class="line"></span><br><span class="line"># <span class="keyword">like</span></span><br><span class="line"><span class="keyword">select</span> device_id, age, university</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> university <span class="keyword">like</span> <span class="string">&#x27;%北京%&#x27;</span></span><br><span class="line"></span><br><span class="line"># <span class="built_in">max</span>() <span class="built_in">min</span>()</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">max</span>(gpa)</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> university <span class="operator">=</span> <span class="string">&#x27;复旦大学&#x27;</span></span><br><span class="line"></span><br><span class="line"># <span class="built_in">avg</span>() <span class="built_in">count</span>()</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(gender) <span class="keyword">as</span> male_num, <span class="built_in">avg</span>(gpa) <span class="keyword">as</span> avg_gpa</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> gender <span class="operator">=</span> <span class="string">&#x27;male&#x27;</span></span><br><span class="line"></span><br><span class="line"># <span class="keyword">having</span></span><br><span class="line"><span class="keyword">select</span> university, <span class="built_in">avg</span>(question_cnt) avg_question_cnt, <span class="built_in">avg</span>(answer_cnt) avg_answer_cnt</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> university</span><br><span class="line"><span class="keyword">having</span> avg_question_cnt <span class="operator">&lt;</span> <span class="number">5</span> <span class="keyword">or</span> avg_answer_cnt <span class="operator">&lt;</span> <span class="number">20</span></span><br><span class="line"># 生成新字段后不能用<span class="keyword">where</span>要用<span class="keyword">having</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"># 查询所有列</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> user_profile</span><br><span class="line"></span><br><span class="line"># 查询多列</span><br><span class="line"><span class="keyword">SELECT</span> device_id, gender, age, university <span class="keyword">FROM</span> user_profile</span><br><span class="line"></span><br><span class="line"># 查询结果去重</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> university <span class="keyword">FROM</span> user_profile</span><br><span class="line"></span><br><span class="line"># 查询结果限制返回行数</span><br><span class="line"><span class="keyword">SELECT</span> device_id <span class="keyword">FROM</span> user_profile LIMIT <span class="number">2</span></span><br><span class="line"></span><br><span class="line"># 查询后重命名</span><br><span class="line"><span class="keyword">SELECT</span> device_id <span class="keyword">FROM</span> user_profile <span class="keyword">AS</span> user_infos_example LIMIT <span class="number">2</span></span><br><span class="line"></span><br><span class="line"># 否定查询</span><br><span class="line"><span class="keyword">select</span> device_id, gender, age, university</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">not</span> university <span class="operator">=</span> <span class="string">'复旦大学'</span></span><br><span class="line"></span><br><span class="line"># 过滤空值</span><br><span class="line"><span class="keyword">select</span> device_id, gender, age, university</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">not</span> age <span class="keyword">is</span> <span class="keyword">null</span></span><br><span class="line"></span><br><span class="line"># <span class="keyword">in</span></span><br><span class="line"><span class="keyword">select</span> device_id, gender, age, university, gpa </span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> university <span class="keyword">in</span> (<span class="string">'北京大学'</span>, <span class="string">'复旦大学'</span>, <span class="string">'山东大学'</span>)</span><br><span class="line"></span><br><span class="line"># <span class="keyword">like</span></span><br><span class="line"><span class="keyword">select</span> device_id, age, university</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> university <span class="keyword">like</span> <span class="string">'%北京%'</span></span><br><span class="line"></span><br><span class="line"># <span class="built_in">max</span>() <span class="built_in">min</span>()</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">max</span>(gpa)</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> university <span class="operator">=</span> <span class="string">'复旦大学'</span></span><br><span class="line"></span><br><span class="line"># <span class="built_in">avg</span>() <span class="built_in">count</span>()</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(gender) <span class="keyword">as</span> male_num, <span class="built_in">avg</span>(gpa) <span class="keyword">as</span> avg_gpa</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> gender <span class="operator">=</span> <span class="string">'male'</span></span><br><span class="line"></span><br><span class="line"># <span class="keyword">having</span></span><br><span class="line"><span class="keyword">select</span> university, <span class="built_in">avg</span>(question_cnt) avg_question_cnt, <span class="built_in">avg</span>(answer_cnt) avg_answer_cnt</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> university</span><br><span class="line"><span class="keyword">having</span> avg_question_cnt <span class="operator">&lt;</span> <span class="number">5</span> <span class="keyword">or</span> avg_answer_cnt <span class="operator">&lt;</span> <span class="number">20</span></span><br><span class="line"># 生成新字段后不能用<span class="keyword">where</span>要用<span class="keyword">having</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="2-涉及到多个表的情况"><a class="markdownIt-Anchor" href="#2-涉及到多个表的情况"></a> 2. 涉及到多个表的情况</h1>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> university, (<span class="built_in">count</span>(q.question_id)<span class="operator">/</span><span class="built_in">count</span>(<span class="keyword">distinct</span>(q.device_id))) avg_answer_cnt</span><br><span class="line"><span class="keyword">from</span> user_profile u</span><br><span class="line"><span class="keyword">join</span> question_practice_detail q</span><br><span class="line"><span class="keyword">on</span> u.device_id <span class="operator">=</span> q.device_id</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> university</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> university <span class="keyword">asc</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> u.university, q.difficult_level, <span class="built_in">count</span>(qp.question_id)<span class="operator">/</span><span class="built_in">count</span>(<span class="keyword">distinct</span> qp.device_id) avg_answer_cnt</span><br><span class="line"><span class="keyword">from</span> user_profile u, question_practice_detail qp, question_detail q</span><br><span class="line"><span class="keyword">where</span> u.university <span class="operator">=</span> <span class="string">&#x27;山东大学&#x27;</span> <span class="keyword">and</span> u.device_id <span class="operator">=</span> qp.device_id <span class="keyword">and</span> q.question_id <span class="operator">=</span> qp.question_id</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> u.university, difficult_level</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> avg_answer_cnt</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> u.university, q.difficult_level, <span class="built_in">count</span>(qp.question_id)<span class="operator">/</span><span class="built_in">count</span>(<span class="keyword">distinct</span> qp.device_id) avg_answer_cnt</span><br><span class="line"><span class="keyword">from</span> user_profile u, question_practice_detail qp, question_detail q</span><br><span class="line"><span class="keyword">where</span> u.university <span class="operator">=</span> <span class="string">'山东大学'</span> <span class="keyword">and</span> u.device_id <span class="operator">=</span> qp.device_id <span class="keyword">and</span> q.question_id <span class="operator">=</span> qp.question_id</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> u.university, difficult_level</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> avg_answer_cnt</span><br></pre></td></tr></table></figure>
 <h2 id="sql25-查找山东大学或者性别为男生的信息"><a class="markdownIt-Anchor" href="#sql25-查找山东大学或者性别为男生的信息"></a> <strong>SQL25</strong> 查找山东大学或者性别为男生的信息</h2>
 <p>题目：现在运营想要分别查看学校为山东大学或者性别为男性的用户的device_id、gender、age和gpa数据，请取出相应结果，结果不去重。</p>
 <p>示例：user_profile</p>
@@ -433,7 +545,7 @@
 </tr>
 </tbody>
 </table>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, gender, age, gpa</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> university <span class="operator">=</span> <span class="string">&#x27;山东大学&#x27;</span></span><br><span class="line"><span class="keyword">union</span> <span class="keyword">all</span> </span><br><span class="line"><span class="keyword">select</span> device_id, gender, age, gpa</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> gender <span class="operator">=</span> <span class="string">&#x27;male&#x27;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, gender, age, gpa</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> university <span class="operator">=</span> <span class="string">'山东大学'</span></span><br><span class="line"><span class="keyword">union</span> <span class="keyword">all</span> </span><br><span class="line"><span class="keyword">select</span> device_id, gender, age, gpa</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> gender <span class="operator">=</span> <span class="string">'male'</span></span><br></pre></td></tr></table></figure>
 <p><code>union</code>可以，但是结果是去重的，所以要用<code>union all</code>。</p>
 <p><code>where gender = ‘male’ or university = ‘山东大学’</code>也不行，结果也是去重的。</p>
 <h1 id="3-if"><a class="markdownIt-Anchor" href="#3-if"></a> 3. if</h1>
@@ -554,7 +666,7 @@
 </tr>
 </tbody>
 </table>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> age_cut, <span class="built_in">count</span>(device_id) number</span><br><span class="line"><span class="keyword">from</span>(<span class="keyword">select</span> if(age <span class="operator">&gt;=</span> <span class="number">25</span>, <span class="string">&#x27;25岁及以上&#x27;</span>, <span class="string">&#x27;25岁以下&#x27;</span>) <span class="keyword">as</span> age_cut, device_id <span class="keyword">from</span> user_profile) t1</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> age_cut</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> age_cut, <span class="built_in">count</span>(device_id) number</span><br><span class="line"><span class="keyword">from</span>(<span class="keyword">select</span> if(age <span class="operator">&gt;=</span> <span class="number">25</span>, <span class="string">'25岁及以上'</span>, <span class="string">'25岁以下'</span>) <span class="keyword">as</span> age_cut, device_id <span class="keyword">from</span> user_profile) t1</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> age_cut</span><br></pre></td></tr></table></figure>
 <h1 id="4-case"><a class="markdownIt-Anchor" href="#4-case"></a> 4. case</h1>
 <h2 id="sql27-查看不同年龄段的用户明细"><a class="markdownIt-Anchor" href="#sql27-查看不同年龄段的用户明细"></a> <strong>SQL27</strong> <strong>查看不同年龄段的用户明细</strong></h2>
 <p>题目：现在运营想要将用户划分为<strong>20岁以下，20-24岁，25岁及以上</strong>三个年龄段，分别查看不同年龄段用户的明细情况，请取出相应数据。（注：若<strong>年龄为空</strong>请返回<strong>其他</strong>。）</p>
@@ -700,7 +812,7 @@
 </tr>
 </tbody>
 </table>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, gender, </span><br><span class="line"><span class="keyword">case</span></span><br><span class="line">    <span class="keyword">when</span> age <span class="operator">&lt;</span> <span class="number">20</span> <span class="keyword">then</span> <span class="string">&#x27;20岁以下&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> age <span class="operator">&lt;</span> <span class="number">25</span> <span class="keyword">then</span> <span class="string">&#x27;20-24岁&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> age <span class="operator">&gt;=</span> <span class="number">25</span> <span class="keyword">then</span> <span class="string">&#x27;25岁及以上&#x27;</span></span><br><span class="line">    <span class="keyword">else</span> <span class="string">&#x27;其他&#x27;</span></span><br><span class="line"><span class="keyword">end</span> age_cut</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, gender, </span><br><span class="line"><span class="keyword">case</span></span><br><span class="line">    <span class="keyword">when</span> age <span class="operator">&lt;</span> <span class="number">20</span> <span class="keyword">then</span> <span class="string">'20岁以下'</span></span><br><span class="line">    <span class="keyword">when</span> age <span class="operator">&lt;</span> <span class="number">25</span> <span class="keyword">then</span> <span class="string">'20-24岁'</span></span><br><span class="line">    <span class="keyword">when</span> age <span class="operator">&gt;=</span> <span class="number">25</span> <span class="keyword">then</span> <span class="string">'25岁及以上'</span></span><br><span class="line">    <span class="keyword">else</span> <span class="string">'其他'</span></span><br><span class="line"><span class="keyword">end</span> age_cut</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br></pre></td></tr></table></figure>
 <h1 id="5-day"><a class="markdownIt-Anchor" href="#5-day"></a> 5. day()</h1>
 <ul>
 <li>
@@ -878,7 +990,7 @@
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">72.7k</span>
+                    <span class="item-value border-box word">72.2k</span>
                 </span>
             
 

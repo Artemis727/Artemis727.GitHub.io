@@ -32,7 +32,119 @@
     KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
     KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
   </script>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
 </head>
 
 
@@ -253,7 +365,7 @@
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>791 Words</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>787 Words</span>
             </span>
         
         
@@ -288,9 +400,9 @@
 <p>We extract the population like this:</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p <span class="operator">&lt;-</span> murders<span class="operator">$</span>population</span><br></pre></td></tr></table></figure>
 <p>If you instead try to access a column with just one bracket,</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">murders<span class="punctuation">[</span><span class="string">&quot;population&quot;</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">murders<span class="punctuation">[</span><span class="string">"population"</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
 <p><strong>R returns a subset of the original data frame containing just this column. This new object will be of class <code>data.frame</code> rather than a vector.</strong> To access the column itself you need to use either the <code>$</code> accessor or the double square brackets <code>[[</code>:</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">murders<span class="punctuation">[[</span><span class="string">&quot;population&quot;</span><span class="punctuation">]</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">murders<span class="punctuation">[[</span><span class="string">"population"</span><span class="punctuation">]</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
 <h1 id="r-sorting-functions"><a class="markdownIt-Anchor" href="#r-sorting-functions"></a> R- sorting functions</h1>
 <ul>
 <li>
@@ -299,20 +411,20 @@
 </li>
 <li>
 <p>rank()</p>
-<p>用法：rank(a)<br />
-函数说明：指出当前向量中各元素大小的排名，默认升序<br />
-函数还有其他的参数：rank(x = data, na.last = TRUE)<br />
-x 表示待排序的向量<br />
+<p>用法：rank(a)<br>
+函数说明：指出当前向量中各元素大小的排名，默认升序<br>
+函数还有其他的参数：rank(x = data, na.last = TRUE)<br>
+x 表示待排序的向量<br>
 na.last 表示是否排序时是否将NA放在最后面，默认忽略NA</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span> a <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">3</span><span class="punctuation">,</span><span class="number">9</span><span class="punctuation">,</span><span class="number">16</span><span class="punctuation">,</span><span class="number">6</span><span class="punctuation">,</span><span class="number">7</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">,</span><span class="number">22</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">,</span><span class="number">10</span><span class="punctuation">,</span><span class="number">13</span><span class="punctuation">)</span></span><br><span class="line"><span class="operator">&gt;</span> order<span class="punctuation">(</span>a<span class="punctuation">)</span></span><br><span class="line"> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>  <span class="number">1</span>  <span class="number">6</span>  <span class="number">8</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">2</span>  <span class="number">9</span> <span class="number">10</span>  <span class="number">3</span>  <span class="number">7</span></span><br><span class="line"><span class="comment">#说明：在向量a中，3是第一小的数，位置下标为1；4是第二小的数，位置下标为6；最大的数是22，位置下标为7</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#a[order(a)] 等同于sort(a)</span></span><br><span class="line"><span class="operator">&gt;</span> a<span class="punctuation">[</span>order<span class="punctuation">(</span>a<span class="punctuation">)</span><span class="punctuation">]</span> </span><br><span class="line"> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>  <span class="number">3</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">13</span> <span class="number">16</span> <span class="number">22</span></span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>order()</p>
 <p>说明：返回的值表示位置，默认是升序，依次对应的是向量的最小值、次小值、第三小值…最大值</p>
-<p>用法：order(a), a为要排序的向量<br />
-order(… = data, na.last = TRUE,decreasing = TRUE)<br />
-… 表示待排序向量<br />
-na.last 表示时候将NA值放在最后面（默认排序忽略NA）<br />
+<p>用法：order(a), a为要排序的向量<br>
+order(… = data, na.last = TRUE,decreasing = TRUE)<br>
+… 表示待排序向量<br>
+na.last 表示时候将NA值放在最后面（默认排序忽略NA）<br>
 decreasing 表示是否按照降序排序，默认升序。</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span> a</span><br><span class="line"> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>  <span class="number">3</span>  <span class="number">9</span> <span class="number">16</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">4</span> <span class="number">22</span>  <span class="number">5</span> <span class="number">10</span> <span class="number">13</span></span><br><span class="line"><span class="operator">&gt;</span> sort<span class="punctuation">(</span>a<span class="punctuation">)</span></span><br><span class="line"> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>  <span class="number">3</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">13</span> <span class="number">16</span> <span class="number">22</span></span><br><span class="line"><span class="operator">&gt;</span> rank<span class="punctuation">(</span>a<span class="punctuation">)</span></span><br><span class="line"> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>  <span class="number">1</span>  <span class="number">6</span>  <span class="number">9</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">2</span> <span class="number">10</span>  <span class="number">3</span>  <span class="number">7</span>  <span class="number">8</span></span><br><span class="line"> <span class="comment">#说明：向量a中的第一个数为3，是最小的，故排名为1；第二个数是9，是第六小的数，排名为6</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -483,7 +595,7 @@ decreasing 表示是否按照降序排序，默认升序。</p>
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">72.7k</span>
+                    <span class="item-value border-box word">72.2k</span>
                 </span>
             
 

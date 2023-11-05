@@ -32,7 +32,119 @@
     KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
     KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
   </script>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
 </head>
 
 
@@ -274,62 +386,62 @@
 <p>第一，指标体系是一套标准化的衡量指标，可以<strong>监控业务的发展情况</strong>；</p>
 <p>第二，指标体系可以形成标准化的体系模版，并且可以<strong>固化下来以减少重复的工作</strong>；</p>
 <p>第三，如果业务出现问题，我们可以<strong>通过指标拆解，迅速定位业务问题</strong>，给出业务优化方向。</p>
-<p><img src="https://picx.zhimg.com/80/v2-a75c3c68cd8225c91a662a5a4f35dc86_1440w.webp?source=1940ef5c" alt="img" /></p>
+<p><img src="https://picx.zhimg.com/80/v2-a75c3c68cd8225c91a662a5a4f35dc86_1440w.webp?source=1940ef5c" alt="img"></p>
 <h1 id="构建一套指标体系需要注意的问题"><a class="markdownIt-Anchor" href="#构建一套指标体系需要注意的问题"></a> 构建一套指标体系需要注意的问题</h1>
 <p><strong>（1）数据提前埋点</strong></p>
 <p>对于互联网公司而言，数据产生于用户行为，用户行为都是通过埋点促发而记录，所以要获得相应的用户数据就得先埋好点。</p>
 <p><strong>（2）统一指标口径</strong></p>
 <p>统一指标计算口径也是很重要的步骤，统一的计算口径可以使得业务具有横向和纵向的可比性，所以需要在统一整套指标体系的最小计算单位，不同的计算口径计算出的数据也会略有差异。</p>
 <p><strong>（3）指标穷尽且相互独立，遵循MCEC原则</strong></p>
-<p>对于某一块业务我们需要下钻和拆解，下钻维度和<a class="link"   target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%8B%86%E8%A7%A3%E7%BB%B4%E5%BA%A6&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A1979721081%7D" >拆解维度<i class="fas fa-external-link-alt"></i></a>需要相互穷尽且完全独立，也就是麦肯锡提出的MCEC原则，样才能更好的暴露业务存在问题。MCEC原则也会在指标体系构建方法中详细介绍。</p>
+<p>对于某一块业务我们需要下钻和拆解，下钻维度和<a class="link" target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%8B%86%E8%A7%A3%E7%BB%B4%E5%BA%A6&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A1979721081%7D">拆解维度<i class="fas fa-external-link-alt"></i></a>需要相互穷尽且完全独立，也就是麦肯锡提出的MCEC原则，样才能更好的暴露业务存在问题。MCEC原则也会在指标体系构建方法中详细介绍。</p>
 <h1 id="如何构建一套指标体系"><a class="markdownIt-Anchor" href="#如何构建一套指标体系"></a> 如何构建一套指标体系</h1>
-<p>数据指标体系建设的方法可以总结为三个步骤，即<strong>明确业务目标</strong>，<strong>梳理产品生命周期及用户行为路径</strong>以及<strong>指标分层治理</strong>，在这三个步骤当中又涉及到 <u>OSM(Object,Strategy,Measure), AARRR(Acquisition,Activation,Retention,Revenue,Referral), UJM(User, Journey, Map), MECE (Mutually Exclusive, Collectively Exhaustive)</u> 四个模型，这四个模型是指导我们构建完整而清晰的指标体系的方法论。<img src="https://pic1.zhimg.com/80/v2-22acacdf88e6bb2d3f542398609be69e_1440w.webp?source=1940ef5c" alt="img" /></p>
+<p>数据指标体系建设的方法可以总结为三个步骤，即<strong>明确业务目标</strong>，<strong>梳理产品生命周期及用户行为路径</strong>以及<strong>指标分层治理</strong>，在这三个步骤当中又涉及到 <u>OSM(Object,Strategy,Measure), AARRR(Acquisition,Activation,Retention,Revenue,Referral), UJM(User, Journey, Map), MECE (Mutually Exclusive, Collectively Exhaustive)</u> 四个模型，这四个模型是指导我们构建完整而清晰的指标体系的方法论。<img src="https://pic1.zhimg.com/80/v2-22acacdf88e6bb2d3f542398609be69e_1440w.webp?source=1940ef5c" alt="img"></p>
 <h2 id="明确业务目标osm模型"><a class="markdownIt-Anchor" href="#明确业务目标osm模型"></a> 明确业务目标：OSM模型</h2>
 <p>OSM模型是 <strong>Object, Strategy, Measure</strong>的缩写。</p>
 <p><strong>1. 在建立数据指标体系之前，一定要清晰的了解<u>业务目标</u>，也就是模型中的O,Object。<strong>换句话说，业务的目标也就是业务的</strong>核心KPI</strong>，了解业务的核心KPI能够帮助我们快速理清指标体系的方向。</p>
-<p><strong>2. 了解业务目标方向之后，就需要制定相应的<u>行动策略</u>，也就是模型中的S,Strategy。<strong>行动策略的制定可以根据产品生命周期或者用户行为路径进行拆解，也就是</strong>把业务的核心KPI拆解到产品生命周期(AARRR)或者<a class="link"   target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%94%A8%E6%88%B7%E8%A1%8C%E4%B8%BA%E8%B7%AF%E5%BE%84&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A1979721081%7D" >用户行为路径<i class="fas fa-external-link-alt"></i></a>(UJM)<strong>当中，在整条链路当中分析</strong>可以提升核心KPI的点</strong>。</p>
+<p><strong>2. 了解业务目标方向之后，就需要制定相应的<u>行动策略</u>，也就是模型中的S,Strategy。<strong>行动策略的制定可以根据产品生命周期或者用户行为路径进行拆解，也就是</strong>把业务的核心KPI拆解到产品生命周期(AARRR)或者<a class="link" target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%94%A8%E6%88%B7%E8%A1%8C%E4%B8%BA%E8%B7%AF%E5%BE%84&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A1979721081%7D">用户行为路径<i class="fas fa-external-link-alt"></i></a>(UJM)<strong>当中，在整条链路当中分析</strong>可以提升核心KPI的点</strong>。</p>
 <p><strong>3. 最后，就需要制定较细的<u>评估指标</u>，也就是模型中的M,Measure。<strong>评估指标的制定是将产品链路或者行为路径中的</strong>各个核心KPI进行下钻细分</strong>，这里用到的方法就是麦肯锡著名的MECE模型，需保证<strong>每个细分指标是完全独立且相互穷尽的</strong>。</p>
-<p><font color = 'red'>总结一下OSM模型的内容及其与AARRR,UJM,MECE模型之间的关系，OSM模型是指标体系建设的指导思想，<strong>理解业务KPI是OSM模型的核心</strong>；制定行动策略是实现业务KPI的手段，而AARRR和UJM模型是实现策略制定的方法论；制定细分指标是评估业务策略优劣的方法，而MECE模型制定细分指标的方法论。</font></p>
-<p><img src="https://pica.zhimg.com/80/v2-83a953b994d95cb26bef7d9568fb4760_1440w.webp?source=1940ef5c" alt="img" /></p>
+<p><font color="red">总结一下OSM模型的内容及其与AARRR,UJM,MECE模型之间的关系，OSM模型是指标体系建设的指导思想，<strong>理解业务KPI是OSM模型的核心</strong>；制定行动策略是实现业务KPI的手段，而AARRR和UJM模型是实现策略制定的方法论；制定细分指标是评估业务策略优劣的方法，而MECE模型制定细分指标的方法论。</font></p>
+<p><img src="https://pica.zhimg.com/80/v2-83a953b994d95cb26bef7d9568fb4760_1440w.webp?source=1940ef5c" alt="img"></p>
 <h2 id="清理产品生命周期及用户行为路径aarrrujm"><a class="markdownIt-Anchor" href="#清理产品生命周期及用户行为路径aarrrujm"></a> 清理产品生命周期及用户行为路径：AARRR/UJM</h2>
-<p>AARRR和UJM模型都是<a class="link"   target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E8%B7%AF%E5%BE%84%E6%A8%A1%E5%9E%8B&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A1979721081%7D" >路径模型<i class="fas fa-external-link-alt"></i></a>，二者原理相似，只是它们出发的角度不一样。AARRR模型是从<strong>产品</strong>角度出发，揭示产品的整个生命周期；而UJM模型是从<strong>用户</strong>出发，揭示用户的行为路径。</p>
+<p>AARRR和UJM模型都是<a class="link" target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E8%B7%AF%E5%BE%84%E6%A8%A1%E5%9E%8B&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A1979721081%7D">路径模型<i class="fas fa-external-link-alt"></i></a>，二者原理相似，只是它们出发的角度不一样。AARRR模型是从<strong>产品</strong>角度出发，揭示产品的整个生命周期；而UJM模型是从<strong>用户</strong>出发，揭示用户的行为路径。</p>
 <p>AARRR模型是基于产品角度，简单地来说就是<strong>拉新，促活，留存，付费，推广</strong>。对于一款产品来说，我们首先要从各个渠道获取用户；其次需要激活这些用户并让他们留存下来；对于留存下来的用户引导他们付费以及推广产品。</p>
 <p>UJM模型则是从用户角度出发，描述了用户进入产品的整个路径流程，即<strong>注册，登陆，加购，购买，复购</strong>链路流程。</p>
 <p>无论是产品角度还是用户角度进行链路流程，核心KPI都可以下钻到相应的节点，这样我们就在整条链路流程当中<strong>拆解了业务的核心KPI</strong>。这样的好处是，我们可以从更多的角度和维度监控和分析业务问题。</p>
-<p><img src="https://picx.zhimg.com/80/v2-bae1e41ebbf3e8a631ca1c3ebfa3cee7_1440w.webp?source=1940ef5c" alt="img" /></p>
+<p><img src="https://picx.zhimg.com/80/v2-bae1e41ebbf3e8a631ca1c3ebfa3cee7_1440w.webp?source=1940ef5c" alt="img"></p>
 <h2 id="指标体系分层治理mece"><a class="markdownIt-Anchor" href="#指标体系分层治理mece"></a> 指标体系分层治理：MECE</h2>
 <p>前面两个步骤，首先我们明确了业务核心目标；其次，我们将业务核心的KPI下钻到产品生命周期或者用户路径行为中；接下来我们需要对这些核心KPI向下进行三到五层的拆解，这个过程我们称为指标体系分级治理，用到的模型是MECE模型。</p>
 <p>MECE模型的指导思想是<strong>完全独立，相互穷尽</strong>，根据这个原则拆分可以暴露业务最本质的问题，帮助数据分析师们快速地定位业务问题。例如，<u>客户总成交额GMV进行以及拆解可以是付费用户数与平均客单价的乘积</u>。</p>
-<p><img src="https://picx.zhimg.com/80/v2-b378f33955e37390d45d3d685d9d412f_1440w.webp?source=1940ef5c" alt="img" /></p>
+<p><img src="https://picx.zhimg.com/80/v2-b378f33955e37390d45d3d685d9d412f_1440w.webp?source=1940ef5c" alt="img"></p>
 <h3 id="以gmv为例用三个步骤四个模型教会你搭建指标体系的方法"><a class="markdownIt-Anchor" href="#以gmv为例用三个步骤四个模型教会你搭建指标体系的方法"></a> 以GMV为例，用三个步骤，四个模型教会你搭建指标体系的方法</h3>
 <blockquote>
 <p>如果你的老板给出你一个很大的业务问题，他说，“我们现在做一套GMV相关的指标体系，你出一个方案吧！”面对这么大的一个命题，我们就需要对命题进行分解，将其分解成若干个子问题并找到各个子问题之间的联系，做成一套业务监控指标体系，帮助数据分析师快速定义业务问题。在这里，我们就通过上面提到的三个步骤，四个模型去搭建GMV相关的指标体系。</p>
 </blockquote>
-<p><img src="https://pica.zhimg.com/80/v2-fe7ca5a8e1a75153bebdeb76bb55ee11_1440w.webp?source=1940ef5c" alt="img" /></p>
+<p><img src="https://pica.zhimg.com/80/v2-fe7ca5a8e1a75153bebdeb76bb55ee11_1440w.webp?source=1940ef5c" alt="img"></p>
 <p>第一步，根据OSM模型构建整体框架，明确业务目标。</p>
 <p>为什么业务会关注GMV？当然这是业务的核心KPI，关系到自己的饭碗，GMV当然越高越年终奖越高。所以，作为数据分析师我们提炼出业务目标——<u>提升用户总成交量GMV</u>。</p>
 <p>第二步，根据AARRR或UJM模型拆解用户达成GMV的路径，<u>将业务目标转换为提升用户路径转化率</u>。</p>
 <p>用户达成GMV需要通过六个步骤，即<u>注册-登录-曝光-点击-加购-成交</u>。到目前为止，我们已经将提升GMV这个目标转换为提升用户付费路径的转化率，<u>只要我们提升用户每一步的基数，使得每一步的转化率变高就可以达成提高GMV的目标</u>。</p>
-<p>将提升GMV转化为提高用户达成GMV路径转化率还有另外一个好处，即通过<a class="link"   target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E8%B7%AF%E5%BE%84%E6%8B%86%E8%A7%A3&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A1979721081%7D" >路径拆解<i class="fas fa-external-link-alt"></i></a>能够暴露业务更多的问题，同时，分析师可以根据暴露的业务问题提出相应的建议方案，这也是数据分析师的价值所在。</p>
+<p>将提升GMV转化为提高用户达成GMV路径转化率还有另外一个好处，即通过<a class="link" target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E8%B7%AF%E5%BE%84%E6%8B%86%E8%A7%A3&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A1979721081%7D">路径拆解<i class="fas fa-external-link-alt"></i></a>能够暴露业务更多的问题，同时，分析师可以根据暴露的业务问题提出相应的建议方案，这也是数据分析师的价值所在。</p>
 <p><strong>第三步，根据MECE模型对GMV达成路径的每一个指标进行拆解，实现指标分级治理。</strong></p>
 <p>有了GMV达成路径之后，我们就可以将这个路径的核心步骤抽象成GMV的分级指标并进行回溯下钻。同时，找出影响每一个步骤的关键因素作为二级指标，每一个关键因素之间需要完全独立，相互穷尽。</p>
 <p>我们先根据公式1：</p>
 <p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mi>M</mi><mi>V</mi><mo>=</mo><mtext>成交用户数</mtext><mo>∗</mo><mtext>平均客单价</mtext></mrow><annotation encoding="application/x-tex">GMV=成交用户数*平均客单价</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">G</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">成</span><span class="mord cjk_fallback">交</span><span class="mord cjk_fallback">用</span><span class="mord cjk_fallback">户</span><span class="mord cjk_fallback">数</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">平</span><span class="mord cjk_fallback">均</span><span class="mord cjk_fallback">客</span><span class="mord cjk_fallback">单</span><span class="mord cjk_fallback">价</span></span></span></span></p>
-<img src="https://pic1.zhimg.com/80/v2-7784967226692e2757192208404bcaef_1440w.webp?source=1940ef5c" alt="img" style="zoom:50%;" />
+<img src="https://pic1.zhimg.com/80/v2-7784967226692e2757192208404bcaef_1440w.webp?source=1940ef5c" alt="img" style="zoom:50%;">
 <p>这里将核心KPI用户总成交量GMV进行了一级拆解。</p>
 <p>又有公式2：</p>
 <p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>成交用户数</mtext><mo>=</mo><mtext>点击</mtext><mi>U</mi><mi>V</mi><mo>∗</mo><mtext>访购率</mtext></mrow><annotation encoding="application/x-tex">成交用户数=点击UV*访购率</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">成</span><span class="mord cjk_fallback">交</span><span class="mord cjk_fallback">用</span><span class="mord cjk_fallback">户</span><span class="mord cjk_fallback">数</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">点</span><span class="mord cjk_fallback">击</span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">访</span><span class="mord cjk_fallback">购</span><span class="mord cjk_fallback">率</span></span></span></span></p>
 <p>将公式2带入公式1得到：</p>
 <p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mi>M</mi><mi>V</mi><mo>=</mo><mtext>点击</mtext><mi>U</mi><mi>V</mi><mo>∗</mo><mtext>访购率</mtext><mo>∗</mo><mtext>平均客单价</mtext></mrow><annotation encoding="application/x-tex">GMV=点击UV*访购率*平均客单价</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">G</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">点</span><span class="mord cjk_fallback">击</span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">访</span><span class="mord cjk_fallback">购</span><span class="mord cjk_fallback">率</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">平</span><span class="mord cjk_fallback">均</span><span class="mord cjk_fallback">客</span><span class="mord cjk_fallback">单</span><span class="mord cjk_fallback">价</span></span></span></span></p>
-<img src="https://picx.zhimg.com/80/v2-4d0be105d38607ab35eee03fe7854519_1440w.webp?source=1940ef5c" alt="img" style="zoom:50%;" />
+<img src="https://picx.zhimg.com/80/v2-4d0be105d38607ab35eee03fe7854519_1440w.webp?source=1940ef5c" alt="img" style="zoom:50%;">
 <p>又有公式3：</p>
 <p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>点击</mtext><mi>U</mi><mi>V</mi><mo>=</mo><mtext>曝光</mtext><mi>U</mi><mi>V</mi><mo>∗</mo><mtext>转化率</mtext></mrow><annotation encoding="application/x-tex">点击UV=曝光UV*转化率</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">点</span><span class="mord cjk_fallback">击</span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">曝</span><span class="mord cjk_fallback">光</span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">转</span><span class="mord cjk_fallback">化</span><span class="mord cjk_fallback">率</span></span></span></span></p>
 <p>将公式3带入公式1得到：</p>
 <p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mi>M</mi><mi>V</mi><mo>=</mo><mtext>曝光</mtext><mi>U</mi><mi>V</mi><mo>∗</mo><mtext>转化率</mtext><mo>∗</mo><mtext>访购率</mtext><mo>∗</mo><mtext>平均客单价</mtext></mrow><annotation encoding="application/x-tex">GMV=曝光UV*转化率*访购率*平均客单价</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">G</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">曝</span><span class="mord cjk_fallback">光</span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">转</span><span class="mord cjk_fallback">化</span><span class="mord cjk_fallback">率</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">访</span><span class="mord cjk_fallback">购</span><span class="mord cjk_fallback">率</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">平</span><span class="mord cjk_fallback">均</span><span class="mord cjk_fallback">客</span><span class="mord cjk_fallback">单</span><span class="mord cjk_fallback">价</span></span></span></span></p>
-<img src="https://pica.zhimg.com/80/v2-4249f99f58791d16147f6dd62a4dc7e8_1440w.webp?source=1940ef5c" alt="img" style="zoom:50%;" />
+<img src="https://pica.zhimg.com/80/v2-4249f99f58791d16147f6dd62a4dc7e8_1440w.webp?source=1940ef5c" alt="img" style="zoom:50%;">
 <p>到这里呢，我们已经将核心KPI用户总成交量GMV进行三级回溯拆解，形成了分级治理的指标体系。到这里并没有结束，<u>像曝光UV等着指标还可以继续向下拆解，例如，谷歌渠道曝光UV，华为渠道曝光UV等等，可以根据具体的工作场景进行适当的调整和向下拆解</u>。</p>
 <p>讲到这里你可能会有几个问题。</p>
-<p><font color = 'red'>问题1：指标分级治理拆这么细有什么用？</font></p>
+<p><font color="red">问题1：指标分级治理拆这么细有什么用？</font></p>
 <p><strong>正向作用：分解核心KPI，明确每一个步骤的行动计算和每个行动考核指标。</strong></p>
 <p><u>例如，老板让你估算明年GMV，就可以根据历史数据运用这套指标体系对明年的GMV进行估算。</u></p>
 <p>再例如，<u>老板让你下个月做到1个亿的GMV，让你出个方案。这是就可以再对曝光UV进行细分，把量拆解到每一个渠道上去。</u></p>
@@ -498,7 +610,7 @@
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">72.7k</span>
+                    <span class="item-value border-box word">72.2k</span>
                 </span>
             
 

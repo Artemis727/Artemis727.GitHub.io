@@ -32,7 +32,119 @@
     KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
     KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
   </script>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
 </head>
 
 
@@ -247,7 +359,7 @@
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>2.3k Words</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>2.2k Words</span>
             </span>
         
         
@@ -276,7 +388,7 @@
 <li>Logistic Regression：<strong>将标量wx+b通过sigmoid函数映射到(0,1)上</strong>，并划分一个<strong>阈值</strong>，大于阈值的分为一类，其他归为另一类，可处理<strong>二分分类问题</strong>；</li>
 <li>对于N分类问题，先得到<strong>N组w值不同的wx+b</strong>，然后<strong>利用softmax函数归一化</strong>，最后得到<strong>N个类上的概率</strong>，可处理<strong>多分类</strong>问题。</li>
 </ul>
-<p><img src="https://pic3.zhimg.com/80/v2-e5118cf19e52cb3ccd832f1f07a1433a_1440w.webp" alt="img" /></p>
+<p><img src="https://pic3.zhimg.com/80/v2-e5118cf19e52cb3ccd832f1f07a1433a_1440w.webp" alt="img"></p>
 <blockquote>
 <p>因此，逻辑回归属于分类方法，其本质是将回归方程映射到了(0,1)上。</p>
 </blockquote>
@@ -313,7 +425,7 @@
 <p>常见的分类模型性能指标有准确率(accuracy)、召回率(recall)、ROC曲线等。</p>
 <h3 id="混淆矩阵"><a class="markdownIt-Anchor" href="#混淆矩阵"></a> 混淆矩阵</h3>
 <p>包括分类器预测结果：真正TP(true positive)、真负TN(true negative)、假正FP(false positive)、假负FN(false negative)的数量，其中真正和真负均为正确分类的结果。</p>
-<p><img src="https://pic3.zhimg.com/80/v2-7e323dac66fca1f5733c5a417081f436_1440w.webp" alt="img" /></p>
+<p><img src="https://pic3.zhimg.com/80/v2-7e323dac66fca1f5733c5a417081f436_1440w.webp" alt="img"></p>
 <p>1代表正类，0代表负类</p>
 <h3 id="准确率acc-真正率tpr及假正率fpr"><a class="markdownIt-Anchor" href="#准确率acc-真正率tpr及假正率fpr"></a> 准确率ACC、真正率TPR及假正率FPR</h3>
 <p><strong>注意区别准确率Accuracy与精确率(查准率)Precision区别</strong>：后者是预测与实际均为正类别样本数量 与 预测正样本数量的比值，即 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mi>P</mi><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mi>T</mi><mi>P</mi><mo>+</mo><mi>F</mi><mi>P</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">TP/(TP+FP)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord">/</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mclose">)</span></span></span></span> 。一般而言，回归模型中默认的Score都是Accuracy值。</p>
@@ -331,17 +443,17 @@
 <p>根据已有数据探究“学习时长”与“是否通过考试”之间关系，并建立预测模型。</p>
 <h2 id="理解数据"><a class="markdownIt-Anchor" href="#理解数据"></a> <strong>理解数据</strong></h2>
 <p>1、导入包和数据</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1.导入包</span></span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> OrderedDict</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">warnings.filterwarnings(<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#2.创建数据（学习时间与是否通过考试）</span></span><br><span class="line">dataDict=&#123;<span class="string">&#x27;学习时间&#x27;</span>:<span class="built_in">list</span>(np.arange(<span class="number">0.50</span>,<span class="number">5.50</span>,<span class="number">0.25</span>)),</span><br><span class="line">        <span class="string">&#x27;考试成绩&#x27;</span>:[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]&#125;</span><br><span class="line">dataOrDict=OrderedDict(dataDict)</span><br><span class="line">dataDf=pd.DataFrame(dataOrDict)</span><br><span class="line">dataDf.head()</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">       学习时间	考试成绩</span><br><span class="line"><span class="number">0</span>	<span class="number">0.50</span>	<span class="number">0</span></span><br><span class="line"><span class="number">1</span>	<span class="number">0.75</span>	<span class="number">0</span></span><br><span class="line"><span class="number">2</span>	<span class="number">1.00</span>	<span class="number">0</span></span><br><span class="line"><span class="number">3</span>	<span class="number">1.25</span>	<span class="number">0</span></span><br><span class="line"><span class="number">4</span>	<span class="number">1.50</span>	<span class="number">0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1.导入包</span></span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> OrderedDict</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">warnings.filterwarnings(<span class="string">'ignore'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#2.创建数据（学习时间与是否通过考试）</span></span><br><span class="line">dataDict={<span class="string">'学习时间'</span>:<span class="built_in">list</span>(np.arange(<span class="number">0.50</span>,<span class="number">5.50</span>,<span class="number">0.25</span>)),</span><br><span class="line">        <span class="string">'考试成绩'</span>:[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]}</span><br><span class="line">dataOrDict=OrderedDict(dataDict)</span><br><span class="line">dataDf=pd.DataFrame(dataOrDict)</span><br><span class="line">dataDf.head()</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">       学习时间	考试成绩</span><br><span class="line"><span class="number">0</span>	<span class="number">0.50</span>	<span class="number">0</span></span><br><span class="line"><span class="number">1</span>	<span class="number">0.75</span>	<span class="number">0</span></span><br><span class="line"><span class="number">2</span>	<span class="number">1.00</span>	<span class="number">0</span></span><br><span class="line"><span class="number">3</span>	<span class="number">1.25</span>	<span class="number">0</span></span><br><span class="line"><span class="number">4</span>	<span class="number">1.50</span>	<span class="number">0</span></span><br></pre></td></tr></table></figure>
 <p>2、查看数据</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看数据具体形式</span></span><br><span class="line">dataDf.head()</span><br><span class="line"><span class="comment">#查看数据类型及缺失情况</span></span><br><span class="line">dataDf.info()</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;pandas.core.frame.DataFrame&#x27;</span>&gt;</span><br><span class="line">RangeIndex: <span class="number">20</span> entries, <span class="number">0</span> to <span class="number">19</span></span><br><span class="line">Data columns (total <span class="number">2</span> columns):</span><br><span class="line">学习时间    <span class="number">20</span> non-null float64</span><br><span class="line">考试成绩    <span class="number">20</span> non-null int64</span><br><span class="line">dtypes: float64(<span class="number">1</span>), int64(<span class="number">1</span>)</span><br><span class="line">memory usage: <span class="number">400.0</span> <span class="built_in">bytes</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#查看描述性统计信息</span></span><br><span class="line">dataDf.describe()</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">        学习时间	 考试成绩</span><br><span class="line">count	<span class="number">20.00000</span> <span class="number">20.000000</span></span><br><span class="line">mean	<span class="number">2.87500</span>	<span class="number">0.500000</span></span><br><span class="line">std	<span class="number">1.47902</span>	<span class="number">0.512989</span></span><br><span class="line"><span class="built_in">min</span>	<span class="number">0.50000</span>	<span class="number">0.000000</span></span><br><span class="line"><span class="number">25</span>%	<span class="number">1.68750</span>	<span class="number">0.000000</span></span><br><span class="line"><span class="number">50</span>%	<span class="number">2.87500</span>	<span class="number">0.500000</span></span><br><span class="line"><span class="number">75</span>%	<span class="number">4.06250</span>	<span class="number">1.000000</span></span><br><span class="line"><span class="built_in">max</span>	<span class="number">5.25000</span>	<span class="number">1.000000</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看数据具体形式</span></span><br><span class="line">dataDf.head()</span><br><span class="line"><span class="comment">#查看数据类型及缺失情况</span></span><br><span class="line">dataDf.info()</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">'pandas.core.frame.DataFrame'</span>&gt;</span><br><span class="line">RangeIndex: <span class="number">20</span> entries, <span class="number">0</span> to <span class="number">19</span></span><br><span class="line">Data columns (total <span class="number">2</span> columns):</span><br><span class="line">学习时间    <span class="number">20</span> non-null float64</span><br><span class="line">考试成绩    <span class="number">20</span> non-null int64</span><br><span class="line">dtypes: float64(<span class="number">1</span>), int64(<span class="number">1</span>)</span><br><span class="line">memory usage: <span class="number">400.0</span> <span class="built_in">bytes</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#查看描述性统计信息</span></span><br><span class="line">dataDf.describe()</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">        学习时间	 考试成绩</span><br><span class="line">count	<span class="number">20.00000</span> <span class="number">20.000000</span></span><br><span class="line">mean	<span class="number">2.87500</span>	<span class="number">0.500000</span></span><br><span class="line">std	<span class="number">1.47902</span>	<span class="number">0.512989</span></span><br><span class="line"><span class="built_in">min</span>	<span class="number">0.50000</span>	<span class="number">0.000000</span></span><br><span class="line"><span class="number">25</span>%	<span class="number">1.68750</span>	<span class="number">0.000000</span></span><br><span class="line"><span class="number">50</span>%	<span class="number">2.87500</span>	<span class="number">0.500000</span></span><br><span class="line"><span class="number">75</span>%	<span class="number">4.06250</span>	<span class="number">1.000000</span></span><br><span class="line"><span class="built_in">max</span>	<span class="number">5.25000</span>	<span class="number">1.000000</span></span><br></pre></td></tr></table></figure>
 <p>3、绘制散点图查看数据分布情况</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#提取特征和标签</span></span><br><span class="line">exam_X=dataDf[<span class="string">&#x27;学习时间&#x27;</span>]</span><br><span class="line">exam_y=dataDf[<span class="string">&#x27;考试成绩&#x27;</span>]</span><br><span class="line"><span class="comment">#绘制散点图</span></span><br><span class="line">plt.scatter(exam_X,exam_y,color=<span class="string">&#x27;b&#x27;</span>,label=<span class="string">&#x27;考试数据&#x27;</span>)</span><br><span class="line">plt.legend(loc=<span class="number">2</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;学习时间&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;考试成绩&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><img src="https://pic2.zhimg.com/80/v2-f1d63db4853f166c846626c1bd7b64cd_1440w.webp" alt="img" /></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#提取特征和标签</span></span><br><span class="line">exam_X=dataDf[<span class="string">'学习时间'</span>]</span><br><span class="line">exam_y=dataDf[<span class="string">'考试成绩'</span>]</span><br><span class="line"><span class="comment">#绘制散点图</span></span><br><span class="line">plt.scatter(exam_X,exam_y,color=<span class="string">'b'</span>,label=<span class="string">'考试数据'</span>)</span><br><span class="line">plt.legend(loc=<span class="number">2</span>)</span><br><span class="line">plt.xlabel(<span class="string">'学习时间'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'考试成绩'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://pic2.zhimg.com/80/v2-f1d63db4853f166c846626c1bd7b64cd_1440w.webp" alt="img"></p>
 <p>从图中可以看出当学习时间高于某一阈值时，一般都能够通过考试，因此我们利用逻辑回归方法建立模型。</p>
 <h2 id="构建模型"><a class="markdownIt-Anchor" href="#构建模型"></a> <strong>构建模型</strong></h2>
 <p>1、拆分训练集并利用散点图观察</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1.拆分训练集和测试集</span></span><br><span class="line"><span class="keyword">from</span> sklearn.cross_validation <span class="keyword">import</span> train_test_split</span><br><span class="line">exam_X=exam_X.values.reshape(-<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">exam_y=exam_y.values.reshape(-<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">train_X,test_X,train_y,test_y=train_test_split(exam_X,exam_y,train_size=<span class="number">0.8</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;训练集数据大小为&#x27;</span>,train_X.size,train_y.size)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;测试集数据大小为&#x27;</span>,test_X.size,test_y.size)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">训练集数据大小为 <span class="number">16</span> <span class="number">16</span></span><br><span class="line">测试集数据大小为 <span class="number">4</span> <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#2.散点图观察</span></span><br><span class="line">plt.scatter(train_X,train_y,color=<span class="string">&#x27;b&#x27;</span>,label=<span class="string">&#x27;train data&#x27;</span>)</span><br><span class="line">plt.scatter(test_X,test_y,color=<span class="string">&#x27;r&#x27;</span>,label=<span class="string">&#x27;test data&#x27;</span>)</span><br><span class="line"><span class="comment">#plt.plot(test_X,pred_y,color=&#x27;r&#x27;)</span></span><br><span class="line">plt.legend(loc=<span class="number">2</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Hours&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Scores&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><img src="https://pic2.zhimg.com/80/v2-61117b8b8c172e696692a69fe3ce062d_1440w.webp" alt="img" /></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1.拆分训练集和测试集</span></span><br><span class="line"><span class="keyword">from</span> sklearn.cross_validation <span class="keyword">import</span> train_test_split</span><br><span class="line">exam_X=exam_X.values.reshape(-<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">exam_y=exam_y.values.reshape(-<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">train_X,test_X,train_y,test_y=train_test_split(exam_X,exam_y,train_size=<span class="number">0.8</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'训练集数据大小为'</span>,train_X.size,train_y.size)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'测试集数据大小为'</span>,test_X.size,test_y.size)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">训练集数据大小为 <span class="number">16</span> <span class="number">16</span></span><br><span class="line">测试集数据大小为 <span class="number">4</span> <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#2.散点图观察</span></span><br><span class="line">plt.scatter(train_X,train_y,color=<span class="string">'b'</span>,label=<span class="string">'train data'</span>)</span><br><span class="line">plt.scatter(test_X,test_y,color=<span class="string">'r'</span>,label=<span class="string">'test data'</span>)</span><br><span class="line"><span class="comment">#plt.plot(test_X,pred_y,color='r')</span></span><br><span class="line">plt.legend(loc=<span class="number">2</span>)</span><br><span class="line">plt.xlabel(<span class="string">'Hours'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'Scores'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://pic2.zhimg.com/80/v2-61117b8b8c172e696692a69fe3ce062d_1440w.webp" alt="img"></p>
 <p>2、导入模型</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line">modelLR=LogisticRegression()</span><br></pre></td></tr></table></figure>
 <p>3、训练模型</p>
@@ -353,10 +465,10 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#学习时间确定时，预测为0和1的概率分别为多少？</span></span><br><span class="line">modelLR.predict_proba(<span class="number">3</span>)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">array([[<span class="number">0.36720478</span>, <span class="number">0.63279522</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#学习时间确定时，预测能否通过考试？</span></span><br><span class="line">modelLR.predict(<span class="number">3</span>)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">array([<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
 <p>3、求出逻辑回归函数并绘制曲线</p>
 <p><em>逻辑回归函数</em></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#先求出回归函数y=a+bx，再代入逻辑函数中pred_y=1/(1+np.exp(-y))</span></span><br><span class="line">b=modelLR.coef_</span><br><span class="line">a=modelLR.intercept_</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;该模型对应的回归函数为:1/(1+exp-(%f+%f*x))&#x27;</span>%(a,b))</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">该模型对应的回归函数为:<span class="number">1</span>/(<span class="number">1</span>+exp-(-<span class="number">1.527106</span>+<span class="number">0.690444</span>*x))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#先求出回归函数y=a+bx，再代入逻辑函数中pred_y=1/(1+np.exp(-y))</span></span><br><span class="line">b=modelLR.coef_</span><br><span class="line">a=modelLR.intercept_</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'该模型对应的回归函数为:1/(1+exp-(%f+%f*x))'</span>%(a,b))</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">该模型对应的回归函数为:<span class="number">1</span>/(<span class="number">1</span>+exp-(-<span class="number">1.527106</span>+<span class="number">0.690444</span>*x))</span><br></pre></td></tr></table></figure>
 <p><em>逻辑回归曲线</em></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#画出相应的逻辑回归曲线</span></span><br><span class="line">plt.scatter(train_X,train_y,color=<span class="string">&#x27;b&#x27;</span>,label=<span class="string">&#x27;train data&#x27;</span>)</span><br><span class="line">plt.scatter(test_X,test_y,color=<span class="string">&#x27;r&#x27;</span>,label=<span class="string">&#x27;test data&#x27;</span>)</span><br><span class="line">plt.plot(test_X,<span class="number">1</span>/(<span class="number">1</span>+np.exp(-(a+b*test_X))),color=<span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">plt.plot(exam_X,<span class="number">1</span>/(<span class="number">1</span>+np.exp(-(a+b*exam_X))),color=<span class="string">&#x27;y&#x27;</span>)</span><br><span class="line">plt.legend(loc=<span class="number">2</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Hours&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Scores&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><img src="https://pic4.zhimg.com/80/v2-247219e9dabefadfeed7933474eaebbb_1440w.webp" alt="img" /></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#画出相应的逻辑回归曲线</span></span><br><span class="line">plt.scatter(train_X,train_y,color=<span class="string">'b'</span>,label=<span class="string">'train data'</span>)</span><br><span class="line">plt.scatter(test_X,test_y,color=<span class="string">'r'</span>,label=<span class="string">'test data'</span>)</span><br><span class="line">plt.plot(test_X,<span class="number">1</span>/(<span class="number">1</span>+np.exp(-(a+b*test_X))),color=<span class="string">'r'</span>)</span><br><span class="line">plt.plot(exam_X,<span class="number">1</span>/(<span class="number">1</span>+np.exp(-(a+b*exam_X))),color=<span class="string">'y'</span>)</span><br><span class="line">plt.legend(loc=<span class="number">2</span>)</span><br><span class="line">plt.xlabel(<span class="string">'Hours'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'Scores'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://pic4.zhimg.com/80/v2-247219e9dabefadfeed7933474eaebbb_1440w.webp" alt="img"></p>
 <p>黄色S形曲线代表利用数据集拟合得到的逻辑回归曲线</p>
 <p>4、得到模型混淆矩阵</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> confusion_matrix</span><br><span class="line"><span class="comment">#数值处理</span></span><br><span class="line">pred_y=<span class="number">1</span>/(<span class="number">1</span>+np.exp(-(a+b*test_X)))</span><br><span class="line">pred_y=pd.DataFrame(pred_y)</span><br><span class="line">pred_y=<span class="built_in">round</span>(pred_y,<span class="number">0</span>).astype(<span class="built_in">int</span>)</span><br><span class="line"><span class="comment">#混淆矩阵</span></span><br><span class="line">confusion_matrix(test_y.astype(<span class="built_in">str</span>),pred_y.astype(<span class="built_in">str</span>))</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">array([[<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">       [<span class="number">0</span>, <span class="number">2</span>]])</span><br></pre></td></tr></table></figure>
@@ -366,8 +478,8 @@
 <li>真正率TPR和假正率FPR分别为0.50和0.00，说明该模型对负例的甄别能力更强（如果数据量更多，该指标更有说服性，而本案例中数据较少，因此受随机影响较大）。</li>
 </ul>
 <p>5、绘制模型ROC曲线</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> roc_curve, auc  <span class="comment">###计算roc和auc</span></span><br><span class="line"><span class="comment"># Compute ROC curve and ROC area for each class</span></span><br><span class="line">fpr,tpr,threshold = roc_curve(test_y, pred_y) <span class="comment">###计算真正率和假正率</span></span><br><span class="line">roc_auc = auc(fpr,tpr) <span class="comment">###计算auc的值</span></span><br><span class="line"></span><br><span class="line">plt.figure()</span><br><span class="line">lw = <span class="number">2</span></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">10</span>))</span><br><span class="line">plt.plot(fpr, tpr, color=<span class="string">&#x27;r&#x27;</span>,</span><br><span class="line">         lw=lw, label=<span class="string">&#x27;ROC curve (area = %0.2f)&#x27;</span> % roc_auc) <span class="comment">###假正率为横坐标，真正率为纵坐标做曲线</span></span><br><span class="line">plt.plot([<span class="number">0</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">1</span>], color=<span class="string">&#x27;navy&#x27;</span>, lw=lw, linestyle=<span class="string">&#x27;--&#x27;</span>)</span><br><span class="line">plt.xlim([<span class="number">0.0</span>, <span class="number">1.0</span>])</span><br><span class="line">plt.ylim([<span class="number">0.0</span>, <span class="number">1.0</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;False Positive Rate&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;True Positive Rate&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;Receiver operating characteristic example&#x27;</span>)</span><br><span class="line">plt.legend(loc=<span class="string">&quot;lower right&quot;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><img src="https://pic3.zhimg.com/80/v2-30b960d57411222d79b41842a3529ea2_1440w.webp" alt="img" /></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> roc_curve, auc  <span class="comment">###计算roc和auc</span></span><br><span class="line"><span class="comment"># Compute ROC curve and ROC area for each class</span></span><br><span class="line">fpr,tpr,threshold = roc_curve(test_y, pred_y) <span class="comment">###计算真正率和假正率</span></span><br><span class="line">roc_auc = auc(fpr,tpr) <span class="comment">###计算auc的值</span></span><br><span class="line"></span><br><span class="line">plt.figure()</span><br><span class="line">lw = <span class="number">2</span></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">10</span>))</span><br><span class="line">plt.plot(fpr, tpr, color=<span class="string">'r'</span>,</span><br><span class="line">         lw=lw, label=<span class="string">'ROC curve (area = %0.2f)'</span> % roc_auc) <span class="comment">###假正率为横坐标，真正率为纵坐标做曲线</span></span><br><span class="line">plt.plot([<span class="number">0</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">1</span>], color=<span class="string">'navy'</span>, lw=lw, linestyle=<span class="string">'--'</span>)</span><br><span class="line">plt.xlim([<span class="number">0.0</span>, <span class="number">1.0</span>])</span><br><span class="line">plt.ylim([<span class="number">0.0</span>, <span class="number">1.0</span>])</span><br><span class="line">plt.xlabel(<span class="string">'False Positive Rate'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'True Positive Rate'</span>)</span><br><span class="line">plt.title(<span class="string">'Receiver operating characteristic example'</span>)</span><br><span class="line">plt.legend(loc=<span class="string">"lower right"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://pic3.zhimg.com/80/v2-30b960d57411222d79b41842a3529ea2_1440w.webp" alt="img"></p>
 <p>红线以下部分面积等于0.75，即误将一个反例划分为正例。（此处AUC的面积与模型准确率刚好一致，并非总是相等的）</p>
 <h1 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h1>
 <ol>
@@ -376,7 +488,7 @@
 </ol>
 <h1 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h1>
 <ol>
-<li><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/48981694" >机器学习之利用Python进行逻辑回归分析<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/48981694">机器学习之利用Python进行逻辑回归分析<i class="fas fa-external-link-alt"></i></a></li>
 </ol>
 
                 </div>
@@ -543,7 +655,7 @@
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">72.7k</span>
+                    <span class="item-value border-box word">72.2k</span>
                 </span>
             
 

@@ -32,7 +32,119 @@
     KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
     KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
   </script>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
 </head>
 
 
@@ -270,14 +382,14 @@
 <p>面试官:“你有没有想过用AB实验来优化项目？”</p>
 <p>​    瑟瑟发抖的我：“<strong>不好意思，我在做项目的时候想过用AB实验，但由于XXXX的原因无法落实。不过我自己构思了比较完整的实验思路……（此处省略若干字），如果有机会让我实施AB实验，我相信能够让项目表现更好。</strong>”</p>
 <p>​    其实这是一个很加分的回答。在面试官看来，眼前的候选人虽然没有参与AB实验，但自己琢磨思考了项目优化方案，应该有不错的自我学习和自我驱动能力 （给自己鼓掌撒花ing）。</p>
-<p>作者：阿狸和小兔<br />
-链接：<a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/0b54dc8b0880" >https://www.jianshu.com/p/0b54dc8b0880<i class="fas fa-external-link-alt"></i></a><br />
-来源：简书<br />
+<p>作者：阿狸和小兔<br>
+链接：<a class="link" target="_blank" rel="noopener" href="https://www.jianshu.com/p/0b54dc8b0880">https://www.jianshu.com/p/0b54dc8b0880<i class="fas fa-external-link-alt"></i></a><br>
+来源：简书<br>
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 </blockquote>
 <h1 id="什么是ab测试"><a class="markdownIt-Anchor" href="#什么是ab测试"></a> 什么是A/B测试</h1>
 <p>简单来讲，A/B测试是一种比较手段：通过分析<strong>同一总体</strong>下，由于<strong>某些不同的策略</strong>导致<strong>样本数据</strong>表现出的差异，来推断某些<strong>策略的效果</strong>。</p>
-<p><img src="https://pic2.zhimg.com/80/v2-b549c6116b2323ee91d92c1d4b03598d_1440w.webp" alt="img" /></p>
+<p><img src="https://pic2.zhimg.com/80/v2-b549c6116b2323ee91d92c1d4b03598d_1440w.webp" alt="img"></p>
 <p>几个核心概念：<strong>同一总体，不同策略，不同样本，差异及效果</strong></p>
 <p>本质上来说，<strong>A/B测试就是假设检验理论的一个实际应用而已</strong>，所以想了解A/B测试的理论，只需要了解假设检验的理论即可。</p>
 <h1 id="ab测试流程"><a class="markdownIt-Anchor" href="#ab测试流程"></a> A/B测试流程</h1>
@@ -296,7 +408,7 @@
 <p>**②同质性：**也可以说是相似性，是要求<u>分出的用户群，在各维度的特征都相似</u>。<u>可以基于用户的设备特征（例如手机机型、操作系统版本号、手机语言等）和用户的其他标签（例如性别、年龄、新老用户、会员等级等）</u>进行分群，每一个A/B测试试验都可以选定特定的用户群进行试验。</p>
 <p>**思考：如何判断是不是真的同质？**可以采用<u>AAB测试</u>。抽出两份流量进行A版本的测试，进行AA测试，并分别与B版本进行AB测试。<u>通过考察A1和A2组是否存在显著性差异，就可以确定试验的分流是否同质了。</u></p>
 <p>**③唯一性：**即要求用户不被重复计入测试。</p>
-<p>**④均匀性：**要求各组<u>流量是均匀的</u>。Hash算法。现在一般由专用的A/B测试工具负责。也有看到一篇文章写了python实现，大体的思路是对用户id添加Salt值，对其散列，并据此算出一个0-1之间的浮点数，同设定好的阈值比大小，从而分组。有兴趣的可以看看，该作者的思路很清晰： <a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/34301270" >随机分配里的Why and How<i class="fas fa-external-link-alt"></i></a>。（统计学原理上，我没有找到均匀性这一要求的依据，其实双样本的假设检验并不要求两个样本的数量相等或相近。当然从直观上是可以理解，希望分出的用户组越相近越好，包括人数的相近。）</p>
+<p>**④均匀性：**要求各组<u>流量是均匀的</u>。Hash算法。现在一般由专用的A/B测试工具负责。也有看到一篇文章写了python实现，大体的思路是对用户id添加Salt值，对其散列，并据此算出一个0-1之间的浮点数，同设定好的阈值比大小，从而分组。有兴趣的可以看看，该作者的思路很清晰： <a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/34301270">随机分配里的Why and How<i class="fas fa-external-link-alt"></i></a>。（统计学原理上，我没有找到均匀性这一要求的依据，其实双样本的假设检验并不要求两个样本的数量相等或相近。当然从直观上是可以理解，希望分出的用户组越相近越好，包括人数的相近。）</p>
 <p><strong>3. A/B测试只能有两个版本么？</strong></p>
 <p>A/B test不是只能A方案和B方案，实际上一个测试可以包含A/B/C/D/E/……多个版本，但是要保证单变量，比如按钮的颜色赤/橙/黄/绿/青/蓝/紫，那么这七个方案是可以做A/B测试的；但如果某方案在旁边新增了另一个按钮，即便实验结果产生了显著差异，我们也无法判断这种差异的成因究竟是谁。</p>
 <p><strong>4. 同一段时间内可以做不同的A/B测试么？</strong></p>
@@ -308,18 +420,18 @@
 </ul>
 <h1 id="ab测试原理假设检验"><a class="markdownIt-Anchor" href="#ab测试原理假设检验"></a> A/B测试原理：假设检验</h1>
 <blockquote>
-<p>参考：<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/68019926" >https://zhuanlan.zhihu.com/p/68019926<i class="fas fa-external-link-alt"></i></a></p>
+<p>参考：<a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/68019926">https://zhuanlan.zhihu.com/p/68019926<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
-<p><img src="https://pic3.zhimg.com/80/v2-9f80526142e214556bef2a19f8e00c9e_1440w.webp" alt="img" /></p>
+<p><img src="https://pic3.zhimg.com/80/v2-9f80526142e214556bef2a19f8e00c9e_1440w.webp" alt="img"></p>
 <blockquote>
-<p>参考：<a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/0b54dc8b0880" >https://www.jianshu.com/p/0b54dc8b0880<i class="fas fa-external-link-alt"></i></a></p>
+<p>参考：<a class="link" target="_blank" rel="noopener" href="https://www.jianshu.com/p/0b54dc8b0880">https://www.jianshu.com/p/0b54dc8b0880<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
 <p>AB实验是数据分析、产品运营、算法开发在工作中都时常接触到的工作。按钮颜色、广告算法、标签排序，这些互联网产品里常见的功能与展示都是在一次次AB实验中得到优化。</p>
 <p>在实习中，并不是每一个实习生都能接触到AB实验，这也让很多没有相关经历的人误认为AB实验是一项高大上的工作任务。但其实——</p>
 <p>许多公司搭建了可(sha)视(gua)化的AB实验平台，业务、运营以及产品都一眼看出AB实验的结果……不过，由于企业搭建的AB实验平台在权限、监控上有诸多限制，加上很多Leader出于实习生实习期短、留用概率小的顾虑，大部分实习生都不会参与完整的AB项目。</p>
 <p>​    可是——</p>
 <p>​    尽管在实习中没有接触过AB实验，在简历中也没提到丝毫，这不代表在面试中就能逃过一劫……</p>
-<img src="https:////upload-images.jianshu.io/upload_images/22555708-a505fad6af9035fc?imageMogr2/auto-orient/strip|imageView2/2/w/424/format/webp" alt="img" style="zoom: 25%;" />
+<img src="https:////upload-images.jianshu.io/upload_images/22555708-a505fad6af9035fc?imageMogr2/auto-orient/strip|imageView2/2/w/424/format/webp" alt="img" style="zoom: 25%;">
 <p>​    我在实习中就没有接触过AB实验，但面试官仍然对我抛出来的项目分析过程饶有兴趣，也会问我有没有使用AB实验作出优化。得益于面试前全方位的准备，我的面试回（tao）答（lu）往往是:</p>
 <p>​    面试官:“你有没有想过用AB实验来优化项目？”</p>
 <p>​    瑟瑟发抖的我：<strong>“不好意思，我在做项目的时候想过用AB实验，但由于XXXX的原因无法落实。不过我自己构思了比较完整的实验思路……（此处省略若干字），如果有机会让我实施AB实验，我相信能够让项目表现更好。”</strong></p>
@@ -367,9 +479,9 @@
 <p><strong>（5）存档AB测试的结果</strong></p>
 <p>对于数据分析师来说，每一个项目、每一个分析都需要做复盘和存档。比如AB实验项目，可以用一个标准化的模板来记录测试内容，为什么测试，测试对接人，测试效果等等，在年终的时候可以更好的汇报和复盘。</p>
 <p>在大半年的工作中，终于有机会接触到诸多的AB实验，慢慢感知到各种AB实验原来殊途同归。但不可置否，它仍然是互联网产品迭代的利器，仍然是分析师证明自身价值的手段之一。想来这也是为什么诸多的面试官喜欢在面试中询问AB实验、假设检验的原因。</p>
-<p>作者：阿狸和小兔<br />
-链接：<a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/0b54dc8b0880" >https://www.jianshu.com/p/0b54dc8b0880<i class="fas fa-external-link-alt"></i></a><br />
-来源：简书<br />
+<p>作者：阿狸和小兔<br>
+链接：<a class="link" target="_blank" rel="noopener" href="https://www.jianshu.com/p/0b54dc8b0880">https://www.jianshu.com/p/0b54dc8b0880<i class="fas fa-external-link-alt"></i></a><br>
+来源：简书<br>
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 
                 </div>
@@ -532,7 +644,7 @@
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">72.7k</span>
+                    <span class="item-value border-box word">72.2k</span>
                 </span>
             
 
