@@ -256,7 +256,7 @@
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>785 Words</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>754 Words</span>
             </span>
         
         
@@ -278,7 +278,9 @@
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="SQL30-统计每种性别的人数"><a href="#SQL30-统计每种性别的人数" class="headerlink" title="SQL30 统计每种性别的人数"></a><strong>SQL30</strong> <strong>统计每种性别的人数</strong></h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>题目：现在运营举办了一场比赛，收到了一些参赛申请，表数据记录形式如下所示，现在运营想要统计每个性别的用户分别有多少参赛者，请取出相应结果</p>
+                    <h1 id="sql30-统计每种性别的人数"><a class="markdownIt-Anchor" href="#sql30-统计每种性别的人数"></a> <strong>SQL30</strong> <strong>统计每种性别的人数</strong></h1>
+<h2 id="描述"><a class="markdownIt-Anchor" href="#描述"></a> 描述</h2>
+<p>题目：现在运营举办了一场比赛，收到了一些参赛申请，表数据记录形式如下所示，现在运营想要统计每个性别的用户分别有多少参赛者，请取出相应结果</p>
 <p>示例：user_submit</p>
 <table>
 <thead>
@@ -288,32 +290,34 @@
 <th>blog_url</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>2138</td>
 <td>180cm,75kg,27,male</td>
-<td>http:&#x2F;url&#x2F;bigboy777</td>
+<td>http:/url/bigboy777</td>
 </tr>
 <tr>
 <td>3214</td>
 <td>165cm,45kg,26,female</td>
-<td>http:&#x2F;url&#x2F;kittycc</td>
+<td>http:/url/kittycc</td>
 </tr>
 <tr>
 <td>6543</td>
 <td>178cm,65kg,25,male</td>
-<td>http:&#x2F;url&#x2F;tiger</td>
+<td>http:/url/tiger</td>
 </tr>
 <tr>
 <td>4321</td>
 <td>171cm,55kg,23,female</td>
-<td>http:&#x2F;url&#x2F;uhksd</td>
+<td>http:/url/uhksd</td>
 </tr>
 <tr>
 <td>2131</td>
 <td>168cm,45kg,22,female</td>
-<td>http:&#x2F;urlsydney</td>
+<td>http:/urlsydney</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>根据示例，你的查询应返回以下结果：</p>
 <table>
 <thead>
@@ -322,7 +326,8 @@
 <th>number</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>male</td>
 <td>2</td>
 </tr>
@@ -330,13 +335,13 @@
 <td>female</td>
 <td>3</td>
 </tr>
-</tbody></table>
-<hr>
+</tbody>
+</table>
+<hr />
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> substring_index(profile, <span class="string">&#x27;,&#x27;</span>, <span class="number">-1</span>) <span class="keyword">as</span> gender, <span class="built_in">count</span>(device_id)</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> gender</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="SQL31-提取博客URL中的用户名"><a href="#SQL31-提取博客URL中的用户名" class="headerlink" title="SQL31 提取博客URL中的用户名"></a><strong>SQL31</strong> <strong>提取博客URL中的用户名</strong></h1><h2 id="描述-1"><a href="#描述-1" class="headerlink" title="描述"></a>描述</h2><p>题目：对于申请参与比赛的用户，blog_url字段中url字符后的字符串为用户个人博客的用户名，现在运营想要把用户的个人博客用户字段提取出单独记录为一个新的字段，请取出所需数据。</p>
+<h1 id="sql31-提取博客url中的用户名"><a class="markdownIt-Anchor" href="#sql31-提取博客url中的用户名"></a> <strong>SQL31</strong> <strong>提取博客URL中的用户名</strong></h1>
+<h2 id="描述-2"><a class="markdownIt-Anchor" href="#描述-2"></a> 描述</h2>
+<p>题目：对于申请参与比赛的用户，blog_url字段中url字符后的字符串为用户个人博客的用户名，现在运营想要把用户的个人博客用户字段提取出单独记录为一个新的字段，请取出所需数据。</p>
 <p>示例：user_submit</p>
 <table>
 <thead>
@@ -346,32 +351,34 @@
 <th>blog_url</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>2138</td>
 <td>180cm,75kg,27,male</td>
-<td>http:&#x2F;ur&#x2F;bisdgboy777</td>
+<td>http:/ur/bisdgboy777</td>
 </tr>
 <tr>
 <td>3214</td>
 <td>165cm,45kg,26,female</td>
-<td>http:&#x2F;url&#x2F;dkittycc</td>
+<td>http:/url/dkittycc</td>
 </tr>
 <tr>
 <td>6543</td>
 <td>178cm,65kg,25,male</td>
-<td>http:&#x2F;ur&#x2F;tigaer</td>
+<td>http:/ur/tigaer</td>
 </tr>
 <tr>
 <td>4321</td>
 <td>171 cm,55kg,23,female</td>
-<td>http:&#x2F;url&#x2F;uhksd</td>
+<td>http:/url/uhksd</td>
 </tr>
 <tr>
 <td>2131</td>
 <td>168cm,45kg,22,female</td>
-<td>http:&#x2F;url&#x2F;sydney</td>
+<td>http:/url/sydney</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>根据示例，你的查询应返回以下结果：</p>
 <table>
 <thead>
@@ -380,7 +387,8 @@
 <th>user_name</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>2138</td>
 <td>bisdgboy777</td>
 </tr>
@@ -400,36 +408,40 @@
 <td>2131</td>
 <td>sydney</td>
 </tr>
-</tbody></table>
-<hr>
-<h3 id="提取某个字符一般有四种做法："><a href="#提取某个字符一般有四种做法：" class="headerlink" title="提取某个字符一般有四种做法："></a>提取某个字符一般有四种做法：</h3><ol>
-<li><p><strong>trim()</strong></p>
+</tbody>
+</table>
+<hr />
+<h3 id="提取某个字符一般有四种做法"><a class="markdownIt-Anchor" href="#提取某个字符一般有四种做法"></a> 提取某个字符一般有四种做法：</h3>
+<ol>
+<li>
+<p><strong>trim()</strong></p>
 <p>trim() 是直接更改相同格式的一列，删除这一列内容中的统一部分，然后重命名：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, <span class="built_in">trim</span>(<span class="string">&#x27;http:/url/&#x27;</span> <span class="keyword">from</span> blog_url) <span class="keyword">as</span> user_name</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br></pre></td></tr></table></figure>
-
-<p>​	</p>
+<p>​</p>
 </li>
-<li><p><strong>substring_index()</strong></p>
+<li>
+<p><strong>substring_index()</strong></p>
 <p>substring_index() 是将字符串切割，1表示保留字符串的左边👈，-1表示保留字符串的右边👉：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, substring_index(blog_url, <span class="string">&#x27;/url/&#x27;</span>, <span class="number">-1</span>) <span class="keyword">as</span> user_name</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br></pre></td></tr></table></figure>
-
 <p>还有一个用法是计数：</p>
 <p>SUBSTRING_INDEX(str,delim,count) 返回从字符串str分隔符 delim 在计数发生前的子字符串。如果计数是正的，则返回一切到最终定界符(从左边算起)的左侧。如果count是负数，则返回一切最终定界符(从右边算起)的右侧。SUBSTRING_INDEX() 搜寻在delim时进行区分大小写的匹配。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SUBSTRING_INDEX(<span class="string">&#x27;www.somewebsite.com&#x27;</span>,<span class="string">&#x27;.&#x27;</span>,<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
-
-<p>Output: <code>&#39;www.somewebsite&#39;</code></p>
+<p>Output: <code>'www.somewebsite'</code></p>
 </li>
-<li><p><strong>substr()</strong></p>
+<li>
+<p><strong>substr()</strong></p>
 <p>substr() 是用具体位置（数字）来表示从哪开始截取的，参数里还包括截取的长度：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, substr(blog_url, <span class="number">11</span>, length(blog_url)<span class="number">-10</span>) <span class="keyword">as</span> user_name</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br></pre></td></tr></table></figure>
-
-
 </li>
-<li><p><strong>replace()</strong></p>
+<li>
+<p><strong>replace()</strong></p>
 <p>replace() 就是替换函数：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sleect device_id, replace(blog_url, <span class="string">&#x27;http:/url/&#x27;</span>, <span class="string">&#x27;&#x27;</span>) <span class="keyword">as</span> user_name</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sleect device_id, replace(blog_url, <span class="string">&#x27;http:/url/&#x27;</span>, <span class="string">&#x27;&#x27;</span>) <span class="keyword">as</span> user_name</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<h1 id="SQL32-截取出年龄"><a href="#SQL32-截取出年龄" class="headerlink" title="SQL32 截取出年龄"></a><strong>SQL32</strong> <strong>截取出年龄</strong></h1><h2 id="描述-2"><a href="#描述-2" class="headerlink" title="描述"></a>描述</h2><p>题目：现在运营举办了一场比赛，收到了一些参赛申请，表数据记录形式如下所示，现在运营想要统计每个年龄的用户分别有多少参赛者，请取出相应结果</p>
+<h1 id="sql32-截取出年龄"><a class="markdownIt-Anchor" href="#sql32-截取出年龄"></a> <strong>SQL32</strong> <strong>截取出年龄</strong></h1>
+<h2 id="描述-3"><a class="markdownIt-Anchor" href="#描述-3"></a> 描述</h2>
+<p>题目：现在运营举办了一场比赛，收到了一些参赛申请，表数据记录形式如下所示，现在运营想要统计每个年龄的用户分别有多少参赛者，请取出相应结果</p>
 <p>示例：user_submit</p>
 <table>
 <thead>
@@ -439,32 +451,34 @@
 <th>blog_url</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>2138</td>
 <td>180cm,75kg,27,male</td>
-<td>http:&#x2F;ur&#x2F;bigboy777</td>
+<td>http:/ur/bigboy777</td>
 </tr>
 <tr>
 <td>3214</td>
 <td>165cm,45kg,26,female</td>
-<td>http:&#x2F;url&#x2F;kittycc</td>
+<td>http:/url/kittycc</td>
 </tr>
 <tr>
 <td>6543</td>
 <td>178cm,65kg,25,male</td>
-<td>http:&#x2F;url&#x2F;tiger</td>
+<td>http:/url/tiger</td>
 </tr>
 <tr>
 <td>4321</td>
 <td>171cm,55kg,23,female</td>
-<td>http:&#x2F;url&#x2F;uhksd</td>
+<td>http:/url/uhksd</td>
 </tr>
 <tr>
 <td>2131</td>
 <td>168cm,45kg,22,female</td>
-<td>http:&#x2F;url&#x2F;sydney</td>
+<td>http:/url/sydney</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>根据示例，你的查询应返回以下结果：</p>
 <table>
 <thead>
@@ -473,7 +487,8 @@
 <th>number</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>27</td>
 <td>1</td>
 </tr>
@@ -493,9 +508,9 @@
 <td>22</td>
 <td>1</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> substring_index(substring_index(profile, <span class="string">&#x27;,&#x27;</span>, <span class="number">-2</span>), <span class="string">&#x27;,&#x27;</span>, <span class="number">1</span>) <span class="keyword">as</span> age, <span class="built_in">count</span>(device_id)</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> age</span><br></pre></td></tr></table></figure>
-
 
                 </div>
 
@@ -615,7 +630,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL30-%E7%BB%9F%E8%AE%A1%E6%AF%8F%E7%A7%8D%E6%80%A7%E5%88%AB%E7%9A%84%E4%BA%BA%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">SQL30 统计每种性别的人数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">描述</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL31-%E6%8F%90%E5%8F%96%E5%8D%9A%E5%AE%A2URL%E4%B8%AD%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-number">2.</span> <span class="nav-text">SQL31 提取博客URL中的用户名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0-1"><span class="nav-number">2.1.</span> <span class="nav-text">描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E5%8F%96%E6%9F%90%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%80%E8%88%AC%E6%9C%89%E5%9B%9B%E7%A7%8D%E5%81%9A%E6%B3%95%EF%BC%9A"><span class="nav-number">2.1.1.</span> <span class="nav-text">提取某个字符一般有四种做法：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL32-%E6%88%AA%E5%8F%96%E5%87%BA%E5%B9%B4%E9%BE%84"><span class="nav-number">3.</span> <span class="nav-text">SQL32 截取出年龄</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0-2"><span class="nav-number">3.1.</span> <span class="nav-text">描述</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sql30-%E7%BB%9F%E8%AE%A1%E6%AF%8F%E7%A7%8D%E6%80%A7%E5%88%AB%E7%9A%84%E4%BA%BA%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text"> SQL30 统计每种性别的人数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text"> 描述</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sql31-%E6%8F%90%E5%8F%96%E5%8D%9A%E5%AE%A2url%E4%B8%AD%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-number">2.</span> <span class="nav-text"> SQL31 提取博客URL中的用户名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0-2"><span class="nav-number">2.1.</span> <span class="nav-text"> 描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E5%8F%96%E6%9F%90%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%80%E8%88%AC%E6%9C%89%E5%9B%9B%E7%A7%8D%E5%81%9A%E6%B3%95"><span class="nav-number">2.1.1.</span> <span class="nav-text"> 提取某个字符一般有四种做法：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sql32-%E6%88%AA%E5%8F%96%E5%87%BA%E5%B9%B4%E9%BE%84"><span class="nav-number">3.</span> <span class="nav-text"> SQL32 截取出年龄</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0-3"><span class="nav-number">3.1.</span> <span class="nav-text"> 描述</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -661,7 +676,7 @@
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">72.2k</span>
+                    <span class="item-value border-box word">72.7k</span>
                 </span>
             
 
@@ -804,7 +819,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL30-%E7%BB%9F%E8%AE%A1%E6%AF%8F%E7%A7%8D%E6%80%A7%E5%88%AB%E7%9A%84%E4%BA%BA%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">SQL30 统计每种性别的人数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">描述</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL31-%E6%8F%90%E5%8F%96%E5%8D%9A%E5%AE%A2URL%E4%B8%AD%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-number">2.</span> <span class="nav-text">SQL31 提取博客URL中的用户名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0-1"><span class="nav-number">2.1.</span> <span class="nav-text">描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E5%8F%96%E6%9F%90%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%80%E8%88%AC%E6%9C%89%E5%9B%9B%E7%A7%8D%E5%81%9A%E6%B3%95%EF%BC%9A"><span class="nav-number">2.1.1.</span> <span class="nav-text">提取某个字符一般有四种做法：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL32-%E6%88%AA%E5%8F%96%E5%87%BA%E5%B9%B4%E9%BE%84"><span class="nav-number">3.</span> <span class="nav-text">SQL32 截取出年龄</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0-2"><span class="nav-number">3.1.</span> <span class="nav-text">描述</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sql30-%E7%BB%9F%E8%AE%A1%E6%AF%8F%E7%A7%8D%E6%80%A7%E5%88%AB%E7%9A%84%E4%BA%BA%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text"> SQL30 统计每种性别的人数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text"> 描述</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sql31-%E6%8F%90%E5%8F%96%E5%8D%9A%E5%AE%A2url%E4%B8%AD%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-number">2.</span> <span class="nav-text"> SQL31 提取博客URL中的用户名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0-2"><span class="nav-number">2.1.</span> <span class="nav-text"> 描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E5%8F%96%E6%9F%90%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%80%E8%88%AC%E6%9C%89%E5%9B%9B%E7%A7%8D%E5%81%9A%E6%B3%95"><span class="nav-number">2.1.1.</span> <span class="nav-text"> 提取某个字符一般有四种做法：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sql32-%E6%88%AA%E5%8F%96%E5%87%BA%E5%B9%B4%E9%BE%84"><span class="nav-number">3.</span> <span class="nav-text"> SQL32 截取出年龄</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0-3"><span class="nav-number">3.1.</span> <span class="nav-text"> 描述</span></a></li></ol></li></ol>
     </div>
 </div>
 

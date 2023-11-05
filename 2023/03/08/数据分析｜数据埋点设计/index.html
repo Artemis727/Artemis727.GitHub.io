@@ -266,13 +266,16 @@
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="六个步骤实现数据埋点设计"><a href="#六个步骤实现数据埋点设计" class="headerlink" title="六个步骤实现数据埋点设计"></a>六个步骤实现数据埋点设计</h1><p><strong>1.确认事件与变量</strong></p>
+                    <h1 id="六个步骤实现数据埋点设计"><a class="markdownIt-Anchor" href="#六个步骤实现数据埋点设计"></a> 六个步骤实现数据埋点设计</h1>
+<p><strong>1.确认事件与变量</strong></p>
 <p>这里的<strong>事件指产品中的功能或者用户的操作，而变量是指描述事件的属性或者关键指标</strong>。确认事件与变量可以通过<strong>AARRR模型或者UJM模型</strong>进行逐步拆解，理清用户生命周期和行为路径，抽象出每一个步骤的关键指标。</p>
 <p>Tips：AARRR模型和UJM模型会在之前的文章中有讲过，点击阅读原文即可跳转。</p>
 <ul>
-<li><p>AARRR 模型<img src="https://picx.zhimg.com/v2-caf3ea7bae280944457fcd076dced07f_720w.jpg?source=172ae18b" alt="重要的产品分析模型：AARRR模型"></p>
+<li>
+<p>AARRR 模型<img src="https://picx.zhimg.com/v2-caf3ea7bae280944457fcd076dced07f_720w.jpg?source=172ae18b" alt="重要的产品分析模型：AARRR模型" /></p>
 </li>
-<li><p>UJM 模型</p>
+<li>
+<p>UJM 模型</p>
 </li>
 </ul>
 <p><strong>2.明确事件的触发时机</strong></p>
@@ -287,7 +290,8 @@
 <p>建立公司内部或者团队内部的命名规范是非常必要的，<strong>可以采用「动词+名词」或者「名词+动词」的规则来命名</strong>，比如「加入购物车」事件，就可以命名为：addToCart。</p>
 <p><strong>6.明确优先级</strong></p>
 <p>数据埋点都是为数据应用做铺排，埋点之后分析师可能面临着搭建指标体系和数据报表体系的工作，<strong>可以根据报表的优先级、埋点的技术实现成本以及资源有限性为数据埋点确定优先级</strong>。</p>
-<h1 id="以电商购物成交转化为例实现数据埋点设计"><a href="#以电商购物成交转化为例实现数据埋点设计" class="headerlink" title="以电商购物成交转化为例实现数据埋点设计"></a>以电商购物成交转化为例实现数据埋点设计</h1><p><img src="https://pic1.zhimg.com/80/v2-35d0220539559da807f851b3059896b5_1440w.webp?source=1940ef5c" alt="img"></p>
+<h1 id="以电商购物成交转化为例实现数据埋点设计"><a class="markdownIt-Anchor" href="#以电商购物成交转化为例实现数据埋点设计"></a> 以电商购物成交转化为例实现数据埋点设计</h1>
+<p><img src="https://pic1.zhimg.com/80/v2-35d0220539559da807f851b3059896b5_1440w.webp?source=1940ef5c" alt="img" /></p>
 <p><strong>（1）通过UJM模型拆分用户购买商品的路径</strong>：将用户购买路径拆解为<u>注册-登录-商品曝光-商品点击-浏览页面详情-加入购物车-生成订单-订单支付</u>步骤，根据产品或策划提的数据需求，<u>确定每一个步骤学要看哪些字段才能实现数据需求</u>。</p>
 <p><strong>（2）确认触发机制</strong>：明确是在<u>点击按钮时记录行为还是在用户完成该步骤时</u>记录行为。</p>
 <p><strong>（3）确认上报机制</strong>：明确数据上报机制，是<u>实时上报还是异步上报</u>，不同的上报机制采集到的字段可能不一样，或者说需要将字段拆分到不同表进行记录。</p>
@@ -295,7 +299,7 @@
 <p><strong>（5）统一表层级结构</strong>：我们这里采用两层数据表结构，<u>第一层存放用户基信息，第二层存放用户行为信息</u>。这个根据团队内部的数据接入规范进行调整，只要是统一的结构，对于数据分析师的分析都是有利的。</p>
 <p><strong>（6）明确数据优先级</strong>：根据<u>埋点需求的紧急程度</u>，给每一个买埋点任务标上优先级。</p>
 <p>根据上面的六个步骤，将每一个步骤需要记录的字段按照标准格式<strong>汇总到文档</strong>，即可完成初步的埋点设计。当然完成初版埋点设计之后，还需要与<strong>产品、策划、程序</strong>一遍一遍过文档内容，不断修改完善，直至三方会谈达成统一意见。</p>
-<p><img src="https://picx.zhimg.com/80/v2-d33bda07fa0a48858fbf98a396530e90_1440w.webp?source=1940ef5c" alt="img"></p>
+<p><img src="https://picx.zhimg.com/80/v2-d33bda07fa0a48858fbf98a396530e90_1440w.webp?source=1940ef5c" alt="img" /></p>
 
                 </div>
 
@@ -411,7 +415,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%E4%B8%AA%E6%AD%A5%E9%AA%A4%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.</span> <span class="nav-text">六个步骤实现数据埋点设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A5%E7%94%B5%E5%95%86%E8%B4%AD%E7%89%A9%E6%88%90%E4%BA%A4%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%BE%8B%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.</span> <span class="nav-text">以电商购物成交转化为例实现数据埋点设计</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%E4%B8%AA%E6%AD%A5%E9%AA%A4%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.</span> <span class="nav-text"> 六个步骤实现数据埋点设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A5%E7%94%B5%E5%95%86%E8%B4%AD%E7%89%A9%E6%88%90%E4%BA%A4%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%BE%8B%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.</span> <span class="nav-text"> 以电商购物成交转化为例实现数据埋点设计</span></a></li></ol>
     </div>
 </div>
 
@@ -457,7 +461,7 @@
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">72.2k</span>
+                    <span class="item-value border-box word">72.7k</span>
                 </span>
             
 
@@ -600,7 +604,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%E4%B8%AA%E6%AD%A5%E9%AA%A4%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.</span> <span class="nav-text">六个步骤实现数据埋点设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A5%E7%94%B5%E5%95%86%E8%B4%AD%E7%89%A9%E6%88%90%E4%BA%A4%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%BE%8B%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.</span> <span class="nav-text">以电商购物成交转化为例实现数据埋点设计</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%E4%B8%AA%E6%AD%A5%E9%AA%A4%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.</span> <span class="nav-text"> 六个步骤实现数据埋点设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A5%E7%94%B5%E5%95%86%E8%B4%AD%E7%89%A9%E6%88%90%E4%BA%A4%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%BE%8B%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.</span> <span class="nav-text"> 以电商购物成交转化为例实现数据埋点设计</span></a></li></ol>
     </div>
 </div>
 
