@@ -335,7 +335,7 @@ mjx-container[display="true"] + br {
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Sun Mar 12 2023 21:33:37 GMT+0800">2023-03-12 21:33:37</span>
+                <span class="pc" data-updated="Sun Nov 05 2023 12:53:34 GMT+0800">2023-11-05 12:53:34</span>
             </span>
         
 
@@ -382,15 +382,15 @@ mjx-container[display="true"] + br {
 <h2 id="准备数据"><a class="markdownIt-Anchor" href="#准备数据"></a> 准备数据</h2>
 <p>数据：日期，订单金额</p>
 <p>假设数据是精确到天的</p>
-<p><img src="https://img-blog.csdnimg.cn/20200817173547970.png#pic_center" alt="img"></p>
+<p><img src="https://p.ipic.vip/er9zul.png" alt="image-20231105125307614 PM"></p>
 <h2 id="计算"><a class="markdownIt-Anchor" href="#计算"></a> 计算</h2>
 <h3 id="月环比和上个月做比较"><a class="markdownIt-Anchor" href="#月环比和上个月做比较"></a> 月环比：和上个月做比较</h3>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 月环比</span></span><br><span class="line"><span class="keyword">select</span> substr(a.d, <span class="number">1</span>, <span class="number">7</span>) <span class="keyword">as</span> <span class="keyword">month</span>, a.d, a.orderpay, b.dd, b.originalday, b.orderpay, (a.orderpay<span class="operator">-</span>b.orderpay)<span class="operator">/</span>b.orderpay <span class="keyword">as</span> month_rate</span><br><span class="line"><span class="keyword">from</span>(</span><br><span class="line">  <span class="keyword">select</span> date_format(datetime, <span class="string">'%Y-%m-%d'</span>) <span class="keyword">as</span> d, orderpay</span><br><span class="line">	<span class="keyword">from</span> ordertable	</span><br><span class="line">	) <span class="keyword">as</span> a</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span>(</span><br><span class="line">  <span class="keyword">select</span> date_add(date_format(datetiem, <span class="string">'%Y-%m-%d'</span>), <span class="type">interval</span> <span class="number">1</span> <span class="keyword">month</span>), 		date_format(datetime, <span class="string">'&amp;Y-%m-%d'</span>) <span class="keyword">as</span> originalday, orderpay</span><br><span class="line">  <span class="keyword">from</span> ordertable</span><br><span class="line">	) <span class="keyword">as</span> b</span><br><span class="line"><span class="keyword">on</span> a.d <span class="operator">=</span> b.dd</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 如果是精确到月的数据，就要把 datetime 变成 concat(datetime, '-01')</span></span><br><span class="line"><span class="keyword">select</span> substr(a.d, <span class="number">1</span>, <span class="number">7</span>) <span class="keyword">as</span> <span class="keyword">month</span>, a.d, a.orderpay, b.dd, b.originalday, b.orderpay, (a.orderpay<span class="operator">-</span>b.orderpay)<span class="operator">/</span>b.orderpay <span class="keyword">as</span> month_rate </span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">  (<span class="keyword">select</span> DATE_FORMAT(CONCAT(datetime,<span class="string">'-01'</span>),<span class="string">'%Y-%m-%d'</span>) <span class="keyword">as</span> d ,orderpay  <span class="keyword">from</span> ordertable) a  </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> </span><br><span class="line">  (<span class="keyword">select</span> DATE_ADD(DATE_FORMAT(CONCAT(datetime,<span class="string">'-01'</span>),<span class="string">'%Y-%m-%d'</span>),<span class="type">INTERVAL</span> <span class="number">1</span> <span class="keyword">month</span> )<span class="keyword">as</span> dd </span><br><span class="line">  ,DATE_FORMAT(CONCAT(datetime,<span class="string">'-01'</span>),<span class="string">'%Y-%m-%d'</span>)<span class="keyword">as</span> originalday,orderpay <span class="keyword">from</span> ordertable) b</span><br><span class="line"><span class="keyword">on</span> a.d<span class="operator">=</span>b.dd</span><br></pre></td></tr></table></figure>
 <p>从结果可以看到，月环比的计算逻辑：在原有的时间加上一个月与原表连接即可得到本月与上个月的信息。结果有几个月份是null，原因是我造的数据没有11月份的，所以才没有计算，这个可忽略。<br>
-<img src="https://img-blog.csdnimg.cn/20200817173904907.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY5MjE5Nw==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<img src="https://p.ipic.vip/g20vvk.png" alt="image-20231105125317168 PM"></p>
 <h3 id="月同比和去年的这个月做比较"><a class="markdownIt-Anchor" href="#月同比和去年的这个月做比较"></a> 月同比：和去年的这个月做比较</h3>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 月同比</span></span><br><span class="line"><span class="keyword">select</span> substr(a.d, <span class="number">1</span>, <span class="number">7</span>) <span class="keyword">as</span> <span class="keyword">month</span>, a.d, a.orderpay, b.dd, b.originalday, b.orderpay, (a.orderpay<span class="operator">-</span>b.orderpay)<span class="operator">/</span>b.orderpay <span class="keyword">as</span> month_rate</span><br><span class="line"><span class="keyword">from</span>(</span><br><span class="line">	<span class="keyword">select</span> date_format(<span class="type">date</span>, <span class="string">'%Y-%m-%d'</span>) <span class="keyword">as</span> d, orderpay</span><br><span class="line">  <span class="keyword">from</span> ordertable</span><br><span class="line">	) <span class="keyword">as</span> a</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span>(</span><br><span class="line">	<span class="keyword">select</span> date_add(date_format(<span class="type">date</span>, <span class="string">'%Y-%m-%d'</span>), <span class="type">interval</span> <span class="number">1</span> <span class="keyword">year</span>) <span class="keyword">as</span> dd, date_format(<span class="type">date</span>, <span class="string">'%Y-%m-%d'</span>) <span class="keyword">as</span> originalday, orderpay</span><br><span class="line">  <span class="keyword">from</span> ordertable</span><br><span class="line">	) <span class="keyword">as</span> b</span><br><span class="line"><span class="keyword">on</span> a.d <span class="operator">=</span> b.dd</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 如果是精确到月的数据，还是要把 datetime 变成 concat(datetime, '-01')</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20200817174410687.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY5MjE5Nw==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p><img src="https://p.ipic.vip/gbhka3.png" alt="image-20231105125325392 PM"></p>
 <h1 id="python"><a class="markdownIt-Anchor" href="#python"></a> Python</h1>
 <blockquote>
 <p>用python中的pandas模块。</p>
@@ -1546,5 +1546,20 @@ mjx-container[display="true"] + br {
 
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

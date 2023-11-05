@@ -335,7 +335,7 @@ mjx-container[display="true"] + br {
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Sun Nov 05 2023 12:39:42 GMT+0800">2023-11-05 12:39:42</span>
+                <span class="pc" data-updated="Sun Nov 05 2023 12:52:25 GMT+0800">2023-11-05 12:52:25</span>
             </span>
         
 
@@ -378,7 +378,7 @@ mjx-container[display="true"] + br {
                     
 
                     <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">library<span class="punctuation">(</span>boot<span class="punctuation">)</span></span><br><span class="line">set.seed<span class="punctuation">(</span><span class="number">2014</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># Bootstrap the mean</span></span><br><span class="line">samplemean <span class="operator">&lt;-</span> <span class="keyword">function</span><span class="punctuation">(</span>data<span class="punctuation">,</span> indices<span class="punctuation">)</span> <span class="punctuation">{</span></span><br><span class="line">  <span class="built_in">return</span><span class="punctuation">(</span>mean<span class="punctuation">(</span>data<span class="punctuation">[</span>indices<span class="punctuation">]</span><span class="punctuation">,</span> na.rm <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">}</span></span><br><span class="line">boot.Baseline <span class="operator">&lt;-</span> boot<span class="punctuation">(</span>data<span class="operator">=</span>data1<span class="operator">$</span>Baseline<span class="punctuation">,</span> statistic<span class="operator">=</span>samplemean<span class="punctuation">,</span> R<span class="operator">=</span><span class="number">10000</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># view results of bootstrap</span></span><br><span class="line">boot.Baseline</span><br><span class="line">plot<span class="punctuation">(</span>boot.Baseline<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<img src="R｜Bootstrap.assets/image-20231105123534175 PM.png" alt="image-20231105123534175 PM" style="zoom:50%;">
+<p><img src="https://p.ipic.vip/lc6795.png" alt="image-20231105125202451 PM"></p>
 <p>这是一个针对 <code>data1$Baseline</code> 的非参数性Bootstrap（自助法）分析的结果。</p>
 <ul>
 <li><strong>原始样本均值</strong>（original sample mean）：样本的平均值为 328.8。</li>
@@ -386,9 +386,9 @@ mjx-container[display="true"] + br {
 <li><strong>标准误差（Standard Error）</strong>：Bootstrap 样本均值的标准差，这里为 17.68664。它是对估计值的不确定性的度量，标准误差越大，表示估计值的不确定性越高。</li>
 </ul>
 <p>这些结果反映了通过 Bootstrap 方法估计得到的样本均值的性质和不确定性。 Bootstrap 是一种用于估计统计量的方法，通过从原始样本中重复抽取样本并计算统计量，以获取该统计量的抽样分布及其性质。这对于在没有明确分布假设的情况下进行推断非常有用。</p>
-<img src="R｜Bootstrap.assets/image-20231105123549597 PM.png" alt="image-20231105123549597 PM" style="zoom:50%;">
+<p><img src="https://p.ipic.vip/61b79v.png" alt="image-20231105125211427 PM"></p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 95% BCA confidence interval from Bootstrap of Mean</span></span><br><span class="line">bci <span class="operator">&lt;-</span> boot.ci<span class="punctuation">(</span>boot.Baseline<span class="punctuation">,</span> type<span class="operator">=</span><span class="string">"bca"</span><span class="punctuation">,</span> conf <span class="operator">=</span> <span class="number">0.95</span><span class="punctuation">)</span></span><br><span class="line">table1<span class="punctuation">[</span><span class="number">1</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">]</span> <span class="operator">&lt;-</span> mean<span class="punctuation">(</span>boot.Baseline<span class="operator">$</span>t<span class="punctuation">)</span> <span class="comment"># avg of the bootstrap samples</span></span><br><span class="line">table1<span class="punctuation">[</span><span class="number">2</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">]</span> <span class="operator">&lt;-</span> paste<span class="punctuation">(</span><span class="built_in">round</span><span class="punctuation">(</span>bci<span class="operator">$</span>bca<span class="punctuation">[</span><span class="number">4</span><span class="punctuation">]</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">)</span><span class="punctuation">,</span><span class="string">' to '</span><span class="punctuation">,</span> <span class="built_in">round</span><span class="punctuation">(</span>bci<span class="operator">$</span>bca<span class="punctuation">[</span><span class="number">5</span><span class="punctuation">]</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<img src="R｜Bootstrap.assets/image-20231105123605767 PM.png" alt="image-20231105123605767 PM" style="zoom:50%;">
+<p><img src="https://p.ipic.vip/gnp6r7.png" alt="image-20231105125220700 PM"></p>
 <ul>
 <li>[Judge] Bootstrap can be used to genreate a trainset and another bootstrap can be used to generate a testset.
 <ul>
@@ -788,5 +788,20 @@ mjx-container[display="true"] + br {
 
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
