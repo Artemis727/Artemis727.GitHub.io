@@ -378,76 +378,63 @@ mjx-container[display="true"] + br {
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="sql语句顺序"><a class="markdownIt-Anchor" href="#sql语句顺序"></a> SQL语句顺序</h1>
-<p>sql语句的书写顺序:<br>
-<strong>select &gt;&gt; from &gt;&gt; where &gt;&gt; group by &gt;&gt; having &gt;&gt; order by &gt;&gt; limit</strong><br>
-注意：</p>
+                    <h1 id="SQL语句顺序"><a href="#SQL语句顺序" class="headerlink" title="SQL语句顺序"></a>SQL语句顺序</h1><p>sql语句的书写顺序:<br><strong>select &gt;&gt; from &gt;&gt; where &gt;&gt; group by &gt;&gt; having &gt;&gt; order by &gt;&gt; limit</strong><br>注意：</p>
 <ol>
 <li>select和from是必须的；</li>
 <li>where和having不能同时使用;</li>
 <li>having和group by联合使用；</li>
 </ol>
-<p>sql语句的解析顺序 :<br>
-from &gt;&gt; on&gt;&gt; join &gt;&gt; where &gt;&gt; group by &gt;&gt; having &gt;&gt; select &gt;&gt; distinct &gt;&gt; order by &gt;&gt; limit<br>
-注意：虽然select在having后执行，但是mysql中仍然可以在having中使用select语句定义的别名</p>
+<p>sql语句的解析顺序 :<br>from &gt;&gt; on&gt;&gt; join &gt;&gt; where &gt;&gt; group by &gt;&gt; having &gt;&gt; select &gt;&gt; distinct &gt;&gt; order by &gt;&gt; limit<br>注意：虽然select在having后执行，但是mysql中仍然可以在having中使用select语句定义的别名</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> [<span class="keyword">ALL</span> <span class="operator">|</span> <span class="keyword">DISTINCT</span> <span class="operator">|</span> DISTINCTROW <span class="operator">|</span> TOP] 字段</span><br><span class="line"><span class="keyword">from</span> 表</span><br><span class="line">[<span class="keyword">inner</span> <span class="keyword">join</span>  <span class="keyword">right</span> <span class="keyword">join</span> <span class="operator">|</span> <span class="keyword">left</span> <span class="keyword">join</span> 表<span class="number">2</span>]</span><br><span class="line">[<span class="keyword">on</span> 连接条件]</span><br><span class="line">[<span class="keyword">where</span> 条件]</span><br><span class="line">[<span class="keyword">group</span> <span class="keyword">by</span> 分组规则]</span><br><span class="line">[<span class="keyword">having</span> 分组条件]</span><br><span class="line">[<span class="keyword">order</span> <span class="keyword">by</span> 排序规则]</span><br><span class="line">[limit 分页规则]</span><br></pre></td></tr></table></figure>
-<h1 id="对于-join如果不写-left-inner-right-默认是什么联接呢"><a class="markdownIt-Anchor" href="#对于-join如果不写-left-inner-right-默认是什么联接呢"></a> 对于 join，如果不写 left, inner, right ，默认是什么联接呢？</h1>
-<p>是<code>inner join</code>。</p>
+<h1 id="对于-join，如果不写-left-inner-right-，默认是什么联接呢？"><a href="#对于-join，如果不写-left-inner-right-，默认是什么联接呢？" class="headerlink" title="对于 join，如果不写 left, inner, right ，默认是什么联接呢？"></a>对于 join，如果不写 left, inner, right ，默认是什么联接呢？</h1><p>是<code>inner join</code>。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> a <span class="keyword">join</span> b <span class="keyword">on</span> a.id <span class="operator">=</span> b.id</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> a <span class="keyword">inner</span> <span class="keyword">join</span> b <span class="keyword">on</span> a.id <span class="operator">=</span> b.id</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> a, b <span class="keyword">where</span> a.id <span class="operator">=</span> b.id</span><br><span class="line"># 上面的三个是相等的.</span><br><span class="line"></span><br><span class="line"># 剩下的<span class="keyword">join</span>类型有:</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span></span><br><span class="line"><span class="keyword">right</span> <span class="keyword">join</span></span><br><span class="line"><span class="keyword">cross</span> <span class="keyword">join</span></span><br><span class="line"><span class="keyword">full</span> <span class="keyword">join</span></span><br><span class="line"></span><br><span class="line"># <span class="number">2005</span>新加</span><br><span class="line"><span class="keyword">cross</span> apply</span><br><span class="line"><span class="keyword">outer</span> apply</span><br></pre></td></tr></table></figure>
-<p><strong>各种连接方式的区别？</strong></p>
+<p> <strong>各种连接方式的区别？</strong></p>
 <p><strong>inner_join：</strong>  内连接，根据两个表共有的列来匹配其中的行，强调只有两个表共有的列值对应的行才能匹配出来。</p>
 <p><strong>left join/right join/all join：</strong> （左，右，全）外连接，以left join 为例，如果指定了需要匹配的列名，无论右表对应行是否包含满足连接条件的数据，左表的数据都会提取出来，则结果会将右表的这些值以空值的形式匹配进来。</p>
 <p><strong>cross join：</strong>  交叉连接，结果是笛卡尔积，就是第一个表符合查询条件的行数乘以第二个表符合查询条件的行数。</p>
-<h1 id="sql窗口函数"><a class="markdownIt-Anchor" href="#sql窗口函数"></a> SQL窗口函数</h1>
-<p>窗口函数原则上只能写在select语句中，对where或group by子句处理后的结果进行操作，可以分为以下两种函数：</p>
+<h1 id="SQL窗口函数"><a href="#SQL窗口函数" class="headerlink" title="SQL窗口函数"></a>SQL窗口函数</h1><p>窗口函数原则上只能写在select语句中，对where或group by子句处理后的结果进行操作，可以分为以下两种函数：</p>
 <p>1） 专用窗口函数，包括后面要讲到的rank, dense_rank, row_number等专用窗口函数。</p>
 <p>2） 聚合函数，如sum. avg, count, max, min等</p>
 <p>窗口函数的基本语法如下：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&lt;</span>窗口函数<span class="operator">&gt;</span> <span class="keyword">over</span> (<span class="keyword">partition</span> <span class="keyword">by</span> <span class="operator">&lt;</span>用于分组的列名<span class="operator">&gt;</span></span><br><span class="line">                <span class="keyword">order</span> <span class="keyword">by</span> <span class="operator">&lt;</span>用于排序的列名<span class="operator">&gt;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="窗口函数使用"><a class="markdownIt-Anchor" href="#窗口函数使用"></a> 窗口函数使用</h2>
-<blockquote>
+<h2 id="窗口函数使用"><a href="#窗口函数使用" class="headerlink" title="窗口函数使用"></a>窗口函数使用</h2><blockquote>
 <p>转自：<a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/92654574">https://zhuanlan.zhihu.com/p/92654574<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
-<h3 id="rank"><a class="markdownIt-Anchor" href="#rank"></a> rank</h3>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>, <span class="built_in">rank</span>() <span class="keyword">over</span>(</span><br><span class="line">	<span class="keyword">partition</span> <span class="keyword">by</span> class</span><br><span class="line">	<span class="keyword">order</span> <span class="keyword">by</span> grade <span class="keyword">desc</span>) <span class="keyword">as</span> ranking</span><br><span class="line"><span class="keyword">from</span> classtable</span><br></pre></td></tr></table></figure>
+<h3 id="rank"><a href="#rank" class="headerlink" title="rank"></a>rank</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>, <span class="built_in">rank</span>() <span class="keyword">over</span>(</span><br><span class="line">	<span class="keyword">partition</span> <span class="keyword">by</span> class</span><br><span class="line">	<span class="keyword">order</span> <span class="keyword">by</span> grade <span class="keyword">desc</span>) <span class="keyword">as</span> ranking</span><br><span class="line"><span class="keyword">from</span> classtable</span><br></pre></td></tr></table></figure>
 <p>1）每个班级内：按班级分组</p>
-<p><strong>partition by用来对表分组</strong>。在这个例子中，所以我们指定了按“班级”分组（partition by 班级）<br>
-2）按成绩排名</p>
+<p><strong>partition by用来对表分组</strong>。在这个例子中，所以我们指定了按“班级”分组（partition by 班级）<br>2）按成绩排名</p>
 <p><strong>order by子句的功能是对分组后的结果进行排序</strong>，默认是按照升序（asc）排列。在本例中（order by 成绩 desc）是按成绩这一列排序，加了desc关键词表示降序排列。</p>
-<p><font color="red">窗口函数具备了我们之前学过的group by子句分组的功能和order by子句排序的功能。那么，为什么还要用窗口函数呢？</font></p>
+<font color="red">窗口函数具备了我们之前学过的group by子句分组的功能和order by子句排序的功能。那么，为什么还要用窗口函数呢？</font>
+
 <p>这是因为，<strong>group by分组汇总后改变了表的行数，一行只有一个类别。而partiition by和rank函数不会减少原表中的行数</strong>。例如下面统计每个班级的人数。</p>
 <p><img src="https://pic2.zhimg.com/80/v2-a9342df7f64ec7d9a52b42adcdb48341_1440w.webp" alt="img"></p>
 <p>现在我们说回来，为什么叫“窗口”函数呢？这是因为<strong>partition by分组后的结果称为“窗口”，这里的窗口不是我们家里的门窗，而是表示“范围”的意思</strong>。</p>
 <p><strong>简单来说，窗口函数有以下功能：</strong></p>
 <p><strong>1）同时具有分组和排序的功能</strong></p>
 <p><strong>2）不减少原表的行数</strong></p>
-<h3 id="其他窗口函数"><a class="markdownIt-Anchor" href="#其他窗口函数"></a> 其他窗口函数</h3>
-<p>专用窗口函数<strong>rank, dense_rank, row_number</strong>有什么区别呢？</p>
+<h3 id="其他窗口函数"><a href="#其他窗口函数" class="headerlink" title="其他窗口函数"></a>其他窗口函数</h3><p>专用窗口函数<strong>rank, dense_rank, row_number</strong>有什么区别呢？</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>,</span><br><span class="line">   <span class="built_in">rank</span>() <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> 成绩 <span class="keyword">desc</span>) <span class="keyword">as</span> ranking,</span><br><span class="line">   <span class="built_in">dense_rank</span>() <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> 成绩 <span class="keyword">desc</span>) <span class="keyword">as</span> dese_rank,</span><br><span class="line">   <span class="built_in">row_number</span>() <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> 成绩 <span class="keyword">desc</span>) <span class="keyword">as</span> row_num</span><br><span class="line"><span class="keyword">from</span> 班级表</span><br></pre></td></tr></table></figure>
-<img src="https://pic2.zhimg.com/80/v2-ad1d86f5a5b9f0ef684907b20b341099_1440w.webp" alt="img" style="zoom:50%;">
+<p><img src="https://pic2.zhimg.com/80/v2-ad1d86f5a5b9f0ef684907b20b341099_1440w.webp" alt="img" style="zoom:50%;"></p>
 <p>rank函数：这个例子中是5位，5位，5位，8位，也就是<strong>如果有并列名次的行，会占用下一名次的位置</strong>。比如正常排名是1，2，3，4，但是现在前3名是并列的名次，结果是：1，1，1，4。</p>
 <p>dense_rank函数：这个例子中是5位，5位，5位，6位，也就是<strong>如果有并列名次的行，不占用下一名次的位置</strong>。比如正常排名是1，2，3，4，但是现在前3名是并列的名次，结果是：1，1，1，2。</p>
 <p>row_number函数：这个例子中是5位，6位，7位，8位，也就是<strong>不考虑并列名次的情况</strong>。比如前3名是并列的名次，排名是正常的1，2，3，4。</p>
 <p>在上述的这三个专用窗口函数中，函数后面的括号不需要任何参数，保持()空着就可以。</p>
-<h3 id="聚合函数作为窗口函数"><a class="markdownIt-Anchor" href="#聚合函数作为窗口函数"></a> 聚合函数作为窗口函数</h3>
-<p>聚和窗口函数和上面提到的专用窗口函数用法完全相同，只需要把聚合函数写在窗口函数的位置即可，<strong>但是函数后面括号里面不能为空，需要指定聚合的列名</strong>。</p>
+<h3 id="聚合函数作为窗口函数"><a href="#聚合函数作为窗口函数" class="headerlink" title="聚合函数作为窗口函数"></a>聚合函数作为窗口函数</h3><p>聚和窗口函数和上面提到的专用窗口函数用法完全相同，只需要把聚合函数写在窗口函数的位置即可，<strong>但是函数后面括号里面不能为空，需要指定聚合的列名</strong>。</p>
 <p>我们来看一下窗口函数是聚合函数时，会出来什么结果：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>,</span><br><span class="line">   <span class="built_in">sum</span>(成绩) <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> 学号) <span class="keyword">as</span> current_sum,</span><br><span class="line">   <span class="built_in">avg</span>(成绩) <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> 学号) <span class="keyword">as</span> current_avg,</span><br><span class="line">   <span class="built_in">count</span>(成绩) <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> 学号) <span class="keyword">as</span> current_count,</span><br><span class="line">   <span class="built_in">max</span>(成绩) <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> 学号) <span class="keyword">as</span> current_max,</span><br><span class="line">   <span class="built_in">min</span>(成绩) <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> 学号) <span class="keyword">as</span> current_min</span><br><span class="line"><span class="keyword">from</span> 班级表</span><br></pre></td></tr></table></figure>
-<img src="https://pic2.zhimg.com/80/v2-c48f0218306f65049fcf9f98c184226d_1440w.webp" alt="img" style="zoom:67%;">
+<p><img src="https://pic2.zhimg.com/80/v2-c48f0218306f65049fcf9f98c184226d_1440w.webp" alt="img" style="zoom:67%;"></p>
 <p>有发现什么吗？我单独用sum举个例子：</p>
 <p>如上图，<strong>聚合函数sum在窗口函数中，是对自身记录、及位于自身记录以上的数据进行求和的结果</strong>。比如0004号，在使用sum窗口函数后的结果，是对0001，0002，0003，0004号的成绩求和，若是0005号，则结果是0001号~0005号成绩的求和，以此类推。</p>
 <p>不仅是sum求和，平均、计数、最大最小值，也是同理，<strong>都是针对自身记录、以及自身记录之上的所有数据进行计算</strong>，现在再结合刚才得到的结果（下图），是不是理解起来容易多了？</p>
 <p>如果想要知道所有人成绩的总和、平均等聚合结果，看最后一行即可。</p>
 <p><strong>这样使用窗口函数有什么用呢？</strong></p>
 <p>聚合函数作为窗口函数，<strong>可以在每一行的数据里直观的看到，截止到本行数据，统计数据是多少（最大值、最小值等）</strong>。同时可以看出<strong>每一行数据，对整体统计数据的影响</strong>。</p>
-<h2 id="注意事项"><a class="markdownIt-Anchor" href="#注意事项"></a> 注意事项</h2>
-<p>partition子句可省略，<strong>省略就是不指定分组</strong>，结果如下，只是按成绩由高到低进行了排序：</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>partition子句可省略，<strong>省略就是不指定分组</strong>，结果如下，只是按成绩由高到低进行了排序：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>,</span><br><span class="line">   <span class="built_in">rank</span>() <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> 成绩 <span class="keyword">desc</span>) <span class="keyword">as</span> ranking</span><br><span class="line"><span class="keyword">from</span> 班级表</span><br></pre></td></tr></table></figure>
 <p>得到结果：</p>
-<img src="https://pic1.zhimg.com/80/v2-c589fe21dd785ff5996174684cc4de84_1440w.webp" alt="img" style="zoom:50%;">
+<p><img src="https://pic1.zhimg.com/80/v2-c589fe21dd785ff5996174684cc4de84_1440w.webp" alt="img" style="zoom:50%;"></p>
 <p>但是，这就失去了窗口函数的功能，所以一般不要这么使用。</p>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<p><strong>1.窗口函数语法</strong></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>1.窗口函数语法</strong></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&lt;</span>窗口函数<span class="operator">&gt;</span> <span class="keyword">over</span> (<span class="keyword">partition</span> <span class="keyword">by</span> <span class="operator">&lt;</span>用于分组的列名<span class="operator">&gt;</span></span><br><span class="line">                <span class="keyword">order</span> <span class="keyword">by</span> <span class="operator">&lt;</span>用于排序的列名<span class="operator">&gt;</span>)</span><br></pre></td></tr></table></figure>
 <p>&lt;窗口函数&gt;的位置，可以放以下两种函数：</p>
 <p>1） 专用窗口函数，比如rank, dense_rank, row_number等</p>
@@ -460,17 +447,13 @@ from &gt;&gt; on&gt;&gt; join &gt;&gt; where &gt;&gt; group by &gt;&gt; having &
 <p><strong>4.窗口函数使用场景</strong></p>
 <p>1）业务需求“<strong>在每组内排名”</strong>，比如：</p>
 <blockquote>
-<p>排名问题：每个部门按业绩来排名<br>
-topN问题：找出每个部门排名前N的员工进行奖励</p>
+<p>排名问题：每个部门按业绩来排名<br>topN问题：找出每个部门排名前N的员工进行奖励</p>
 </blockquote>
-<h1 id="on和where的区别"><a class="markdownIt-Anchor" href="#on和where的区别"></a> on和where的区别</h1>
-<blockquote>
+<h1 id="on和where的区别"><a href="#on和where的区别" class="headerlink" title="on和where的区别"></a>on和where的区别</h1><blockquote>
 <p>参考：<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/tayngh/article/details/99684035">https://blog.csdn.net/tayngh/article/details/99684035<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
 <p>前提：数据库在连接多张表返回记录时，都会生成一个中间临时表。</p>
-<p>在多表查询时，ON和where都表示筛选条件，<strong>on先执行，where后执行</strong>。<br>
-<u>区别：</u><br>
-<strong>外连接时，on条件是在生成临时表时使用的条件，它不管on中的条件是否为真，都会返回左边表中的记录。而where条件是在临时表生成好后，再对临时表进行过滤的条件。</strong></p>
+<p>在多表查询时，ON和where都表示筛选条件，<strong>on先执行，where后执行</strong>。<br><u>区别：</u><br><strong>外连接时，on条件是在生成临时表时使用的条件，它不管on中的条件是否为真，都会返回左边表中的记录。而where条件是在临时表生成好后，再对临时表进行过滤的条件。</strong></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> </span><br><span class="line"><span class="keyword">FROM</span> emp e </span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> dept d </span><br><span class="line"><span class="keyword">ON</span> e.deptno<span class="operator">=</span>d.`deptno` <span class="keyword">AND</span> e.`deptno`<span class="operator">=</span><span class="number">40</span>;</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20190816192208899.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3RheW5naA==,size_16,color_FFFFFF,t_70" alt="on查询结果"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> </span><br><span class="line"><span class="keyword">FROM</span> emp e </span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> dept d </span><br><span class="line"><span class="keyword">ON</span> e.deptno<span class="operator">=</span>d.`deptno` </span><br><span class="line"><span class="keyword">WHERE</span> e.`deptno`<span class="operator">=</span><span class="number">40</span>;</span><br></pre></td></tr></table></figure>
@@ -501,7 +484,7 @@ topN问题：找出每个部门排名前N的员工进行奖励</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tab1.size <span class="operator">=</span> tab2.size</span><br><span class="line">tab1.id tab1.size tab2.size tab2.name</span><br><span class="line"><span class="number">1</span> <span class="number">10</span> <span class="number">10</span> AAA</span><br><span class="line"><span class="number">2</span> <span class="number">20</span> <span class="number">20</span> BBB</span><br><span class="line"><span class="number">2</span> <span class="number">20</span> <span class="number">20</span> CCC</span><br><span class="line"><span class="number">3</span> <span class="number">30</span> (<span class="keyword">null</span>) (<span class="keyword">null</span>)</span><br></pre></td></tr></table></figure>
 <p>2、再对中间表过滤</p>
 <p>where 条件：</p>
-<p>tab2.name=‘AAA’</p>
+<p>tab2.name=’AAA’</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tab1.id tab1.size tab2.size tab2.name</span><br><span class="line"><span class="number">1</span> <span class="number">10</span> <span class="number">10</span> AAA</span><br></pre></td></tr></table></figure>
 <p><strong>第二条SQL的过程：</strong></p>
 <p>1、中间表</p>
@@ -510,120 +493,90 @@ topN问题：找出每个部门排名前N的员工进行奖励</p>
 <p>其实以上结果的关键原因就是 <strong>left join,right join,full join</strong> 的特殊性。</p>
 <p>不管 on 上的条件是否为真都会返回 left 或 right 表中的记录，full 则具有 left 和 right 的特性的并集。</p>
 <p>而 inner jion 没这个特殊性，则条件放在 on 中和 where 中，返回的结果集是相同的。</p>
-<h2 id="总结-2"><a class="markdownIt-Anchor" href="#总结-2"></a> 总结：</h2>
-<p>前提：数据库在连接多张表返回记录时，都会生成一个中间临时表。</p>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>前提：数据库在连接多张表返回记录时，都会生成一个中间临时表。</p>
 <p>在内连接中，使用on或者where没有区别。</p>
 <p>在外连接里，例如使用left join时：</p>
 <p><strong>on是在生成临时表时使用的条件</strong>，不管on的条件是否为真，都会返回左边表中的全部记录。</p>
 <p><strong>where条件是在临时表生成好后，再对临时表进行过滤的条件</strong>。这时已经没有left join的含义（必须返回左边表的记录）了，条件不为真的就全部过滤掉。</p>
-<h1 id="sql行列转换"><a class="markdownIt-Anchor" href="#sql行列转换"></a> SQL行列转换</h1>
-<blockquote>
+<h1 id="SQL行列转换"><a href="#SQL行列转换" class="headerlink" title="SQL行列转换"></a>SQL行列转换</h1><blockquote>
 <p>参考：<a class="link" target="_blank" rel="noopener" href="https://www.jianshu.com/p/1c6fb0df9f58">https://www.jianshu.com/p/1c6fb0df9f58<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
-<h2 id="行转列"><a class="markdownIt-Anchor" href="#行转列"></a> 行转列</h2>
-<p>假如我们有下表：</p>
-<p><img src="https:////upload-images.jianshu.io/upload_images/1691280-fe651b7989ee5052.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/267/format/webp" alt="img"></p>
+<h2 id="行转列"><a href="#行转列" class="headerlink" title="行转列"></a>行转列</h2><p>假如我们有下表：</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/1691280-fe651b7989ee5052.png?imageMogr2/auto-orient/strip|imageView2/2/w/267/format/webp" alt="img"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> student</span><br><span class="line">PIVOT (</span><br><span class="line">    <span class="built_in">SUM</span>(score) <span class="keyword">FOR</span> subject <span class="keyword">IN</span> (语文, 数学, 英语)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>通过上面 SQL 语句即可得到下面的结果</p>
-<p><img src="https:////upload-images.jianshu.io/upload_images/1691280-e82d6a40909b732f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/354/format/webp" alt="img"></p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/1691280-e82d6a40909b732f.png?imageMogr2/auto-orient/strip|imageView2/2/w/354/format/webp" alt="img"></p>
 <p>PIVOT 后跟一个聚合函数来拿到结果，FOR 后面跟的科目是我们要转换的列，这样的话科目中的语文、数学、英语就就被转换为列。IN 后面跟的就是具体的科目值。</p>
 <p><strong>pivot将原来表中 课程字段中的 数据行 语文，数学，英语 转换为列，并用sum取对应列的值。</strong></p>
 <p>当然我们也可以用 CASE WHEN 得到同样的结果，就是写起来麻烦一点。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name,</span><br><span class="line">  <span class="built_in">MAX</span>(</span><br><span class="line">  <span class="keyword">CASE</span></span><br><span class="line">    <span class="keyword">WHEN</span> subject<span class="operator">=</span><span class="string">'语文'</span></span><br><span class="line">    <span class="keyword">THEN</span> score</span><br><span class="line">    <span class="keyword">ELSE</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">END</span>) <span class="keyword">AS</span> "语文",</span><br><span class="line">  <span class="built_in">MAX</span>(</span><br><span class="line">  <span class="keyword">CASE</span></span><br><span class="line">    <span class="keyword">WHEN</span> subject<span class="operator">=</span><span class="string">'数学'</span></span><br><span class="line">    <span class="keyword">THEN</span> score</span><br><span class="line">    <span class="keyword">ELSE</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">END</span>) <span class="keyword">AS</span> "数学",</span><br><span class="line">  <span class="built_in">MAX</span>(</span><br><span class="line">  <span class="keyword">CASE</span></span><br><span class="line">    <span class="keyword">WHEN</span> subject<span class="operator">=</span><span class="string">'英语'</span></span><br><span class="line">    <span class="keyword">THEN</span> score</span><br><span class="line">    <span class="keyword">ELSE</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">END</span>) <span class="keyword">AS</span> "英语"</span><br><span class="line"><span class="keyword">FROM</span> student</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> name</span><br></pre></td></tr></table></figure>
 <p>使用 CASE WHEN 可以得到和 PIVOT 同样的结果，没有 PIVOT 简单直观。</p>
-<h2 id="列转行"><a class="markdownIt-Anchor" href="#列转行"></a> 列转行</h2>
-<p>假设我们有下表 student1</p>
-<p><img src="https:////upload-images.jianshu.io/upload_images/1691280-e82d6a40909b732f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/354/format/webp" alt="img"></p>
+<h2 id="列转行"><a href="#列转行" class="headerlink" title="列转行"></a>列转行</h2><p>假设我们有下表 student1</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/1691280-e82d6a40909b732f.png?imageMogr2/auto-orient/strip|imageView2/2/w/354/format/webp" alt="img"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> student1</span><br><span class="line">UNPIVOT (</span><br><span class="line">    score <span class="keyword">FOR</span> subject <span class="keyword">IN</span> ("语文","数学","英语")</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>通过 UNPIVOT 即可得到如下结果：</p>
-<p><img src="https:////upload-images.jianshu.io/upload_images/1691280-fe651b7989ee5052.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/267/format/webp" alt="img"></p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/1691280-fe651b7989ee5052.png?imageMogr2/auto-orient/strip|imageView2/2/w/267/format/webp" alt="img"></p>
 <p>我们也可以使用下面方法得到同样结果</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    NAME,</span><br><span class="line">    <span class="string">'语文'</span> <span class="keyword">AS</span> subject ,</span><br><span class="line">    <span class="built_in">MAX</span>("语文") <span class="keyword">AS</span> score</span><br><span class="line"><span class="keyword">FROM</span> student1 <span class="keyword">GROUP</span> <span class="keyword">BY</span> NAME</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    NAME,</span><br><span class="line">    <span class="string">'数学'</span> <span class="keyword">AS</span> subject ,</span><br><span class="line">    <span class="built_in">MAX</span>("数学") <span class="keyword">AS</span> score</span><br><span class="line"><span class="keyword">FROM</span> student1 <span class="keyword">GROUP</span> <span class="keyword">BY</span> NAME</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    NAME,</span><br><span class="line">    <span class="string">'英语'</span> <span class="keyword">AS</span> subject ,</span><br><span class="line">    <span class="built_in">MAX</span>("英语") <span class="keyword">AS</span> score</span><br><span class="line"><span class="keyword">FROM</span> student1 <span class="keyword">GROUP</span> <span class="keyword">BY</span> NAME</span><br></pre></td></tr></table></figure>
-<h1 id="索引的作用"><a class="markdownIt-Anchor" href="#索引的作用"></a> 索引的作用</h1>
-<p>索引是为了<strong>提高数据库查询数据的速度</strong>而增加的标志符号（通过创建<strong>唯一性索引，可以保证表中每一行数据的唯一性</strong>）。索引主要建立在<strong>①经常搜索的列；②主键所在列；③外键所在列</strong></p>
+<h1 id="索引的作用"><a href="#索引的作用" class="headerlink" title="索引的作用"></a>索引的作用</h1><p>索引是为了<strong>提高数据库查询数据的速度</strong>而增加的标志符号（通过创建<strong>唯一性索引，可以保证表中每一行数据的唯一性</strong>）。索引主要建立在<strong>①经常搜索的列；②主键所在列；③外键所在列</strong></p>
 <p>索引包括聚集索引与非聚集索引，它们的区别在于<strong>索引记录的顺序与表记录的顺序是否一致</strong>。</p>
 <p>聚集索引:  可以理解为<strong>索引记录的顺序与表记录的顺序一致</strong>，SQL默认在依次递增的主键上建立聚集索引，例如，id为1的数据在第一条，id为2的数据在第二条。聚集索引会按照主键的顺序来排序。（例如，用字典找字，对于认识的字可以通过拼音排序对应正文找到页码）</p>
-<p>非聚集索引:  可以理解<strong>数据存储在一个地方，索引指向数据存储的位置，索引的顺序与表中数据记录的顺序不一定一致</strong>。例如说，建立数据表登记学生考试成绩，字段包括姓名，学号与分数。假定该表按照成绩排序、学号信息错乱，可以考虑构建非聚集索引，第一名对应1，第二名对应2……，想要提取第10个学生的学号，查找索引10指向的数据即可。（用字典找字，不认识的字可以采用部首结合笔画等信息在检字表中搜索，找到页码。比如查"张"字，检字表中"张"的页码是60页，检字表中"张"的上面是"驰"字，但页码却是100页，"张"的下面是"弩"字，页面是200页。很显然，在正文里面这些字并不是真正的分别位于"张"字的上下方，而检字表中连续的"驰、张、弩"三字实际上就是他们在非聚集索引中的排序）</p>
+<p>非聚集索引:  可以理解<strong>数据存储在一个地方，索引指向数据存储的位置，索引的顺序与表中数据记录的顺序不一定一致</strong>。例如说，建立数据表登记学生考试成绩，字段包括姓名，学号与分数。假定该表按照成绩排序、学号信息错乱，可以考虑构建非聚集索引，第一名对应1，第二名对应2……，想要提取第10个学生的学号，查找索引10指向的数据即可。（用字典找字，不认识的字可以采用部首结合笔画等信息在检字表中搜索，找到页码。比如查”张”字，检字表中”张”的页码是60页，检字表中”张”的上面是”驰”字，但页码却是100页，”张”的下面是”弩”字，页面是200页。很显然，在正文里面这些字并不是真正的分别位于”张”字的上下方，而检字表中连续的”驰、张、弩”三字实际上就是他们在非聚集索引中的排序）</p>
 <p>（关于聚集索引和非聚集索引的区别可以百度学习下，我记得好几家面试都直接问了……）</p>
-<h1 id="排名函数与排序函数"><a class="markdownIt-Anchor" href="#排名函数与排序函数"></a> 排名函数与排序函数</h1>
-<p>排序函数：<strong>order by</strong> （默认asc升序，指定desc降序），例如将表格数据按照考试成绩从低到高排序。</p>
+<h1 id="排名函数与排序函数"><a href="#排名函数与排序函数" class="headerlink" title="排名函数与排序函数"></a>排名函数与排序函数</h1><p>排序函数：<strong>order by</strong> （默认asc升序，指定desc降序），例如将表格数据按照考试成绩从低到高排序。</p>
 <p>排名函数：<strong>rank, dense rank, row number</strong> ，得到的成绩的排序后，根据成绩的高低对学生排名，100分对应第一名，99分第二名。它们的区别在于：</p>
 <p><strong>rank</strong>函数：如果有并列名次的行，会占用下一名次的位置。1，1，1，4。</p>
 <p><strong>dense_rank</strong>函数：如果有并列名次的行，不占用下一名次的位置。1，1，1，2。</p>
 <p><strong>row_number</strong>函数：不考虑并列名次的情况。1，2，3，4。</p>
-<h1 id="连接多个select"><a class="markdownIt-Anchor" href="#连接多个select"></a> 连接多个select？</h1>
-<p>**union:**连接select，不允许重复值，而且select的对象要有相同的列以及数据类型；(例如A表中某字段的数据是1,1,2,3,4，B表中对应的数据是（0,0,0,0,0），则提取的数据是（1,0；2,0；3,0；4,0），也就是说（1,0）这个组合只会出现一次。)</p>
-<p>**union all:**作用同union,但是允许重复值（也就是说，与上面一样的操作里，(1,0)这个组合会出现2次）</p>
+<h1 id="连接多个select？"><a href="#连接多个select？" class="headerlink" title="连接多个select？"></a>连接多个select？</h1><p><strong>union:</strong>连接select，不允许重复值，而且select的对象要有相同的列以及数据类型；(例如A表中某字段的数据是1,1,2,3,4，B表中对应的数据是（0,0,0,0,0），则提取的数据是（1,0；2,0；3,0；4,0），也就是说（1,0）这个组合只会出现一次。)</p>
+<p><strong>union all:</strong>作用同union,但是允许重复值（也就是说，与上面一样的操作里，(1,0)这个组合会出现2次）</p>
 <p>一般来说如果select 字段大于1个，用union all比用union速度快，因为union 会将多个结果中重复的数据合并，union all则是直接合并</p>
 <p><strong>Intersect:</strong> 和 union指令类似，intersect也是合并两个select语句结果的函数。不同的地方是， union的处理结果类似于全集 (如果这个值存在于第一个select或者第二个select，它就会被选出)，而intersect则比较像取出交集 ( 值要同时存在于第一个select和第二个select)。</p>
-<p>**minus:**先找出第一个 select 语句所产生的结果，然后看这些结果有没有在第二个 select语句的结果中。最后会输出<u>第一个select中没有，但是第二个select中有的数据</u></p>
-<h1 id="主键和外建"><a class="markdownIt-Anchor" href="#主键和外建"></a> 主键和外建？</h1>
-<p>主键是一张表中能够确定一条记录的<strong>唯一</strong>标志(数据库中的一条记录中有若干个属性，若其中某一个属性组(注意是组)能唯一标识一条记录，该属性组就可以成为一个主键 )，比如身份证号。</p>
+<p><strong>minus:</strong>先找出第一个 select 语句所产生的结果，然后看这些结果有没有在第二个 select语句的结果中。最后会输出<u>第一个select中没有，但是第二个select中有的数据</u></p>
+<h1 id="主键和外建？"><a href="#主键和外建？" class="headerlink" title="主键和外建？"></a>主键和外建？</h1><p>主键是一张表中能够确定一条记录的<strong>唯一</strong>标志(数据库中的一条记录中有若干个属性，若其中某一个属性组(注意是组)能唯一标识一条记录，该属性组就可以成为一个主键 )，比如身份证号。</p>
 <p>外键用于和另一张表进行关联。例如，A字段是A表的主键，那么出现在B表中的A字段能够作为B表的外键，实现A,B表的连接查询。</p>
-<h1 id="向表中插入数据"><a class="markdownIt-Anchor" href="#向表中插入数据"></a> 向表中插入数据</h1>
-<p><strong>insert into tablename values:</strong>  普通插入数据模式</p>
+<h1 id="向表中插入数据"><a href="#向表中插入数据" class="headerlink" title="向表中插入数据"></a>向表中插入数据</h1><p><strong>insert into tablename values:</strong>  普通插入数据模式</p>
 <p><strong>insert or ignore into:</strong> 如果没有则插入数据，如果有则忽略</p>
 <p><strong>insert or replace into:</strong> 如果不存在就插入，存在就更新</p>
-<h1 id="删除表中数据"><a class="markdownIt-Anchor" href="#删除表中数据"></a> 删除表中数据</h1>
-<p><strong>delete  :</strong> 删除表中数据，可以指定具体数据（where）</p>
+<h1 id="删除表中数据"><a href="#删除表中数据" class="headerlink" title="删除表中数据"></a>删除表中数据</h1><p><strong>delete  :</strong> 删除表中数据，可以指定具体数据（where）</p>
 <p><strong>drop column/ drop table</strong> :  删除列数据，与delete 不同，drop函数会将数据以及表的结构全部删除。</p>
-<p>**truncate:**仅删除数据，且默认删除所有数据。和delete不同，truncate不能用where进行筛选，但删除速度比delete快</p>
-<h1 id="字符串常见操作函数"><a class="markdownIt-Anchor" href="#字符串常见操作函数"></a> 字符串常见操作函数</h1>
-<p><strong>concat():</strong>  将多个字符串连接成一个字符串，连接符用“”包起来</p>
+<p><strong>truncate:</strong>仅删除数据，且默认删除所有数据。和delete不同，truncate不能用where进行筛选，但删除速度比delete快</p>
+<h1 id="字符串常见操作函数"><a href="#字符串常见操作函数" class="headerlink" title="字符串常见操作函数"></a>字符串常见操作函数</h1><p><strong>concat():</strong>  将多个字符串连接成一个字符串，连接符用“”包起来</p>
 <p><strong>concat_ws()</strong>； 将多个字符串连接成一个字符串，在最开始的位置指定连接符（指定一次即可）</p>
 <p><strong>group concat():</strong>  将group by产生的同一个分组中的值连接起来，返回一个字符串。</p>
-<p><strong>like():</strong>   需要与通配符一起使用（'%‘代表任意字符出现任意次数；’_'仅能匹配单个字符）</p>
+<p><strong>like():</strong>   需要与通配符一起使用（’%’代表任意字符出现任意次数；’_’仅能匹配单个字符）</p>
 <p><strong>substr():</strong>   用于从字段中提取相应位置的字符。</p>
 <p><strong>regexp()</strong> :  正则表达式匹配函数</p>
-<h1 id="inexist-的关系和区别"><a class="markdownIt-Anchor" href="#inexist-的关系和区别"></a> in/exist 的关系和区别</h1>
-<p><strong>子查询过程中，In和exist函数效率比较：</strong></p>
+<h1 id="in-exist-的关系和区别"><a href="#in-exist-的关系和区别" class="headerlink" title="in/exist 的关系和区别"></a>in/exist 的关系和区别</h1><p><strong>子查询过程中，In和exist函数效率比较：</strong></p>
 <p>当进行连接的两个表大小相似，效率差不多；</p>
 <p>如果子查询的内表更大，则exist的效率更高（exist先查询外表，然后根据外表中的每一个记录，分别执行exist语句判断子查询的内表是否满足条件，满足条件就返回ture）。</p>
 <p>如果子查询的内表小，则in的效率高（in在查询的时候，首先查询子查询的表，然后将内表和外表做一个笛卡尔积 (表中的每一行数据都能够任意组合A表有a行，B表有b行，最后会输出a*b行)，然后按照条件进行筛选。所以相对内表比较小的时候，in的速度较快）。</p>
 <p><strong>Exist的原理:</strong> 使用exist时，若子查询能够找到匹配的记录，则返回true，外表能够提取查询数据；使用 not exist 时，若子查询找不到匹配记录，则返回true，外表能够提取查询数据。</p>
-<h1 id="笛卡尔积"><a class="markdownIt-Anchor" href="#笛卡尔积"></a> 笛卡尔积</h1>
-<p>笛卡尔乘积简单来说，就是两个集合中的每一个成员，都与对方集合中的任意一个成员有关联。开发人员在写代码时,往往因为遗漏了join条件,而触发了集合A中的一条数据能与集合B的另一个元素发生关联后呈现出在一行数据,并且无错误的显现出来,形成强制关系;所以查询俩表,要么对联立的俩字段进行严格筛选得出独一值的列项,要么对这俩表的字段的数据进行唯一约束,防止此类情况发生,以避开此类堆积无名义的数据的出现。</p>
-<h1 id="left-join和inner-joinfull-join什么区别"><a class="markdownIt-Anchor" href="#left-join和inner-joinfull-join什么区别"></a> LEFT JOIN和INNER JOIN，FULL JOIN什么区别？</h1>
-<ul>
-<li>
-<p>都是连接查询；</p>
+<h1 id="笛卡尔积"><a href="#笛卡尔积" class="headerlink" title="笛卡尔积"></a>笛卡尔积</h1><p>笛卡尔乘积简单来说，就是两个集合中的每一个成员，都与对方集合中的任意一个成员有关联。开发人员在写代码时,往往因为遗漏了join条件,而触发了集合A中的一条数据能与集合B的另一个元素发生关联后呈现出在一行数据,并且无错误的显现出来,形成强制关系;所以查询俩表,要么对联立的俩字段进行严格筛选得出独一值的列项,要么对这俩表的字段的数据进行唯一约束,防止此类情况发生,以避开此类堆积无名义的数据的出现。</p>
+<h1 id="LEFT-JOIN和INNER-JOIN，FULL-JOIN什么区别？"><a href="#LEFT-JOIN和INNER-JOIN，FULL-JOIN什么区别？" class="headerlink" title="LEFT JOIN和INNER JOIN，FULL JOIN什么区别？"></a>LEFT JOIN和INNER JOIN，FULL JOIN什么区别？</h1><ul>
+<li><p>都是连接查询；</p>
 </li>
-<li>
-<p>inner join -&gt; 只保留两张表中完全匹配的结果集；</p>
+<li><p>inner join -&gt; 只保留两张表中完全匹配的结果集；</p>
 </li>
-<li>
-<p>left join -&gt; 返回左表中所有的行，即使在右表中没有匹配的记录；</p>
-</li>
-<li>
-<p>right join -&gt; 返回右表中所有的行，即使在左表中没有匹配的记录；</p>
-</li>
-<li>
-<p>full join -&gt; 返回左表和右表中所有的行，左表和右表中没有匹配数据各自单独一行。</p>
-</li>
+<li>left join -&gt; 返回左表中所有的行，即使在右表中没有匹配的记录；</li>
+<li>right join -&gt; 返回右表中所有的行，即使在左表中没有匹配的记录；</li>
+<li>full join -&gt; 返回左表和右表中所有的行，左表和右表中没有匹配数据各自单独一行。</li>
 </ul>
-<h1 id="having和where什么区别"><a class="markdownIt-Anchor" href="#having和where什么区别"></a> <strong>HAVING和WHERE什么区别？</strong></h1>
-<ul>
-<li>
-<p>“Where” 是一个约束声明，使用Where来约束来自<a class="link" target="_blank" rel="noopener" href="http://lib.csdn.net/base/mysql">数据库<i class="fas fa-external-link-alt"></i></a>的数据，Where是在结果返回之前起作用的，且Where中不能使用聚合函数。</p>
+<h1 id="HAVING和WHERE什么区别？"><a href="#HAVING和WHERE什么区别？" class="headerlink" title="HAVING和WHERE什么区别？"></a><strong>HAVING和WHERE什么区别？</strong></h1><ul>
+<li><p>“Where” 是一个约束声明，使用Where来约束来自<a class="link" target="_blank" rel="noopener" href="http://lib.csdn.net/base/mysql">数据库<i class="fas fa-external-link-alt"></i></a>的数据，Where是在结果返回之前起作用的，且Where中不能使用聚合函数。</p>
 </li>
-<li>
-<p>“Having”是一个过滤声明，是在查询返回结果集以后对查询结果进行的过滤操作，在Having中可以使用聚合函数。</p>
+<li><p>“Having”是一个过滤声明，是在查询返回结果集以后对查询结果进行的过滤操作，在Having中可以使用聚合函数。</p>
 </li>
-<li>
-<p>HAVING 子句可以让我们筛选成组后的各组数据，WHERE子句在聚合（聚合函数如SUM, COUNT, MAX, AVG等）前先筛选记录．也就是说作用在 GROUP BY 子句和 HAVING 子句前；而  HAVING 子句在聚合后对组记录进行筛选。</p>
+<li><p>HAVING 子句可以让我们筛选成组后的各组数据，WHERE子句在聚合（聚合函数如SUM, COUNT, MAX, AVG等）前先筛选记录．也就是说作用在 GROUP BY 子句和 HAVING 子句前；而  HAVING 子句在聚合后对组记录进行筛选。</p>
 </li>
-<li>
-<p><strong>结论：</strong></p>
+<li><p><strong>结论：</strong></p>
 <ol>
-<li>
-<p>当分组筛选的时候 用having</p>
+<li><p>当分组筛选的时候 用having</p>
 </li>
-<li>
-<p>其它情况用where</p>
+<li><p>其它情况用where</p>
 </li>
 </ol>
-<p>用having就一定要和group by连用，<br>
-用group by不一有having （它只是一个筛选条件用的）</p>
+<p>用having就一定要和group by连用，<br>用group by不一有having （它只是一个筛选条件用的）</p>
 <p>只要条件里面的字段, <strong>不是表里面原先有的字段就需要用having</strong>。</p>
 <p>SQL在查询表的时候先把查询的字段放到了内存里，而<strong>where查询的时候是从表里面查的，其余需要用having</strong>。</p>
 </li>
@@ -743,7 +696,7 @@ topN问题：找出每个部门排名前N的员工进行奖励</p>
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sql%E8%AF%AD%E5%8F%A5%E9%A1%BA%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text"> SQL语句顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%B9%E4%BA%8E-join%E5%A6%82%E6%9E%9C%E4%B8%8D%E5%86%99-left-inner-right-%E9%BB%98%E8%AE%A4%E6%98%AF%E4%BB%80%E4%B9%88%E8%81%94%E6%8E%A5%E5%91%A2"><span class="nav-number">2.</span> <span class="nav-text"> 对于 join，如果不写 left, inner, right ，默认是什么联接呢？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sql%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text"> SQL窗口函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8"><span class="nav-number">3.1.</span> <span class="nav-text"> 窗口函数使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rank"><span class="nav-number">3.1.1.</span> <span class="nav-text"> rank</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">3.1.2.</span> <span class="nav-text"> 其他窗口函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">3.1.3.</span> <span class="nav-text"> 聚合函数作为窗口函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">3.2.</span> <span class="nav-text"> 注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.3.</span> <span class="nav-text"> 总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#on%E5%92%8Cwhere%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">4.</span> <span class="nav-text"> on和where的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93-2"><span class="nav-number">4.1.</span> <span class="nav-text"> 总结：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sql%E8%A1%8C%E5%88%97%E8%BD%AC%E6%8D%A2"><span class="nav-number">5.</span> <span class="nav-text"> SQL行列转换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E8%BD%AC%E5%88%97"><span class="nav-number">5.1.</span> <span class="nav-text"> 行转列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%BD%AC%E8%A1%8C"><span class="nav-number">5.2.</span> <span class="nav-text"> 列转行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text"> 索引的作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%92%E5%90%8D%E5%87%BD%E6%95%B0%E4%B8%8E%E6%8E%92%E5%BA%8F%E5%87%BD%E6%95%B0"><span class="nav-number">7.</span> <span class="nav-text"> 排名函数与排序函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%A4%9A%E4%B8%AAselect"><span class="nav-number">8.</span> <span class="nav-text"> 连接多个select？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BB%E9%94%AE%E5%92%8C%E5%A4%96%E5%BB%BA"><span class="nav-number">9.</span> <span class="nav-text"> 主键和外建？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%91%E8%A1%A8%E4%B8%AD%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">10.</span> <span class="nav-text"> 向表中插入数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%A1%A8%E4%B8%AD%E6%95%B0%E6%8D%AE"><span class="nav-number">11.</span> <span class="nav-text"> 删除表中数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0"><span class="nav-number">12.</span> <span class="nav-text"> 字符串常见操作函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#inexist-%E7%9A%84%E5%85%B3%E7%B3%BB%E5%92%8C%E5%8C%BA%E5%88%AB"><span class="nav-number">13.</span> <span class="nav-text"> in&#x2F;exist 的关系和区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF"><span class="nav-number">14.</span> <span class="nav-text"> 笛卡尔积</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#left-join%E5%92%8Cinner-joinfull-join%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="nav-number">15.</span> <span class="nav-text"> LEFT JOIN和INNER JOIN，FULL JOIN什么区别？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#having%E5%92%8Cwhere%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="nav-number">16.</span> <span class="nav-text"> HAVING和WHERE什么区别？</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E8%AF%AD%E5%8F%A5%E9%A1%BA%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text">SQL语句顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%B9%E4%BA%8E-join%EF%BC%8C%E5%A6%82%E6%9E%9C%E4%B8%8D%E5%86%99-left-inner-right-%EF%BC%8C%E9%BB%98%E8%AE%A4%E6%98%AF%E4%BB%80%E4%B9%88%E8%81%94%E6%8E%A5%E5%91%A2%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">对于 join，如果不写 left, inner, right ，默认是什么联接呢？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">SQL窗口函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8"><span class="nav-number">3.1.</span> <span class="nav-text">窗口函数使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rank"><span class="nav-number">3.1.1.</span> <span class="nav-text">rank</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">3.1.2.</span> <span class="nav-text">其他窗口函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">3.1.3.</span> <span class="nav-text">聚合函数作为窗口函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">3.2.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#on%E5%92%8Cwhere%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">4.</span> <span class="nav-text">on和where的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">4.1.</span> <span class="nav-text">总结：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E8%A1%8C%E5%88%97%E8%BD%AC%E6%8D%A2"><span class="nav-number">5.</span> <span class="nav-text">SQL行列转换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E8%BD%AC%E5%88%97"><span class="nav-number">5.1.</span> <span class="nav-text">行转列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%BD%AC%E8%A1%8C"><span class="nav-number">5.2.</span> <span class="nav-text">列转行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text">索引的作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%92%E5%90%8D%E5%87%BD%E6%95%B0%E4%B8%8E%E6%8E%92%E5%BA%8F%E5%87%BD%E6%95%B0"><span class="nav-number">7.</span> <span class="nav-text">排名函数与排序函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%A4%9A%E4%B8%AAselect%EF%BC%9F"><span class="nav-number">8.</span> <span class="nav-text">连接多个select？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BB%E9%94%AE%E5%92%8C%E5%A4%96%E5%BB%BA%EF%BC%9F"><span class="nav-number">9.</span> <span class="nav-text">主键和外建？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%91%E8%A1%A8%E4%B8%AD%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">10.</span> <span class="nav-text">向表中插入数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%A1%A8%E4%B8%AD%E6%95%B0%E6%8D%AE"><span class="nav-number">11.</span> <span class="nav-text">删除表中数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0"><span class="nav-number">12.</span> <span class="nav-text">字符串常见操作函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#in-exist-%E7%9A%84%E5%85%B3%E7%B3%BB%E5%92%8C%E5%8C%BA%E5%88%AB"><span class="nav-number">13.</span> <span class="nav-text">in&#x2F;exist 的关系和区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF"><span class="nav-number">14.</span> <span class="nav-text">笛卡尔积</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LEFT-JOIN%E5%92%8CINNER-JOIN%EF%BC%8CFULL-JOIN%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">15.</span> <span class="nav-text">LEFT JOIN和INNER JOIN，FULL JOIN什么区别？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HAVING%E5%92%8CWHERE%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">16.</span> <span class="nav-text">HAVING和WHERE什么区别？</span></a></li></ol>
     </div>
 </div>
 
@@ -789,7 +742,7 @@ topN问题：找出每个部门排名前N的员工进行奖励</p>
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">72.2k</span>
+                    <span class="item-value border-box word">71.5k</span>
                 </span>
             
 
@@ -932,7 +885,7 @@ topN问题：找出每个部门排名前N的员工进行奖励</p>
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sql%E8%AF%AD%E5%8F%A5%E9%A1%BA%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text"> SQL语句顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%B9%E4%BA%8E-join%E5%A6%82%E6%9E%9C%E4%B8%8D%E5%86%99-left-inner-right-%E9%BB%98%E8%AE%A4%E6%98%AF%E4%BB%80%E4%B9%88%E8%81%94%E6%8E%A5%E5%91%A2"><span class="nav-number">2.</span> <span class="nav-text"> 对于 join，如果不写 left, inner, right ，默认是什么联接呢？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sql%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text"> SQL窗口函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8"><span class="nav-number">3.1.</span> <span class="nav-text"> 窗口函数使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rank"><span class="nav-number">3.1.1.</span> <span class="nav-text"> rank</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">3.1.2.</span> <span class="nav-text"> 其他窗口函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">3.1.3.</span> <span class="nav-text"> 聚合函数作为窗口函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">3.2.</span> <span class="nav-text"> 注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.3.</span> <span class="nav-text"> 总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#on%E5%92%8Cwhere%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">4.</span> <span class="nav-text"> on和where的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93-2"><span class="nav-number">4.1.</span> <span class="nav-text"> 总结：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sql%E8%A1%8C%E5%88%97%E8%BD%AC%E6%8D%A2"><span class="nav-number">5.</span> <span class="nav-text"> SQL行列转换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E8%BD%AC%E5%88%97"><span class="nav-number">5.1.</span> <span class="nav-text"> 行转列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%BD%AC%E8%A1%8C"><span class="nav-number">5.2.</span> <span class="nav-text"> 列转行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text"> 索引的作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%92%E5%90%8D%E5%87%BD%E6%95%B0%E4%B8%8E%E6%8E%92%E5%BA%8F%E5%87%BD%E6%95%B0"><span class="nav-number">7.</span> <span class="nav-text"> 排名函数与排序函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%A4%9A%E4%B8%AAselect"><span class="nav-number">8.</span> <span class="nav-text"> 连接多个select？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BB%E9%94%AE%E5%92%8C%E5%A4%96%E5%BB%BA"><span class="nav-number">9.</span> <span class="nav-text"> 主键和外建？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%91%E8%A1%A8%E4%B8%AD%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">10.</span> <span class="nav-text"> 向表中插入数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%A1%A8%E4%B8%AD%E6%95%B0%E6%8D%AE"><span class="nav-number">11.</span> <span class="nav-text"> 删除表中数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0"><span class="nav-number">12.</span> <span class="nav-text"> 字符串常见操作函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#inexist-%E7%9A%84%E5%85%B3%E7%B3%BB%E5%92%8C%E5%8C%BA%E5%88%AB"><span class="nav-number">13.</span> <span class="nav-text"> in&#x2F;exist 的关系和区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF"><span class="nav-number">14.</span> <span class="nav-text"> 笛卡尔积</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#left-join%E5%92%8Cinner-joinfull-join%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="nav-number">15.</span> <span class="nav-text"> LEFT JOIN和INNER JOIN，FULL JOIN什么区别？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#having%E5%92%8Cwhere%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="nav-number">16.</span> <span class="nav-text"> HAVING和WHERE什么区别？</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E8%AF%AD%E5%8F%A5%E9%A1%BA%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text">SQL语句顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%B9%E4%BA%8E-join%EF%BC%8C%E5%A6%82%E6%9E%9C%E4%B8%8D%E5%86%99-left-inner-right-%EF%BC%8C%E9%BB%98%E8%AE%A4%E6%98%AF%E4%BB%80%E4%B9%88%E8%81%94%E6%8E%A5%E5%91%A2%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">对于 join，如果不写 left, inner, right ，默认是什么联接呢？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">SQL窗口函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8"><span class="nav-number">3.1.</span> <span class="nav-text">窗口函数使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rank"><span class="nav-number">3.1.1.</span> <span class="nav-text">rank</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">3.1.2.</span> <span class="nav-text">其他窗口函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">3.1.3.</span> <span class="nav-text">聚合函数作为窗口函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">3.2.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#on%E5%92%8Cwhere%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">4.</span> <span class="nav-text">on和where的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">4.1.</span> <span class="nav-text">总结：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E8%A1%8C%E5%88%97%E8%BD%AC%E6%8D%A2"><span class="nav-number">5.</span> <span class="nav-text">SQL行列转换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E8%BD%AC%E5%88%97"><span class="nav-number">5.1.</span> <span class="nav-text">行转列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%BD%AC%E8%A1%8C"><span class="nav-number">5.2.</span> <span class="nav-text">列转行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text">索引的作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%92%E5%90%8D%E5%87%BD%E6%95%B0%E4%B8%8E%E6%8E%92%E5%BA%8F%E5%87%BD%E6%95%B0"><span class="nav-number">7.</span> <span class="nav-text">排名函数与排序函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%A4%9A%E4%B8%AAselect%EF%BC%9F"><span class="nav-number">8.</span> <span class="nav-text">连接多个select？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BB%E9%94%AE%E5%92%8C%E5%A4%96%E5%BB%BA%EF%BC%9F"><span class="nav-number">9.</span> <span class="nav-text">主键和外建？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%91%E8%A1%A8%E4%B8%AD%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">10.</span> <span class="nav-text">向表中插入数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%A1%A8%E4%B8%AD%E6%95%B0%E6%8D%AE"><span class="nav-number">11.</span> <span class="nav-text">删除表中数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0"><span class="nav-number">12.</span> <span class="nav-text">字符串常见操作函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#in-exist-%E7%9A%84%E5%85%B3%E7%B3%BB%E5%92%8C%E5%8C%BA%E5%88%AB"><span class="nav-number">13.</span> <span class="nav-text">in&#x2F;exist 的关系和区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF"><span class="nav-number">14.</span> <span class="nav-text">笛卡尔积</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LEFT-JOIN%E5%92%8CINNER-JOIN%EF%BC%8CFULL-JOIN%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">15.</span> <span class="nav-text">LEFT JOIN和INNER JOIN，FULL JOIN什么区别？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HAVING%E5%92%8CWHERE%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">16.</span> <span class="nav-text">HAVING和WHERE什么区别？</span></a></li></ol>
     </div>
 </div>
 
