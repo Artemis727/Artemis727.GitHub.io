@@ -5,35 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="Hexo Theme Keep">
     <meta name="description" content="Hexo Theme Keep">
-    <meta name="author" content="Syaoran Li">
+    <meta name="author" content="Li Syaoran">
     
     <title>
         
             数据分析｜数据指标口径不统一 |
         
-        Syaoran :)
+        Syaoran&#39;s Cosmos
     </title>
     
 <link rel="stylesheet" href="/css/style.css">
 
     
+        <link rel="shortcut icon" href="/images/Pixel1.jpg">
     
-<link rel="stylesheet" href="/font/css/fontawesome.min.css">
-
-    
-<link rel="stylesheet" href="/font/css/regular.min.css">
-
-    
-<link rel="stylesheet" href="/font/css/solid.min.css">
-
-    
-<link rel="stylesheet" href="/font/css/brands.min.css">
-
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/font/css/brands.min.css">
     
     <script class="keep-theme-configurations">
     const KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"artemis727.github.io","root":"/","language":"en","path":"search.json"}
-    KEEP.theme_config = {"toc":{},"style":{},"local_search":{},"code_block":{},"pjax":{},"lazyload":{},"comment":{},"post":{},"website_count":{},"version":"3.8.6"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"style":{"primary_color":"#adc178","logo":"/images/Bird.JPG","favicon":"/images/Pixel1.jpg","avatar":"/images/Bird.JPG","first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"I want to do something meaningful, intriguing and challenging. || Being present.","hitokoto":false},"scroll":{"progress_bar":true,"percent":false}},"local_search":{"enable":true,"preload":true},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":true,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":true,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"version":"3.8.6"}
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
     KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
     KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
@@ -157,7 +151,12 @@ mjx-container[display="true"] + br {
 <body>
 <div class="progress-bar-container">
     
+        <span class="scroll-progress-bar"></span>
+    
 
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
     
 </div>
 
@@ -176,8 +175,12 @@ mjx-container[display="true"] + br {
     <div class="border-box header-content">
         <div class="left border-box">
             
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/Bird.JPG">
+                </a>
+            
             <a class="site-name border-box" href="/">
-               Syaoran :)
+               Syaoran&#39;s Cosmos
             </a>
         </div>
 
@@ -201,10 +204,40 @@ mjx-container[display="true"] + br {
                             </a>
                         </li>
                     
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
                     
                 </ul>
             </div>
             <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
                 
                 <div class="icon-item menu-bar">
                     <div class="menu-bar-middle"></div>
@@ -224,6 +257,21 @@ mjx-container[display="true"] + br {
                 <li class="drawer-menu-item flex-center">
                     <a class=""
                        href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
                 </li>
             
         </ul>
@@ -259,9 +307,15 @@ mjx-container[display="true"] + br {
                 
                     <div class="article-header border-box">
                         
+                            <div class="avatar-box border-box">
+                                <img src="/images/Bird.JPG">
+                            </div>
+                        
                         <div class="info-box">
                             <div class="author">
-                                <span class="name">Syaoran Li</span>
+                                <span class="name">Li Syaoran</span>
+                                
+                                    <span class="author-label">Architect</span>
                                 
                             </div>
                             <div class="meta-info border-box">
@@ -301,7 +355,15 @@ mjx-container[display="true"] + br {
 
         
         
+            <span class="meta-info-item article-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>699 Words</span>
+            </span>
         
+        
+        
+            <span class="meta-info-item article-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
         
     </div>
 
@@ -366,6 +428,29 @@ mjx-container[display="true"] + br {
                     </div>
                     <div>
                         
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
                     </div>
                 </div>
 
@@ -414,6 +499,19 @@ mjx-container[display="true"] + br {
                     
 
 
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;Comments
+        </div>
+        
+            
+
+    <div class="error-tips">Please fill in Valine complete configuration items.</div>
+
+
+        
+    </div>
+
 
 
 
@@ -422,6 +520,15 @@ mjx-container[display="true"] + br {
             </div>
         </div>
 
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#case1-%E7%BB%9F%E4%B8%80%E6%8C%87%E6%A0%87%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E9%97%B4%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E4%B8%80%E8%87%B4"><span class="nav-number">1.</span> <span class="nav-text"> Case1: 统一指标在不同系统之间标口径不一致</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#case2-%E4%B8%AD%E9%97%B4%E8%A1%A8%E7%9A%84%E5%BB%BA%E7%AB%8B%E5%92%8C%E7%BB%B4%E6%8A%A4"><span class="nav-number">2.</span> <span class="nav-text"> Case2: 中间表的建立和维护</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%9B%E7%BB%99%E7%AB%AF"><span class="nav-number">2.1.</span> <span class="nav-text"> 供给端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E8%80%97%E7%AB%AF"><span class="nav-number">2.2.</span> <span class="nav-text"> 消耗端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.3.</span> <span class="nav-text"> 总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#case3-%E5%8F%AF%E4%BB%A5%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80%E7%9A%84%E9%97%AE%E9%A2%98%E5%90%97"><span class="nav-number">3.</span> <span class="nav-text"> Case3: 可以彻底解决数据指标口径不统一的问题吗？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#case4-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%85%AC%E5%8F%B8%E5%86%85%E9%83%A8%E7%BB%9F%E4%B8%80%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84"><span class="nav-number">4.</span> <span class="nav-text"> Case4: 如何在公司内部统一数据指标口径</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B6%E5%AE%9A%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%A7%84%E8%8C%83"><span class="nav-number">4.1.</span> <span class="nav-text"> 制定数据埋点规范</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
         
     </div>
 </div>
@@ -438,9 +545,9 @@ mjx-container[display="true"] + br {
     <div class="border-box website-info-box default">
         
             <div class="copyright-info info-item default">
-                &copy;&nbsp;2023
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2023
                 
-                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Syaoran Li</a>
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Li Syaoran</a>
                 
             </div>
 
@@ -451,13 +558,34 @@ mjx-container[display="true"] + br {
             
 
             
+                <div class="deploy-info info-item default">
+                    
+                        This site is deployed on <span class="tooltip" data-tooltip-content="GitHub Pages"><img src="/images/deploy-provider/github.png"></span>
+                        
+                </div>
+            
         
 
         <div class="count-item info-item default">
             
-
+                <span class="count-box border-box word">
+                    <span class="item-type border-box">Total words</span>
+                    <span class="item-value border-box word">72.7k</span>
+                </span>
             
 
+            
+                <span class="count-box border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-box border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
             
         </div>
     </div>
@@ -473,8 +601,17 @@ mjx-container[display="true"] + br {
     <ul class="tools-list border-box">
         <!-- PC TOC show toggle -->
         
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
 
         <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
         
     </ul>
 </div>
@@ -508,7 +645,15 @@ mjx-container[display="true"] + br {
 
     <ul class="exposed-tools-list border-box">
         
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
 
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
         
 
         <li class="tools-item tool-toggle-show flex-center">
@@ -532,51 +677,85 @@ mjx-container[display="true"] + br {
 
     <!-- local search -->
     
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
 
     <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#case1-%E7%BB%9F%E4%B8%80%E6%8C%87%E6%A0%87%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E9%97%B4%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E4%B8%80%E8%87%B4"><span class="nav-number">1.</span> <span class="nav-text"> Case1: 统一指标在不同系统之间标口径不一致</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#case2-%E4%B8%AD%E9%97%B4%E8%A1%A8%E7%9A%84%E5%BB%BA%E7%AB%8B%E5%92%8C%E7%BB%B4%E6%8A%A4"><span class="nav-number">2.</span> <span class="nav-text"> Case2: 中间表的建立和维护</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%9B%E7%BB%99%E7%AB%AF"><span class="nav-number">2.1.</span> <span class="nav-text"> 供给端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E8%80%97%E7%AB%AF"><span class="nav-number">2.2.</span> <span class="nav-text"> 消耗端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.3.</span> <span class="nav-text"> 总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#case3-%E5%8F%AF%E4%BB%A5%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80%E7%9A%84%E9%97%AE%E9%A2%98%E5%90%97"><span class="nav-number">3.</span> <span class="nav-text"> Case3: 可以彻底解决数据指标口径不统一的问题吗？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#case4-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%85%AC%E5%8F%B8%E5%86%85%E9%83%A8%E7%BB%9F%E4%B8%80%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84"><span class="nav-number">4.</span> <span class="nav-text"> Case4: 如何在公司内部统一数据指标口径</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B6%E5%AE%9A%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%A7%84%E8%8C%83"><span class="nav-number">4.1.</span> <span class="nav-text"> 制定数据埋点规范</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
     
 </main>
 
 
 
 <!-- common -->
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/header-shrink.js"></script>
-
-<script src="/js/back2top.js"></script>
-
-<script src="/js/dark-light-toggle.js"></script>
-
-<script src="/js/main.js"></script>
-
-<script src="/js/libs/anime.min.js"></script>
-
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/dark-light-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/libs/anime.min.js"></script>
 
 <!-- local-search -->
 
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/local-search.js"></script>
+
 
 <!-- code-block -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/code-block.js"></script>
 
 
 <!-- lazyload -->
 
 
-<div class="">
+<div class="pjax">
     
         <!-- post-helper -->
-        
-<script src="/js/post/post-helper.js"></script>
-
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/post/post-helper.js"></script>
 
         <!-- toc -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/post/toc.js"></script>
         
 
         <!-- copyright-info -->
         
 
         <!-- share -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/post/share.js"></script>
         
     
 
@@ -591,6 +770,37 @@ mjx-container[display="true"] + br {
 
 
 <!-- pjax -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
 
 
 
