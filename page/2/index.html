@@ -25,7 +25,7 @@
     <script class="keep-theme-configurations">
     const KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"artemis727.github.io","root":"/","language":"en","path":"search.json"}
-    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"style":{"primary_color":"#adc178","logo":"/images/Bird.JPG","favicon":"/images/Pixel1.jpg","avatar":"/images/Bird.JPG","first_screen":{"enable":true,"background_img":"/images/munchlax-sleeping-on-the-field-pixel-moewalls-com.mp4","description":"The higher I got, the more amazed I was by the view.","hitokoto":false},"scroll":{"progress_bar":true,"percent":false}},"local_search":{"enable":true,"preload":true},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":true,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":true,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"version":"3.8.6"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"style":{"primary_color":"#adc178","logo":"/images/Bird.JPG","favicon":"/images/Pixel1.jpg","avatar":"/images/Bird.JPG","first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"The higher I got, the more amazed I was by the view.","hitokoto":false},"scroll":{"progress_bar":true,"percent":false}},"local_search":{"enable":true,"preload":true},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":true,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":true,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"version":"3.8.6"}
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
     KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
     KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
@@ -306,7 +306,10 @@ mjx-container[display="true"] + br {
                     <div class="home-article-content keep-markdown-body">
                         
                             精通互联网世界中的各种业务模型（如AARRR模型、UE模型、RMF模型、转化漏斗模型、帕累托法则、生命周期理论、营销渠道归因模型）。
-AARRR模型漏斗模型参考
+ AARRR模型
+ 漏斗模型
+ 参考
+
 数据分析商业逻辑模型简介（一）：AARRR模型、漏斗模型
 
 
@@ -408,10 +411,14 @@ AARRR模型漏斗模型参考
 
                     <div class="home-article-content keep-markdown-body">
                         
-                            SQL计算月环比、月同比准备数据数据：日期，订单金额
+                             SQL计算月环比、月同比
+ 准备数据
+数据：日期，订单金额
 假设数据是精确到天的
 
-计算月环比：和上个月做比较1234567891011121314151617181920-- 月环比select substr(a.d, 1, 7) as month, a...
+ 计算
+ 月环比：和上个月做比较
+1234567891011121314151617181920-- 月环比select substr(a.d, 1, 7) as ...
                         
                     </div>
 
@@ -471,6 +478,7 @@ AARRR模型漏斗模型参考
                     <div class="home-article-content keep-markdown-body">
                         
                             
+
 有1000个样本，如何计算总体方差？
 “样本方差的期望等于总体方差。”在这些样本里再进行多次重复抽样，用多次得出的方差来估计总体方差。
 
@@ -535,9 +543,11 @@ AARRR模型漏斗模型参考
 
                     <div class="home-article-content keep-markdown-body">
                         
-                            分类和回归Logistic Regression 和 Linear Regression
+                             分类和回归
+ Logistic Regression 和 Linear Regression
+
 Linear Regression：输出一个标量wx+b，是连续值，用以处理回归问题；
-Logistic Regression：将标量wx+b通过sigmoid...
+Logistic Regression：将标量wx+b通过sig...
                         
                     </div>
 
@@ -599,11 +609,9 @@ Logistic Regression：将标量wx+b通过sigmoid...
 
                     <div class="home-article-content keep-markdown-body">
                         
-                            如果你是超市老板，发现业绩下滑怎么分析？5W1H法。
-
-你会用哪三个指标来评估超市？1、销售数量——客户消费的商品的数量。销售数代表顾客的支持情况。
-2、销售额——客户购买商品所支付的金额。
-3、周转率——周转率和统计的时间段有关。周转率=（销售吊牌...
+                             如果你是超市老板，发现业绩下滑怎么分析？
+5W1H法。
+![指标下降分析 （5W1H法）](/Users/xiaoyu/Library/Mobile Documents/iCloudnetxmind~brownieapp/Documents/指标下...
                         
                     </div>
 
@@ -662,7 +670,8 @@ Logistic Regression：将标量wx+b通过sigmoid...
 
                     <div class="home-article-content keep-markdown-body">
                         
-                            字节商业化战略分析日常实习生【一面】
+                             字节商业化战略分析日常实习生
+【一面】
 
 经历面：框架+做什么+结果/收获
 抖音和快手的差异？
@@ -670,7 +679,7 @@ Logistic Regression：将标量wx+b通过sigmoid...
 抖音和快手电商谁会赢？
 如何判断/分析用户对平台的价值？
 抖音做电商的首要考量？要怎么做？
-类似访谈记录，考速记：读一段文字， 记录...
+类似访谈记录，考速记：读一段文字， ...
                         
                     </div>
 
@@ -778,8 +787,9 @@ Logistic Regression：将标量wx+b通过sigmoid...
 
                     <div class="home-article-content keep-markdown-body">
                         
-                            ❓竞品分析：飞书 &amp; 叮叮 &amp; 企业微信背景钉钉卖的是“云钉一体”的生态，背后有阿里云做撑腰；企微背靠的是微信的强连接能力，在对外连接层面一直有较强的说服力；而“后发者”飞书，只能靠输出“先进管理”的理念和出色的产品力来取胜。
-竞品分...
+                             ❓竞品分析：飞书 &amp; 叮叮 &amp; 企业微信
+ 背景
+钉钉卖的是“云钉一体”的生态，背后有阿里云做撑腰；企微背靠的是微信的强连接能力，在对外连接层面一直有较强的说服力；而“后发者”飞书，只能靠输出“先进管理”的理念和出色的产品力来取胜。...
                         
                     </div>
 
@@ -838,8 +848,9 @@ Logistic Regression：将标量wx+b通过sigmoid...
 
                     <div class="home-article-content keep-markdown-body">
                         
-                            概述SaaS的英文全称是Software as a Service，意思是软件即服务。SaaS的本质是一种软件的交付模型，即不向用户交付最终的软件产品，软件作为用户使用的服务而存在。所以SaaS就相当于软件中的租借模式。
-常见的SaaS代表性产品包括...
+                             概述
+SaaS的英文全称是Software as a Service，意思是软件即服务。SaaS的本质是一种软件的交付模型，即不向用户交付最终的软件产品，软件作为用户使用的服务而存在。所以SaaS就相当于软件中的租借模式。
+常见的SaaS代表性产品...
                         
                     </div>
 
@@ -953,7 +964,7 @@ Logistic Regression：将标量wx+b通过sigmoid...
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">71.5k</span>
+                    <span class="item-value border-box word">72.3k</span>
                 </span>
             
 
@@ -1131,20 +1142,5 @@ Logistic Regression：将标量wx+b通过sigmoid...
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

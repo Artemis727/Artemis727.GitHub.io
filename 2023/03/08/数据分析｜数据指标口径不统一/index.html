@@ -27,7 +27,7 @@
     <script class="keep-theme-configurations">
     const KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"artemis727.github.io","root":"/","language":"en","path":"search.json"}
-    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"style":{"primary_color":"#adc178","logo":"/images/Bird.JPG","favicon":"/images/Pixel1.jpg","avatar":"/images/Bird.JPG","first_screen":{"enable":true,"background_img":"/images/munchlax-sleeping-on-the-field-pixel-moewalls-com.mp4","description":"The higher I got, the more amazed I was by the view.","hitokoto":false},"scroll":{"progress_bar":true,"percent":false}},"local_search":{"enable":true,"preload":true},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":true,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":true,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"version":"3.8.6"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"style":{"primary_color":"#adc178","logo":"/images/Bird.JPG","favicon":"/images/Pixel1.jpg","avatar":"/images/Bird.JPG","first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"The higher I got, the more amazed I was by the view.","hitokoto":false},"scroll":{"progress_bar":true,"percent":false}},"local_search":{"enable":true,"preload":true},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":true,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":true,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"version":"3.8.6"}
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
     KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
     KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
@@ -356,7 +356,7 @@ mjx-container[display="true"] + br {
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>702 Words</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>699 Words</span>
             </span>
         
         
@@ -379,29 +379,37 @@ mjx-container[display="true"] + br {
                     
 
                     <p><img src="http://img.pmcaff.com/9e2f3796fc0662953a71edd6a76592b9-picture?imageView2/0/format/jpg" alt="图片"></p>
-<h1 id="Case1-统一指标在不同系统之间标口径不一致"><a href="#Case1-统一指标在不同系统之间标口径不一致" class="headerlink" title="Case1: 统一指标在不同系统之间标口径不一致"></a>Case1: 统一指标在不同系统之间标口径不一致</h1><p>改进方方案是<strong>将各个系统都需要用的复合指标，统一由数据中台进行加工，并统一向外提供消费</strong>，同时数据中台需要确保指标的<strong>准确性、及时性</strong>，最好能提供<strong>自我质量检查机制</strong>，无需消费者自己再检查。</p>
-<h1 id="Case2-中间表的建立和维护"><a href="#Case2-中间表的建立和维护" class="headerlink" title="Case2: 中间表的建立和维护"></a>Case2: 中间表的建立和维护</h1><ul>
+<h1 id="case1-统一指标在不同系统之间标口径不一致"><a class="markdownIt-Anchor" href="#case1-统一指标在不同系统之间标口径不一致"></a> Case1: 统一指标在不同系统之间标口径不一致</h1>
+<p>改进方方案是<strong>将各个系统都需要用的复合指标，统一由数据中台进行加工，并统一向外提供消费</strong>，同时数据中台需要确保指标的<strong>准确性、及时性</strong>，最好能提供<strong>自我质量检查机制</strong>，无需消费者自己再检查。</p>
+<h1 id="case2-中间表的建立和维护"><a class="markdownIt-Anchor" href="#case2-中间表的建立和维护"></a> Case2: 中间表的建立和维护</h1>
+<ul>
 <li>目的：依托于基础的<strong>埋点表/业务明细表/用户明细表</strong>等，来提高<strong>数据提取与输出</strong>的效率。</li>
-<li>作用：在[<strong>dws层</strong> (data warehouse service，汇总层，按照业务划分来提供后续的业务查询、数据分发等) ][<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/pmdream/article/details/113601956]，将**基础事实层**的数据，通过**与产品人员既定的规则**编写，用”case">https://blog.csdn.net/pmdream/article/details/113601956]，将**基础事实层**的数据，通过**与产品人员既定的规则**编写，用”case<i class="fas fa-external-link-alt"></i></a> when”或syscode系统码表来<strong>将业务口径标签化</strong>，将数据<strong>固定在对应主题域</strong>中，方便日常的汇报或者用户分析使用。</li>
+<li>作用：在[<strong>dws层</strong> (data warehouse service，汇总层，按照业务划分来提供后续的业务查询、数据分发等) ][<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/pmdream/article/details/113601956">https://blog.csdn.net/pmdream/article/details/113601956<i class="fas fa-external-link-alt"></i></a>]，将<strong>基础事实层</strong>的数据，通过<strong>与产品人员既定的规则</strong>编写，用”case when”或syscode系统码表来<strong>将业务口径标签化</strong>，将数据<strong>固定在对应主题域</strong>中，方便日常的汇报或者用户分析使用。</li>
 </ul>
 <blockquote>
 <p>引自：<a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/145226500">https://zhuanlan.zhihu.com/p/145226500<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
-<h2 id="供给端"><a href="#供给端" class="headerlink" title="供给端"></a>供给端</h2><p>创建一张中间表，将所有功能数据存储，对于有关需求可以随取随用。</p>
+<h2 id="供给端"><a class="markdownIt-Anchor" href="#供给端"></a> 供给端</h2>
+<p>创建一张中间表，将所有功能数据存储，对于有关需求可以随取随用。</p>
 <p><img src="https://pic1.zhimg.com/80/v2-7589a707dbcb40bddd1d36577b8a250c_1440w.webp" alt="img"></p>
-<h2 id="消耗端"><a href="#消耗端" class="headerlink" title="消耗端"></a>消耗端</h2><p>运营人员除了关注整体的文章阅读外，还会关注各个入口的转化情况，数据如下：</p>
+<h2 id="消耗端"><a class="markdownIt-Anchor" href="#消耗端"></a> 消耗端</h2>
+<p>运营人员除了关注整体的文章阅读外，还会关注各个入口的转化情况，数据如下：</p>
 <p><img src="https://pic4.zhimg.com/80/v2-c9a75c4aaf73c79c9e2760754722c0eb_1440w.webp" alt="img"></p>
 <p><strong>与产品/运营人员，开会商议，确定每个来源入口的规则，对埋点表进行处理，用case when使不同的来源入口标签化</strong>：</p>
 <p><img src="https://pic1.zhimg.com/80/v2-c14e8c8aa14ce726c0044756eb35aaf4_1440w.webp" alt="img"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过建立中间表，确实可以提高数据的输出效率，但是<strong>光建立是远远不够的，后期的维护也同样重要</strong>。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>通过建立中间表，确实可以提高数据的输出效率，但是<strong>光建立是远远不够的，后期的维护也同样重要</strong>。</p>
 <p>由于规则是与产品/运营商定的，<strong>必须形成规范的数据字典文档，存储在公共平台上</strong>（wiki、SVN等），有改动或者新增，需及时调整。</p>
 <p>有新增的业务时，也要在发版之后，添加至中间表中，避免数据遗漏或者重跑。</p>
-<h1 id="Case3-可以彻底解决数据指标口径不统一的问题吗？"><a href="#Case3-可以彻底解决数据指标口径不统一的问题吗？" class="headerlink" title="Case3: 可以彻底解决数据指标口径不统一的问题吗？"></a>Case3: 可以彻底解决数据指标口径不统一的问题吗？</h1><blockquote>
-<p>参考：<a class="link" target="_blank" rel="noopener" href="https://coffee.pmcaff.com/article/3203006749265024?newwindow=1#:~:text=指标口径不统一的,的把数据用起来%E3%80%82">https://coffee.pmcaff.com/article/3203006749265024?newwindow=1#:~:text=指标口径不统一的,的把数据用起来%E3%80%82<i class="fas fa-external-link-alt"></i></a></p>
+<h1 id="case3-可以彻底解决数据指标口径不统一的问题吗"><a class="markdownIt-Anchor" href="#case3-可以彻底解决数据指标口径不统一的问题吗"></a> Case3: 可以彻底解决数据指标口径不统一的问题吗？</h1>
+<blockquote>
+<p>参考：<a class="link" target="_blank" rel="noopener" href="https://coffee.pmcaff.com/article/3203006749265024?newwindow=1#:~:text=%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80%E7%9A%84,%E7%9A%84%E6%8A%8A%E6%95%B0%E6%8D%AE%E7%94%A8%E8%B5%B7%E6%9D%A5%E3%80%82">https://coffee.pmcaff.com/article/3203006749265024?newwindow=1#:~:text=指标口径不统一的,的把数据用起来。<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
-<h1 id="Case4-如何在公司内部统一数据指标口径"><a href="#Case4-如何在公司内部统一数据指标口径" class="headerlink" title="Case4: 如何在公司内部统一数据指标口径"></a>Case4: 如何在公司内部统一数据指标口径</h1><p>第一，<strong>规范数据埋点</strong>，先统一数据埋点的<u>最小维度记录方式</u>等，做好这一步是统一数据口径的基础，会为之后口径的统一提供极大便利；其次是，<strong>构建数据字典</strong>，定义每一个指标的<u>最小维度和统计口径</u>；然后就是通过<strong>数据指标体系</strong>等进行数据指标的展示。</p>
+<h1 id="case4-如何在公司内部统一数据指标口径"><a class="markdownIt-Anchor" href="#case4-如何在公司内部统一数据指标口径"></a> Case4: 如何在公司内部统一数据指标口径</h1>
+<p>第一，<strong>规范数据埋点</strong>，先统一数据埋点的<u>最小维度记录方式</u>等，做好这一步是统一数据口径的基础，会为之后口径的统一提供极大便利；其次是，<strong>构建数据字典</strong>，定义每一个指标的<u>最小维度和统计口径</u>；然后就是通过<strong>数据指标体系</strong>等进行数据指标的展示。</p>
 <p>当然这只是数据层面的，对口径的统一还需要和各方沟通达成统一的认知。</p>
-<h2 id="制定数据埋点规范"><a href="#制定数据埋点规范" class="headerlink" title="制定数据埋点规范"></a>制定数据埋点规范</h2>
+<h2 id="制定数据埋点规范"><a class="markdownIt-Anchor" href="#制定数据埋点规范"></a> 制定数据埋点规范</h2>
+
                 </div>
 
                 
@@ -516,7 +524,7 @@ mjx-container[display="true"] + br {
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Case1-%E7%BB%9F%E4%B8%80%E6%8C%87%E6%A0%87%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E9%97%B4%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E4%B8%80%E8%87%B4"><span class="nav-number">1.</span> <span class="nav-text">Case1: 统一指标在不同系统之间标口径不一致</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Case2-%E4%B8%AD%E9%97%B4%E8%A1%A8%E7%9A%84%E5%BB%BA%E7%AB%8B%E5%92%8C%E7%BB%B4%E6%8A%A4"><span class="nav-number">2.</span> <span class="nav-text">Case2: 中间表的建立和维护</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%9B%E7%BB%99%E7%AB%AF"><span class="nav-number">2.1.</span> <span class="nav-text">供给端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E8%80%97%E7%AB%AF"><span class="nav-number">2.2.</span> <span class="nav-text">消耗端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Case3-%E5%8F%AF%E4%BB%A5%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80%E7%9A%84%E9%97%AE%E9%A2%98%E5%90%97%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">Case3: 可以彻底解决数据指标口径不统一的问题吗？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Case4-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%85%AC%E5%8F%B8%E5%86%85%E9%83%A8%E7%BB%9F%E4%B8%80%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84"><span class="nav-number">4.</span> <span class="nav-text">Case4: 如何在公司内部统一数据指标口径</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B6%E5%AE%9A%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%A7%84%E8%8C%83"><span class="nav-number">4.1.</span> <span class="nav-text">制定数据埋点规范</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#case1-%E7%BB%9F%E4%B8%80%E6%8C%87%E6%A0%87%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E9%97%B4%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E4%B8%80%E8%87%B4"><span class="nav-number">1.</span> <span class="nav-text"> Case1: 统一指标在不同系统之间标口径不一致</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#case2-%E4%B8%AD%E9%97%B4%E8%A1%A8%E7%9A%84%E5%BB%BA%E7%AB%8B%E5%92%8C%E7%BB%B4%E6%8A%A4"><span class="nav-number">2.</span> <span class="nav-text"> Case2: 中间表的建立和维护</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%9B%E7%BB%99%E7%AB%AF"><span class="nav-number">2.1.</span> <span class="nav-text"> 供给端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E8%80%97%E7%AB%AF"><span class="nav-number">2.2.</span> <span class="nav-text"> 消耗端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.3.</span> <span class="nav-text"> 总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#case3-%E5%8F%AF%E4%BB%A5%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80%E7%9A%84%E9%97%AE%E9%A2%98%E5%90%97"><span class="nav-number">3.</span> <span class="nav-text"> Case3: 可以彻底解决数据指标口径不统一的问题吗？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#case4-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%85%AC%E5%8F%B8%E5%86%85%E9%83%A8%E7%BB%9F%E4%B8%80%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84"><span class="nav-number">4.</span> <span class="nav-text"> Case4: 如何在公司内部统一数据指标口径</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B6%E5%AE%9A%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%A7%84%E8%8C%83"><span class="nav-number">4.1.</span> <span class="nav-text"> 制定数据埋点规范</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -562,7 +570,7 @@ mjx-container[display="true"] + br {
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">71.5k</span>
+                    <span class="item-value border-box word">72.3k</span>
                 </span>
             
 
@@ -705,7 +713,7 @@ mjx-container[display="true"] + br {
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Case1-%E7%BB%9F%E4%B8%80%E6%8C%87%E6%A0%87%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E9%97%B4%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E4%B8%80%E8%87%B4"><span class="nav-number">1.</span> <span class="nav-text">Case1: 统一指标在不同系统之间标口径不一致</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Case2-%E4%B8%AD%E9%97%B4%E8%A1%A8%E7%9A%84%E5%BB%BA%E7%AB%8B%E5%92%8C%E7%BB%B4%E6%8A%A4"><span class="nav-number">2.</span> <span class="nav-text">Case2: 中间表的建立和维护</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%9B%E7%BB%99%E7%AB%AF"><span class="nav-number">2.1.</span> <span class="nav-text">供给端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E8%80%97%E7%AB%AF"><span class="nav-number">2.2.</span> <span class="nav-text">消耗端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Case3-%E5%8F%AF%E4%BB%A5%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80%E7%9A%84%E9%97%AE%E9%A2%98%E5%90%97%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">Case3: 可以彻底解决数据指标口径不统一的问题吗？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Case4-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%85%AC%E5%8F%B8%E5%86%85%E9%83%A8%E7%BB%9F%E4%B8%80%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84"><span class="nav-number">4.</span> <span class="nav-text">Case4: 如何在公司内部统一数据指标口径</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B6%E5%AE%9A%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%A7%84%E8%8C%83"><span class="nav-number">4.1.</span> <span class="nav-text">制定数据埋点规范</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#case1-%E7%BB%9F%E4%B8%80%E6%8C%87%E6%A0%87%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E9%97%B4%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E4%B8%80%E8%87%B4"><span class="nav-number">1.</span> <span class="nav-text"> Case1: 统一指标在不同系统之间标口径不一致</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#case2-%E4%B8%AD%E9%97%B4%E8%A1%A8%E7%9A%84%E5%BB%BA%E7%AB%8B%E5%92%8C%E7%BB%B4%E6%8A%A4"><span class="nav-number">2.</span> <span class="nav-text"> Case2: 中间表的建立和维护</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%9B%E7%BB%99%E7%AB%AF"><span class="nav-number">2.1.</span> <span class="nav-text"> 供给端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E8%80%97%E7%AB%AF"><span class="nav-number">2.2.</span> <span class="nav-text"> 消耗端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.3.</span> <span class="nav-text"> 总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#case3-%E5%8F%AF%E4%BB%A5%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84%E4%B8%8D%E7%BB%9F%E4%B8%80%E7%9A%84%E9%97%AE%E9%A2%98%E5%90%97"><span class="nav-number">3.</span> <span class="nav-text"> Case3: 可以彻底解决数据指标口径不统一的问题吗？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#case4-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%85%AC%E5%8F%B8%E5%86%85%E9%83%A8%E7%BB%9F%E4%B8%80%E6%95%B0%E6%8D%AE%E6%8C%87%E6%A0%87%E5%8F%A3%E5%BE%84"><span class="nav-number">4.</span> <span class="nav-text"> Case4: 如何在公司内部统一数据指标口径</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B6%E5%AE%9A%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%A7%84%E8%8C%83"><span class="nav-number">4.1.</span> <span class="nav-text"> 制定数据埋点规范</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -796,20 +804,5 @@ mjx-container[display="true"] + br {
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

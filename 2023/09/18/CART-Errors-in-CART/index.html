@@ -27,7 +27,7 @@
     <script class="keep-theme-configurations">
     const KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"artemis727.github.io","root":"/","language":"en","path":"search.json"}
-    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"style":{"primary_color":"#adc178","logo":"/images/Bird.JPG","favicon":"/images/Pixel1.jpg","avatar":"/images/Bird.JPG","first_screen":{"enable":true,"background_img":"/images/munchlax-sleeping-on-the-field-pixel-moewalls-com.mp4","description":"The higher I got, the more amazed I was by the view.","hitokoto":false},"scroll":{"progress_bar":true,"percent":false}},"local_search":{"enable":true,"preload":true},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":true,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":true,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"version":"3.8.6"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"style":{"primary_color":"#adc178","logo":"/images/Bird.JPG","favicon":"/images/Pixel1.jpg","avatar":"/images/Bird.JPG","first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"The higher I got, the more amazed I was by the view.","hitokoto":false},"scroll":{"progress_bar":true,"percent":false}},"local_search":{"enable":true,"preload":true},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":true,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":true,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"version":"3.8.6"}
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
     KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
     KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
@@ -379,38 +379,46 @@ mjx-container[display="true"] + br {
                     
 
                     <p>CART全称是Classification and Regression Trees。</p>
-<h1 id="“Trainset-error”-和-“CV-error”"><a href="#“Trainset-error”-和-“CV-error”" class="headerlink" title="“Trainset error” 和 “CV error”"></a>“Trainset error” 和 “CV error”</h1><p>对于 CART（Classification and Regression Trees）算法，”Trainset error” 和 “CV error” 分别代表了两种不同的误差度量：</p>
+<h1 id="trainset-error-和-cv-error"><a class="markdownIt-Anchor" href="#trainset-error-和-cv-error"></a> “Trainset error” 和 “CV error”</h1>
+<p>对于 CART（Classification and Regression Trees）算法，“Trainset error” 和 “CV error” 分别代表了两种不同的误差度量：</p>
 <ol>
-<li><p><strong>Trainset Error（训练集误差）</strong>：</p>
+<li>
+<p><strong>Trainset Error（训练集误差）</strong>：</p>
 <p>这是在构建决策树时使用训练数据集来评估模型的误差。具体来说，它是指模型在训练数据集上的预测误差或者拟合不准确度。训练集误差通常是通过将模型对训练数据集的预测与实际观测值进行比较来计算的。</p>
 <p><strong>训练集误差的一个问题是它可能会过于乐观地估计了模型的性能，因为模型在训练数据上进行了拟合。这可能导致模型在未见过的新数据上的性能表现不佳。</strong></p>
 </li>
-<li><p><strong>Cross-Validation Error（交叉验证误差）</strong>：</p>
-<p><strong>为了更准确地评估模型的性能，</strong>通常会将数据分成训练集和测试集两部分。交叉验证（Cross-Validation）是一种常用的方法，它将数据分成多个折（folds），然后分别使用其中一个折作为测试集，其余折作为训练集来训练模型。这样可以多次进行模型训练和评估，从而得到一个更稳健的性能估计。</p>
+<li>
+<p><strong>Cross-Validation Error（交叉验证误差）</strong>：</p>
+<p>**为了更准确地评估模型的性能，**通常会将数据分成训练集和测试集两部分。交叉验证（Cross-Validation）是一种常用的方法，它将数据分成多个折（folds），然后分别使用其中一个折作为测试集，其余折作为训练集来训练模型。这样可以多次进行模型训练和评估，从而得到一个更稳健的性能估计。</p>
 <p>CV error 是在交叉验证中得到的，它表示模型在不同的测试集上的平均预测误差。通常，通过计算多次交叉验证的结果的平均值来得到最终的 CV error。</p>
 </li>
 </ol>
 <p>总的来说，Trainset Error 是在训练数据上的误差，它可能会过于乐观地估计模型的性能；而 CV error 则是通过在多次独立的测试集上进行交叉验证得到的，它提供了对模型在未见过的数据上性能的更稳健的估计。 CV error 通常被认为是对模型性能的更可靠的评估。</p>
-<h1 id="解释一个CP-table"><a href="#解释一个CP-table" class="headerlink" title="解释一个CP table"></a>解释一个CP table</h1><p>一个 CART（Classification and Regression Trees）模型的 <code>cp table</code> 包含了与树的复杂度参数（通常用 α 表示）相关的信息。CART 模型会根据训练数据构建一棵树，但这棵树可能会过于复杂，导致在训练数据上表现很好，但在未见过的数据上表现较差（过拟合）。</p>
+<h1 id="解释一个cp-table"><a class="markdownIt-Anchor" href="#解释一个cp-table"></a> 解释一个CP table</h1>
+<p>一个 CART（Classification and Regression Trees）模型的 <code>cp table</code> 包含了与树的复杂度参数（通常用 α 表示）相关的信息。CART 模型会根据训练数据构建一棵树，但这棵树可能会过于复杂，导致在训练数据上表现很好，但在未见过的数据上表现较差（过拟合）。</p>
 <p><code>cp table</code> 提供了一种帮助找到适当树大小的方法。其中 <code>cp</code> 代表复杂度参数，它可以理解为控制树的复杂程度的一个调节参数。</p>
 <p><code>cp table</code> 通常包括以下列：</p>
 <ol>
-<li><p><strong><code>CP</code>（复杂度参数）</strong>：</p>
+<li>
+<p><strong><code>CP</code>（复杂度参数）</strong>：</p>
 <ul>
 <li>这列列出了不同的复杂度参数值。它们是一个递减的有序序列，从最大的复杂度开始，逐渐减小。</li>
 </ul>
 </li>
-<li><p><strong><code>rel error</code>（相对误差）</strong>：</p>
+<li>
+<p><strong><code>rel error</code>（相对误差）</strong>：</p>
 <ul>
 <li>这列列出了在给定复杂度参数下，与完全展开的树相比，模型的相对误差。<strong>相对误差是模型的预测误差与完全展开树的预测误差之比。</strong></li>
 </ul>
 </li>
-<li><p><strong><code>xerror</code>（交叉验证误差）</strong>：</p>
+<li>
+<p><strong><code>xerror</code>（交叉验证误差）</strong>：</p>
 <ul>
 <li>这列列出了在给定复杂度参数下，通过<strong>交叉验证</strong>得到的模型的平均预测误差。</li>
 </ul>
 </li>
-<li><p><strong><code>xstd</code>（交叉验证误差的标准差）</strong>：</p>
+<li>
+<p><strong><code>xstd</code>（交叉验证误差的标准差）</strong>：</p>
 <ul>
 <li>这列列出了在给定复杂度参数下，通过交叉验证得到的模型的平均预测误差的<strong>标准差</strong>。</li>
 </ul>
@@ -418,11 +426,14 @@ mjx-container[display="true"] + br {
 </ol>
 <p>解释一个 <code>cp table</code> 的过程通常包括以下步骤：</p>
 <ol>
-<li><p><strong>选择最小的 <code>CP</code> 值</strong>：通常会选择具有最小相对误差或交叉验证误差的复杂度参数作为最终模型的复杂度参数。</p>
+<li>
+<p><strong>选择最小的 <code>CP</code> 值</strong>：通常会选择具有最小相对误差或交叉验证误差的复杂度参数作为最终模型的复杂度参数。</p>
 </li>
-<li><p><strong>对比相对误差和交叉验证误差</strong>：相对误差提供了一种在训练集上进行模型评估的方法，而交叉验证误差提供了对模型在未见过数据上的性能的估计。</p>
+<li>
+<p><strong>对比相对误差和交叉验证误差</strong>：相对误差提供了一种在训练集上进行模型评估的方法，而交叉验证误差提供了对模型在未见过数据上的性能的估计。</p>
 </li>
-<li><p><strong>考虑模型的解释性和复杂度</strong>：选择一个合适的复杂度参数需要在模型的性能和复杂度之间进行权衡。更复杂的模型可能在训练数据上表现得更好，但可能在新数据上表现较差。</p>
+<li>
+<p><strong>考虑模型的解释性和复杂度</strong>：选择一个合适的复杂度参数需要在模型的性能和复杂度之间进行权衡。更复杂的模型可能在训练数据上表现得更好，但可能在新数据上表现较差。</p>
 </li>
 </ol>
 <p>总的来说，<code>cp table</code> 提供了一个帮助找到合适树大小的指南，以避免过拟合和提高模型的泛化能力。</p>
@@ -541,7 +552,7 @@ mjx-container[display="true"] + br {
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E2%80%9CTrainset-error%E2%80%9D-%E5%92%8C-%E2%80%9CCV-error%E2%80%9D"><span class="nav-number">1.</span> <span class="nav-text">“Trainset error” 和 “CV error”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%AACP-table"><span class="nav-number">2.</span> <span class="nav-text">解释一个CP table</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#trainset-error-%E5%92%8C-cv-error"><span class="nav-number">1.</span> <span class="nav-text"> “Trainset error” 和 “CV error”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%AAcp-table"><span class="nav-number">2.</span> <span class="nav-text"> 解释一个CP table</span></a></li></ol>
     </div>
 </div>
 
@@ -587,7 +598,7 @@ mjx-container[display="true"] + br {
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">71.5k</span>
+                    <span class="item-value border-box word">72.3k</span>
                 </span>
             
 
@@ -730,7 +741,7 @@ mjx-container[display="true"] + br {
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E2%80%9CTrainset-error%E2%80%9D-%E5%92%8C-%E2%80%9CCV-error%E2%80%9D"><span class="nav-number">1.</span> <span class="nav-text">“Trainset error” 和 “CV error”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%AACP-table"><span class="nav-number">2.</span> <span class="nav-text">解释一个CP table</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#trainset-error-%E5%92%8C-cv-error"><span class="nav-number">1.</span> <span class="nav-text"> “Trainset error” 和 “CV error”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%AAcp-table"><span class="nav-number">2.</span> <span class="nav-text"> 解释一个CP table</span></a></li></ol>
     </div>
 </div>
 
@@ -821,20 +832,5 @@ mjx-container[display="true"] + br {
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

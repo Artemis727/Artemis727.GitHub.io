@@ -27,7 +27,7 @@
     <script class="keep-theme-configurations">
     const KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"artemis727.github.io","root":"/","language":"en","path":"search.json"}
-    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"style":{"primary_color":"#adc178","logo":"/images/Bird.JPG","favicon":"/images/Pixel1.jpg","avatar":"/images/Bird.JPG","first_screen":{"enable":true,"background_img":"/images/munchlax-sleeping-on-the-field-pixel-moewalls-com.mp4","description":"The higher I got, the more amazed I was by the view.","hitokoto":false},"scroll":{"progress_bar":true,"percent":false}},"local_search":{"enable":true,"preload":true},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":true,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":true,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"version":"3.8.6"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"style":{"primary_color":"#adc178","logo":"/images/Bird.JPG","favicon":"/images/Pixel1.jpg","avatar":"/images/Bird.JPG","first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"The higher I got, the more amazed I was by the view.","hitokoto":false},"scroll":{"progress_bar":true,"percent":false}},"local_search":{"enable":true,"preload":true},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":true,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":true,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"version":"3.8.6"}
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
     KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
     KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
@@ -378,13 +378,16 @@ mjx-container[display="true"] + br {
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="六个步骤实现数据埋点设计"><a href="#六个步骤实现数据埋点设计" class="headerlink" title="六个步骤实现数据埋点设计"></a>六个步骤实现数据埋点设计</h1><p><strong>1.确认事件与变量</strong></p>
+                    <h1 id="六个步骤实现数据埋点设计"><a class="markdownIt-Anchor" href="#六个步骤实现数据埋点设计"></a> 六个步骤实现数据埋点设计</h1>
+<p><strong>1.确认事件与变量</strong></p>
 <p>这里的<strong>事件指产品中的功能或者用户的操作，而变量是指描述事件的属性或者关键指标</strong>。确认事件与变量可以通过<strong>AARRR模型或者UJM模型</strong>进行逐步拆解，理清用户生命周期和行为路径，抽象出每一个步骤的关键指标。</p>
 <p>Tips：AARRR模型和UJM模型会在之前的文章中有讲过，点击阅读原文即可跳转。</p>
 <ul>
-<li><p>AARRR 模型<img src="https://picx.zhimg.com/v2-caf3ea7bae280944457fcd076dced07f_720w.jpg?source=172ae18b" alt="重要的产品分析模型：AARRR模型"></p>
+<li>
+<p>AARRR 模型<img src="https://picx.zhimg.com/v2-caf3ea7bae280944457fcd076dced07f_720w.jpg?source=172ae18b" alt="重要的产品分析模型：AARRR模型"></p>
 </li>
-<li><p>UJM 模型</p>
+<li>
+<p>UJM 模型</p>
 </li>
 </ul>
 <p><strong>2.明确事件的触发时机</strong></p>
@@ -399,7 +402,8 @@ mjx-container[display="true"] + br {
 <p>建立公司内部或者团队内部的命名规范是非常必要的，<strong>可以采用「动词+名词」或者「名词+动词」的规则来命名</strong>，比如「加入购物车」事件，就可以命名为：addToCart。</p>
 <p><strong>6.明确优先级</strong></p>
 <p>数据埋点都是为数据应用做铺排，埋点之后分析师可能面临着搭建指标体系和数据报表体系的工作，<strong>可以根据报表的优先级、埋点的技术实现成本以及资源有限性为数据埋点确定优先级</strong>。</p>
-<h1 id="以电商购物成交转化为例实现数据埋点设计"><a href="#以电商购物成交转化为例实现数据埋点设计" class="headerlink" title="以电商购物成交转化为例实现数据埋点设计"></a>以电商购物成交转化为例实现数据埋点设计</h1><p><img src="https://pic1.zhimg.com/80/v2-35d0220539559da807f851b3059896b5_1440w.webp?source=1940ef5c" alt="img"></p>
+<h1 id="以电商购物成交转化为例实现数据埋点设计"><a class="markdownIt-Anchor" href="#以电商购物成交转化为例实现数据埋点设计"></a> 以电商购物成交转化为例实现数据埋点设计</h1>
+<p><img src="https://pic1.zhimg.com/80/v2-35d0220539559da807f851b3059896b5_1440w.webp?source=1940ef5c" alt="img"></p>
 <p><strong>（1）通过UJM模型拆分用户购买商品的路径</strong>：将用户购买路径拆解为<u>注册-登录-商品曝光-商品点击-浏览页面详情-加入购物车-生成订单-订单支付</u>步骤，根据产品或策划提的数据需求，<u>确定每一个步骤学要看哪些字段才能实现数据需求</u>。</p>
 <p><strong>（2）确认触发机制</strong>：明确是在<u>点击按钮时记录行为还是在用户完成该步骤时</u>记录行为。</p>
 <p><strong>（3）确认上报机制</strong>：明确数据上报机制，是<u>实时上报还是异步上报</u>，不同的上报机制采集到的字段可能不一样，或者说需要将字段拆分到不同表进行记录。</p>
@@ -523,7 +527,7 @@ mjx-container[display="true"] + br {
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%E4%B8%AA%E6%AD%A5%E9%AA%A4%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.</span> <span class="nav-text">六个步骤实现数据埋点设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A5%E7%94%B5%E5%95%86%E8%B4%AD%E7%89%A9%E6%88%90%E4%BA%A4%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%BE%8B%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.</span> <span class="nav-text">以电商购物成交转化为例实现数据埋点设计</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%E4%B8%AA%E6%AD%A5%E9%AA%A4%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.</span> <span class="nav-text"> 六个步骤实现数据埋点设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A5%E7%94%B5%E5%95%86%E8%B4%AD%E7%89%A9%E6%88%90%E4%BA%A4%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%BE%8B%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.</span> <span class="nav-text"> 以电商购物成交转化为例实现数据埋点设计</span></a></li></ol>
     </div>
 </div>
 
@@ -569,7 +573,7 @@ mjx-container[display="true"] + br {
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">71.5k</span>
+                    <span class="item-value border-box word">72.3k</span>
                 </span>
             
 
@@ -712,7 +716,7 @@ mjx-container[display="true"] + br {
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%E4%B8%AA%E6%AD%A5%E9%AA%A4%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.</span> <span class="nav-text">六个步骤实现数据埋点设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A5%E7%94%B5%E5%95%86%E8%B4%AD%E7%89%A9%E6%88%90%E4%BA%A4%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%BE%8B%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.</span> <span class="nav-text">以电商购物成交转化为例实现数据埋点设计</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%E4%B8%AA%E6%AD%A5%E9%AA%A4%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.</span> <span class="nav-text"> 六个步骤实现数据埋点设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A5%E7%94%B5%E5%95%86%E8%B4%AD%E7%89%A9%E6%88%90%E4%BA%A4%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%BE%8B%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.</span> <span class="nav-text"> 以电商购物成交转化为例实现数据埋点设计</span></a></li></ol>
     </div>
 </div>
 
@@ -803,20 +807,5 @@ mjx-container[display="true"] + br {
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
