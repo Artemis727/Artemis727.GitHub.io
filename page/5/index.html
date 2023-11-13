@@ -305,15 +305,15 @@ mjx-container[display="true"] + br {
 
                     <div class="home-article-content keep-markdown-body">
                         
-                             SQL30 统计每种性别的人数
- 描述
-题目：现在运营举办了一场比赛，收到了一些参赛申请，表数据记录形式如下所示，现在运营想要统计每个性别的用户分别有多少参赛者，请取出相应结果
+                            SQL30 统计每种性别的人数描述题目：现在运营举办了一场比赛，收到了一些参赛申请，表数据记录形式如下所示，现在运营想要统计每个性别的用户分别有多少参赛者，请取出相应结果
 示例：user_submit
 
 
 
+
 device_id
-profile...
+profile
+bl...
                         
                     </div>
 
@@ -384,9 +384,8 @@ profile...
 
                     <div class="home-article-content keep-markdown-body">
                         
-                             计算用户次日留存率
-如果只是计算用户的次日留存率，那么使用date_sub()函数就够了：
-12345678910select avg(if(b.device_id is not null, 1, 0)) as avg_retfrom(    se...
+                            计算用户次日留存率如果只是计算用户的次日留存率，那么使用date_sub()函数就够了：
+12345678910select avg(if(b.device_id is not null, 1, 0)) as avg_retfrom(    sele...
                         
                     </div>
 
@@ -509,7 +508,7 @@ profile...
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">74.5k</span>
+                    <span class="item-value border-box word">73.6k</span>
                 </span>
             
 
@@ -687,20 +686,5 @@ profile...
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":75,"height":150},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>

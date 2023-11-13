@@ -305,10 +305,9 @@ mjx-container[display="true"] + br {
 
                     <div class="home-article-content keep-markdown-body">
                         
-                             六个步骤实现数据埋点设计
-1.确认事件与变量
+                            六个步骤实现数据埋点设计1.确认事件与变量
 这里的事件指产品中的功能或者用户的操作，而变量是指描述事件的属性或者关键指标。确认事件与变量可以通过AARRR模型或者UJM模型进行逐步拆解，理清用户生命周期和行为路径，抽象出每一个步骤的关键指标。
-T...
+Tip...
                         
                     </div>
 
@@ -368,9 +367,8 @@ T...
                     <div class="home-article-content keep-markdown-body">
                         
                             
- Case1: 统一指标在不同系统之间标口径不一致
-改进方方案是将各个系统都需要用的复合指标，统一由数据中台进行加工，并统一向外提供消费，同时数据中台需要确保指标的准确性、及时性，最好能提供自我质量检查机制，无需消费者自己再检查。
- Case2: ...
+Case1: 统一指标在不同系统之间标口径不一致改进方方案是将各个系统都需要用的复合指标，统一由数据中台进行加工，并统一向外提供消费，同时数据中台需要确保指标的准确性、及时性，最好能提供自我质量检查机制，无需消费者自己再检查。
+Case2: 中间表...
                         
                     </div>
 
@@ -429,12 +427,12 @@ T...
 
                     <div class="home-article-content keep-markdown-body">
                         
-                             产品日活(DAU)下降，该如何分析
-
+                            产品日活(DAU)下降，该如何分析
 案例：例如网易新闻APP日活突然下降5%，需要尽快排查一下数据下跌的原因。
 
- 分析框架和逻辑思维
-![image-20230308082432891](/Users/xiaoyu/Library/Applic...
+分析框架和逻辑思维
+可以分为五个步骤。
+第一，结合以往经验及各种信息，对数据的异常作出假设。比如假期效应、热点事件、活动影响、政策影响和...
                         
                     </div>
 
@@ -493,10 +491,9 @@ T...
 
                     <div class="home-article-content keep-markdown-body">
                         
-                             SQL语句顺序
-sql语句的书写顺序:
-select &gt;&gt; from &gt;&gt; where &gt;&gt; group by &gt;&gt; having &gt;&gt; order by &gt;&gt; limit
-注...
+                            SQL语句顺序sql语句的书写顺序:select &gt;&gt; from &gt;&gt; where &gt;&gt; group by &gt;&gt; having &gt;&gt; order by &gt;&gt; limit注意：
+
+...
                         
                     </div>
 
@@ -555,11 +552,10 @@ select &gt;&gt; from &gt;&gt; where &gt;&gt; group by &gt;&gt; having &gt;&gt; o
 
                     <div class="home-article-content keep-markdown-body">
                         
-                             words &amp; expressions
-
+                            words &amp; expressions
 the North China Plain 华北平原
 the upper/middle/lower reaches of Yellow River
-Bordering on the … in the...
+Bordering on the … in the w...
                         
                     </div>
 
@@ -627,9 +623,7 @@ Bordering on the … in the...
 
                     <div class="home-article-content keep-markdown-body">
                         
-                             Notes
- ProfileReport [1]
-12345import ydata_profiling as ppfimport pandas as pddf_train = pd.read_csv('train.csv')ppf.Profile...
+                            NotesProfileReport [1]12345import ydata_profiling as ppfimport pandas as pddf_train = pd.read_csv('train.csv')ppf.ProfileRepo...
                         
                     </div>
 
@@ -706,12 +700,9 @@ Bordering on the … in the...
                             
 From kaggle: Comprehensive data exploration with python
 
- Notes
- 偏度(skewness)和峰度(kurtosis）
-
+Notes偏度(skewness)和峰度(kurtosis）
 skewness 衡量数据分布的非对称程度
-
-正态分布 skew...
+正态分布 skewness ...
                         
                     </div>
 
@@ -785,16 +776,13 @@ skewness 衡量数据分布的非对称程度
 
                     <div class="home-article-content keep-markdown-body">
                         
-                             Words &amp; Expressions
-
-
+                            Words &amp; Expressions
 in a nested way 嵌套
-
 
 concatenate 连接 c() -&gt; all items in ‘()’ to a vector
 
 
- Why use ‘[[’ instea...
+Why use ‘[[’ instead of ...
                         
                     </div>
 
@@ -922,9 +910,8 @@ From following H...
 
                     <div class="home-article-content keep-markdown-body">
                         
-                             1. 查询列
-列查询、多列查询、限制返回数量、in、like、聚合函数。
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748...
+                            1. 查询列列查询、多列查询、限制返回数量、in、like、聚合函数。
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849...
                         
                     </div>
 
@@ -1047,7 +1034,7 @@ From following H...
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">74.5k</span>
+                    <span class="item-value border-box word">73.6k</span>
                 </span>
             
 
@@ -1225,20 +1212,5 @@ From following H...
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":75,"height":150},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>

@@ -387,15 +387,13 @@ mjx-container[display="true"] + br {
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="1-查询列"><a class="markdownIt-Anchor" href="#1-查询列"></a> 1. 查询列</h1>
-<p>列查询、多列查询、限制返回数量、in、like、聚合函数。</p>
+                    <h1 id="1-查询列"><a href="#1-查询列" class="headerlink" title="1. 查询列"></a>1. 查询列</h1><p>列查询、多列查询、限制返回数量、in、like、聚合函数。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"># 查询所有列</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> user_profile</span><br><span class="line"></span><br><span class="line"># 查询多列</span><br><span class="line"><span class="keyword">SELECT</span> device_id, gender, age, university <span class="keyword">FROM</span> user_profile</span><br><span class="line"></span><br><span class="line"># 查询结果去重</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> university <span class="keyword">FROM</span> user_profile</span><br><span class="line"></span><br><span class="line"># 查询结果限制返回行数</span><br><span class="line"><span class="keyword">SELECT</span> device_id <span class="keyword">FROM</span> user_profile LIMIT <span class="number">2</span></span><br><span class="line"></span><br><span class="line"># 查询后重命名</span><br><span class="line"><span class="keyword">SELECT</span> device_id <span class="keyword">FROM</span> user_profile <span class="keyword">AS</span> user_infos_example LIMIT <span class="number">2</span></span><br><span class="line"></span><br><span class="line"># 否定查询</span><br><span class="line"><span class="keyword">select</span> device_id, gender, age, university</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">not</span> university <span class="operator">=</span> <span class="string">'复旦大学'</span></span><br><span class="line"></span><br><span class="line"># 过滤空值</span><br><span class="line"><span class="keyword">select</span> device_id, gender, age, university</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">not</span> age <span class="keyword">is</span> <span class="keyword">null</span></span><br><span class="line"></span><br><span class="line"># <span class="keyword">in</span></span><br><span class="line"><span class="keyword">select</span> device_id, gender, age, university, gpa </span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> university <span class="keyword">in</span> (<span class="string">'北京大学'</span>, <span class="string">'复旦大学'</span>, <span class="string">'山东大学'</span>)</span><br><span class="line"></span><br><span class="line"># <span class="keyword">like</span></span><br><span class="line"><span class="keyword">select</span> device_id, age, university</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> university <span class="keyword">like</span> <span class="string">'%北京%'</span></span><br><span class="line"></span><br><span class="line"># <span class="built_in">max</span>() <span class="built_in">min</span>()</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">max</span>(gpa)</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> university <span class="operator">=</span> <span class="string">'复旦大学'</span></span><br><span class="line"></span><br><span class="line"># <span class="built_in">avg</span>() <span class="built_in">count</span>()</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(gender) <span class="keyword">as</span> male_num, <span class="built_in">avg</span>(gpa) <span class="keyword">as</span> avg_gpa</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> gender <span class="operator">=</span> <span class="string">'male'</span></span><br><span class="line"></span><br><span class="line"># <span class="keyword">having</span></span><br><span class="line"><span class="keyword">select</span> university, <span class="built_in">avg</span>(question_cnt) avg_question_cnt, <span class="built_in">avg</span>(answer_cnt) avg_answer_cnt</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> university</span><br><span class="line"><span class="keyword">having</span> avg_question_cnt <span class="operator">&lt;</span> <span class="number">5</span> <span class="keyword">or</span> avg_answer_cnt <span class="operator">&lt;</span> <span class="number">20</span></span><br><span class="line"># 生成新字段后不能用<span class="keyword">where</span>要用<span class="keyword">having</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="2-涉及到多个表的情况"><a class="markdownIt-Anchor" href="#2-涉及到多个表的情况"></a> 2. 涉及到多个表的情况</h1>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> university, (<span class="built_in">count</span>(q.question_id)<span class="operator">/</span><span class="built_in">count</span>(<span class="keyword">distinct</span>(q.device_id))) avg_answer_cnt</span><br><span class="line"><span class="keyword">from</span> user_profile u</span><br><span class="line"><span class="keyword">join</span> question_practice_detail q</span><br><span class="line"><span class="keyword">on</span> u.device_id <span class="operator">=</span> q.device_id</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> university</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> university <span class="keyword">asc</span></span><br></pre></td></tr></table></figure>
+<h1 id="2-涉及到多个表的情况"><a href="#2-涉及到多个表的情况" class="headerlink" title="2. 涉及到多个表的情况"></a>2. 涉及到多个表的情况</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> university, (<span class="built_in">count</span>(q.question_id)<span class="operator">/</span><span class="built_in">count</span>(<span class="keyword">distinct</span>(q.device_id))) avg_answer_cnt</span><br><span class="line"><span class="keyword">from</span> user_profile u</span><br><span class="line"><span class="keyword">join</span> question_practice_detail q</span><br><span class="line"><span class="keyword">on</span> u.device_id <span class="operator">=</span> q.device_id</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> university</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> university <span class="keyword">asc</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> u.university, q.difficult_level, <span class="built_in">count</span>(qp.question_id)<span class="operator">/</span><span class="built_in">count</span>(<span class="keyword">distinct</span> qp.device_id) avg_answer_cnt</span><br><span class="line"><span class="keyword">from</span> user_profile u, question_practice_detail qp, question_detail q</span><br><span class="line"><span class="keyword">where</span> u.university <span class="operator">=</span> <span class="string">'山东大学'</span> <span class="keyword">and</span> u.device_id <span class="operator">=</span> qp.device_id <span class="keyword">and</span> q.question_id <span class="operator">=</span> qp.question_id</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> u.university, difficult_level</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> avg_answer_cnt</span><br></pre></td></tr></table></figure>
-<h2 id="sql25-查找山东大学或者性别为男生的信息"><a class="markdownIt-Anchor" href="#sql25-查找山东大学或者性别为男生的信息"></a> <strong>SQL25</strong> 查找山东大学或者性别为男生的信息</h2>
-<p>题目：现在运营想要分别查看学校为山东大学或者性别为男性的用户的device_id、gender、age和gpa数据，请取出相应结果，结果不去重。</p>
+<h2 id="SQL25-查找山东大学或者性别为男生的信息"><a href="#SQL25-查找山东大学或者性别为男生的信息" class="headerlink" title="SQL25 查找山东大学或者性别为男生的信息"></a><strong>SQL25</strong> 查找山东大学或者性别为男生的信息</h2><p>题目：现在运营想要分别查看学校为山东大学或者性别为男性的用户的device_id、gender、age和gpa数据，请取出相应结果，结果不去重。</p>
 <p>示例：user_profile</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -490,7 +488,9 @@ mjx-container[display="true"] + br {
 </tr>
 </tbody>
 </table>
+</div>
 <p>根据示例，你的查询应返回以下结果（注意输出的顺序，先输出学校为山东大学再输出性别为男生的信息）：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -545,14 +545,14 @@ mjx-container[display="true"] + br {
 </tr>
 </tbody>
 </table>
+</div>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, gender, age, gpa</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> university <span class="operator">=</span> <span class="string">'山东大学'</span></span><br><span class="line"><span class="keyword">union</span> <span class="keyword">all</span> </span><br><span class="line"><span class="keyword">select</span> device_id, gender, age, gpa</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> gender <span class="operator">=</span> <span class="string">'male'</span></span><br></pre></td></tr></table></figure>
 <p><code>union</code>可以，但是结果是去重的，所以要用<code>union all</code>。</p>
 <p><code>where gender = ‘male’ or university = ‘山东大学’</code>也不行，结果也是去重的。</p>
-<h1 id="3-if"><a class="markdownIt-Anchor" href="#3-if"></a> 3. if</h1>
-<h2 id="sql26-计算25岁以上和以下的用户数量"><a class="markdownIt-Anchor" href="#sql26-计算25岁以上和以下的用户数量"></a> SQL26 <strong>计算25岁以上和以下的用户数量</strong></h2>
-<p>题目：现在运营想要将用户划分为25岁以下和25岁及以上两个年龄段，分别查看这两个年龄段用户数量</p>
+<h1 id="3-if"><a href="#3-if" class="headerlink" title="3. if"></a>3. if</h1><h2 id="SQL26-计算25岁以上和以下的用户数量"><a href="#SQL26-计算25岁以上和以下的用户数量" class="headerlink" title="SQL26 计算25岁以上和以下的用户数量"></a>SQL26 <strong>计算25岁以上和以下的用户数量</strong></h2><p>题目：现在运营想要将用户划分为25岁以下和25岁及以上两个年龄段，分别查看这两个年龄段用户数量</p>
 <p><strong>本题注意：age为null 也记为 25岁以下</strong></p>
 <p>示例：user_profile</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -647,7 +647,9 @@ mjx-container[display="true"] + br {
 </tr>
 </tbody>
 </table>
+</div>
 <p>根据示例，你的查询应返回以下结果：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -666,11 +668,11 @@ mjx-container[display="true"] + br {
 </tr>
 </tbody>
 </table>
+</div>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> age_cut, <span class="built_in">count</span>(device_id) number</span><br><span class="line"><span class="keyword">from</span>(<span class="keyword">select</span> if(age <span class="operator">&gt;=</span> <span class="number">25</span>, <span class="string">'25岁及以上'</span>, <span class="string">'25岁以下'</span>) <span class="keyword">as</span> age_cut, device_id <span class="keyword">from</span> user_profile) t1</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> age_cut</span><br></pre></td></tr></table></figure>
-<h1 id="4-case"><a class="markdownIt-Anchor" href="#4-case"></a> 4. case</h1>
-<h2 id="sql27-查看不同年龄段的用户明细"><a class="markdownIt-Anchor" href="#sql27-查看不同年龄段的用户明细"></a> <strong>SQL27</strong> <strong>查看不同年龄段的用户明细</strong></h2>
-<p>题目：现在运营想要将用户划分为<strong>20岁以下，20-24岁，25岁及以上</strong>三个年龄段，分别查看不同年龄段用户的明细情况，请取出相应数据。（注：若<strong>年龄为空</strong>请返回<strong>其他</strong>。）</p>
+<h1 id="4-case"><a href="#4-case" class="headerlink" title="4. case"></a>4. case</h1><h2 id="SQL27-查看不同年龄段的用户明细"><a href="#SQL27-查看不同年龄段的用户明细" class="headerlink" title="SQL27 查看不同年龄段的用户明细"></a><strong>SQL27</strong> <strong>查看不同年龄段的用户明细</strong></h2><p>题目：现在运营想要将用户划分为<strong>20岁以下，20-24岁，25岁及以上</strong>三个年龄段，分别查看不同年龄段用户的明细情况，请取出相应数据。（注：若<strong>年龄为空</strong>请返回<strong>其他</strong>。）</p>
 <p>示例：user_profile</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -765,7 +767,9 @@ mjx-container[display="true"] + br {
 </tr>
 </tbody>
 </table>
+</div>
 <p>根据示例，你的查询应返回以下结果：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -812,23 +816,18 @@ mjx-container[display="true"] + br {
 </tr>
 </tbody>
 </table>
+</div>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, gender, </span><br><span class="line"><span class="keyword">case</span></span><br><span class="line">    <span class="keyword">when</span> age <span class="operator">&lt;</span> <span class="number">20</span> <span class="keyword">then</span> <span class="string">'20岁以下'</span></span><br><span class="line">    <span class="keyword">when</span> age <span class="operator">&lt;</span> <span class="number">25</span> <span class="keyword">then</span> <span class="string">'20-24岁'</span></span><br><span class="line">    <span class="keyword">when</span> age <span class="operator">&gt;=</span> <span class="number">25</span> <span class="keyword">then</span> <span class="string">'25岁及以上'</span></span><br><span class="line">    <span class="keyword">else</span> <span class="string">'其他'</span></span><br><span class="line"><span class="keyword">end</span> age_cut</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br></pre></td></tr></table></figure>
-<h1 id="5-day"><a class="markdownIt-Anchor" href="#5-day"></a> 5. day()</h1>
-<ul>
-<li>
-<p>day()</p>
+<h1 id="5-day"><a href="#5-day" class="headerlink" title="5. day()"></a>5. day()</h1><ul>
+<li><p>day()</p>
 </li>
-<li>
-<p>month()</p>
+<li><p>month()</p>
 </li>
-<li>
-<p>year()</p>
+<li><p>year()</p>
 </li>
 </ul>
-<h1 id="6-用户留存率计算"><a class="markdownIt-Anchor" href="#6-用户留存率计算"></a> 6. 用户留存率计算</h1>
-<p><a href="/Users/xiaoyu/Documents/%E5%8D%9A%E5%AE%A2/SQL-%E8%AE%A1%E7%AE%97%E7%94%A8%E6%88%B7%E6%AC%A1%E6%97%A5%E7%95%99%E5%AD%98%E7%8E%87.md">SQL-计算用户次日留存率.md</a></p>
-<h1 id="7-字符串相关"><a class="markdownIt-Anchor" href="#7-字符串相关"></a> 7. 字符串相关</h1>
-<p><a href="/Users/xiaoyu/Documents/%E5%8D%9A%E5%AE%A2/SQL-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%85%B3.md">SQL-字符串相关.md</a></p>
+<h1 id="6-用户留存率计算"><a href="#6-用户留存率计算" class="headerlink" title="6. 用户留存率计算"></a>6. 用户留存率计算</h1><p><a href="/Users/xiaoyu/Documents/博客/SQL-计算用户次日留存率.md">SQL-计算用户次日留存率.md</a></p>
+<h1 id="7-字符串相关"><a href="#7-字符串相关" class="headerlink" title="7. 字符串相关"></a>7. 字符串相关</h1><p><a href="/Users/xiaoyu/Documents/博客/SQL-字符串相关.md">SQL-字符串相关.md</a></p>
 
                 </div>
 
@@ -944,7 +943,7 @@ mjx-container[display="true"] + br {
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%9F%A5%E8%AF%A2%E5%88%97"><span class="nav-number">1.</span> <span class="nav-text"> 1. 查询列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E6%B6%89%E5%8F%8A%E5%88%B0%E5%A4%9A%E4%B8%AA%E8%A1%A8%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">2.</span> <span class="nav-text"> 2. 涉及到多个表的情况</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#sql25-%E6%9F%A5%E6%89%BE%E5%B1%B1%E4%B8%9C%E5%A4%A7%E5%AD%A6%E6%88%96%E8%80%85%E6%80%A7%E5%88%AB%E4%B8%BA%E7%94%B7%E7%94%9F%E7%9A%84%E4%BF%A1%E6%81%AF"><span class="nav-number">2.1.</span> <span class="nav-text"> SQL25 查找山东大学或者性别为男生的信息</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-if"><span class="nav-number">3.</span> <span class="nav-text"> 3. if</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#sql26-%E8%AE%A1%E7%AE%9725%E5%B2%81%E4%BB%A5%E4%B8%8A%E5%92%8C%E4%BB%A5%E4%B8%8B%E7%9A%84%E7%94%A8%E6%88%B7%E6%95%B0%E9%87%8F"><span class="nav-number">3.1.</span> <span class="nav-text"> SQL26 计算25岁以上和以下的用户数量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-case"><span class="nav-number">4.</span> <span class="nav-text"> 4. case</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#sql27-%E6%9F%A5%E7%9C%8B%E4%B8%8D%E5%90%8C%E5%B9%B4%E9%BE%84%E6%AE%B5%E7%9A%84%E7%94%A8%E6%88%B7%E6%98%8E%E7%BB%86"><span class="nav-number">4.1.</span> <span class="nav-text"> SQL27 查看不同年龄段的用户明细</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-day"><span class="nav-number">5.</span> <span class="nav-text"> 5. day()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-%E7%94%A8%E6%88%B7%E7%95%99%E5%AD%98%E7%8E%87%E8%AE%A1%E7%AE%97"><span class="nav-number">6.</span> <span class="nav-text"> 6. 用户留存率计算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%85%B3"><span class="nav-number">7.</span> <span class="nav-text"> 7. 字符串相关</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%9F%A5%E8%AF%A2%E5%88%97"><span class="nav-number">1.</span> <span class="nav-text">1. 查询列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E6%B6%89%E5%8F%8A%E5%88%B0%E5%A4%9A%E4%B8%AA%E8%A1%A8%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">2.</span> <span class="nav-text">2. 涉及到多个表的情况</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL25-%E6%9F%A5%E6%89%BE%E5%B1%B1%E4%B8%9C%E5%A4%A7%E5%AD%A6%E6%88%96%E8%80%85%E6%80%A7%E5%88%AB%E4%B8%BA%E7%94%B7%E7%94%9F%E7%9A%84%E4%BF%A1%E6%81%AF"><span class="nav-number">2.1.</span> <span class="nav-text">SQL25 查找山东大学或者性别为男生的信息</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-if"><span class="nav-number">3.</span> <span class="nav-text">3. if</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL26-%E8%AE%A1%E7%AE%9725%E5%B2%81%E4%BB%A5%E4%B8%8A%E5%92%8C%E4%BB%A5%E4%B8%8B%E7%9A%84%E7%94%A8%E6%88%B7%E6%95%B0%E9%87%8F"><span class="nav-number">3.1.</span> <span class="nav-text">SQL26 计算25岁以上和以下的用户数量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-case"><span class="nav-number">4.</span> <span class="nav-text">4. case</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL27-%E6%9F%A5%E7%9C%8B%E4%B8%8D%E5%90%8C%E5%B9%B4%E9%BE%84%E6%AE%B5%E7%9A%84%E7%94%A8%E6%88%B7%E6%98%8E%E7%BB%86"><span class="nav-number">4.1.</span> <span class="nav-text">SQL27 查看不同年龄段的用户明细</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-day"><span class="nav-number">5.</span> <span class="nav-text">5. day()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-%E7%94%A8%E6%88%B7%E7%95%99%E5%AD%98%E7%8E%87%E8%AE%A1%E7%AE%97"><span class="nav-number">6.</span> <span class="nav-text">6. 用户留存率计算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%85%B3"><span class="nav-number">7.</span> <span class="nav-text">7. 字符串相关</span></a></li></ol>
     </div>
 </div>
 
@@ -990,7 +989,7 @@ mjx-container[display="true"] + br {
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">74.5k</span>
+                    <span class="item-value border-box word">73.6k</span>
                 </span>
             
 
@@ -1133,7 +1132,7 @@ mjx-container[display="true"] + br {
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%9F%A5%E8%AF%A2%E5%88%97"><span class="nav-number">1.</span> <span class="nav-text"> 1. 查询列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E6%B6%89%E5%8F%8A%E5%88%B0%E5%A4%9A%E4%B8%AA%E8%A1%A8%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">2.</span> <span class="nav-text"> 2. 涉及到多个表的情况</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#sql25-%E6%9F%A5%E6%89%BE%E5%B1%B1%E4%B8%9C%E5%A4%A7%E5%AD%A6%E6%88%96%E8%80%85%E6%80%A7%E5%88%AB%E4%B8%BA%E7%94%B7%E7%94%9F%E7%9A%84%E4%BF%A1%E6%81%AF"><span class="nav-number">2.1.</span> <span class="nav-text"> SQL25 查找山东大学或者性别为男生的信息</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-if"><span class="nav-number">3.</span> <span class="nav-text"> 3. if</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#sql26-%E8%AE%A1%E7%AE%9725%E5%B2%81%E4%BB%A5%E4%B8%8A%E5%92%8C%E4%BB%A5%E4%B8%8B%E7%9A%84%E7%94%A8%E6%88%B7%E6%95%B0%E9%87%8F"><span class="nav-number">3.1.</span> <span class="nav-text"> SQL26 计算25岁以上和以下的用户数量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-case"><span class="nav-number">4.</span> <span class="nav-text"> 4. case</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#sql27-%E6%9F%A5%E7%9C%8B%E4%B8%8D%E5%90%8C%E5%B9%B4%E9%BE%84%E6%AE%B5%E7%9A%84%E7%94%A8%E6%88%B7%E6%98%8E%E7%BB%86"><span class="nav-number">4.1.</span> <span class="nav-text"> SQL27 查看不同年龄段的用户明细</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-day"><span class="nav-number">5.</span> <span class="nav-text"> 5. day()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-%E7%94%A8%E6%88%B7%E7%95%99%E5%AD%98%E7%8E%87%E8%AE%A1%E7%AE%97"><span class="nav-number">6.</span> <span class="nav-text"> 6. 用户留存率计算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%85%B3"><span class="nav-number">7.</span> <span class="nav-text"> 7. 字符串相关</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%9F%A5%E8%AF%A2%E5%88%97"><span class="nav-number">1.</span> <span class="nav-text">1. 查询列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E6%B6%89%E5%8F%8A%E5%88%B0%E5%A4%9A%E4%B8%AA%E8%A1%A8%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">2.</span> <span class="nav-text">2. 涉及到多个表的情况</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL25-%E6%9F%A5%E6%89%BE%E5%B1%B1%E4%B8%9C%E5%A4%A7%E5%AD%A6%E6%88%96%E8%80%85%E6%80%A7%E5%88%AB%E4%B8%BA%E7%94%B7%E7%94%9F%E7%9A%84%E4%BF%A1%E6%81%AF"><span class="nav-number">2.1.</span> <span class="nav-text">SQL25 查找山东大学或者性别为男生的信息</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-if"><span class="nav-number">3.</span> <span class="nav-text">3. if</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL26-%E8%AE%A1%E7%AE%9725%E5%B2%81%E4%BB%A5%E4%B8%8A%E5%92%8C%E4%BB%A5%E4%B8%8B%E7%9A%84%E7%94%A8%E6%88%B7%E6%95%B0%E9%87%8F"><span class="nav-number">3.1.</span> <span class="nav-text">SQL26 计算25岁以上和以下的用户数量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-case"><span class="nav-number">4.</span> <span class="nav-text">4. case</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL27-%E6%9F%A5%E7%9C%8B%E4%B8%8D%E5%90%8C%E5%B9%B4%E9%BE%84%E6%AE%B5%E7%9A%84%E7%94%A8%E6%88%B7%E6%98%8E%E7%BB%86"><span class="nav-number">4.1.</span> <span class="nav-text">SQL27 查看不同年龄段的用户明细</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-day"><span class="nav-number">5.</span> <span class="nav-text">5. day()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-%E7%94%A8%E6%88%B7%E7%95%99%E5%AD%98%E7%8E%87%E8%AE%A1%E7%AE%97"><span class="nav-number">6.</span> <span class="nav-text">6. 用户留存率计算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%85%B3"><span class="nav-number">7.</span> <span class="nav-text">7. 字符串相关</span></a></li></ol>
     </div>
 </div>
 
@@ -1224,20 +1223,5 @@ mjx-container[display="true"] + br {
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":75,"height":150},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>

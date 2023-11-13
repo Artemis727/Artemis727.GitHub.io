@@ -390,10 +390,9 @@ mjx-container[display="true"] + br {
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="sql30-统计每种性别的人数"><a class="markdownIt-Anchor" href="#sql30-统计每种性别的人数"></a> <strong>SQL30</strong> <strong>统计每种性别的人数</strong></h1>
-<h2 id="描述"><a class="markdownIt-Anchor" href="#描述"></a> 描述</h2>
-<p>题目：现在运营举办了一场比赛，收到了一些参赛申请，表数据记录形式如下所示，现在运营想要统计每个性别的用户分别有多少参赛者，请取出相应结果</p>
+                    <h1 id="SQL30-统计每种性别的人数"><a href="#SQL30-统计每种性别的人数" class="headerlink" title="SQL30 统计每种性别的人数"></a><strong>SQL30</strong> <strong>统计每种性别的人数</strong></h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>题目：现在运营举办了一场比赛，收到了一些参赛申请，表数据记录形式如下所示，现在运营想要统计每个性别的用户分别有多少参赛者，请取出相应结果</p>
 <p>示例：user_submit</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -430,7 +429,9 @@ mjx-container[display="true"] + br {
 </tr>
 </tbody>
 </table>
+</div>
 <p>根据示例，你的查询应返回以下结果：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -449,12 +450,12 @@ mjx-container[display="true"] + br {
 </tr>
 </tbody>
 </table>
+</div>
 <hr>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> substring_index(profile, <span class="string">','</span>, <span class="number">-1</span>) <span class="keyword">as</span> gender, <span class="built_in">count</span>(device_id)</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> gender</span><br></pre></td></tr></table></figure>
-<h1 id="sql31-提取博客url中的用户名"><a class="markdownIt-Anchor" href="#sql31-提取博客url中的用户名"></a> <strong>SQL31</strong> <strong>提取博客URL中的用户名</strong></h1>
-<h2 id="描述-2"><a class="markdownIt-Anchor" href="#描述-2"></a> 描述</h2>
-<p>题目：对于申请参与比赛的用户，blog_url字段中url字符后的字符串为用户个人博客的用户名，现在运营想要把用户的个人博客用户字段提取出单独记录为一个新的字段，请取出所需数据。</p>
+<h1 id="SQL31-提取博客URL中的用户名"><a href="#SQL31-提取博客URL中的用户名" class="headerlink" title="SQL31 提取博客URL中的用户名"></a><strong>SQL31</strong> <strong>提取博客URL中的用户名</strong></h1><h2 id="描述-1"><a href="#描述-1" class="headerlink" title="描述"></a>描述</h2><p>题目：对于申请参与比赛的用户，blog_url字段中url字符后的字符串为用户个人博客的用户名，现在运营想要把用户的个人博客用户字段提取出单独记录为一个新的字段，请取出所需数据。</p>
 <p>示例：user_submit</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -491,7 +492,9 @@ mjx-container[display="true"] + br {
 </tr>
 </tbody>
 </table>
+</div>
 <p>根据示例，你的查询应返回以下结果：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -522,17 +525,15 @@ mjx-container[display="true"] + br {
 </tr>
 </tbody>
 </table>
+</div>
 <hr>
-<h3 id="提取某个字符一般有四种做法"><a class="markdownIt-Anchor" href="#提取某个字符一般有四种做法"></a> 提取某个字符一般有四种做法：</h3>
-<ol>
-<li>
-<p><strong>trim()</strong></p>
+<h3 id="提取某个字符一般有四种做法："><a href="#提取某个字符一般有四种做法：" class="headerlink" title="提取某个字符一般有四种做法："></a>提取某个字符一般有四种做法：</h3><ol>
+<li><p><strong>trim()</strong></p>
 <p>trim() 是直接更改相同格式的一列，删除这一列内容中的统一部分，然后重命名：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, <span class="built_in">trim</span>(<span class="string">'http:/url/'</span> <span class="keyword">from</span> blog_url) <span class="keyword">as</span> user_name</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br></pre></td></tr></table></figure>
-<p>​</p>
+<p>​    </p>
 </li>
-<li>
-<p><strong>substring_index()</strong></p>
+<li><p><strong>substring_index()</strong></p>
 <p>substring_index() 是将字符串切割，1表示保留字符串的左边👈，-1表示保留字符串的右边👉：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, substring_index(blog_url, <span class="string">'/url/'</span>, <span class="number">-1</span>) <span class="keyword">as</span> user_name</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br></pre></td></tr></table></figure>
 <p>还有一个用法是计数：</p>
@@ -540,21 +541,22 @@ mjx-container[display="true"] + br {
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SUBSTRING_INDEX(<span class="string">'www.somewebsite.com'</span>,<span class="string">'.'</span>,<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
 <p>Output: <code>'www.somewebsite'</code></p>
 </li>
-<li>
-<p><strong>substr()</strong></p>
+</ol>
+<ol>
+<li><p><strong>substr()</strong></p>
 <p>substr() 是用具体位置（数字）来表示从哪开始截取的，参数里还包括截取的长度：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id, substr(blog_url, <span class="number">11</span>, length(blog_url)<span class="number">-10</span>) <span class="keyword">as</span> user_name</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p><strong>replace()</strong></p>
+</ol>
+<ol>
+<li><p><strong>replace()</strong></p>
 <p>replace() 就是替换函数：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sleect device_id, replace(blog_url, <span class="string">'http:/url/'</span>, <span class="string">''</span>) <span class="keyword">as</span> user_name</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h1 id="sql32-截取出年龄"><a class="markdownIt-Anchor" href="#sql32-截取出年龄"></a> <strong>SQL32</strong> <strong>截取出年龄</strong></h1>
-<h2 id="描述-3"><a class="markdownIt-Anchor" href="#描述-3"></a> 描述</h2>
-<p>题目：现在运营举办了一场比赛，收到了一些参赛申请，表数据记录形式如下所示，现在运营想要统计每个年龄的用户分别有多少参赛者，请取出相应结果</p>
+<h1 id="SQL32-截取出年龄"><a href="#SQL32-截取出年龄" class="headerlink" title="SQL32 截取出年龄"></a><strong>SQL32</strong> <strong>截取出年龄</strong></h1><h2 id="描述-2"><a href="#描述-2" class="headerlink" title="描述"></a>描述</h2><p>题目：现在运营举办了一场比赛，收到了一些参赛申请，表数据记录形式如下所示，现在运营想要统计每个年龄的用户分别有多少参赛者，请取出相应结果</p>
 <p>示例：user_submit</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -591,7 +593,9 @@ mjx-container[display="true"] + br {
 </tr>
 </tbody>
 </table>
+</div>
 <p>根据示例，你的查询应返回以下结果：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -622,6 +626,7 @@ mjx-container[display="true"] + br {
 </tr>
 </tbody>
 </table>
+</div>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> substring_index(substring_index(profile, <span class="string">','</span>, <span class="number">-2</span>), <span class="string">','</span>, <span class="number">1</span>) <span class="keyword">as</span> age, <span class="built_in">count</span>(device_id)</span><br><span class="line"><span class="keyword">from</span> user_submit</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> age</span><br></pre></td></tr></table></figure>
 
                 </div>
@@ -742,7 +747,7 @@ mjx-container[display="true"] + br {
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sql30-%E7%BB%9F%E8%AE%A1%E6%AF%8F%E7%A7%8D%E6%80%A7%E5%88%AB%E7%9A%84%E4%BA%BA%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text"> SQL30 统计每种性别的人数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text"> 描述</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sql31-%E6%8F%90%E5%8F%96%E5%8D%9A%E5%AE%A2url%E4%B8%AD%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-number">2.</span> <span class="nav-text"> SQL31 提取博客URL中的用户名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0-2"><span class="nav-number">2.1.</span> <span class="nav-text"> 描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E5%8F%96%E6%9F%90%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%80%E8%88%AC%E6%9C%89%E5%9B%9B%E7%A7%8D%E5%81%9A%E6%B3%95"><span class="nav-number">2.1.1.</span> <span class="nav-text"> 提取某个字符一般有四种做法：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sql32-%E6%88%AA%E5%8F%96%E5%87%BA%E5%B9%B4%E9%BE%84"><span class="nav-number">3.</span> <span class="nav-text"> SQL32 截取出年龄</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0-3"><span class="nav-number">3.1.</span> <span class="nav-text"> 描述</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL30-%E7%BB%9F%E8%AE%A1%E6%AF%8F%E7%A7%8D%E6%80%A7%E5%88%AB%E7%9A%84%E4%BA%BA%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">SQL30 统计每种性别的人数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">描述</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL31-%E6%8F%90%E5%8F%96%E5%8D%9A%E5%AE%A2URL%E4%B8%AD%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-number">2.</span> <span class="nav-text">SQL31 提取博客URL中的用户名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0-1"><span class="nav-number">2.1.</span> <span class="nav-text">描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E5%8F%96%E6%9F%90%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%80%E8%88%AC%E6%9C%89%E5%9B%9B%E7%A7%8D%E5%81%9A%E6%B3%95%EF%BC%9A"><span class="nav-number">2.1.1.</span> <span class="nav-text">提取某个字符一般有四种做法：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL32-%E6%88%AA%E5%8F%96%E5%87%BA%E5%B9%B4%E9%BE%84"><span class="nav-number">3.</span> <span class="nav-text">SQL32 截取出年龄</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0-2"><span class="nav-number">3.1.</span> <span class="nav-text">描述</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -788,7 +793,7 @@ mjx-container[display="true"] + br {
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">74.5k</span>
+                    <span class="item-value border-box word">73.6k</span>
                 </span>
             
 
@@ -931,7 +936,7 @@ mjx-container[display="true"] + br {
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sql30-%E7%BB%9F%E8%AE%A1%E6%AF%8F%E7%A7%8D%E6%80%A7%E5%88%AB%E7%9A%84%E4%BA%BA%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text"> SQL30 统计每种性别的人数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text"> 描述</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sql31-%E6%8F%90%E5%8F%96%E5%8D%9A%E5%AE%A2url%E4%B8%AD%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-number">2.</span> <span class="nav-text"> SQL31 提取博客URL中的用户名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0-2"><span class="nav-number">2.1.</span> <span class="nav-text"> 描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E5%8F%96%E6%9F%90%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%80%E8%88%AC%E6%9C%89%E5%9B%9B%E7%A7%8D%E5%81%9A%E6%B3%95"><span class="nav-number">2.1.1.</span> <span class="nav-text"> 提取某个字符一般有四种做法：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sql32-%E6%88%AA%E5%8F%96%E5%87%BA%E5%B9%B4%E9%BE%84"><span class="nav-number">3.</span> <span class="nav-text"> SQL32 截取出年龄</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0-3"><span class="nav-number">3.1.</span> <span class="nav-text"> 描述</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL30-%E7%BB%9F%E8%AE%A1%E6%AF%8F%E7%A7%8D%E6%80%A7%E5%88%AB%E7%9A%84%E4%BA%BA%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">SQL30 统计每种性别的人数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">描述</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL31-%E6%8F%90%E5%8F%96%E5%8D%9A%E5%AE%A2URL%E4%B8%AD%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-number">2.</span> <span class="nav-text">SQL31 提取博客URL中的用户名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0-1"><span class="nav-number">2.1.</span> <span class="nav-text">描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E5%8F%96%E6%9F%90%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%80%E8%88%AC%E6%9C%89%E5%9B%9B%E7%A7%8D%E5%81%9A%E6%B3%95%EF%BC%9A"><span class="nav-number">2.1.1.</span> <span class="nav-text">提取某个字符一般有四种做法：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL32-%E6%88%AA%E5%8F%96%E5%87%BA%E5%B9%B4%E9%BE%84"><span class="nav-number">3.</span> <span class="nav-text">SQL32 截取出年龄</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0-2"><span class="nav-number">3.1.</span> <span class="nav-text">描述</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -1022,20 +1027,5 @@ mjx-container[display="true"] + br {
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":75,"height":150},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>

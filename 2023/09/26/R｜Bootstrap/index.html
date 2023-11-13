@@ -390,13 +390,11 @@ mjx-container[display="true"] + br {
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 95% BCA confidence interval from Bootstrap of Mean</span></span><br><span class="line">bci <span class="operator">&lt;-</span> boot.ci<span class="punctuation">(</span>boot.Baseline<span class="punctuation">,</span> type<span class="operator">=</span><span class="string">"bca"</span><span class="punctuation">,</span> conf <span class="operator">=</span> <span class="number">0.95</span><span class="punctuation">)</span></span><br><span class="line">table1<span class="punctuation">[</span><span class="number">1</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">]</span> <span class="operator">&lt;-</span> mean<span class="punctuation">(</span>boot.Baseline<span class="operator">$</span>t<span class="punctuation">)</span> <span class="comment"># avg of the bootstrap samples</span></span><br><span class="line">table1<span class="punctuation">[</span><span class="number">2</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">]</span> <span class="operator">&lt;-</span> paste<span class="punctuation">(</span><span class="built_in">round</span><span class="punctuation">(</span>bci<span class="operator">$</span>bca<span class="punctuation">[</span><span class="number">4</span><span class="punctuation">]</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">)</span><span class="punctuation">,</span><span class="string">' to '</span><span class="punctuation">,</span> <span class="built_in">round</span><span class="punctuation">(</span>bci<span class="operator">$</span>bca<span class="punctuation">[</span><span class="number">5</span><span class="punctuation">]</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://p.ipic.vip/gnp6r7.png" alt="image-20231105125220700 PM"></p>
 <ul>
-<li>[Judge] Bootstrap can be used to genreate a trainset and another bootstrap can be used to generate a testset.
-<ul>
+<li>[Judge] Bootstrap can be used to genreate a trainset and another bootstrap can be used to generate a testset.<ul>
 <li><strong>No</strong>! The trainset and the test set should not be duplicated, they should be different.</li>
 </ul>
 </li>
-<li>[Judge] Bootstrap can be used to train a model that could predict Y.
-<ul>
+<li>[Judge] Bootstrap can be used to train a model that could predict Y.<ul>
 <li><strong>True</strong>. Random forest uses bootstrap to generate a model that can predict Y.</li>
 </ul>
 </li>
@@ -554,7 +552,7 @@ mjx-container[display="true"] + br {
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">74.5k</span>
+                    <span class="item-value border-box word">73.6k</span>
                 </span>
             
 
@@ -788,20 +786,5 @@ mjx-container[display="true"] + br {
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":75,"height":150},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>
