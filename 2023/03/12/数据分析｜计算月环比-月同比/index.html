@@ -378,18 +378,24 @@ mjx-container[display="true"] + br {
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="SQL计算月环比、月同比"><a href="#SQL计算月环比、月同比" class="headerlink" title="SQL计算月环比、月同比"></a>SQL计算月环比、月同比</h1><h2 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h2><p>数据：日期，订单金额</p>
+                    <h1 id="sql计算月环比-月同比"><a class="markdownIt-Anchor" href="#sql计算月环比-月同比"></a> SQL计算月环比、月同比</h1>
+<h2 id="准备数据"><a class="markdownIt-Anchor" href="#准备数据"></a> 准备数据</h2>
+<p>数据：日期，订单金额</p>
 <p>假设数据是精确到天的</p>
 <p><img src="https://p.ipic.vip/er9zul.png" alt="image-20231105125307614 PM"></p>
-<h2 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h2><h3 id="月环比：和上个月做比较"><a href="#月环比：和上个月做比较" class="headerlink" title="月环比：和上个月做比较"></a>月环比：和上个月做比较</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 月环比</span></span><br><span class="line"><span class="keyword">select</span> substr(a.d, <span class="number">1</span>, <span class="number">7</span>) <span class="keyword">as</span> <span class="keyword">month</span>, a.d, a.orderpay, b.dd, b.originalday, b.orderpay, (a.orderpay<span class="operator">-</span>b.orderpay)<span class="operator">/</span>b.orderpay <span class="keyword">as</span> month_rate</span><br><span class="line"><span class="keyword">from</span>(</span><br><span class="line">  <span class="keyword">select</span> date_format(datetime, <span class="string">'%Y-%m-%d'</span>) <span class="keyword">as</span> d, orderpay</span><br><span class="line">	<span class="keyword">from</span> ordertable	</span><br><span class="line">	) <span class="keyword">as</span> a</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span>(</span><br><span class="line">  <span class="keyword">select</span> date_add(date_format(datetiem, <span class="string">'%Y-%m-%d'</span>), <span class="type">interval</span> <span class="number">1</span> <span class="keyword">month</span>), 		date_format(datetime, <span class="string">'&amp;Y-%m-%d'</span>) <span class="keyword">as</span> originalday, orderpay</span><br><span class="line">  <span class="keyword">from</span> ordertable</span><br><span class="line">	) <span class="keyword">as</span> b</span><br><span class="line"><span class="keyword">on</span> a.d <span class="operator">=</span> b.dd</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 如果是精确到月的数据，就要把 datetime 变成 concat(datetime, '-01')</span></span><br><span class="line"><span class="keyword">select</span> substr(a.d, <span class="number">1</span>, <span class="number">7</span>) <span class="keyword">as</span> <span class="keyword">month</span>, a.d, a.orderpay, b.dd, b.originalday, b.orderpay, (a.orderpay<span class="operator">-</span>b.orderpay)<span class="operator">/</span>b.orderpay <span class="keyword">as</span> month_rate </span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">  (<span class="keyword">select</span> DATE_FORMAT(CONCAT(datetime,<span class="string">'-01'</span>),<span class="string">'%Y-%m-%d'</span>) <span class="keyword">as</span> d ,orderpay  <span class="keyword">from</span> ordertable) a  </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> </span><br><span class="line">  (<span class="keyword">select</span> DATE_ADD(DATE_FORMAT(CONCAT(datetime,<span class="string">'-01'</span>),<span class="string">'%Y-%m-%d'</span>),<span class="type">INTERVAL</span> <span class="number">1</span> <span class="keyword">month</span> )<span class="keyword">as</span> dd </span><br><span class="line">  ,DATE_FORMAT(CONCAT(datetime,<span class="string">'-01'</span>),<span class="string">'%Y-%m-%d'</span>)<span class="keyword">as</span> originalday,orderpay <span class="keyword">from</span> ordertable) b</span><br><span class="line"><span class="keyword">on</span> a.d<span class="operator">=</span>b.dd</span><br></pre></td></tr></table></figure>
-<p>从结果可以看到，月环比的计算逻辑：在原有的时间加上一个月与原表连接即可得到本月与上个月的信息。结果有几个月份是null，原因是我造的数据没有11月份的，所以才没有计算，这个可忽略。<br><img src="https://p.ipic.vip/g20vvk.png" alt="image-20231105125317168 PM"></p>
-<h3 id="月同比：和去年的这个月做比较"><a href="#月同比：和去年的这个月做比较" class="headerlink" title="月同比：和去年的这个月做比较"></a>月同比：和去年的这个月做比较</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 月同比</span></span><br><span class="line"><span class="keyword">select</span> substr(a.d, <span class="number">1</span>, <span class="number">7</span>) <span class="keyword">as</span> <span class="keyword">month</span>, a.d, a.orderpay, b.dd, b.originalday, b.orderpay, (a.orderpay<span class="operator">-</span>b.orderpay)<span class="operator">/</span>b.orderpay <span class="keyword">as</span> month_rate</span><br><span class="line"><span class="keyword">from</span>(</span><br><span class="line">	<span class="keyword">select</span> date_format(<span class="type">date</span>, <span class="string">'%Y-%m-%d'</span>) <span class="keyword">as</span> d, orderpay</span><br><span class="line">  <span class="keyword">from</span> ordertable</span><br><span class="line">	) <span class="keyword">as</span> a</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span>(</span><br><span class="line">	<span class="keyword">select</span> date_add(date_format(<span class="type">date</span>, <span class="string">'%Y-%m-%d'</span>), <span class="type">interval</span> <span class="number">1</span> <span class="keyword">year</span>) <span class="keyword">as</span> dd, date_format(<span class="type">date</span>, <span class="string">'%Y-%m-%d'</span>) <span class="keyword">as</span> originalday, orderpay</span><br><span class="line">  <span class="keyword">from</span> ordertable</span><br><span class="line">	) <span class="keyword">as</span> b</span><br><span class="line"><span class="keyword">on</span> a.d <span class="operator">=</span> b.dd</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 如果是精确到月的数据，还是要把 datetime 变成 concat(datetime, '-01')</span></span><br></pre></td></tr></table></figure>
+<h2 id="计算"><a class="markdownIt-Anchor" href="#计算"></a> 计算</h2>
+<h3 id="月环比和上个月做比较"><a class="markdownIt-Anchor" href="#月环比和上个月做比较"></a> 月环比：和上个月做比较</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 月环比</span></span><br><span class="line"><span class="keyword">select</span> substr(a.d, <span class="number">1</span>, <span class="number">7</span>) <span class="keyword">as</span> <span class="keyword">month</span>, a.d, a.orderpay, b.dd, b.originalday, b.orderpay, (a.orderpay<span class="operator">-</span>b.orderpay)<span class="operator">/</span>b.orderpay <span class="keyword">as</span> month_rate</span><br><span class="line"><span class="keyword">from</span>(</span><br><span class="line">  <span class="keyword">select</span> date_format(datetime, <span class="string">'%Y-%m-%d'</span>) <span class="keyword">as</span> d, orderpay</span><br><span class="line">	<span class="keyword">from</span> ordertable	</span><br><span class="line">	) <span class="keyword">as</span> a</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span>(</span><br><span class="line">  <span class="keyword">select</span> date_add(date_format(datetiem, <span class="string">'%Y-%m-%d'</span>), <span class="type">interval</span> <span class="number">1</span> <span class="keyword">month</span>), 		date_format(datetime, <span class="string">'&amp;Y-%m-%d'</span>) <span class="keyword">as</span> originalday, orderpay</span><br><span class="line">  <span class="keyword">from</span> ordertable</span><br><span class="line">	) <span class="keyword">as</span> b</span><br><span class="line"><span class="keyword">on</span> a.d <span class="operator">=</span> b.dd</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 如果是精确到月的数据，就要把 datetime 变成 concat(datetime, '-01')</span></span><br><span class="line"><span class="keyword">select</span> substr(a.d, <span class="number">1</span>, <span class="number">7</span>) <span class="keyword">as</span> <span class="keyword">month</span>, a.d, a.orderpay, b.dd, b.originalday, b.orderpay, (a.orderpay<span class="operator">-</span>b.orderpay)<span class="operator">/</span>b.orderpay <span class="keyword">as</span> month_rate </span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">  (<span class="keyword">select</span> DATE_FORMAT(CONCAT(datetime,<span class="string">'-01'</span>),<span class="string">'%Y-%m-%d'</span>) <span class="keyword">as</span> d ,orderpay  <span class="keyword">from</span> ordertable) a  </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> </span><br><span class="line">  (<span class="keyword">select</span> DATE_ADD(DATE_FORMAT(CONCAT(datetime,<span class="string">'-01'</span>),<span class="string">'%Y-%m-%d'</span>),<span class="type">INTERVAL</span> <span class="number">1</span> <span class="keyword">month</span> )<span class="keyword">as</span> dd </span><br><span class="line">  ,DATE_FORMAT(CONCAT(datetime,<span class="string">'-01'</span>),<span class="string">'%Y-%m-%d'</span>)<span class="keyword">as</span> originalday,orderpay <span class="keyword">from</span> ordertable) b</span><br><span class="line"><span class="keyword">on</span> a.d<span class="operator">=</span>b.dd</span><br></pre></td></tr></table></figure>
+<p>从结果可以看到，月环比的计算逻辑：在原有的时间加上一个月与原表连接即可得到本月与上个月的信息。结果有几个月份是null，原因是我造的数据没有11月份的，所以才没有计算，这个可忽略。<br>
+<img src="https://p.ipic.vip/g20vvk.png" alt="image-20231105125317168 PM"></p>
+<h3 id="月同比和去年的这个月做比较"><a class="markdownIt-Anchor" href="#月同比和去年的这个月做比较"></a> 月同比：和去年的这个月做比较</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 月同比</span></span><br><span class="line"><span class="keyword">select</span> substr(a.d, <span class="number">1</span>, <span class="number">7</span>) <span class="keyword">as</span> <span class="keyword">month</span>, a.d, a.orderpay, b.dd, b.originalday, b.orderpay, (a.orderpay<span class="operator">-</span>b.orderpay)<span class="operator">/</span>b.orderpay <span class="keyword">as</span> month_rate</span><br><span class="line"><span class="keyword">from</span>(</span><br><span class="line">	<span class="keyword">select</span> date_format(<span class="type">date</span>, <span class="string">'%Y-%m-%d'</span>) <span class="keyword">as</span> d, orderpay</span><br><span class="line">  <span class="keyword">from</span> ordertable</span><br><span class="line">	) <span class="keyword">as</span> a</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span>(</span><br><span class="line">	<span class="keyword">select</span> date_add(date_format(<span class="type">date</span>, <span class="string">'%Y-%m-%d'</span>), <span class="type">interval</span> <span class="number">1</span> <span class="keyword">year</span>) <span class="keyword">as</span> dd, date_format(<span class="type">date</span>, <span class="string">'%Y-%m-%d'</span>) <span class="keyword">as</span> originalday, orderpay</span><br><span class="line">  <span class="keyword">from</span> ordertable</span><br><span class="line">	) <span class="keyword">as</span> b</span><br><span class="line"><span class="keyword">on</span> a.d <span class="operator">=</span> b.dd</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 如果是精确到月的数据，还是要把 datetime 变成 concat(datetime, '-01')</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://p.ipic.vip/gbhka3.png" alt="image-20231105125325392 PM"></p>
-<h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><blockquote>
+<h1 id="python"><a class="markdownIt-Anchor" href="#python"></a> Python</h1>
+<blockquote>
 <p>用python中的pandas模块。</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">months = pd.date_range(*start*=<span class="string">'2010-01-01'</span>, *end*=<span class="string">'2020-12-31'</span>, *freq*=<span class="string">'M'</span>)</span><br><span class="line">df = pd.DataFrame({<span class="string">'month'</span>: months, <span class="string">'v'</span>: <span class="number">100</span>*np.random.rand(months.shape[<span class="number">0</span>], <span class="number">1</span>).reshape(months.shape[<span class="number">0</span>])})</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -456,10 +462,8 @@ mjx-container[display="true"] + br {
 </tr>
 </tbody>
 </table>
-</div>
 <p>132 rows × 2 columns</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 环比计算</span></span><br><span class="line"><span class="comment"># 方法1</span></span><br><span class="line">df[<span class="string">'v_last'</span>] = df[<span class="string">'v'</span>].shift(<span class="number">1</span>)</span><br><span class="line"><span class="comment"># shift()表示将这列数据整个后移一位</span></span><br><span class="line">df[<span class="string">'month_earlier_1'</span>] = df[<span class="string">'v'</span>]/df[<span class="string">'v_last'</span>]-<span class="number">1</span></span><br><span class="line">df</span><br></pre></td></tr></table></figure>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -550,10 +554,8 @@ mjx-container[display="true"] + br {
 </tr>
 </tbody>
 </table>
-</div>
 <p>132 rows × 4 columns</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法2</span></span><br><span class="line">df[<span class="string">'m_m_diff'</span>] = df[<span class="string">'v'</span>].diff()</span><br><span class="line"><span class="comment"># diff()用于计算相邻两个值的差值</span></span><br><span class="line">df[<span class="string">'month_earlier_2'</span>] = df[<span class="string">'m_m_diff'</span>]/df[<span class="string">'v'</span>].shift(<span class="number">1</span>)</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -668,10 +670,8 @@ mjx-container[display="true"] + br {
 </tr>
 </tbody>
 </table>
-</div>
 <p>132 rows × 6 columns</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法3</span></span><br><span class="line">df[<span class="string">'month_earlier_3'</span>] = df[<span class="string">'v'</span>].pct_change()</span><br><span class="line"><span class="comment"># df中的pct_change()表示当前元素与先前元素相差的百分比</span></span><br><span class="line">df</span><br></pre></td></tr></table></figure>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -798,10 +798,8 @@ mjx-container[display="true"] + br {
 </tr>
 </tbody>
 </table>
-</div>
 <p>132 rows × 7 columns</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">df.drop(columns={<span class="string">'v_last'</span>, <span class="string">'month_earlier_1'</span>, <span class="string">'month_earlier_2'</span>,<span class="string">'month_earlier_3'</span>,<span class="string">'m_m_diff'</span>}, inplace=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 同比计算</span></span><br><span class="line"><span class="comment"># 方法1</span></span><br><span class="line">df[<span class="string">'last_year_v'</span>] = df[<span class="string">'v'</span>].shift(<span class="number">12</span>)</span><br><span class="line">df[<span class="string">'year_earlier_1'</span>] = df[<span class="string">'v'</span>]/df[<span class="string">'last_year_v'</span>]-<span class="number">1</span></span><br><span class="line">df</span><br></pre></td></tr></table></figure>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -892,10 +890,8 @@ mjx-container[display="true"] + br {
 </tr>
 </tbody>
 </table>
-</div>
 <p>132 rows × 4 columns</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'year_diff'</span>] = df[<span class="string">'v'</span>].diff(<span class="number">12</span>)</span><br><span class="line">df[<span class="string">'year_diff'</span>].fillna(<span class="number">0</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">df[<span class="string">'year_earlier_2'</span>] = df[<span class="string">'year_diff'</span>]/(df[<span class="string">'v'</span>]-df[<span class="string">'year_diff'</span>])</span><br><span class="line"><span class="comment"># (df['v']-df['year_diff'])计算的是去年同期的值</span></span><br><span class="line">df</span><br></pre></td></tr></table></figure>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1010,10 +1006,8 @@ mjx-container[display="true"] + br {
 </tr>
 </tbody>
 </table>
-</div>
 <p>132 rows × 6 columns</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'year_earlier_3'</span>] = df[<span class="string">'v'</span>].pct_change(periods = <span class="number">12</span>)</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1140,17 +1134,22 @@ mjx-container[display="true"] + br {
 </tr>
 </tbody>
 </table>
-</div>
 <p>132 rows × 7 columns</p>
 <hr>
-<p><strong>关于pct_change()函数：</strong>pct_change主要涉及以下参数，</p>
+<p>**关于pct_change()函数：**pct_change主要涉及以下参数，</p>
 <ul>
-<li><p>periods=1，用来设置计算的周期。</p>
+<li>
+<p>periods=1，用来设置计算的周期。</p>
 </li>
-<li><p>fill_method=‘pad’，如何在计算百分比变化之前处理缺失值(NA)。</p>
+<li>
+<p>fill_method=‘pad’，如何在计算百分比变化之前处理缺失值(NA)。</p>
 </li>
-<li>limit=None，设置停止填充条件，即当遇到填充的连续缺失值的数量n时，停止此处填充</li>
-<li>freq=None，从时间序列 API 中使用的增量（例如 ‘M’ 或 BDay())</li>
+<li>
+<p>limit=None，设置停止填充条件，即当遇到填充的连续缺失值的数量n时，停止此处填充</p>
+</li>
+<li>
+<p>freq=None，从时间序列 API 中使用的增量（例如 ‘M’ 或 BDay())</p>
+</li>
 </ul>
 
                 </div>
@@ -1267,7 +1266,7 @@ mjx-container[display="true"] + br {
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E8%AE%A1%E7%AE%97%E6%9C%88%E7%8E%AF%E6%AF%94%E3%80%81%E6%9C%88%E5%90%8C%E6%AF%94"><span class="nav-number">1.</span> <span class="nav-text">SQL计算月环比、月同比</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E6%95%B0%E6%8D%AE"><span class="nav-number">1.1.</span> <span class="nav-text">准备数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97"><span class="nav-number">1.2.</span> <span class="nav-text">计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%88%E7%8E%AF%E6%AF%94%EF%BC%9A%E5%92%8C%E4%B8%8A%E4%B8%AA%E6%9C%88%E5%81%9A%E6%AF%94%E8%BE%83"><span class="nav-number">1.2.1.</span> <span class="nav-text">月环比：和上个月做比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%88%E5%90%8C%E6%AF%94%EF%BC%9A%E5%92%8C%E5%8E%BB%E5%B9%B4%E7%9A%84%E8%BF%99%E4%B8%AA%E6%9C%88%E5%81%9A%E6%AF%94%E8%BE%83"><span class="nav-number">1.2.2.</span> <span class="nav-text">月同比：和去年的这个月做比较</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python"><span class="nav-number">2.</span> <span class="nav-text">Python</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sql%E8%AE%A1%E7%AE%97%E6%9C%88%E7%8E%AF%E6%AF%94-%E6%9C%88%E5%90%8C%E6%AF%94"><span class="nav-number">1.</span> <span class="nav-text"> SQL计算月环比、月同比</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E6%95%B0%E6%8D%AE"><span class="nav-number">1.1.</span> <span class="nav-text"> 准备数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97"><span class="nav-number">1.2.</span> <span class="nav-text"> 计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%88%E7%8E%AF%E6%AF%94%E5%92%8C%E4%B8%8A%E4%B8%AA%E6%9C%88%E5%81%9A%E6%AF%94%E8%BE%83"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 月环比：和上个月做比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%88%E5%90%8C%E6%AF%94%E5%92%8C%E5%8E%BB%E5%B9%B4%E7%9A%84%E8%BF%99%E4%B8%AA%E6%9C%88%E5%81%9A%E6%AF%94%E8%BE%83"><span class="nav-number">1.2.2.</span> <span class="nav-text"> 月同比：和去年的这个月做比较</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python"><span class="nav-number">2.</span> <span class="nav-text"> Python</span></a></li></ol>
     </div>
 </div>
 
@@ -1313,7 +1312,7 @@ mjx-container[display="true"] + br {
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">73.6k</span>
+                    <span class="item-value border-box word">75.6k</span>
                 </span>
             
 
@@ -1456,7 +1455,7 @@ mjx-container[display="true"] + br {
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E8%AE%A1%E7%AE%97%E6%9C%88%E7%8E%AF%E6%AF%94%E3%80%81%E6%9C%88%E5%90%8C%E6%AF%94"><span class="nav-number">1.</span> <span class="nav-text">SQL计算月环比、月同比</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E6%95%B0%E6%8D%AE"><span class="nav-number">1.1.</span> <span class="nav-text">准备数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97"><span class="nav-number">1.2.</span> <span class="nav-text">计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%88%E7%8E%AF%E6%AF%94%EF%BC%9A%E5%92%8C%E4%B8%8A%E4%B8%AA%E6%9C%88%E5%81%9A%E6%AF%94%E8%BE%83"><span class="nav-number">1.2.1.</span> <span class="nav-text">月环比：和上个月做比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%88%E5%90%8C%E6%AF%94%EF%BC%9A%E5%92%8C%E5%8E%BB%E5%B9%B4%E7%9A%84%E8%BF%99%E4%B8%AA%E6%9C%88%E5%81%9A%E6%AF%94%E8%BE%83"><span class="nav-number">1.2.2.</span> <span class="nav-text">月同比：和去年的这个月做比较</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python"><span class="nav-number">2.</span> <span class="nav-text">Python</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sql%E8%AE%A1%E7%AE%97%E6%9C%88%E7%8E%AF%E6%AF%94-%E6%9C%88%E5%90%8C%E6%AF%94"><span class="nav-number">1.</span> <span class="nav-text"> SQL计算月环比、月同比</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E6%95%B0%E6%8D%AE"><span class="nav-number">1.1.</span> <span class="nav-text"> 准备数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97"><span class="nav-number">1.2.</span> <span class="nav-text"> 计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%88%E7%8E%AF%E6%AF%94%E5%92%8C%E4%B8%8A%E4%B8%AA%E6%9C%88%E5%81%9A%E6%AF%94%E8%BE%83"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 月环比：和上个月做比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%88%E5%90%8C%E6%AF%94%E5%92%8C%E5%8E%BB%E5%B9%B4%E7%9A%84%E8%BF%99%E4%B8%AA%E6%9C%88%E5%81%9A%E6%AF%94%E8%BE%83"><span class="nav-number">1.2.2.</span> <span class="nav-text"> 月同比：和去年的这个月做比较</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python"><span class="nav-number">2.</span> <span class="nav-text"> Python</span></a></li></ol>
     </div>
 </div>
 

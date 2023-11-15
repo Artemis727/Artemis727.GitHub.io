@@ -387,46 +387,62 @@ mjx-container[display="true"] + br {
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="计算用户次日留存率"><a href="#计算用户次日留存率" class="headerlink" title="计算用户次日留存率"></a>计算用户次日留存率</h1><p>如果只是计算用户的<strong>次日</strong>留存率，那么使用date_sub()函数就够了：</p>
+                    <h1 id="计算用户次日留存率"><a class="markdownIt-Anchor" href="#计算用户次日留存率"></a> 计算用户次日留存率</h1>
+<p>如果只是计算用户的<strong>次日</strong>留存率，那么使用date_sub()函数就够了：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(if(b.device_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">null</span>, <span class="number">1</span>, <span class="number">0</span>)) <span class="keyword">as</span> avg_ret</span><br><span class="line"><span class="keyword">from</span>(</span><br><span class="line">    <span class="keyword">select</span> <span class="keyword">distinct</span> device_id, <span class="type">date</span></span><br><span class="line">    <span class="keyword">from</span> question_practice_detail</span><br><span class="line">) a</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span>(</span><br><span class="line">    <span class="keyword">select</span> <span class="keyword">distinct</span> device_id, date_sub(<span class="type">date</span>, <span class="type">interval</span> <span class="number">1</span> <span class="keyword">day</span>) <span class="keyword">as</span> <span class="type">date</span></span><br><span class="line">    <span class="keyword">from</span> question_practice_detail</span><br><span class="line">) b</span><br><span class="line"><span class="keyword">on</span> a.device_id <span class="operator">=</span> b.device_id <span class="keyword">and</span> a.date <span class="operator">=</span> b.date</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>date_sub() 函数：</strong></p>
+<li>
+<p><strong>date_sub() 函数：</strong></p>
 <ul>
-<li><p>SELECT DATE_SUB(‘2010-08-12’, INTERVAL 3 DAY) AS NewDate </p>
+<li>
+<p>SELECT DATE_SUB(‘2010-08-12’, INTERVAL 3 DAY) AS NewDate</p>
 <p>结果： 2010-08-09</p>
 </li>
-<li><p>SELECT DATE_SUB(‘2010-08-12’, INTERVAL ‘3-2’ YEAR_MONTH) AS NewDate </p>
+<li>
+<p>SELECT DATE_SUB(‘2010-08-12’, INTERVAL ‘3-2’ YEAR_MONTH) AS NewDate</p>
 <p>结果： 2007-06-12</p>
 </li>
-<li><p>SELECT DATE_SUB(‘2011-09-14 2:44:36’, INTERVAL ‘2:26’ HOUR_MINUTE) AS NewDate </p>
+<li>
+<p>SELECT DATE_SUB(‘2011-09-14 2:44:36’, INTERVAL ‘2:26’ HOUR_MINUTE) AS NewDate</p>
 <p>结果： 2011-09-14 00:18:36</p>
 </li>
 </ul>
 </li>
 </ul>
-<h1 id="基于SQL的留存率计算"><a href="#基于SQL的留存率计算" class="headerlink" title="基于SQL的留存率计算"></a>基于SQL的留存率计算</h1><blockquote>
+<h1 id="基于sql的留存率计算"><a class="markdownIt-Anchor" href="#基于sql的留存率计算"></a> 基于SQL的留存率计算</h1>
+<blockquote>
 <p>转自<a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/178598910">知乎：基于SQL的留存率计算<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
-<h2 id="一、什么是留存率"><a href="#一、什么是留存率" class="headerlink" title="一、什么是留存率"></a>一、什么是留存率</h2><p>互联网行业里，留存率是用于反映网站、互联网应用或网络游戏的<strong>运营情况</strong>的统计指标，其具体含义为<strong>在统计周期（周/月）内，每日活跃用户数在第N日仍启动该App的用户数占比的平均值</strong>。其中N通常取2、3、7、<strong>14</strong>、30，分别对应次日留存率、三日留存率、周留存率、半月留存率和月留存率。</p>
+<h2 id="一-什么是留存率"><a class="markdownIt-Anchor" href="#一-什么是留存率"></a> 一、什么是留存率</h2>
+<p>互联网行业里，留存率是用于反映网站、互联网应用或网络游戏的<strong>运营情况</strong>的统计指标，其具体含义为<strong>在统计周期（周/月）内，每日活跃用户数在第N日仍启动该App的用户数占比的平均值</strong>。其中N通常取2、3、7、<strong>14</strong>、30，分别对应次日留存率、三日留存率、周留存率、半月留存率和月留存率。</p>
 <p>留存率常用于反映用户粘性，<strong>当N取值越大、留存率越高时，用户粘性越高</strong>。</p>
-<h2 id="二、留存率的计算"><a href="#二、留存率的计算" class="headerlink" title="二、留存率的计算"></a>二、留存率的计算</h2><ul>
-<li><p><strong>留存率 = 登陆用户数/新增用户数 * 100%</strong></p>
+<h2 id="二-留存率的计算"><a class="markdownIt-Anchor" href="#二-留存率的计算"></a> 二、留存率的计算</h2>
+<ul>
+<li>
+<p><strong>留存率 = 登陆用户数/新增用户数 * 100%</strong></p>
 </li>
-<li><p>新增用户数：在当前时间段新注册（或新访问）的用户数；</p>
+<li>
+<p>新增用户数：在当前时间段新注册（或新访问）的用户数；</p>
 </li>
-<li><p>登录用户数：在统计的时间段至少登录过一次的用户数；</p>
+<li>
+<p>登录用户数：在统计的时间段至少登录过一次的用户数；</p>
 </li>
-<li><p>次日留存率：在次日至少登录过一次的用户数/当天新增的用户数；</p>
+<li>
+<p>次日留存率：在次日至少登录过一次的用户数/当天新增的用户数；</p>
 </li>
-<li><p>❗️<strong>3日留存率</strong>：在往后3天内<strong>至少登录过一次</strong>的用户数/当天新增的用户数；</p>
+<li>
+<p>❗️<strong>3日留存率</strong>：在往后3天内<strong>至少登录过一次</strong>的用户数/当天新增的用户数；</p>
 </li>
-<li><p>❗️<strong>7日留存率</strong>：在往后7天内<strong>至少登录过一次</strong>的用户数/当天新增的用户数；</p>
+<li>
+<p>❗️<strong>7日留存率</strong>：在往后7天内<strong>至少登录过一次</strong>的用户数/当天新增的用户数；</p>
 </li>
-<li><p>❗️<strong>15日留存数</strong>：当天新增的用户数，在往后<strong>7天内至少登录过一次</strong>的用户，在往后<strong>第8天到第14天内至少再登陆过一次</strong>的用户数</p>
+<li>
+<p>❗️<strong>15日留存数</strong>：当天新增的用户数，在往后<strong>7天内至少登录过一次</strong>的用户，在往后<strong>第8天到第14天内至少再登陆过一次</strong>的用户数</p>
 <p><strong>➡️ 3日和7日，至少登陆过一次；15日，7天为一段，在每段内至少登录一次！</strong></p>
 </li>
 </ul>
-<h2 id="SQL中计算用户的留存率"><a href="#SQL中计算用户的留存率" class="headerlink" title="SQL中计算用户的留存率"></a>SQL中计算用户的留存率</h2><ul>
+<h2 id="sql中计算用户的留存率"><a class="markdownIt-Anchor" href="#sql中计算用户的留存率"></a> SQL中计算用户的留存率</h2>
+<ul>
 <li><strong>新增用户数</strong></li>
 </ul>
 <p>由于数据过大，这截取时间2017.11.26~2017.12.03为例。</p>
@@ -451,7 +467,7 @@ mjx-container[display="true"] + br {
 <p><img src="https://pic3.zhimg.com/80/v2-58aa55bd327431b0782ff0dc5d41c8ce_1440w.webp" alt="img"></p>
 <p>将上表存为视图C，</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> C(用户ID, atime, btime)</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> a.用户ID, a.`日期`, b.`日期` </span><br><span class="line"><span class="keyword">from</span> userbehavior <span class="keyword">AS</span> a <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> userbehavior <span class="keyword">AS</span> b</span><br><span class="line"><span class="keyword">ON</span> a.`用户ID`<span class="operator">=</span>b.`用户ID`</span><br><span class="line"><span class="keyword">WHERE</span> a.`日期`<span class="operator">&gt;</span><span class="string">'2017-11-25'</span><span class="keyword">AND</span> a.`日期` <span class="operator">&lt;</span> <span class="string">'2017-12-04'</span>;</span><br></pre></td></tr></table></figure>
-<ol>
+<ol start="2">
 <li>计算时间间隔用<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37493556/article/details/92805912">timestampdiff函数<i class="fas fa-external-link-alt"></i></a></li>
 </ol>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> `用户ID`, TIMESTAMPDIFF(<span class="keyword">DAY</span>, atime, btime)<span class="keyword">AS</span> 时间间隔</span><br><span class="line"><span class="keyword">FROM</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> a.用户ID, a.日期 <span class="keyword">as</span> atime, b.日期 <span class="keyword">as</span> btime</span><br><span class="line">  <span class="keyword">FROM</span> userbehavior <span class="keyword">as</span> a <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> userbehavior <span class="keyword">as</span> b</span><br><span class="line">  <span class="keyword">ON</span> a.用户ID<span class="operator">=</span>b.`用户ID`</span><br><span class="line">  <span class="keyword">WHERE</span> a.`日期`<span class="operator">&gt;</span><span class="string">'2017-11-25'</span><span class="keyword">AND</span> a.`日期` <span class="operator">&lt;</span> <span class="string">'2017-12-04'</span>) <span class="keyword">AS</span> c</span><br><span class="line"><span class="comment">-- 这里直接设置为表c</span></span><br></pre></td></tr></table></figure>
@@ -464,9 +480,11 @@ mjx-container[display="true"] + br {
 </ul>
 <p>次日留存率=次日留存用户数/当日活跃用户数</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span>,<span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="keyword">case</span> <span class="keyword">when</span> 时间间隔 <span class="operator">=</span> <span class="number">1</span> <span class="keyword">then</span> `用户ID`</span><br><span class="line">			<span class="keyword">ELSE</span> <span class="keyword">NULL</span></span><br><span class="line">			<span class="keyword">END</span>) <span class="keyword">AS</span> 次日留存数<span class="operator">/</span><span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> 用户ID) <span class="keyword">AS</span> 次日留存率</span><br><span class="line"><span class="keyword">FROM</span>( <span class="keyword">SELECT</span> `用户ID`,TIMESTAMPDIFF(<span class="keyword">DAY</span>,atime,btime)<span class="keyword">AS</span> 时间间隔</span><br><span class="line">			 <span class="keyword">FROM</span> (</span><br><span class="line">				<span class="keyword">SELECT</span> a.用户ID,a.日期 <span class="keyword">as</span> atime,b.日期 <span class="keyword">as</span> btime</span><br><span class="line">				<span class="keyword">FROM</span> userbehavior <span class="keyword">as</span> a <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> userbehavior <span class="keyword">as</span> b</span><br><span class="line">				<span class="keyword">ON</span> a.用户ID<span class="operator">=</span>b.`用户ID`</span><br><span class="line">				<span class="keyword">WHERE</span> a.`日期`<span class="operator">&gt;</span><span class="string">'2017-11-25'</span><span class="keyword">AND</span> a.`日期` <span class="operator">&lt;</span> <span class="string">'2017-12-04'</span></span><br><span class="line">				) <span class="keyword">AS</span> c</span><br><span class="line">			)<span class="keyword">AS</span> d</span><br></pre></td></tr></table></figure>
-<h2 id="三、三日以及N日留存的计算"><a href="#三、三日以及N日留存的计算" class="headerlink" title="三、三日以及N日留存的计算"></a>三、三日以及N日留存的计算</h2><p>只需要修改时间间隔=N即可。</p>
+<h2 id="三-三日以及n日留存的计算"><a class="markdownIt-Anchor" href="#三-三日以及n日留存的计算"></a> 三、三日以及N日留存的计算</h2>
+<p>只需要修改时间间隔=N即可。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 日期,<span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> 用户ID <span class="keyword">AS</span> 活跃用户数,</span><br><span class="line"><span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="keyword">case</span> <span class="keyword">when</span> 时间间隔<span class="operator">=</span><span class="number">1</span> <span class="keyword">then</span> `用户ID`</span><br><span class="line">			<span class="keyword">ELSE</span> <span class="keyword">NULL</span></span><br><span class="line">			<span class="keyword">END</span>) <span class="keyword">AS</span> 次日留存数<span class="operator">/</span><span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> 用户ID) <span class="keyword">AS</span> 次日留存率</span><br><span class="line"><span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="keyword">case</span> <span class="keyword">when</span> 时间间隔<span class="operator">=</span><span class="number">3</span> <span class="keyword">then</span> `用户ID`</span><br><span class="line">			<span class="keyword">ELSE</span> <span class="keyword">NULL</span></span><br><span class="line">			<span class="keyword">END</span>) <span class="keyword">AS</span> 次日留存数<span class="operator">/</span><span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> 用户ID) <span class="keyword">AS</span> 三日留存率</span><br><span class="line"><span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="keyword">case</span> <span class="keyword">when</span> 时间间隔<span class="operator">=</span><span class="number">7</span> <span class="keyword">then</span> `用户ID`</span><br><span class="line">			<span class="keyword">ELSE</span> <span class="keyword">NULL</span></span><br><span class="line">			<span class="keyword">END</span>) <span class="keyword">AS</span> 次日留存数<span class="operator">/</span><span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> 用户ID) <span class="keyword">AS</span> 七日留存率</span><br><span class="line"><span class="keyword">FROM</span>( <span class="keyword">SELECT</span> `用户ID`,TIMESTAMPDIFF(<span class="keyword">DAY</span>,atime,btime)<span class="keyword">AS</span> 时间间隔</span><br><span class="line">			 <span class="keyword">FROM</span> (</span><br><span class="line">				<span class="keyword">SELECT</span> a.用户ID,a.日期 <span class="keyword">as</span> atime,b.日期 <span class="keyword">as</span> btime</span><br><span class="line">				<span class="keyword">FROM</span> userbehavior <span class="keyword">as</span> a <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> 每日新增用户数表 <span class="keyword">as</span> b</span><br><span class="line">				<span class="keyword">ON</span> a.用户ID<span class="operator">=</span>b.`用户ID`</span><br><span class="line">				<span class="keyword">WHERE</span> a.`日期`<span class="operator">&gt;</span><span class="string">'2017-11-25'</span><span class="keyword">AND</span> a.`日期` <span class="operator">&lt;</span> <span class="string">'2017-12-04'</span></span><br><span class="line">				) <span class="keyword">AS</span> c</span><br><span class="line">			)<span class="keyword">AS</span> d</span><br></pre></td></tr></table></figure>
-<h2 id="四、连续登录三天用户数量"><a href="#四、连续登录三天用户数量" class="headerlink" title="四、连续登录三天用户数量"></a>四、连续登录三天用户数量</h2>
+<h2 id="四-连续登录三天用户数量"><a class="markdownIt-Anchor" href="#四-连续登录三天用户数量"></a> 四、连续登录三天用户数量</h2>
+
                 </div>
 
                 
@@ -565,7 +583,7 @@ mjx-container[display="true"] + br {
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E7%94%A8%E6%88%B7%E6%AC%A1%E6%97%A5%E7%95%99%E5%AD%98%E7%8E%87"><span class="nav-number">1.</span> <span class="nav-text">计算用户次日留存率</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8ESQL%E7%9A%84%E7%95%99%E5%AD%98%E7%8E%87%E8%AE%A1%E7%AE%97"><span class="nav-number">2.</span> <span class="nav-text">基于SQL的留存率计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E7%95%99%E5%AD%98%E7%8E%87"><span class="nav-number">2.1.</span> <span class="nav-text">一、什么是留存率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E7%95%99%E5%AD%98%E7%8E%87%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">2.2.</span> <span class="nav-text">二、留存率的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL%E4%B8%AD%E8%AE%A1%E7%AE%97%E7%94%A8%E6%88%B7%E7%9A%84%E7%95%99%E5%AD%98%E7%8E%87"><span class="nav-number">2.3.</span> <span class="nav-text">SQL中计算用户的留存率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E4%B8%89%E6%97%A5%E4%BB%A5%E5%8F%8AN%E6%97%A5%E7%95%99%E5%AD%98%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">2.4.</span> <span class="nav-text">三、三日以及N日留存的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E8%BF%9E%E7%BB%AD%E7%99%BB%E5%BD%95%E4%B8%89%E5%A4%A9%E7%94%A8%E6%88%B7%E6%95%B0%E9%87%8F"><span class="nav-number">2.5.</span> <span class="nav-text">四、连续登录三天用户数量</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E7%94%A8%E6%88%B7%E6%AC%A1%E6%97%A5%E7%95%99%E5%AD%98%E7%8E%87"><span class="nav-number">1.</span> <span class="nav-text"> 计算用户次日留存率</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8Esql%E7%9A%84%E7%95%99%E5%AD%98%E7%8E%87%E8%AE%A1%E7%AE%97"><span class="nav-number">2.</span> <span class="nav-text"> 基于SQL的留存率计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80-%E4%BB%80%E4%B9%88%E6%98%AF%E7%95%99%E5%AD%98%E7%8E%87"><span class="nav-number">2.1.</span> <span class="nav-text"> 一、什么是留存率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C-%E7%95%99%E5%AD%98%E7%8E%87%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">2.2.</span> <span class="nav-text"> 二、留存率的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sql%E4%B8%AD%E8%AE%A1%E7%AE%97%E7%94%A8%E6%88%B7%E7%9A%84%E7%95%99%E5%AD%98%E7%8E%87"><span class="nav-number">2.3.</span> <span class="nav-text"> SQL中计算用户的留存率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89-%E4%B8%89%E6%97%A5%E4%BB%A5%E5%8F%8An%E6%97%A5%E7%95%99%E5%AD%98%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">2.4.</span> <span class="nav-text"> 三、三日以及N日留存的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B-%E8%BF%9E%E7%BB%AD%E7%99%BB%E5%BD%95%E4%B8%89%E5%A4%A9%E7%94%A8%E6%88%B7%E6%95%B0%E9%87%8F"><span class="nav-number">2.5.</span> <span class="nav-text"> 四、连续登录三天用户数量</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -611,7 +629,7 @@ mjx-container[display="true"] + br {
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">73.6k</span>
+                    <span class="item-value border-box word">75.6k</span>
                 </span>
             
 
@@ -754,7 +772,7 @@ mjx-container[display="true"] + br {
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E7%94%A8%E6%88%B7%E6%AC%A1%E6%97%A5%E7%95%99%E5%AD%98%E7%8E%87"><span class="nav-number">1.</span> <span class="nav-text">计算用户次日留存率</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8ESQL%E7%9A%84%E7%95%99%E5%AD%98%E7%8E%87%E8%AE%A1%E7%AE%97"><span class="nav-number">2.</span> <span class="nav-text">基于SQL的留存率计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E7%95%99%E5%AD%98%E7%8E%87"><span class="nav-number">2.1.</span> <span class="nav-text">一、什么是留存率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E7%95%99%E5%AD%98%E7%8E%87%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">2.2.</span> <span class="nav-text">二、留存率的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL%E4%B8%AD%E8%AE%A1%E7%AE%97%E7%94%A8%E6%88%B7%E7%9A%84%E7%95%99%E5%AD%98%E7%8E%87"><span class="nav-number">2.3.</span> <span class="nav-text">SQL中计算用户的留存率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E4%B8%89%E6%97%A5%E4%BB%A5%E5%8F%8AN%E6%97%A5%E7%95%99%E5%AD%98%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">2.4.</span> <span class="nav-text">三、三日以及N日留存的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E8%BF%9E%E7%BB%AD%E7%99%BB%E5%BD%95%E4%B8%89%E5%A4%A9%E7%94%A8%E6%88%B7%E6%95%B0%E9%87%8F"><span class="nav-number">2.5.</span> <span class="nav-text">四、连续登录三天用户数量</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E7%94%A8%E6%88%B7%E6%AC%A1%E6%97%A5%E7%95%99%E5%AD%98%E7%8E%87"><span class="nav-number">1.</span> <span class="nav-text"> 计算用户次日留存率</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8Esql%E7%9A%84%E7%95%99%E5%AD%98%E7%8E%87%E8%AE%A1%E7%AE%97"><span class="nav-number">2.</span> <span class="nav-text"> 基于SQL的留存率计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80-%E4%BB%80%E4%B9%88%E6%98%AF%E7%95%99%E5%AD%98%E7%8E%87"><span class="nav-number">2.1.</span> <span class="nav-text"> 一、什么是留存率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C-%E7%95%99%E5%AD%98%E7%8E%87%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">2.2.</span> <span class="nav-text"> 二、留存率的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sql%E4%B8%AD%E8%AE%A1%E7%AE%97%E7%94%A8%E6%88%B7%E7%9A%84%E7%95%99%E5%AD%98%E7%8E%87"><span class="nav-number">2.3.</span> <span class="nav-text"> SQL中计算用户的留存率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89-%E4%B8%89%E6%97%A5%E4%BB%A5%E5%8F%8An%E6%97%A5%E7%95%99%E5%AD%98%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">2.4.</span> <span class="nav-text"> 三、三日以及N日留存的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B-%E8%BF%9E%E7%BB%AD%E7%99%BB%E5%BD%95%E4%B8%89%E5%A4%A9%E7%94%A8%E6%88%B7%E6%95%B0%E9%87%8F"><span class="nav-number">2.5.</span> <span class="nav-text"> 四、连续登录三天用户数量</span></a></li></ol></li></ol>
     </div>
 </div>
 
