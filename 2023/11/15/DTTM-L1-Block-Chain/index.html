@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Li Syaoran">
+    
+    <title>
+        
+            DTTM | L1 Block Chain |
+        
+        Syaoran&#39;s Cosmos
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/Pixel1.jpg">
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"artemis727.github.io","root":"/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"style":{"primary_color":"#adc178","logo":"/images/Bird.JPG","favicon":"/images/Pixel1.jpg","avatar":"/images/Bird.JPG","first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Being present.","hitokoto":false},"scroll":{"progress_bar":true,"percent":false}},"local_search":{"enable":true,"preload":true},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":true,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":true,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"version":"3.8.6"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/Bird.JPG">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Syaoran&#39;s Cosmos
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+
+                
+
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+
+        <div class="article-content-container border-box">
+
+            
+
+            <div class="article-content-bottom border-box">
+                
+                    <div class="article-title">
+                        DTTM | L1 Block Chain
+                    </div>
+                
+
+                
+                    <div class="article-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/Bird.JPG">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name">Li Syaoran</span>
+                                
+                                    <span class="author-label">Architect</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="article-meta-info-container border-box post">
+    <div class="article-meta-info border-box">
+        
+
+
+        
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2023-11-15 14:49:38</span>
+                <span class="mobile">2023-11-15 14:49</span>
+            </span>
+
+            <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Tue Nov 21 2023 15:14:40 GMT+0800">2023-11-21 15:14:40</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="article-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/BA/">BA</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+
+        
+        
+            <span class="meta-info-item article-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>800 Words</span>
+            </span>
+        
+        
+        
+            <span class="meta-info-item article-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="article-content keep-markdown-body">
+                    
+
+                    <h1 id="what-is-blockchain-how-it-works"><a class="markdownIt-Anchor" href="#what-is-blockchain-how-it-works"></a> What is blockchain: How it works</h1>
+<ul>
+<li>Blockchain is a type of distributed ledger technology = Transparancy + Immutability + Distributed consensus
+<ul>
+<li>immutability: hash function</li>
+<li>security: multiple computer nodes, have to achieve a consensus</li>
+</ul>
+</li>
+<li>Centralized vs Distributed/Decentralized Ledger
+<ul>
+<li>Centralized: SAP, ERP, one central server does most of the processing
+<ul>
+<li>make decisions, propagate, command and control</li>
+</ul>
+</li>
+<li>Decentralized: a network of server, each has a copy of the database/ledger
+<ul>
+<li>no command and control, decisions are made in using a consus approach, eg. votes</li>
+<li>open-source software communities</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Pros &amp; Cons</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Centralized</th>
+<th>Decentralized</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pros</td>
+<td>1. easy to control/manage; 2. faster; 4. ease of achieving standardization; 7. efficient (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>i</mi><mi>n</mi><mi>p</mi><mi>u</mi><mi>t</mi></mrow><mrow><mi>o</mi><mi>u</mi><mi>t</mi><mi>p</mi><mi>u</mi><mi>t</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{input}{output}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.38888em;vertical-align:-0.481108em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.907772em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">p</span><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">t</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.446108em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">p</span><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.481108em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>)</td>
+<td>3. fault-tolerance; 5. transparency; 6. lower chances of error (more eyeballs look at the info)</td>
+</tr>
+<tr>
+<td>Cons</td>
+<td>3. risk: single point of failure (prone to corruption)</td>
+<td>2. latency</td>
+</tr>
+</tbody>
+</table>
+<p>In a word, centralized -&gt; within the control, decentralized -&gt; extremely reliable.</p>
+<h1 id="blockchain-development"><a class="markdownIt-Anchor" href="#blockchain-development"></a> Blockchain development</h1>
+<ul>
+<li>Bitcoin is not blockchain, it’s an initial use case of blockchain.</li>
+</ul>
+<h1 id="4-elements-of-blockchain"><a class="markdownIt-Anchor" href="#4-elements-of-blockchain"></a> 4 elements of blockchain</h1>
+<h2 id="peer-to-peer-network"><a class="markdownIt-Anchor" href="#peer-to-peer-network"></a> Peer-to-peer network</h2>
+<ul>
+<li>public, permissionless</li>
+<li>What does a miner/computer node do?</li>
+</ul>
+<h2 id="data-management"><a class="markdownIt-Anchor" href="#data-management"></a> Data Management</h2>
+<ul>
+<li>How the data is structured?
+<ul>
+<li>Chains or blocks.</li>
+<li>Append only. Only can add new blocks to the blockchain.</li>
+</ul>
+</li>
+</ul>
+<h2 id="cryptography"><a class="markdownIt-Anchor" href="#cryptography"></a> Cryptography</h2>
+<ul>
+<li>
+<p>Hash function</p>
+<ul>
+<li>
+<p>Can only be used to encrypt. Can’t decrypt.</p>
+</li>
+<li>
+<p>2 outputs are same -&gt; 2 inputs are same.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="consus-system"><a class="markdownIt-Anchor" href="#consus-system"></a> Consus system</h2>
+<h1 id="mining"><a class="markdownIt-Anchor" href="#mining"></a> Mining</h1>
+<p><em>Why is Ethereum able to move from Proof of Work to Proof of Stake, while Bitcoin still hasn’t?</em></p>
+<ul>
+<li>disparity of the ideas of founders</li>
+</ul>
+<h1 id="questions"><a class="markdownIt-Anchor" href="#questions"></a> Questions</h1>
+<p>What is a node?</p>
+<ul>
+<li>A type of cryptocurrency</li>
+<li>A blockchain</li>
+<li><strong>A computer on a blockchain network</strong></li>
+<li>An exchange</li>
+</ul>
+<p>What incentivizes the miners to give correct validation of transactions?</p>
+<ul>
+<li>A nonce</li>
+<li><strong>A block reward</strong></li>
+<li>Thumbs up from the community</li>
+<li>More memory</li>
+</ul>
+<p>Are blockchains fully public?</p>
+<ul>
+<li>Yes</li>
+<li>No</li>
+<li><strong>It depends</strong></li>
+</ul>
+<p>Where is the bitcoin central server located?</p>
+<ul>
+<li>Washington DC</li>
+<li>Undisclosed location</li>
+<li>London</li>
+<li><strong>None of the above</strong></li>
+</ul>
+<h1 id="blockchain-20-ethereum"><a class="markdownIt-Anchor" href="#blockchain-20-ethereum"></a> Blockchain 2.0 - Ethereum</h1>
+<ul>
+<li>smart contracts</li>
+<li><em>What are the pros and cons of using such blockchain as a service platforms?</em>
+<ul>
+<li>pros: quick (no coding)</li>
+<li>cons:</li>
+</ul>
+</li>
+</ul>
+<h1 id="blockchain-30"><a class="markdownIt-Anchor" href="#blockchain-30"></a> Blockchain 3.0</h1>
+<ul>
+<li>current stage</li>
+<li>trade-off among scalability, decentralized and security</li>
+</ul>
+<img src="https://p.ipic.vip/o6qao8.png" alt="image-2023111554320797 PM" style="zoom:67%;">
+<ul>
+<li>
+<p>Layer</p>
+<ul>
+<li>
+<p>在区块链领域，“layer” 通常指的是区块链技术的不同层次或协议。这样的分层结构旨在提供更多的灵活性和可扩展性，使不同的功能和应用能够在区块链上更好地运行。以下是一些常见的区块链层次或协议：</p>
+<ol>
+<li>
+<p><strong>Layer 1（第一层）：</strong> 这是区块链的基本层，包括底层的区块链协议，如比特币的区块链或以太坊的主链。Layer 1 主要关注去中心化、安全性和共识机制。</p>
+</li>
+<li>
+<p><strong>Layer 2（第二层）：</strong> 这是在基本区块链协议之上构建的层，用于提高交易处理速度和降低费用。Layer 2 解决方案包括诸如闪电网络（Lightning Network）和夸链协议（Cross-Chain Protocols）等。</p>
+</li>
+<li>
+<p><strong>Layer 3（第三层）：</strong> 这一层涉及构建在Layer 2之上的更高级的应用和协议。它可能包括智能合约平台、分布式应用程序（DApps）以及与区块链相关的协议和服务。</p>
+</li>
+</ol>
+<p>每个层次都有其独特的功能和目标，而不同的区块链项目和平台可能在不同的层次上进行创新。这种分层结构有助于提高区块链系统的可扩展性和适应性，使其更适用于各种用例。</p>
+</li>
+<li>
+<p>大部分的development都是contribute to scalability的，很少有对decentralized有作用的</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="questions-2"><a class="markdownIt-Anchor" href="#questions-2"></a> Questions</h1>
+<p><img src="https://p.ipic.vip/euuif4.png" alt="image-2023111555049261 PM"></p>
+<ul>
+<li>F</li>
+<li>F: It can’t do everything, cloud only means it is opearted bu some data center, it is not magical</li>
+<li>F: not all public. Blockchain can be public or private. You can encrypt the information, even if you can see, you may can’t understand it.</li>
+<li>?T: Blockchain is going to change the world? Maybe</li>
+<li>F: You need development, guest fees, computing power …</li>
+<li>F:</li>
+<li>F:</li>
+<li>F: not only financial, manifacturing, supply chain …</li>
+<li>T: the technology is relatively mature, but the business may be not ready to use it</li>
+<li>F: it denpends</li>
+</ul>
+
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="article-nav">
+                        
+                            <div class="article-prev">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2023/11/16/DTTM-L2-Block-Chain-Use-Cases/"
+                                   title="DTTM | L2 Block Chain Use Cases"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                      <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                            <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">DTTM | L2 Block Chain Use Cases</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="article-next">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2023/11/14/Advanced-DM-W1/"
+                                   title="Advanced DM | W1"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Advanced DM | W1</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                            <span class="right arrow-icon flex-center">
+                                      <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;Comments
+        </div>
+        
+            
+
+    <div class="error-tips">Please fill in Valine complete configuration items.</div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#what-is-blockchain-how-it-works"><span class="nav-number">1.</span> <span class="nav-text"> What is blockchain: How it works</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#blockchain-development"><span class="nav-number">2.</span> <span class="nav-text"> Blockchain development</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-elements-of-blockchain"><span class="nav-number">3.</span> <span class="nav-text"> 4 elements of blockchain</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#peer-to-peer-network"><span class="nav-number">3.1.</span> <span class="nav-text"> Peer-to-peer network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#data-management"><span class="nav-number">3.2.</span> <span class="nav-text"> Data Management</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cryptography"><span class="nav-number">3.3.</span> <span class="nav-text"> Cryptography</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#consus-system"><span class="nav-number">3.4.</span> <span class="nav-text"> Consus system</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mining"><span class="nav-number">4.</span> <span class="nav-text"> Mining</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#questions"><span class="nav-number">5.</span> <span class="nav-text"> Questions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#blockchain-20-ethereum"><span class="nav-number">6.</span> <span class="nav-text"> Blockchain 2.0 - Ethereum</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#blockchain-30"><span class="nav-number">7.</span> <span class="nav-text"> Blockchain 3.0</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#questions-2"><span class="nav-number">8.</span> <span class="nav-text"> Questions</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2023
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Li Syaoran</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+                <div class="deploy-info info-item default">
+                    
+                        This site is deployed on <span class="tooltip" data-tooltip-content="GitHub Pages"><img src="/images/deploy-provider/github.png"></span>
+                        
+                </div>
+            
+        
+
+        <div class="count-item info-item default">
+            
+                <span class="count-box border-box word">
+                    <span class="item-type border-box">Total words</span>
+                    <span class="item-value border-box word">77.7k</span>
+                </span>
+            
+
+            
+                <span class="count-box border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-box border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#what-is-blockchain-how-it-works"><span class="nav-number">1.</span> <span class="nav-text"> What is blockchain: How it works</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#blockchain-development"><span class="nav-number">2.</span> <span class="nav-text"> Blockchain development</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-elements-of-blockchain"><span class="nav-number">3.</span> <span class="nav-text"> 4 elements of blockchain</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#peer-to-peer-network"><span class="nav-number">3.1.</span> <span class="nav-text"> Peer-to-peer network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#data-management"><span class="nav-number">3.2.</span> <span class="nav-text"> Data Management</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cryptography"><span class="nav-number">3.3.</span> <span class="nav-text"> Cryptography</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#consus-system"><span class="nav-number">3.4.</span> <span class="nav-text"> Consus system</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mining"><span class="nav-number">4.</span> <span class="nav-text"> Mining</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#questions"><span class="nav-number">5.</span> <span class="nav-text"> Questions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#blockchain-20-ethereum"><span class="nav-number">6.</span> <span class="nav-text"> Blockchain 2.0 - Ethereum</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#blockchain-30"><span class="nav-number">7.</span> <span class="nav-text"> Blockchain 3.0</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#questions-2"><span class="nav-number">8.</span> <span class="nav-text"> Questions</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/dark-light-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/local-search.js"></script>
+
+
+<!-- code-block -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/code-block.js"></script>
+
+
+<!-- lazyload -->
+
+
+<div class="pjax">
+    
+        <!-- post-helper -->
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/post/post-helper.js"></script>
+
+        <!-- toc -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/post/toc.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/post/share.js"></script>
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":75,"height":150},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>
