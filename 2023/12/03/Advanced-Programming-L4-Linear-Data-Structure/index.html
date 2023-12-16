@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Li Syaoran">
+    
+    <title>
+        
+            Advanced Programming | L4 Linear Data Structure |
+        
+        Syaoran&#39;s Cosmos
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/Pixel1.jpg">
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"artemis727.github.io","root":"/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"style":{"primary_color":"#adc178","logo":"/images/Bird.JPG","favicon":"/images/Pixel1.jpg","avatar":"/images/Bird.JPG","first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Being present.","hitokoto":false},"scroll":{"progress_bar":true,"percent":false}},"local_search":{"enable":true,"preload":true},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":true,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":true,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"version":"3.8.6"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/Bird.JPG">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Syaoran&#39;s Cosmos
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+
+                
+
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+
+        <div class="article-content-container border-box">
+
+            
+
+            <div class="article-content-bottom border-box">
+                
+                    <div class="article-title">
+                        Advanced Programming | L4 Linear Data Structure
+                    </div>
+                
+
+                
+                    <div class="article-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/Bird.JPG">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name">Li Syaoran</span>
+                                
+                                    <span class="author-label">Architect</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="article-meta-info-container border-box post">
+    <div class="article-meta-info border-box">
+        
+
+
+        
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2023-12-03 19:49:54</span>
+                <span class="mobile">2023-12-03 19:49</span>
+            </span>
+
+            <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Thu Dec 07 2023 10:41:10 GMT+0800">2023-12-07 10:41:10</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="article-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/BA/">BA</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+
+        
+        
+            <span class="meta-info-item article-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.7k Words</span>
+            </span>
+        
+        
+        
+            <span class="meta-info-item article-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="article-content keep-markdown-body">
+                    
+
+                    <h1 id="lists-and-pointer-structures"><a class="markdownIt-Anchor" href="#lists-and-pointer-structures"></a> Lists and Pointer Structures</h1>
+<p>That is the big benefit of pointers: they allow you to point to a potentially large segment of memory with just a simple memory address.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = <span class="built_in">set</span>()</span><br></pre></td></tr></table></figure>
+<p>We would normally say that s is a variable of the type set. That is, s is a set. This is not strictly true, however. <strong>The variable s is rather a reference (a “safe” pointer) to a set.</strong> The set constructor creates a set somewhere in memory and <strong>returns the memory location where that set starts. This is what gets stored in s.</strong></p>
+<h2 id="arrays"><a class="markdownIt-Anchor" href="#arrays"></a> Arrays</h2>
+<ul>
+<li>An array is a sequential list of data. Being sequential means that each element is stored right after the previous one in memory. This involves <strong>requirements for storage</strong>.</li>
+<li>The flip side of the coin is that <strong>arrays are very fast</strong>. No need to jump between memory locations for array, but <strong>list needs</strong>.</li>
+</ul>
+<h2 id="pointer-structures"><a class="markdownIt-Anchor" href="#pointer-structures"></a> Pointer structures</h2>
+<ul>
+<li>Pointer structures are lists of items that can be spread out in memory, each item contains one or more links to other items in the structure. What type of links these are dependent on the type of structure we have.</li>
+<li>There are several benefits with pointer structures. First of all, they don’t require sequential storage space. Second, they can start small and grow arbitrarily as you add more nodes to the structure. However, this comes to a cost.</li>
+</ul>
+<h2 id="nodes"><a class="markdownIt-Anchor" href="#nodes"></a> Nodes</h2>
+<ul>
+<li>A node is a container of data, together with one or more links to other nodes. A link is a pointer.</li>
+<li>The string is not really stored in the node, but is rather a pointer to the actual string:</li>
+</ul>
+<img src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781786467355/files/assets/bdfa3595-5708-47b7-be38-08263facb2b9.jpg" alt="img" style="zoom: 50%;">
+<p>​	Thus the storage requirement for this simple node is two memory addresses.</p>
+<h2 id="finding-endpoints"><a class="markdownIt-Anchor" href="#finding-endpoints"></a> Finding endpoints</h2>
+<ul>
+<li>The last value.next -&gt; None, the first value.previous -&gt; None.</li>
+</ul>
+<img src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781786467355/files/assets/025520c4-e6cb-4956-8715-19304a597e34.jpg" alt="img" style="zoom:50%;">
+<h2 id="node"><a class="markdownIt-Anchor" href="#node"></a> Node</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Node</span>: </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, data=<span class="literal">None</span></span>): </span><br><span class="line">        self.data = data </span><br><span class="line">        self.<span class="built_in">next</span> = <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>The next pointer is initialized to None, meaning that unless you change the value of next, the node is going to be an end-point. This is a good idea, <strong>so that we do not forget to terminate the list properly</strong>.</li>
+<li>One thing you may want to do is implement the <strong>str</strong> method so that it calls the <strong>str</strong> method of the contained object is called <strong>when the node object is passed to print</strong>:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>): </span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">str</span>(data) </span><br></pre></td></tr></table></figure>
+<h2 id="other-node-types"><a class="markdownIt-Anchor" href="#other-node-types"></a> Other node types</h2>
+<ul>
+<li>Sometimes we want to go from A to B, but at the same time from B to A. In that case, we add a previous pointer in addition to the next pointer:</li>
+</ul>
+<img src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781786467355/files/assets/40fc4830-4045-468a-b887-612f95349437.jpg" alt="img" style="zoom:24%;">
+<ul>
+<li>
+<p>You might also be creating tiles for a tile-based game. In such a case, instead of previous and next, you might use north, south, east, and west. There are more types of pointers, but the principle is the same. Tiles at the end of the map will point to None:</p>
+<img src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781786467355/files/assets/9fa1def7-d820-479a-b09e-dc5c8baeeb6e.jpg" alt="img" style="zoom:33%;">
+</li>
+<li>
+<p>According to your need, if you have to move north-west, north-east, south-east, and south-west as well, just add them into your nodes.</p>
+</li>
+</ul>
+<h2 id="singly-linked-lists"><a class="markdownIt-Anchor" href="#singly-linked-lists"></a> Singly linked lists</h2>
+<ul>
+<li>One-direction</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">current = n1</span><br><span class="line"><span class="keyword">while</span> current:</span><br><span class="line">    <span class="built_in">print</span>(current.data)</span><br><span class="line">    current = current.<span class="built_in">next</span> </span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>Problems:</p>
+<ul>
+<li>
+<p>It requires too much manual work by the programmer</p>
+</li>
+<li>
+<p>It is too error-prone (this is a consequence of the first point)</p>
+</li>
+<li>
+<p>Too much of the inner workings of the list is exposed to the programmer</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Create a class for singly linked lists:</p>
+</li>
+</ul>
+<p>​	Since the list is initially empty, set the reference to None:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">SinglyLinkedList</span>:</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">		self.tail = <span class="literal">None</span> </span><br><span class="line"></span><br><span class="line">	<span class="comment"># define the 'Append' function</span></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">append</span>(<span class="params">self, data</span>):</span><br><span class="line">    <span class="comment"># Encapsulate the data in a Node</span></span><br><span class="line">    node = Node(data)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> self.tail == <span class="literal">None</span>:</span><br><span class="line">      self.tail = node</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      current = self.tail</span><br><span class="line">      <span class="keyword">while</span> current.<span class="built_in">next</span>:</span><br><span class="line">        current = current.<span class="built_in">next</span></span><br><span class="line">      current.<span class="built_in">next</span> = node</span><br></pre></td></tr></table></figure>
+<ul>
+<li>How to use:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">words = SinglyLinkedList()</span><br><span class="line">words.append(<span class="string">'egg'</span>)</span><br><span class="line">words.append(<span class="string">'ham'</span>)</span><br><span class="line">words.append(<span class="string">'spam'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># traverse the list</span></span><br><span class="line"><span class="comment"># get the first element of the list from the list itself</span></span><br><span class="line">current = words.tail</span><br><span class="line"><span class="keyword">while</span> current:</span><br><span class="line">  <span class="built_in">print</span>(current.data)</span><br><span class="line">  current = current.<span class="built_in">next</span></span><br></pre></td></tr></table></figure>
+<h3 id="a-faster-append-operation"><a class="markdownIt-Anchor" href="#a-faster-append-operation"></a> A faster append operation</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">SinglyLinkedList</span>:</span><br><span class="line">     <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>): </span><br><span class="line">         <span class="comment"># ...</span></span><br><span class="line">         self.tail = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">     <span class="keyword">def</span> <span class="title function_">append</span>(<span class="params">self, data</span>):</span><br><span class="line">        node = Node(data)</span><br><span class="line">        <span class="keyword">if</span> self.head:</span><br><span class="line">            self.head.<span class="built_in">next</span> = node</span><br><span class="line">            self.head = node</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.tail = node</span><br><span class="line">            self.head = node </span><br></pre></td></tr></table></figure>
+<h3 id="getting-the-size-of-the-list"><a class="markdownIt-Anchor" href="#getting-the-size-of-the-list"></a> Getting the size of the list</h3>
+<p>We add a size member to the SinglyLinkedList class, initializing it to 0 in the constructor. Then we increment size by one in the append method:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">SinglyLinkedList</span>:</span><br><span class="line">     <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">         <span class="comment"># ...</span></span><br><span class="line">         self.size = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">     <span class="keyword">def</span> <span class="title function_">append</span>(<span class="params">self, data</span>):</span><br><span class="line">         <span class="comment"># ...</span></span><br><span class="line">         self.size += <span class="number">1</span> </span><br></pre></td></tr></table></figure>
+<h3 id="improving-list-traversal"><a class="markdownIt-Anchor" href="#improving-list-traversal"></a> Improving list traversal</h3>
+<ul>
+<li>Client code should never need to interact with Node objects.</li>
+<li>Creating a method that returns a generator:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">iter</span>(<span class="params">self</span>):</span><br><span class="line">    current = self.tail</span><br><span class="line">    <span class="keyword">while</span> current:</span><br><span class="line">        val = current.data</span><br><span class="line">        current = current.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">yield</span> val </span><br></pre></td></tr></table></figure>
+<p>yield在函数中的功能类似于return，不同的是yield每次返回结果之后函数并没有退出，而是 每次遇到yield关键字后返回相应结果，并保留函数当前的运行状态，等待下一次的调用。如果 一个函数需要多次循环执行一个动作，并且每次执行的结果都是需要的，这种场景很适合使用yield实现。</p>
+<p>版权声明：本文为CSDN博主「-牧野-」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>
+原文链接：<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/dcrmg/article/details/78128041">https://blog.csdn.net/dcrmg/article/details/78128041<i class="fas fa-external-link-alt"></i></a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> words.<span class="built_in">iter</span>():</span><br><span class="line">    <span class="built_in">print</span>(word) </span><br></pre></td></tr></table></figure>
+<h3 id="deleting-nodes"><a class="markdownIt-Anchor" href="#deleting-nodes"></a> Deleting nodes</h3>
+<ul>
+<li>Delete a node by the data it contains.</li>
+</ul>
+<p><img src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781786467355/files/assets/a24a0505-aeb7-4fa6-b2f5-52e83df490bf.jpg" alt="img"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">delete</span>(<span class="params">self, data</span>):</span><br><span class="line">    current = self.tail</span><br><span class="line">    prev = self.tail</span><br><span class="line">    <span class="keyword">while</span> current:</span><br><span class="line">        <span class="keyword">if</span> current.data == data:</span><br><span class="line">            <span class="keyword">if</span> current == self.tail:</span><br><span class="line">                self.tail = current.<span class="built_in">next</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                prev.<span class="built_in">next</span> = current.<span class="built_in">next</span></span><br><span class="line">            self.size -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        prev = current</span><br><span class="line">        current = current.<span class="built_in">next</span></span><br></pre></td></tr></table></figure>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
+<h3 id="list-search"><a class="markdownIt-Anchor" href="#list-search"></a> List search</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">search</span>(<span class="params">self, data</span>):</span><br><span class="line">     <span class="keyword">for</span> node <span class="keyword">in</span> self.<span class="built_in">iter</span>():</span><br><span class="line">         <span class="keyword">if</span> data == node:</span><br><span class="line">             <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">     <span class="keyword">return</span> <span class="literal">False</span>  </span><br></pre></td></tr></table></figure>
+<h3 id="clearing-a-list"><a class="markdownIt-Anchor" href="#clearing-a-list"></a> Clearing a list</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">clear</span>(<span class="params">self</span>): </span><br><span class="line">       <span class="string">""" Clear the entire list. """</span> </span><br><span class="line">       self.tail = <span class="literal">None</span> </span><br><span class="line">       self.head = <span class="literal">None</span> </span><br></pre></td></tr></table></figure>
+<h2 id="doubly-linked-lists"><a class="markdownIt-Anchor" href="#doubly-linked-lists"></a> Doubly linked lists</h2>
+<img src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781786467355/files/assets/e3da69b8-ac2d-4e20-b82f-7cd375c7d8ab.jpg" alt="e3da69b8-ac2d-4e20-b82f-7cd375c7d8ab" style="zoom:33%;">
+<img src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781786467355/files/assets/7d9a21da-8c82-4386-80a0-f2eabb03028f.jpg" alt="7d9a21da-8c82-4386-80a0-f2eabb03028f" style="zoom:24%;">
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Node</span>(<span class="title class_ inherited__">object</span>): </span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, data=<span class="literal">None</span>, <span class="built_in">next</span>=<span class="literal">None</span>, prev=<span class="literal">None</span></span>): </span><br><span class="line">       self.data = data </span><br><span class="line">       self.<span class="built_in">next</span> = <span class="built_in">next</span> </span><br><span class="line">       self.prev = prev </span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DoublyLinkedList</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">   <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">       self.head = <span class="literal">None</span></span><br><span class="line">       self.tail = <span class="literal">None</span></span><br><span class="line">       self.count = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>self.head points to the beginner node of the list and self.tail points to the latest node added to the list</li>
+<li>Append:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">append</span>(<span class="params">self, data</span>): </span><br><span class="line">    <span class="string">""" Append an item to the list. """</span> </span><br><span class="line"></span><br><span class="line">       new_node = Node(data, <span class="literal">None</span>, <span class="literal">None</span>) </span><br><span class="line">       <span class="keyword">if</span> self.head <span class="keyword">is</span> <span class="literal">None</span>: </span><br><span class="line">           self.head = new_node </span><br><span class="line">           self.tail = self.head </span><br><span class="line">       <span class="keyword">else</span>: </span><br><span class="line">           new_node.prev = self.tail </span><br><span class="line">           self.tail.<span class="built_in">next</span> = new_node </span><br><span class="line">           self.tail = new_node </span><br><span class="line"></span><br><span class="line">           self.count += <span class="number">1</span> </span><br></pre></td></tr></table></figure>
+<img src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781786467355/files/assets/a85e5964-91cb-4f88-9f0e-b58f32a27ca5.jpg" alt="a85e5964-91cb-4f88-9f0e-b58f32a27ca5" style="zoom:24%;">
+<img src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781786467355/files/assets/e34fee50-eda1-401a-bf3b-16f472104da0.jpg" alt="e34fee50-eda1-401a-bf3b-16f472104da0" style="zoom:24%;">
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">delete</span>(<span class="params">self, data</span>): </span><br><span class="line">    current = self.head </span><br><span class="line">    node_deleted = <span class="literal">False</span> </span><br><span class="line">    <span class="keyword">if</span> current <span class="keyword">is</span> <span class="literal">None</span>: </span><br><span class="line">    		node_deleted = <span class="literal">False</span> </span><br><span class="line">    <span class="comment"># 要删除的是头部节点</span></span><br><span class="line">    <span class="keyword">elif</span> current.data == data: </span><br><span class="line">        self.head = current.<span class="built_in">next</span> </span><br><span class="line">        self.head.prev = <span class="literal">None</span> </span><br><span class="line">        node_deleted = <span class="literal">True</span> </span><br><span class="line">    <span class="comment"># 要删除的是尾部节点</span></span><br><span class="line">    <span class="keyword">elif</span> self.tail.data == data: </span><br><span class="line">        self.tail = self.tail.prev </span><br><span class="line">        self.tail.<span class="built_in">next</span> = <span class="literal">None</span> </span><br><span class="line">        node_deleted = <span class="literal">True</span> </span><br><span class="line">    <span class="comment"># 要删除的是中间节点，先寻找</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">while</span> current: </span><br><span class="line">            <span class="keyword">if</span> current.data == data: </span><br><span class="line">                current.prev.<span class="built_in">next</span> = current.<span class="built_in">next</span> </span><br><span class="line">                current.<span class="built_in">next</span>.prev = current.prev </span><br><span class="line">                node_deleted = <span class="literal">True</span> </span><br><span class="line">            current = current.<span class="built_in">next</span> </span><br><span class="line">    <span class="keyword">if</span> node_deleted: </span><br><span class="line">      self.count -= <span class="number">1</span>     </span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># List Search  </span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">contain</span>(<span class="params">self, data</span>): </span><br><span class="line">      <span class="keyword">for</span> node_data <span class="keyword">in</span> self.<span class="built_in">iter</span>(): </span><br><span class="line">          <span class="keyword">if</span> data == node_data: </span><br><span class="line">              <span class="keyword">return</span> <span class="literal">True</span> </span><br><span class="line">          <span class="keyword">return</span> <span class="literal">False</span> </span><br></pre></td></tr></table></figure>
+<h2 id="circular-lists"><a class="markdownIt-Anchor" href="#circular-lists"></a> Circular lists</h2>
+<ul>
+<li>Circular lists can be based on both singly and doubly linked lists.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">append</span>(<span class="params">self, data</span>): </span><br><span class="line">      node = Node(data) </span><br><span class="line">      <span class="keyword">if</span> self.head: </span><br><span class="line">          self.head.<span class="built_in">next</span> = node </span><br><span class="line">          self.head = node </span><br><span class="line">      <span class="keyword">else</span>: </span><br><span class="line">          self.head = node </span><br><span class="line">          self.tail = node </span><br><span class="line">      self.head.<span class="built_in">next</span> = self.tail </span><br><span class="line">      self.size += <span class="number">1</span> </span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">delete</span>(<span class="params">self, data</span>): </span><br><span class="line">        current = self.tail </span><br><span class="line">        prev = self.tail </span><br><span class="line">        <span class="keyword">while</span> prev == current <span class="keyword">or</span> prev != self.head: </span><br><span class="line">            <span class="keyword">if</span> current.data == data: </span><br><span class="line">                <span class="keyword">if</span> current == self.tail: </span><br><span class="line">                    self.tail = current.<span class="built_in">next</span> </span><br><span class="line">                    self.head.<span class="built_in">next</span> = self.tail </span><br><span class="line">                <span class="keyword">else</span>: </span><br><span class="line">                    prev.<span class="built_in">next</span> = current.<span class="built_in">next</span> </span><br><span class="line">                self.size -= <span class="number">1</span> </span><br><span class="line">                <span class="keyword">return</span> </span><br><span class="line">            prev = current </span><br><span class="line">            current = current.<span class="built_in">next</span> </span><br></pre></td></tr></table></figure>
+<h3 id="iterating-through-a-circular-list"><a class="markdownIt-Anchor" href="#iterating-through-a-circular-list"></a> Iterating through a circular list</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">words = CircularList() </span><br><span class="line">words.append(<span class="string">'eggs'</span>) </span><br><span class="line">words.append(<span class="string">'ham'</span>) </span><br><span class="line">words.append(<span class="string">'spam'</span>) </span><br><span class="line"></span><br><span class="line">counter = <span class="number">0</span> </span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> words.<span class="built_in">iter</span>(): </span><br><span class="line">   <span class="built_in">print</span>(word) </span><br><span class="line">   counter += <span class="number">1</span> </span><br><span class="line">   <span class="keyword">if</span> counter &gt; <span class="number">1000</span>: </span><br><span class="line">       <span class="keyword">break</span> </span><br></pre></td></tr></table></figure>
+<h2 id="stacks"><a class="markdownIt-Anchor" href="#stacks"></a> Stacks</h2>
+<ul>
+<li><strong>Last-In, First-Out</strong> (<strong>LIFO</strong>) or <strong>First-In, Last-Out</strong> (<strong>FILO</strong>)</li>
+<li>Only one end for all adding and removing</li>
+<li>Operations
+<ul>
+<li><strong>isEmpty:</strong> Returns true if the stack is empty</li>
+<li><strong>push:</strong> <u>Adds</u> a new element</li>
+<li><strong>pop</strong>: Returns the element added most recently and <u>removes</u> it</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781789801217/files/assets/a9ce44cc-08ed-4e39-b3ba-6a5691b22a2b.png" alt="a9ce44cc-08ed-4e39-b3ba-6a5691b22a2b"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span>:</span><br><span class="line">     <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">         self.items = []</span><br><span class="line">     <span class="keyword">def</span> <span class="title function_">isEmpty</span>(<span class="params">self</span>):</span><br><span class="line">         <span class="keyword">return</span> self.items == []</span><br><span class="line">     <span class="keyword">def</span> <span class="title function_">push</span>(<span class="params">self, item</span>):</span><br><span class="line">         <span class="comment"># 用的是append</span></span><br><span class="line">         self.items.append(item)</span><br><span class="line">     <span class="keyword">def</span> <span class="title function_">pop</span>(<span class="params">self</span>):</span><br><span class="line">         <span class="keyword">return</span> self.items.pop()</span><br><span class="line">     <span class="keyword">def</span> <span class="title function_">peek</span>(<span class="params">self</span>):</span><br><span class="line">         <span class="keyword">return</span> self.items[<span class="built_in">len</span>(self.items)-<span class="number">1</span>]</span><br><span class="line">     <span class="keyword">def</span> <span class="title function_">size</span>(<span class="params">self</span>):</span><br><span class="line">         <span class="keyword">return</span> <span class="built_in">len</span>(self.items)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">stack = Stack()</span><br><span class="line">stack.push(<span class="string">'Red'</span>)</span><br><span class="line">stack.push(<span class="string">'Orange'</span>)</span><br><span class="line">stack.push(<span class="string">'Yellow'</span>)</span><br><span class="line">stack.push(<span class="string">'Green'</span>)</span><br><span class="line"></span><br><span class="line">stack.pop()</span><br><span class="line">&gt; <span class="string">'Yellow'</span></span><br><span class="line"></span><br><span class="line">stack.isEmpty()</span><br><span class="line">&gt; <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<h3 id="time-complexity-of-stacks"><a class="markdownIt-Anchor" href="#time-complexity-of-stacks"></a> Time complexity of stacks</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Operations</strong></th>
+<th><strong>Time Complexity</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>push</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>pop</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>size</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>peek</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table>
+<p>None of them depends on the size of the stack.</p>
+<h3 id="applications-stack"><a class="markdownIt-Anchor" href="#applications-stack"></a> Applications: Stack</h3>
+<ul>
+<li>Browser history</li>
+<li>Word - Undo</li>
+</ul>
+<h2 id="queues"><a class="markdownIt-Anchor" href="#queues"></a> Queues</h2>
+<ul>
+<li><strong>FIFO</strong></li>
+<li>One end of the queue is called the <em>rear</em> and the other is called the <em>front</em>.</li>
+<li>When elements are <strong>removed</strong> from the front, the operation is called <em>dequeue</em>.</li>
+<li>When elements are <strong>added</strong> at the rear, the operation is called <em>enqueue</em>.</li>
+</ul>
+<p><img src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781789801217/files/assets/0da2e641-e84f-4f35-bdea-2fe3d9366528.png" alt="0da2e641-e84f-4f35-bdea-2fe3d9366528"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Queue</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">   <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">      self.items = []</span><br><span class="line">   <span class="keyword">def</span> <span class="title function_">isEmpty</span>(<span class="params">self</span>):</span><br><span class="line">      <span class="keyword">return</span> self.items == []</span><br><span class="line">   <span class="keyword">def</span> <span class="title function_">enqueue</span>(<span class="params">self, item</span>):</span><br><span class="line">    	<span class="comment"># 用的是insert</span></span><br><span class="line">       self.items.insert(<span class="number">0</span>,item)</span><br><span class="line">   <span class="keyword">def</span> <span class="title function_">dequeue</span>(<span class="params">self</span>):</span><br><span class="line">      <span class="keyword">return</span> self.items.pop()</span><br><span class="line">   <span class="keyword">def</span> <span class="title function_">size</span>(<span class="params">self</span>):</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">len</span>(self.items)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">queue = Queue()</span><br><span class="line">queue.enqueue(<span class="string">'Red'</span>)</span><br><span class="line">queue.enqueue(<span class="string">'Orange'</span>)</span><br><span class="line">queue.enqueue(<span class="string">'Yellow'</span>)</span><br><span class="line">queue.enqueue(<span class="string">'Green'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(queue.size())</span><br><span class="line">&gt; <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(queue.dequeue())</span><br><span class="line">&gt; Red</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(queue.dequeue())</span><br><span class="line">&gt; Orange</span><br></pre></td></tr></table></figure>
+<h2 id="the-basic-idea-behind-the-use-of-stacks-and-queues"><a class="markdownIt-Anchor" href="#the-basic-idea-behind-the-use-of-stacks-and-queues"></a> The basic idea behind the use of stacks and queues</h2>
+<p><strong>Mail</strong> stack/queue</p>
+<ul>
+<li><strong>stack</strong>: read the latest first. There is a chance that we never get a chance to reach a very important letter waiting for us at the lower end of the stack.</li>
+<li><strong>queue</strong>: read the oldest first</li>
+</ul>
+
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="article-nav">
+                        
+                        
+                            <div class="article-next">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2023/11/30/DTTM-L6/"
+                                   title="DTTM | L6"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">DTTM | L6</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                            <span class="right arrow-icon flex-center">
+                                      <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;Comments
+        </div>
+        
+            
+
+    <div class="error-tips">Please fill in Valine complete configuration items.</div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lists-and-pointer-structures"><span class="nav-number">1.</span> <span class="nav-text"> Lists and Pointer Structures</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#arrays"><span class="nav-number">1.1.</span> <span class="nav-text"> Arrays</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pointer-structures"><span class="nav-number">1.2.</span> <span class="nav-text"> Pointer structures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nodes"><span class="nav-number">1.3.</span> <span class="nav-text"> Nodes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#finding-endpoints"><span class="nav-number">1.4.</span> <span class="nav-text"> Finding endpoints</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node"><span class="nav-number">1.5.</span> <span class="nav-text"> Node</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#other-node-types"><span class="nav-number">1.6.</span> <span class="nav-text"> Other node types</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#singly-linked-lists"><span class="nav-number">1.7.</span> <span class="nav-text"> Singly linked lists</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-faster-append-operation"><span class="nav-number">1.7.1.</span> <span class="nav-text"> A faster append operation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getting-the-size-of-the-list"><span class="nav-number">1.7.2.</span> <span class="nav-text"> Getting the size of the list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#improving-list-traversal"><span class="nav-number">1.7.3.</span> <span class="nav-text"> Improving list traversal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deleting-nodes"><span class="nav-number">1.7.4.</span> <span class="nav-text"> Deleting nodes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-search"><span class="nav-number">1.7.5.</span> <span class="nav-text"> List search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#clearing-a-list"><span class="nav-number">1.7.6.</span> <span class="nav-text"> Clearing a list</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#doubly-linked-lists"><span class="nav-number">1.8.</span> <span class="nav-text"> Doubly linked lists</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#circular-lists"><span class="nav-number">1.9.</span> <span class="nav-text"> Circular lists</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#iterating-through-a-circular-list"><span class="nav-number">1.9.1.</span> <span class="nav-text"> Iterating through a circular list</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stacks"><span class="nav-number">1.10.</span> <span class="nav-text"> Stacks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#time-complexity-of-stacks"><span class="nav-number">1.10.1.</span> <span class="nav-text"> Time complexity of stacks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#applications-stack"><span class="nav-number">1.10.2.</span> <span class="nav-text"> Applications: Stack</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#queues"><span class="nav-number">1.11.</span> <span class="nav-text"> Queues</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#the-basic-idea-behind-the-use-of-stacks-and-queues"><span class="nav-number">1.12.</span> <span class="nav-text"> The basic idea behind the use of stacks and queues</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2023
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Li Syaoran</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+                <div class="deploy-info info-item default">
+                    
+                        This site is deployed on <span class="tooltip" data-tooltip-content="GitHub Pages"><img src="/images/deploy-provider/github.png"></span>
+                        
+                </div>
+            
+        
+
+        <div class="count-item info-item default">
+            
+                <span class="count-box border-box word">
+                    <span class="item-type border-box">Total words</span>
+                    <span class="item-value border-box word">82.6k</span>
+                </span>
+            
+
+            
+                <span class="count-box border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-box border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lists-and-pointer-structures"><span class="nav-number">1.</span> <span class="nav-text"> Lists and Pointer Structures</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#arrays"><span class="nav-number">1.1.</span> <span class="nav-text"> Arrays</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pointer-structures"><span class="nav-number">1.2.</span> <span class="nav-text"> Pointer structures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nodes"><span class="nav-number">1.3.</span> <span class="nav-text"> Nodes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#finding-endpoints"><span class="nav-number">1.4.</span> <span class="nav-text"> Finding endpoints</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node"><span class="nav-number">1.5.</span> <span class="nav-text"> Node</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#other-node-types"><span class="nav-number">1.6.</span> <span class="nav-text"> Other node types</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#singly-linked-lists"><span class="nav-number">1.7.</span> <span class="nav-text"> Singly linked lists</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-faster-append-operation"><span class="nav-number">1.7.1.</span> <span class="nav-text"> A faster append operation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getting-the-size-of-the-list"><span class="nav-number">1.7.2.</span> <span class="nav-text"> Getting the size of the list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#improving-list-traversal"><span class="nav-number">1.7.3.</span> <span class="nav-text"> Improving list traversal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deleting-nodes"><span class="nav-number">1.7.4.</span> <span class="nav-text"> Deleting nodes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-search"><span class="nav-number">1.7.5.</span> <span class="nav-text"> List search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#clearing-a-list"><span class="nav-number">1.7.6.</span> <span class="nav-text"> Clearing a list</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#doubly-linked-lists"><span class="nav-number">1.8.</span> <span class="nav-text"> Doubly linked lists</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#circular-lists"><span class="nav-number">1.9.</span> <span class="nav-text"> Circular lists</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#iterating-through-a-circular-list"><span class="nav-number">1.9.1.</span> <span class="nav-text"> Iterating through a circular list</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stacks"><span class="nav-number">1.10.</span> <span class="nav-text"> Stacks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#time-complexity-of-stacks"><span class="nav-number">1.10.1.</span> <span class="nav-text"> Time complexity of stacks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#applications-stack"><span class="nav-number">1.10.2.</span> <span class="nav-text"> Applications: Stack</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#queues"><span class="nav-number">1.11.</span> <span class="nav-text"> Queues</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#the-basic-idea-behind-the-use-of-stacks-and-queues"><span class="nav-number">1.12.</span> <span class="nav-text"> The basic idea behind the use of stacks and queues</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/dark-light-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/local-search.js"></script>
+
+
+<!-- code-block -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/code-block.js"></script>
+
+
+<!-- lazyload -->
+
+
+<div class="pjax">
+    
+        <!-- post-helper -->
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/post/post-helper.js"></script>
+
+        <!-- toc -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/post/toc.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/post/share.js"></script>
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":75,"height":150},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>

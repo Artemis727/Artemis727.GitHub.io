@@ -335,7 +335,7 @@ mjx-container[display="true"] + br {
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Wed Nov 22 2023 18:38:34 GMT+0800">2023-11-22 18:38:34</span>
+                <span class="pc" data-updated="Tue Nov 28 2023 19:07:42 GMT+0800">2023-11-28 19:07:42</span>
             </span>
         
 
@@ -353,6 +353,10 @@ mjx-container[display="true"] + br {
         
 
         
+        
+            <span class="meta-info-item article-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>840 Words</span>
+            </span>
         
         
         
@@ -373,7 +377,139 @@ mjx-container[display="true"] + br {
                 <div class="article-content keep-markdown-body">
                     
 
-                    
+                    <h1 id="pacelc-theorem"><a class="markdownIt-Anchor" href="#pacelc-theorem"></a> PACELC Theorem</h1>
+<p><img src="https://p.ipic.vip/gbv7rt.png" alt="image-2023112264911414 PM"></p>
+<ul>
+<li>PACELC is an extended version of CAP Theorem</li>
+<li>If (P)artition happens, we must choose either
+<ul>
+<li>(A)vailability, or</li>
+<li>©onsistency</li>
+</ul>
+</li>
+<li>(E)lse, we must choose
+<ul>
+<li><strong>Low</strong> (L)atency, or</li>
+<li>High ©onsistency</li>
+</ul>
+</li>
+<li>CAP Theorem describes a distributed database, PACELC describes high-availability distributed database</li>
+</ul>
+<h1 id="the-case-against-sql"><a class="markdownIt-Anchor" href="#the-case-against-sql"></a> The Case Against SQL</h1>
+<h2 id="the-common-5v-of-big-data"><a class="markdownIt-Anchor" href="#the-common-5v-of-big-data"></a> The common 5V of Big Data</h2>
+<ul>
+<li>Veracity -&gt; Correctness</li>
+<li>Value</li>
+<li>Volume -&gt; Large volume of data -&gt; hundreds/thousands gigabytes of data -&gt; how to make read/write fast?</li>
+<li>Velocity</li>
+<li>Variety</li>
+</ul>
+<p>Impedance Mismatch -&gt; cross-table information</p>
+<h1 id="nosql"><a class="markdownIt-Anchor" href="#nosql"></a> NoSQL</h1>
+<blockquote>
+<p>We don’e need a schema design.</p>
+<p>A traditional table holds records in design.</p>
+<p>NoSQL (MongDB) offers people more choices of organizing data, achieve better partitioning.</p>
+<p>GitHub’s LINT: Lint 工具通常用于检查代码中的潜在问题、风格违规或错误，以确保代码质量和一致性。Linting 是一种静态代码分析的方式，有助于发现并修复代码中的常见问题。</p>
+</blockquote>
+<h2 id="nosql-base-properties"><a class="markdownIt-Anchor" href="#nosql-base-properties"></a> NoSQL BASE properties</h2>
+<ul>
+<li>
+<p><strong>Basically Available</strong>: distributed database that is always available.</p>
+</li>
+<li>
+<p><strong>Soft-state</strong>: Opposition of hard-state.</p>
+<ul>
+<li>“Soft state” 意味着系统中的状态是不稳定的，可能会在时间上变化。(<strong>You will have difference version of truth. The data is not durable.</strong> )</li>
+<li>数据的状态不一定需要一直保持不变，而是在某些条件下可能会发生变化。</li>
+<li>这种状态的变化可能是暂时的，不需要永久保存或在系统宕机时保留。</li>
+<li>在 NoSQL 数据库中，“soft state” 的一个常见例子是缓存。缓存中的数据是一种软状态，因为它可以在数据库中的数据发生变化时被更新或刷新。缓存是一种用于提高性能和减轻数据库负载的方法，但由于缓存是一种软状态，因此在一定条件下可能会失效或变得不一致。</li>
+<li>与之相对的是 “hard state” (durability)，它指的是系统状态是稳定的，不容易随时间的推移而改变。在数据库中，“hard state” 表示数据的一致性和持久性得到了强调，确保数据在各种情况下都是可靠和可用的。</li>
+</ul>
+</li>
+<li>
+<p><strong>Eventual Consistency</strong>: The consistency will be achieved when the network is recovered.</p>
+</li>
+</ul>
+<h2 id="types-of-nosql"><a class="markdownIt-Anchor" href="#types-of-nosql"></a> Types of NoSQL</h2>
+<ul>
+<li>Key-value store: only 2 cols, fast</li>
+<li>Document store</li>
+<li>Wide-column store: 3-dimension table</li>
+<li>Graph</li>
+</ul>
+<h1 id="document-datastore"><a class="markdownIt-Anchor" href="#document-datastore"></a> Document datastore</h1>
+<ul>
+<li>Usually, a third table will be established to handle the m-n relationship.</li>
+<li><strong>A car can be rented to many drivers, and a driver can rent different cars throughout his lifetime. How should we model this?</strong>
+<ul>
+<li>Car/customer谁update快就把谁作为PK，让另一个成为它的一条属性</li>
+<li>使用MongoDB数据库</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://p.ipic.vip/0zo2mi.png" alt="image-2023112282741813 PM"></p>
+<h2 id="document-datastore-key-considerations"><a class="markdownIt-Anchor" href="#document-datastore-key-considerations"></a> Document datastore - Key Considerations</h2>
+<p>Consider that a hospital stores patient personal details, diagnosis, prescribed medications, treatment plans, genetic material in a document datastore.</p>
+<ul>
+<li>What are the data retrieval entry points)?</li>
+<li>Which piece of information is likely to be read or write frequently?</li>
+<li>Are there certain data retrieval data entry points that must be avoided?</li>
+</ul>
+<ol>
+<li>
+<p>data retrieval entry points/query points?</p>
+<ol>
+<li>idnetity no/passport no</li>
+<li>name &amp;&amp; gender &amp;&amp; dob</li>
+<li>patientid</li>
+</ol>
+<p>补充：Pull out data from a medical perspective, eg. if the wrong medication is given a bunch of patents, then you may use medication &amp; duration to do the query.</p>
+</li>
+<li>
+<p>which piece of info is likely to be read or write frequently?</p>
+<ol>
+<li>disgnosis</li>
+<li>allergic history</li>
+<li>prescribed mediations</li>
+<li>physical condition, pregnant</li>
+</ol>
+<p>补充：When things go wrong, how do we retrieve these info?</p>
+</li>
+<li>
+<p>sensitive reasons</p>
+<ol>
+<li>personal data: identity no, name to recognize this person</li>
+<li>significant medical records: major surgery,</li>
+<li>payment data: payment card information, medical insurance record</li>
+</ol>
+</li>
+</ol>
+<p>​	补充：sensitive treatment plans (HIV, Covid heats), you should consider the impact on the society and business when designing the schema</p>
+<h1 id="document-datastore-group-exercise"><a class="markdownIt-Anchor" href="#document-datastore-group-exercise"></a> Document datastore - Group Exercise</h1>
+<p>Consider an international hotel group that operates a membership program. The program will support the members stay booking, facilities booking, redemption, and special requests received during the current stay and past bookings.</p>
+<ul>
+<li>
+<p>How would you design the documents to capture these details in MongoDB? Design and prepare a short 5 minutes brief on your design.</p>
+</li>
+<li>
+<p>Things to consider:</p>
+<ul>
+<li>
+<p>Hotel members expect seamless service when on-site.</p>
+</li>
+<li>
+<p>The hotel would like to make marketing personalized.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>Put into a word doc and send before Sunday.</p>
+<p>Database</p>
+<ul>
+<li></li>
+</ul>
+
                 </div>
 
                 
@@ -414,6 +550,22 @@ mjx-container[display="true"] + br {
 
                 
                     <div class="article-nav">
+                        
+                            <div class="article-prev">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2023/11/23/DTTM-L4-Identifying-Business-opportunities-through-Design-Thinking/"
+                                   title="DTTM | L4 Identifying Business opportunities through Design Thinking"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                      <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                            <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">DTTM | L4 Identifying Business opportunities through Design Thinking</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
                         
                         
                             <div class="article-next">
@@ -464,7 +616,7 @@ mjx-container[display="true"] + br {
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pacelc-theorem"><span class="nav-number">1.</span> <span class="nav-text"> PACELC Theorem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#the-case-against-sql"><span class="nav-number">2.</span> <span class="nav-text"> The Case Against SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#the-common-5v-of-big-data"><span class="nav-number">2.1.</span> <span class="nav-text"> The common 5V of Big Data</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nosql"><span class="nav-number">3.</span> <span class="nav-text"> NoSQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nosql-base-properties"><span class="nav-number">3.1.</span> <span class="nav-text"> NoSQL BASE properties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#types-of-nosql"><span class="nav-number">3.2.</span> <span class="nav-text"> Types of NoSQL</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#document-datastore"><span class="nav-number">4.</span> <span class="nav-text"> Document datastore</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#document-datastore-key-considerations"><span class="nav-number">4.1.</span> <span class="nav-text"> Document datastore - Key Considerations</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#document-datastore-group-exercise"><span class="nav-number">5.</span> <span class="nav-text"> Document datastore - Group Exercise</span></a></li></ol>
     </div>
 </div>
 
@@ -510,7 +662,7 @@ mjx-container[display="true"] + br {
             
                 <span class="count-box border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">77.7k</span>
+                    <span class="item-value border-box word">82.6k</span>
                 </span>
             
 
@@ -653,7 +805,7 @@ mjx-container[display="true"] + br {
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pacelc-theorem"><span class="nav-number">1.</span> <span class="nav-text"> PACELC Theorem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#the-case-against-sql"><span class="nav-number">2.</span> <span class="nav-text"> The Case Against SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#the-common-5v-of-big-data"><span class="nav-number">2.1.</span> <span class="nav-text"> The common 5V of Big Data</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nosql"><span class="nav-number">3.</span> <span class="nav-text"> NoSQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nosql-base-properties"><span class="nav-number">3.1.</span> <span class="nav-text"> NoSQL BASE properties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#types-of-nosql"><span class="nav-number">3.2.</span> <span class="nav-text"> Types of NoSQL</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#document-datastore"><span class="nav-number">4.</span> <span class="nav-text"> Document datastore</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#document-datastore-key-considerations"><span class="nav-number">4.1.</span> <span class="nav-text"> Document datastore - Key Considerations</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#document-datastore-group-exercise"><span class="nav-number">5.</span> <span class="nav-text"> Document datastore - Group Exercise</span></a></li></ol>
     </div>
 </div>
 
