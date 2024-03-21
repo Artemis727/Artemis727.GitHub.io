@@ -201,29 +201,6 @@
   </entry>
   
   <entry>
-    <title>AI | W1</title>
-    <link href="https://artemis727.github.io/2023/11/20/AI-W1/"/>
-    <id>https://artemis727.github.io/2023/11/20/AI-W1/</id>
-    <published>2023-11-20T05:50:35.000Z</published>
-    <updated>2023-11-21T07:05:56.269Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Recommendation : <a class="link" href="https://www.amazon.com/Learning-Data-Yaser-S-Abu-Mostafa/dp/1600490069">Learning From Data<i class="fas fa-external-link-alt"></i></a></p><p><a class="link" href="https://work.caltech.edu/telecourse">Mooc<i class="fas fa-external-link-alt"></i></a></p></blockquote><h1 id="machine-learning-paradigm"><a class="markdownIt-Anchor" href="#machine-learning-paradigm"></a> Machine Learning Paradigm</h1><p><img src="../../../Library/Application%20Support/typora-user-images/image-2023112015930265%E2%80%AFPM.png" alt="image-2023112015930265 PM"></p><p>Question: Why do we need a candidate formula (hypothesis set)?</p><h2 id="example1-linear-separable-data"><a class="markdownIt-Anchor" href="#example1-linear-separable-data"></a> Example1: Linear Separable Data</h2><p><img src="https://p.ipic.vip/0sme05.png" alt="image-2023112021814437 PM"></p><p><img src="https://p.ipic.vip/5w1jke.png" alt="image-2023112021830000 PM"></p><p><img src="https://p.ipic.vip/ebk8pw.png" alt="image-2023112021841696 PM"></p><p>-&gt; ‘linear separable’ data</p><p>Candidating function can be ended like the target function.</p><p>Not enough data -&gt; underfitting data</p><h2 id="example2-non-linear-separable-data"><a class="markdownIt-Anchor" href="#example2-non-linear-separable-data"></a> Example2: Non-linear Separable Data</h2><p><img src="../../../Library/Containers/com.tencent.xinWeChat/Data/Library/Application%20Support/com.tencent.xinWeChat/2.0b4.0.9/e64de847ce5df010568a7ec24eb83621/Message/MessageTemp/9e20f478899dc29eb19741386f9343c8/Image/11541700461282_.pic_hd.jpg" alt="11541700461282_.pic_hd"></p><p><img src="../../../Library/Containers/com.tencent.xinWeChat/Data/Library/Application%20Support/com.tencent.xinWeChat/2.0b4.0.9/e64de847ce5df010568a7ec24eb83621/Message/MessageTemp/9e20f478899dc29eb19741386f9343c8/Image/11551700461328_.pic_hd.jpg" alt="11541700461282_.pic_hd"></p><h1 id="about-the-class"><a class="markdownIt-Anchor" href="#about-the-class"></a> About the Class</h1><h2 id="grade-component"><a class="markdownIt-Anchor" href="#grade-component"></a> Grade component</h2><table><thead><tr><th><strong>Component</strong></th><th><strong>ILO Tested</strong></th><th><strong>Weighting</strong></th><th><strong>Team/Individual</strong></th><th><strong>Assessment Rubrics</strong></th></tr></thead><tbody><tr><td>1. Class  Participation (2 e-learning + 6* homework)</td><td>1, 2, 3</td><td>30%</td><td>Individual</td><td>Appendix 1.1</td></tr><tr><td>2. Final Assignment * 2</td><td>1,2,3</td><td>30%</td><td>Individual</td><td>Appendix 1.2</td></tr><tr><td>3. Group Project * 2</td><td>1,2,3</td><td>40%</td><td>Team</td><td>Appendix 1.3</td></tr><tr><td>Total</td><td>100%</td><td></td><td></td><td></td></tr></tbody></table><h2 id="related-link"><a class="markdownIt-Anchor" href="#related-link"></a> Related Link</h2><p><a class="link" href="https://us02web.zoom.us/j/8632539931?pwd=VUpud3hpRXZOdTNlT1JJNnFoeUVOUT09">zoom link:<i class="fas fa-external-link-alt"></i></a></p><p><a class="link" href="https://us02web.zoom.us/j/8632539931?pwd=VUpud3hpRXZOdTNlT1JJNnFoeUVOUT09">https://us02web.zoom.us/j/8632539931?pwd=VUpud3hpRXZOdTNlT1JJNnFoeUVOUT09<i class="fas fa-external-link-alt"></i></a></p><p>password: 1234</p><p>id: 863 253 9931</p><p>Download:</p><p>Python: Anaconda: <a class="link" href="https://www.anaconda.com/products/individual">https://www.anaconda.com/products/individual<i class="fas fa-external-link-alt"></i></a></p><p>VS Code: <a class="link" href="https://code.visualstudio.com/download">https://code.visualstudio.com/download<i class="fas fa-external-link-alt"></i></a></p><p>Orange: <a class="link" href="https://orangedatamining.com/download/#windows">https://orangedatamining.com/download/#windows<i class="fas fa-external-link-alt"></i></a></p><p>=========================================================================================================================================================</p><p>Register:</p><p>Programming:</p><p>R: rstudio cloud <a class="link" href="https://rstudio.cloud/">https://rstudio.cloud/<i class="fas fa-external-link-alt"></i></a></p><p>Snatchbot : <a class="link" href="https://snatchbot.me/">https://snatchbot.me/<i class="fas fa-external-link-alt"></i></a></p><p>=========================================================================================================================================================</p><p>API:</p><p>Replicate: <a class="link" href="https://replicate.com/">https://replicate.com/<i class="fas fa-external-link-alt"></i></a></p><p>discord: <a class="link" href="https://discord.com/">https://discord.com/<i class="fas fa-external-link-alt"></i></a></p><p><a class="link" href="https://www.midjourney.com/">Midjourney: https://www.midjourney.com/<i class="fas fa-external-link-alt"></i></a></p><p>Openai: <a class="link" href="https://openai.com/">https://openai.com/<i class="fas fa-external-link-alt"></i></a></p><p>Google Makersuite: <a class="link" href="https://makersuite.google.com/waitlist">https://makersuite.google.com/waitlist<i class="fas fa-external-link-alt"></i></a></p><p>=========================================================================================================================================================</p><p>Cloud:</p><p>Render: <a class="link" href="https://render.com/">https://render.com/<i class="fas fa-external-link-alt"></i></a></p><p>PythonAnywhere: <a class="link" href="https://www.pythonanywhere.com/">https://www.pythonanywhere.com/<i class="fas fa-external-link-alt"></i></a></p><p>github: <a class="link" href="https://github.com/">https://github.com/<i class="fas fa-external-link-alt"></i></a></p><p>discord: <a class="link" href="https://discord.com/">https://discord.com/<i class="fas fa-external-link-alt"></i></a></p><p><a class="link" href="https://www.midjourney.com/">Midjourney: https://www.midjourney.com/<i class="fas fa-external-link-alt"></i></a></p><p>==========================================================================================================================================================</p><p>Useful Link:</p><p>Library: <a class="link" href="https://1drv.ms/f/s!Aik2a4x7tvLygrcOVnorwa6X7zBxTg?e=ns139i">https://1drv.ms/f/s!Aik2a4x7tvLygrcOVnorwa6X7zBxTg?e=ns139i<i class="fas fa-external-link-alt"></i></a></p><p>Google Drive Code: <a class="link" href="https://drive.google.com/drive/folders/1fXjR7HWQVDvW4b_UwFmEM_NymlOo4Wbw?usp=sharing">https://drive.google.com/drive/folders/1fXjR7HWQVDvW4b_UwFmEM_NymlOo4Wbw?usp=sharing,<i class="fas fa-external-link-alt"></i></a></p><p>Google Drive Data: <a class="link" href="https://drive.google.com/drive/folders/1DWSSkL9zMwXktar8rxC_3rUGqxwNNTrR?usp=sharing">https://drive.google.com/drive/folders/1DWSSkL9zMwXktar8rxC_3rUGqxwNNTrR?usp=sharing<i class="fas fa-external-link-alt"></i></a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;Recommendation : &lt;a class=&quot;link&quot; href=&quot;https://www.amazon.com/Learning-Data-Yaser-S-Abu-Mostafa/dp/1600490069&quot;&gt;Learning From</summary>
-      
-    
-    
-    
-    <category term="BA" scheme="https://artemis727.github.io/categories/BA/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Advanced Programming | L2 Array</title>
     <link href="https://artemis727.github.io/2023/11/19/Advanced-Programming-L2-Array/"/>
     <id>https://artemis727.github.io/2023/11/19/Advanced-Programming-L2-Array/</id>
@@ -479,6 +456,29 @@
     
     <category term="Research" scheme="https://artemis727.github.io/categories/Research/"/>
     
+    
+  </entry>
+  
+  <entry>
+    <title>CART | Errors in CART</title>
+    <link href="https://artemis727.github.io/2023/09/18/CART-Errors-in-CART/"/>
+    <id>https://artemis727.github.io/2023/09/18/CART-Errors-in-CART/</id>
+    <published>2023-09-18T05:41:18.000Z</published>
+    <updated>2023-09-18T05:41:50.837Z</updated>
+    
+    <content type="html"><![CDATA[<p>CART全称是Classification and Regression Trees。</p><h1 id="trainset-error-和-cv-error"><a class="markdownIt-Anchor" href="#trainset-error-和-cv-error"></a> “Trainset error” 和 “CV error”</h1><p>对于 CART（Classification and Regression Trees）算法，“Trainset error” 和 “CV error” 分别代表了两种不同的误差度量：</p><ol><li><p><strong>Trainset Error（训练集误差）</strong>：</p><p>这是在构建决策树时使用训练数据集来评估模型的误差。具体来说，它是指模型在训练数据集上的预测误差或者拟合不准确度。训练集误差通常是通过将模型对训练数据集的预测与实际观测值进行比较来计算的。</p><p><strong>训练集误差的一个问题是它可能会过于乐观地估计了模型的性能，因为模型在训练数据上进行了拟合。这可能导致模型在未见过的新数据上的性能表现不佳。</strong></p></li><li><p><strong>Cross-Validation Error（交叉验证误差）</strong>：</p><p>**为了更准确地评估模型的性能，**通常会将数据分成训练集和测试集两部分。交叉验证（Cross-Validation）是一种常用的方法，它将数据分成多个折（folds），然后分别使用其中一个折作为测试集，其余折作为训练集来训练模型。这样可以多次进行模型训练和评估，从而得到一个更稳健的性能估计。</p><p>CV error 是在交叉验证中得到的，它表示模型在不同的测试集上的平均预测误差。通常，通过计算多次交叉验证的结果的平均值来得到最终的 CV error。</p></li></ol><p>总的来说，Trainset Error 是在训练数据上的误差，它可能会过于乐观地估计模型的性能；而 CV error 则是通过在多次独立的测试集上进行交叉验证得到的，它提供了对模型在未见过的数据上性能的更稳健的估计。 CV error 通常被认为是对模型性能的更可靠的评估。</p><h1 id="解释一个cp-table"><a class="markdownIt-Anchor" href="#解释一个cp-table"></a> 解释一个CP table</h1><p>一个 CART（Classification and Regression Trees）模型的 <code>cp table</code> 包含了与树的复杂度参数（通常用 α 表示）相关的信息。CART 模型会根据训练数据构建一棵树，但这棵树可能会过于复杂，导致在训练数据上表现很好，但在未见过的数据上表现较差（过拟合）。</p><p><code>cp table</code> 提供了一种帮助找到适当树大小的方法。其中 <code>cp</code> 代表复杂度参数，它可以理解为控制树的复杂程度的一个调节参数。</p><p><code>cp table</code> 通常包括以下列：</p><ol><li><p><strong><code>CP</code>（复杂度参数）</strong>：</p><ul><li>这列列出了不同的复杂度参数值。它们是一个递减的有序序列，从最大的复杂度开始，逐渐减小。</li></ul></li><li><p><strong><code>rel error</code>（相对误差）</strong>：</p><ul><li>这列列出了在给定复杂度参数下，与完全展开的树相比，模型的相对误差。<strong>相对误差是模型的预测误差与完全展开树的预测误差之比。</strong></li></ul></li><li><p><strong><code>xerror</code>（交叉验证误差）</strong>：</p><ul><li>这列列出了在给定复杂度参数下，通过<strong>交叉验证</strong>得到的模型的平均预测误差。</li></ul></li><li><p><strong><code>xstd</code>（交叉验证误差的标准差）</strong>：</p><ul><li>这列列出了在给定复杂度参数下，通过交叉验证得到的模型的平均预测误差的<strong>标准差</strong>。</li></ul></li></ol><p>解释一个 <code>cp table</code> 的过程通常包括以下步骤：</p><ol><li><p><strong>选择最小的 <code>CP</code> 值</strong>：通常会选择具有最小相对误差或交叉验证误差的复杂度参数作为最终模型的复杂度参数。</p></li><li><p><strong>对比相对误差和交叉验证误差</strong>：相对误差提供了一种在训练集上进行模型评估的方法，而交叉验证误差提供了对模型在未见过数据上的性能的估计。</p></li><li><p><strong>考虑模型的解释性和复杂度</strong>：选择一个合适的复杂度参数需要在模型的性能和复杂度之间进行权衡。更复杂的模型可能在训练数据上表现得更好，但可能在新数据上表现较差。</p></li></ol><p>总的来说，<code>cp table</code> 提供了一个帮助找到合适树大小的指南，以避免过拟合和提高模型的泛化能力。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;CART全称是Classification and Regression Trees。&lt;/p&gt;
+&lt;h1 id=&quot;trainset-error-和-cv-error&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#trainset-error-和-c</summary>
+      
+    
+    
+    
+    
+    <category term="算法" scheme="https://artemis727.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
