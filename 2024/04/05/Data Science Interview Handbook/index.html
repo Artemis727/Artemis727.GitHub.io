@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Li Syaoran">
+    
+    <title>
+        
+        Syaoran&#39;s Universe
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/Pixel1.jpg">
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"artemis727.github.io","root":"/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"style":{"primary_color":"#adc178","logo":"/images/Bird.JPG","favicon":"/images/Pixel1.jpg","avatar":"/images/Bird.JPG","first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Being present.","hitokoto":false},"scroll":{"progress_bar":true,"percent":false}},"local_search":{"enable":true,"preload":true},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":true,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":true,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"version":"3.8.6"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Syaoran :)" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/Bird.JPG">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Syaoran&#39;s Universe
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+
+                
+
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+
+        <div class="article-content-container border-box">
+
+            
+
+            <div class="article-content-bottom border-box">
+                
+                    <div class="article-title">
+                        
+                    </div>
+                
+
+                
+                    <div class="article-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/Bird.JPG">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name">Li Syaoran</span>
+                                
+                                    <span class="author-label">Architect</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="article-meta-info-container border-box post">
+    <div class="article-meta-info border-box">
+        
+
+
+        
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2024-04-05 22:49:03</span>
+                <span class="mobile">2024-04-05 22:49</span>
+            </span>
+
+            <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Sun Apr 07 2024 20:14:26 GMT+0800">2024-04-07 20:14:26</span>
+            </span>
+        
+
+        
+
+        
+
+        
+        
+            <span class="meta-info-item article-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>2k Words</span>
+            </span>
+        
+        
+        
+            <span class="meta-info-item article-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="article-content keep-markdown-body">
+                    
+
+                    <p><img src="https://p.ipic.vip/f21989.png" alt="img"></p>
+<h1 id="k-means"><a class="markdownIt-Anchor" href="#k-means"></a> <a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/141882592">K-means<i class="fas fa-external-link-alt"></i></a></h1>
+<ul>
+<li><u>Clustering</u> -&gt; unsupervised.</li>
+<li><u>Business example</u> -&gt; If we have a large amount of information on <strong>current and potential customers</strong>, we can use clustering to <strong>divide customers into groups for further analysis and marketing campaigns</strong>. -&gt; RFM + clustering</li>
+<li><u>降维和矢量化 Vector Quantization</u> -&gt; 可以将高维特征压缩到一列当中，常常用于图像，声音，视频等非结构化数据，可以大幅度压缩数据量。High-dimensional features can be compressed into a column, often used in images, sound, video and other unstructured data, which can greatly compress the data.</li>
+</ul>
+<h2 id="聚类算法和分类算法的区别"><a class="markdownIt-Anchor" href="#聚类算法和分类算法的区别"></a> 聚类算法和分类算法的区别：</h2>
+<p><img src="https://p.ipic.vip/bbnei6.jpg" alt="img"></p>
+<h2 id="常用聚类算法的简单介绍"><a class="markdownIt-Anchor" href="#常用聚类算法的简单介绍"></a> 常用聚类算法的简单介绍：</h2>
+<ul>
+<li><strong>K-means聚类:<strong>也称为K均值聚类，它试图发现k(用户指定个数)个不同的簇 ，并且</strong>每个簇的中心采用簇中所含值的均值计算而成</strong>。</li>
+<li>**层次聚类:**层次聚类(hierarchical clustering)试图在不同层次对数据集进行划分，从而形成树形的聚类结构。</li>
+<li><strong>DBSCAN:<strong>这是一种基于</strong>密度</strong> density 的聚类算法，<strong>簇的个数由算法自动地确定</strong>。低密度区域中的点被视为噪声而忽略，因此DBSCAN不产生完全聚类。</li>
+</ul>
+<h2 id="k-means-process"><a class="markdownIt-Anchor" href="#k-means-process"></a> K-means Process</h2>
+<p><img src="https://p.ipic.vip/cjajjd.jpg" alt="img"></p>
+<p><img src="https://p.ipic.vip/7fu6mz.jpg" alt="img"></p>
+<h2 id="聚类算法聚出的类有什么含义呢这些类有什么样的性质"><a class="markdownIt-Anchor" href="#聚类算法聚出的类有什么含义呢这些类有什么样的性质"></a> <strong>聚类算法聚出的类有什么含义呢?这些类有什么样的性质?</strong></h2>
+<ul>
+<li>我们认为，被分在同一个簇中的数据是有相似性的，而不同簇中的数据是不同的，<strong>当聚类完毕之后，我们就要分别去研究每个簇中的样本都有什么样的性质，从而根据业务需求制定不同的商业或者科技策略。</strong></li>
+<li>聚类算法我们追求的是“<strong>簇内差异小，簇外差异大</strong>”。而这个“差异”，由样本点到其所在簇的质心的距离来衡量。**KMeans追求的是，求解能够让Inertia最小化的质心。**实际上，我们也可以使用其他距离，每个距离都有自己对应的Inertia。</li>
+</ul>
+<p><img src="https://pic3.zhimg.com/80/v2-7352114269686af769a4471845fe9296_1440w.webp" alt="img"></p>
+<h2 id="执行过程"><a class="markdownIt-Anchor" href="#执行过程"></a> 执行过程</h2>
+<p>（1）数据预处理，如归一化、离散点处理即可。</p>
+<p>（2）随机选取K个簇中心（K是用户指定的参数，即所期望的簇的个数）</p>
+<p>（3）定义代价函数（可以将簇内平方和函数作为代价函数）</p>
+<p>（4）定义迭代次数t，重复下面过程直到代价函数收敛（或簇心不发生变化、或达到迭代次数）</p>
+<p>- 对于每一个样本x，将其分配到距离最近的簇；</p>
+<p>- 对于每一个簇，重新计算该类簇的中心。</p>
+<h2 id="k-means聚类的初始值k怎么选取"><a class="markdownIt-Anchor" href="#k-means聚类的初始值k怎么选取"></a> k-means聚类的初始值k怎么选取？</h2>
+<ul>
+<li>
+<p>简单方法</p>
+<ul>
+<li>
+<p>**一是选取k值可以根据具体的业务需求制定。**比如说，一个游戏公司想把所有玩家做聚类分析，分成顶级、高级、中级、菜鸟四类，那么K=4；如果房地产公司想把当地的商品房分成高中低三档，那么K=3。按需选择虽然合理，但是未必能保证在做K-Means时能够得到清晰的分界线。</p>
+<p><strong>二是可以“观察”</strong>。如果数据量较少，或者可以先对原始数据集采样，随后对这些数据进行可视化，观察其大概分为多少类，进而设置k的取值。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>专业方法</p>
+<ul>
+<li>Elbow Method：优点是适用于高维的样本数据。有时候人们也会把手肘法用于不同的度量上，如组内方差组间方差比。<img src="https://p.ipic.vip/3rwwiz.png" alt="image-20240405231046647"><img src="https://p.ipic.vip/bj6bt6.jpg" alt="img"></li>
+<li><strong>Gap Static</strong></li>
+<li><strong>Silhouette Score</strong></li>
+</ul>
+</li>
+</ul>
+<h1 id="dbscan-density-based-spatial-clustering-of-applications-with-noise"><a class="markdownIt-Anchor" href="#dbscan-density-based-spatial-clustering-of-applications-with-noise"></a> <a class="link" target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1971939">DBSCAN (Density-Based Spatial Clustering of Applications with Noise)<i class="fas fa-external-link-alt"></i></a></h1>
+<ul>
+<li>DBSCAN(Density-Based Spatial Clustering of Applications with Noise, 具有噪声的基于密度的聚类方法) 是一基于密度的聚类算法，DBSCAN将簇定义为<strong>密度相连的点的最大集合</strong>，能够把具有足够高密度的区域划分为簇，并可在噪声的空间数据库中发现任意形状的聚类。</li>
+</ul>
+<p><img src="https://p.ipic.vip/upre42.png" alt="img"></p>
+<ul>
+<li>
+<p>上面这些点是分布在样本空间的众多样本，现在我们的目标是把这些在样本空间中距离相近的聚成一类。</p>
+<p>我们发现A点附近的点密度较大，红色的圆圈根据一定的规则在这里滚啊滚，最终收纳了A附近的5个点，标记为红色也就是定为同一个簇。</p>
+<p>其它没有被收纳的根据一样的规则成簇。</p>
+<p>形象来说，我们可以认为这是系统在众多样本点中随机选中一个，围绕这个被选中的样本点画一个圆，规定这个圆的半径以及圆内最少包含的样本点，如果在指定半径内有足够多的样本点在内，那么这个圆圈的圆心就转移到这个内部样本点，继续去圈附近其它的样本点，类似传销一样，继续去发展下线。</p>
+<p>等到这个滚来滚去的圈发现所圈住的样本点数量少于预先指定的值，就停止了。那么我们称最开始那个点为核心点，如A，停下来的那个点为边界点，如B、C，没得滚的那个点为离群点，如N）。</p>
+</li>
+<li>
+<p>基于密度这点有什么好处呢？</p>
+<p>我们知道kmeans聚类算法只能处理球形的簇，也就是一个聚成实心的团（这是因为算法本身计算平均距离的局限）。但往往现实中还会有各种形状，比如下面两张图，环形和不规则形，这个时候，那些传统的聚类算法显然就悲剧了。</p>
+<p>于是就思考，样本密度大的成一类呗，这就是DBSCAN聚类算法。</p>
+</li>
+</ul>
+<p><img src="https://p.ipic.vip/skt3zb.png" alt="img"></p>
+<ul>
+<li>
+<p>怎么选择半径？<img src="https://p.ipic.vip/j2f9is.png" alt="img"></p>
+</li>
+<li>
+<p>怎么选择**MinPts：**这个参数就是圈住的点的个数，也相当于是一个密度，一般这个值都是偏小一些，然后进行多次尝试</p>
+</li>
+<li>
+<p>DBSCAN 算法的计算复杂的度为 O(n²)</p>
+</li>
+</ul>
+<h1 id="optics-ordering-points-to-identify-the-clustering-structure"><a class="markdownIt-Anchor" href="#optics-ordering-points-to-identify-the-clustering-structure"></a> <a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/haveanybody/article/details/113782209">OPTICS (Ordering points to identify the clustering structure)<i class="fas fa-external-link-alt"></i></a></h1>
+<ul>
+<li>
+<p>OPTICS算法是DBSCAN的改进版本，<strong>因此OPTICS算法也是一种基于密度的聚类算法</strong>。</p>
+</li>
+<li>
+<p>在DBSCAN算法中，有两个比较重要的参数：邻域半径eps和核心对象的最小邻域样本数min_samples，选择不同的参数会导致最终聚类的结果千差万别，<strong>而在高维数据中，两个参数的联合调参也不是一件容易的事</strong>。<strong>OPTICS算法的提出就是为了帮助DBSCAN算法选择合适的参数，降低输入参数的敏感度</strong>。</p>
+</li>
+<li>
+<p>实际上，OPTICS并不显式的生成数据聚类结果，只是<strong>对数据集中的对象进行排序，得到一个有序的对象列表</strong>，通过该有序列表，可以得到一个<strong>决策图</strong>，通过决策图可以<strong>选择不同的eps参数进行DBSCAN聚类</strong>。</p>
+</li>
+</ul>
+<p>两个基本概念：</p>
+<ul>
+<li>core distance 核心距离：核心距离是使一个样本点成为core points的最小半径，在给定邻域半径eps和minPoints参数的前提下，核心距离可以比给定的eps更小</li>
+<li>reachability distance：可达距离指的是样本与core point的距离</li>
+</ul>
+<p>缺点：It only produces a cluster ordering.</p>
+<p><img src="https://p.ipic.vip/q83a23.png" alt="7777"></p>
+<p>OPTICS并不依赖全局变量来确定聚类，而是将空间上最接近的点相邻排列，以得到数据集合中的对象的线性排序。排序后生成的序列存储了与相邻点之间的距离，并最终生成了一个 dendrogram 。OPTICS算法的思路与<a class="link" target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/DBSCAN">DBSCAN<i class="fas fa-external-link-alt"></i></a>类似，但是解决了DBSCAN的一个主要弱点，即如何在密度变化的数据中取得有效的聚类。同时 OPTICS也避免了多数聚类算法中对输入参数敏感的问题。</p>
+<h1 id="linear-regression"><a class="markdownIt-Anchor" href="#linear-regression"></a> <a class="link" target="_blank" rel="noopener" href="https://sscc.wisc.edu/sscc/pubs/RegDiag-R/model-assumptions.html">Linear Regression<i class="fas fa-external-link-alt"></i></a></h1>
+<p><img src="https://p.ipic.vip/2lbw97.png" alt="image-20240405235418282"></p>
+<h2 id="model-assumpitions"><a class="markdownIt-Anchor" href="#model-assumpitions"></a> Model Assumpitions</h2>
+<h2 id="tests-that-need-to-be-done-before-modeling"><a class="markdownIt-Anchor" href="#tests-that-need-to-be-done-before-modeling"></a> Tests that need to be done before modeling:</h2>
+<ul>
+<li>
+<p>Testing the <strong>residuals’ normality</strong> =&gt; Why? =&gt; How? Shapiro-Wilk, QQ-plot in R</p>
+</li>
+<li>
+<p>Testing <strong>Residuals Independence</strong> =&gt; Why? =&gt; How? Durbin-Watson test (autocorrelation)</p>
+</li>
+<li>
+<p>Testing Multicollinearity =&gt; VIF (variation inflation factor)</p>
+</li>
+<li>
+<p>Equality of variance (homoscedasticity) =&gt; Levene’s Test</p>
+</li>
+<li>
+<p>Testing linearity =&gt;</p>
+</li>
+<li></li>
+</ul>
+<h1 id="fp-growth"><a class="markdownIt-Anchor" href="#fp-growth"></a> FP-Growth</h1>
+
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="article-nav">
+                        
+                        
+                            <div class="article-next">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2024/04/03/%E6%89%BE%E5%B7%A5%EF%BD%9C%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E5%85%AB%E8%82%A1/"
+                                   title=""
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis"></span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                            <span class="right arrow-icon flex-center">
+                                      <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;Comments
+        </div>
+        
+            
+
+    <div class="error-tips">Please fill in Valine complete configuration items.</div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#k-means"><span class="nav-number">1.</span> <span class="nav-text"> K-means</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E5%92%8C%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.1.</span> <span class="nav-text"> 聚类算法和分类算法的区别：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.2.</span> <span class="nav-text"> 常用聚类算法的简单介绍：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#k-means-process"><span class="nav-number">1.3.</span> <span class="nav-text"> K-means Process</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E8%81%9A%E5%87%BA%E7%9A%84%E7%B1%BB%E6%9C%89%E4%BB%80%E4%B9%88%E5%90%AB%E4%B9%89%E5%91%A2%E8%BF%99%E4%BA%9B%E7%B1%BB%E6%9C%89%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.4.</span> <span class="nav-text"> 聚类算法聚出的类有什么含义呢?这些类有什么样的性质?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="nav-number">1.5.</span> <span class="nav-text"> 执行过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#k-means%E8%81%9A%E7%B1%BB%E7%9A%84%E5%88%9D%E5%A7%8B%E5%80%BCk%E6%80%8E%E4%B9%88%E9%80%89%E5%8F%96"><span class="nav-number">1.6.</span> <span class="nav-text"> k-means聚类的初始值k怎么选取？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#dbscan-density-based-spatial-clustering-of-applications-with-noise"><span class="nav-number">2.</span> <span class="nav-text"> DBSCAN (Density-Based Spatial Clustering of Applications with Noise)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#optics-ordering-points-to-identify-the-clustering-structure"><span class="nav-number">3.</span> <span class="nav-text"> OPTICS (Ordering points to identify the clustering structure)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linear-regression"><span class="nav-number">4.</span> <span class="nav-text"> Linear Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#model-assumpitions"><span class="nav-number">4.1.</span> <span class="nav-text"> Model Assumpitions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tests-that-need-to-be-done-before-modeling"><span class="nav-number">4.2.</span> <span class="nav-text"> Tests that need to be done before modeling:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fp-growth"><span class="nav-number">5.</span> <span class="nav-text"> FP-Growth</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2024
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Li Syaoran</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+                <div class="deploy-info info-item default">
+                    
+                        This site is deployed on <span class="tooltip" data-tooltip-content="GitHub Pages"><img src="/images/deploy-provider/github.png"></span>
+                        
+                </div>
+            
+        
+
+        <div class="count-item info-item default">
+            
+                <span class="count-box border-box word">
+                    <span class="item-type border-box">Total words</span>
+                    <span class="item-value border-box word">98.5k</span>
+                </span>
+            
+
+            
+                <span class="count-box border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-box border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#k-means"><span class="nav-number">1.</span> <span class="nav-text"> K-means</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E5%92%8C%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.1.</span> <span class="nav-text"> 聚类算法和分类算法的区别：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.2.</span> <span class="nav-text"> 常用聚类算法的简单介绍：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#k-means-process"><span class="nav-number">1.3.</span> <span class="nav-text"> K-means Process</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E8%81%9A%E5%87%BA%E7%9A%84%E7%B1%BB%E6%9C%89%E4%BB%80%E4%B9%88%E5%90%AB%E4%B9%89%E5%91%A2%E8%BF%99%E4%BA%9B%E7%B1%BB%E6%9C%89%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.4.</span> <span class="nav-text"> 聚类算法聚出的类有什么含义呢?这些类有什么样的性质?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="nav-number">1.5.</span> <span class="nav-text"> 执行过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#k-means%E8%81%9A%E7%B1%BB%E7%9A%84%E5%88%9D%E5%A7%8B%E5%80%BCk%E6%80%8E%E4%B9%88%E9%80%89%E5%8F%96"><span class="nav-number">1.6.</span> <span class="nav-text"> k-means聚类的初始值k怎么选取？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#dbscan-density-based-spatial-clustering-of-applications-with-noise"><span class="nav-number">2.</span> <span class="nav-text"> DBSCAN (Density-Based Spatial Clustering of Applications with Noise)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#optics-ordering-points-to-identify-the-clustering-structure"><span class="nav-number">3.</span> <span class="nav-text"> OPTICS (Ordering points to identify the clustering structure)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linear-regression"><span class="nav-number">4.</span> <span class="nav-text"> Linear Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#model-assumpitions"><span class="nav-number">4.1.</span> <span class="nav-text"> Model Assumpitions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tests-that-need-to-be-done-before-modeling"><span class="nav-number">4.2.</span> <span class="nav-text"> Tests that need to be done before modeling:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fp-growth"><span class="nav-number">5.</span> <span class="nav-text"> FP-Growth</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/dark-light-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/local-search.js"></script>
+
+
+<!-- code-block -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/code-block.js"></script>
+
+
+<!-- lazyload -->
+
+
+<div class="pjax">
+    
+        <!-- post-helper -->
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/post/post-helper.js"></script>
+
+        <!-- toc -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/post/toc.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/post/share.js"></script>
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.6/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":80,"height":160},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>
